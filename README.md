@@ -24,6 +24,9 @@ Group Name: __'The Cheese Group'__
   - __[ ]__ Nazifa
   - __[ ]__ Wilson
 
+## Requirements
+- Languages: HTML, CSS, JavaScript, PHP
+
 ## Updates
 
 - __17/01/2026, Changes made:__
