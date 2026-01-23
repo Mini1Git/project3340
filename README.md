@@ -14,7 +14,8 @@ Group Name: __'The Cheese Group'__
 - __[X]__ _Discuss_ with group about __common interests__ to more easily identify _business case_.
   - __[X]__ _Develop_ a word document to _compile_ information.
   - __[X]__ _Discuss_ ways to combine ideas or go with one via __survey__.
-  ~~- __[ ]__ _Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
+  
+  - ~~__[ ]__ _Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
 
 - __[ ]__ _Optional Task:_ __Design wireframes__ for each page, each person can choose which pages to design based on their UI/UX design skills.
 
