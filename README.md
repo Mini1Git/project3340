@@ -9,6 +9,9 @@ Group Name: __'The Cheese Group'__
 - Nazifa Tahsin
 - Kayden Ions
 
+## Google Doc Design Document:
+	https://docs.google.com/document/d/1_kI17sUta9oh6Pqrc_Lg_VRuLf6k7XWfQJOQ6VlU-WQ/edit?usp=sharing
+
 ## Todo List
 
 - __[X]__ _Discuss_ with group about __common interests__ to more easily identify _business case_.
