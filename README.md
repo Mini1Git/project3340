@@ -40,7 +40,7 @@ Languages: HTML, CSS, JavaScript, PHP
 
 - __17/01/2026, Changes made:__
   - Kayden: Did some formatting to the _readme.md_ document. Justification behind this was to incorporate a todo list and a list of updates on specific dates for documentation purposes. Feel free to give constructive criticisms on the formatting.
-- __23/01/2026:__ Made some progress in our group meeting. Decided on making a delivery app and naming it 'Grillow'. Talked about our next steps and then updated the readme formatting.
+- __23/01/2026, Changes made:__ Made some progress in our group meeting. Decided on making a delivery app and naming it 'Grillow'. Talked about our next steps and then updated the readme formatting.
 
 ## Comments
 
