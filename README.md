@@ -24,7 +24,7 @@ Languages: HTML, CSS, JavaScript, PHP
 - [X] _Discuss_ with group about __common interests__ to more easily identify _business case_.
   - [X] _Develop_ a word document to _compile_ information.
   - [X] _Discuss_ ways to combine ideas or go with one via __survey__.
-  - [ ] ~~ _Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
+  - [ ] ~~_Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
 
 - [ ] _Design a Simple Logo:_ Each group member can submit a logo to their individual branches.
 
@@ -48,3 +48,4 @@ If there are any comments or concerns, please use the group discord, the github 
 
     - DD/MM/YYYY, Comment:
     - Name: Description of comment or issue.
+
