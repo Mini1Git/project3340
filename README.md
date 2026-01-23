@@ -11,24 +11,25 @@ Group Name: __'The Cheese Group'__
 
 ## Todo List
 
-- __[X]__ _Discuss_ with group about __common interests__ to more easily identify _business case_.
-  - __[X]__ _Develop_ a word document to _compile_ information.
-  - __[X]__ _Discuss_ ways to combine ideas or go with one via __survey__.
+- [X] _Discuss_ with group about __common interests__ to more easily identify _business case_.
+  - [X] _Develop_ a word document to _compile_ information.
+  - [X] _Discuss_ ways to combine ideas or go with one via __survey__.
   
-  - ~~__[ ]__ _Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
+  - ~~[ ] _Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
 
-- __[ ]__ _Optional Task:_ __Design wireframes__ for each page, each person can choose which pages to design based on their UI/UX design skills.
+- [ ] _Optional Task:_ __Design wireframes__ for each page, each person can choose which pages to design based on their UI/UX design skills.
 
-- __[ ]__ _Develop_ a __common design__ using design tools or HTML and CSS and present each to the group. This includes the colour theme, forms, navigation system, link styles and anything else you can think of. Check each box if you have finished a design.
-  - __[ ]__ Kayden
-  - __[ ]__ Liana
-  - __[ ]__ Nazifa
-  - __[ ]__ Wilson
+- [ ] _Develop_ a __common design__ using design tools or HTML and CSS and present each to the group. This includes the colour theme, forms, navigation system, link styles and anything else you can think of. Check each box if you have finished a design.
+  - [ ] Kayden
+  - [ ] Liana
+  - [ ] Nazifa
+  - [ ] Wilson
 
 ## Updates
 
 - __17/01/2026, Changes made:__
   - Kayden: Did some formatting to the _readme.md_ document. Justification behind this was to incorporate a todo list and a list of updates on specific dates for documentation purposes. Feel free to give constructive criticisms on the formatting.
+- __23/01/2026:__
 
 ## Comments
 
