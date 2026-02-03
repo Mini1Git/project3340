@@ -52,3 +52,15 @@ If there are any comments or concerns, please use the group discord, the github 
     - DD/MM/YYYY, Comment:
     - Name: Description of comment or issue.
 
+## List of pages
+  WE need at least 15 pages
+*Dynamic pages (10 Dynamic)
+  -Home page
+  -food menu
+  -inventory page
+  -cart page
+*static page (5 static) 
+  -help page
+  -FAQ
+  -About us
+
