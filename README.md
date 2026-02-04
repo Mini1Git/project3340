@@ -36,6 +36,9 @@ Languages: HTML, CSS, JavaScript, PHP
   - [ ] Nazifa
   - [ ] Wilson
 
+## Requirements
+- Languages: HTML, CSS, JavaScript, PHP
+
 ## Updates
 
 - __17/01/2026, Changes made:__
@@ -49,3 +52,18 @@ If there are any comments or concerns, please use the group discord, the github 
     - DD/MM/YYYY, Comment:
     - Name: Description of comment or issue.
 
+## List of pages
+  WE need at least 15 pages
+  
+### Dynamic pages (10 Dynamic)
+
+- Home page
+- Food menu
+- Inventory page
+- Cart page
+
+### Static pages (5 static) 
+
+- Help page
+- FAQ
+- About us
