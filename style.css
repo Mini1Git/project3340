@@ -13,7 +13,9 @@ header {
     align-items: center;
 }
 h1{
-    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
     letter-spacing: 3px;
     font-family: "Srisakdi", system-ui;
 }
