@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
-
 * {
     margin: 0;
     padding: 0 ;
-}
+} /*the entire header section*/
 header {
     background-color: #e93729;
     color: #fbfbfb;
@@ -40,14 +39,23 @@ header img {
     color: #fbfbfb;
     text-decoration: none;
 
-   }
+}
 .sign button {
     background-color: #e93729;
 }
 
 
-
 .login a{
     color:#e93729;
     text-decoration: none;
+}
+
+/*navigation rules*/
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.services, .partner {
+    list-style: none;
 }
