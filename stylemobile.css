@@ -1,2 +1,30 @@
 @media(max-width: 767px)
-//hi
+
+{
+
+*{
+    font-size: 12px;
+} 
+header img {
+    width: 30px;
+}
+
+h1{
+    font-size: 25px;
+}
+
+.log {
+    padding: 15px;
+}
+
+.log button {
+    padding: 5px;
+    width: 60px;
+    font-size: 11px;
+    font-weight: 600;
+}
+a {
+    font-size: 11px;
+}
+
+}
