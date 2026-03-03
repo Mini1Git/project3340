@@ -1,16 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0 ;
 }
-
-.log {
+header {
     background-color: #e93729;
     color: #fbfbfb;
+    font-family: "Srisakdi", system-ui;
+    font-size: 30px;
+}
+
+.log {
     padding: 30px;
 }
 
 .log button {
     background-color: #fbfbfb;
+    color: #e93729;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 50px;
 }
+
+.log a:first-child{
+    background-color: #fbfbfb;
+    color:#e93729;
+}
+
+.log a: 2-child{
+    background-color: #e93729;;
+    color: #fbfbfb;
+}
+
