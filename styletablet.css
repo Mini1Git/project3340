@@ -2,7 +2,33 @@
 {
 
 
+*{
+    font-size: 14px;
+} 
+header img {
+    width: 40px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+.log {
+    padding: 22px;
+}
+
+.log button {
+    padding: 7px;
+    width: 75px;
+    font-size: 11px;
+    font-weight: 600;
+}
+a {
+    font-size: 13px;
+}
+
+}
 
 
-    
+
 }

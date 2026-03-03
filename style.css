@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0 ;
+    font-size: 16px;
 }
 header {
     background-color: #e93729;
@@ -28,11 +29,14 @@ header img {
 .log button {
     color: #e93729;
     padding: 10px;
-    width: 80px;
+    width: 90px;
     border-radius: 25px;
     border: none;
     font-size: 12px;
     font-weight: 700;
+}
+a{
+    font-size: 15px;
 }
 .sign {
     background-color: #e93729;
