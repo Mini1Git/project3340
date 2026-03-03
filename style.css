@@ -8,7 +8,15 @@ header {
     background-color: #e93729;
     color: #fbfbfb;
     font-family: "Srisakdi", system-ui;
-    font-size: 30px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 50px;
 }
 
 .log {
@@ -16,19 +24,30 @@ header {
 }
 
 .log button {
-    background-color: #fbfbfb;
     color: #e93729;
-    padding: 20px;
-    border-radius: 50px;
+    padding: 10px;
+    width: 80px;
+    border-radius: 25px;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
 }
-
-.log a:first-child{
-    background-color: #fbfbfb;
-    color:#e93729;
+.sign {
+    background-color: #e93729;
 }
-
-.log a: 2-child{
-    background-color: #e93729;;
+.sign a{
+    /* background-color: #e93729; */
     color: #fbfbfb;
+    text-decoration: none;
+
+   }
+.sign button {
+    background-color: #e93729;
 }
 
+
+
+.login a{
+    color:#e93729;
+    text-decoration: none;
+}
