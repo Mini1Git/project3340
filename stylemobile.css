@@ -67,4 +67,8 @@ nav{
     margin-right: auto;
 }
 
+.restaurant ul {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 }
