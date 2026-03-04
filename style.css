@@ -62,8 +62,6 @@ header img {
     background-color: #e93729;
 }
 
-
-
 .login a, #on-page a{
     color:#e93729;
     text-decoration: none;
@@ -135,4 +133,59 @@ nav {
 
 #on-page{
     background-color: #e93729;
+}
+
+/*jumbotron*/
+
+.jumbotron {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 25px;
+    background: url("background\ jumbotron.webp") no-repeat center center/cover;
+    overflow: hidden;
+    height: 350px;
+}
+
+ .overlay { /*the orange background*/
+    height: 100%;
+    width: 100%;
+    background: rgba(249, 115, 22, 0.95);
+    clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+ }
+
+ .container {
+    color: #fbfbfb;
+    display: flex;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+ 
+ }
+
+ .jumbotron p{
+   font-size: 18px; 
+}
+
+.jumbotron a {
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    background-color: #fbfbfb;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    border: 2px solid#fbfbfb;
+    border-radius: 25px;
+    text-shadow: none;
+}
+
+.jumbotron a:hover {
+    background-color: rgb(249, 115, 22);
+    color: #fbfbfb;
+
 }
