@@ -5,6 +5,11 @@
     padding: 0 ;
     font-family: "Poppins", sans-serif;
 }
+
+/*ham burger*/
+.ham{
+    display: none;
+}
 header {
     background-color: #e93729;
     color: #fbfbfb;

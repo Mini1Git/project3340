@@ -6,6 +6,11 @@ header img {
     height: 30px;
 }
 
+.ham{
+    display: inline;
+    width: 30px;
+}
+
 h1{
     font-size: 25px;
 }
