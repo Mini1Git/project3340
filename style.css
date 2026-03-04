@@ -49,9 +49,14 @@ header img {
     text-decoration: none;
 
 }
+
+.sign a:hover, .login a:hover {
+    color: black;
+}
 .sign button {
     background-color: #e93729;
 }
+
 
 
 .login a, #on-page a{
@@ -73,7 +78,6 @@ nav {
     font-size: 16px;
     
 }
-
 
 .services, .partner { /*the ul*/
     list-style: none;
@@ -105,6 +109,10 @@ nav {
     color: #e93729;
     font-size: 14px;
     font-weight: 500;
+}
+
+.services a:hover, .partner a:hover, #on-page a:hover {
+    color: black;
 }
 
 .services img {
