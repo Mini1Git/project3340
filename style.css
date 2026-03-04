@@ -189,3 +189,45 @@ nav {
     color: #fbfbfb;
 
 }
+
+/*restaurant rules*/
+
+.restaurant ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;/*might change later*/
+    width: 90%;
+    margin: 50px auto;
+}
+
+.restaurant li {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 2px 6px 1px rgba(0,0,0,0.39);
+}
+.restaurant img {
+    width: 100%;
+}
+
+.restaurant .info {
+    padding: 20px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 20px;
+}
+.restaurant span {
+    font-size: 18px;
+    color: gray;
+}
+
+.restaurant .star {
+    width: 12px;
+}
+
