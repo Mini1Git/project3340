@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0 ;
-    font-size: 16px;
+    font-family: "Poppins", sans-serif;
 }
 header {
     background-color: #e93729;
@@ -19,13 +20,6 @@ h1{
     font-family: "Srisakdi", system-ui;
 }
 
-h1 {
-    display: flex;
-    justify-content: center;
-    letter-spacing: 3px;
-    font-size: 40px;
-    font-family: "Srisakdi", system-ui;
-}
 
 header img {
     width: 50px;
@@ -44,9 +38,7 @@ header img {
     font-size: 12px;
     font-weight: 700;
 }
-a{
-    font-size: 15px;
-}
+
 .sign {
     background-color: #e93729;
 }
@@ -76,6 +68,7 @@ nav {
     justify-content: center;
     align-items: center;
     border-right: 2px solid rgba(217, 217, 217, 0.15);
+    font-size: 16px;
     
 }
 
@@ -86,7 +79,7 @@ nav {
     padding: 15px 20px;
 
 }
-.services li, .partner li {
+.services li, .partner li  {
     height: 50px;
     background-color: rgba(217, 217, 217, 0.15);
     border-radius: 30px;
@@ -95,20 +88,31 @@ nav {
     align-items: center;
     width: 140px;
     margin-bottom: 25px;
-    border: 2px #e93729 solid;
 
+}
+
+.partner {
+    padding-top: 38px;
+}
+.partner li {
+       border: 2px #e93729 solid;
 }
 
 .services a, .partner a {
     text-decoration: none;
     color: #e93729;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 
 .services img {
     width: 17px;
 } 
+.services a {
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
 
 #on-page a{
     color: #fbfbfb;
