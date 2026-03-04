@@ -47,5 +47,31 @@ nav {
 .services a {
     gap:10px;
 }
+.jumbotron {
+    height: 250px;
+}
+
+.jumbotron h2 {
+    font-size: 18px;
+}
+ .jumbotron p {
+    font-size: 12px;
+ }
+
+ .container {
+    height: 80%;
+    justify-content: space-around;
+ }
+
+ .overlay {
+    padding: 0 20px;
+ }
+
+.jumbotron a {
+    width: 80px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500;
+ }
 
 }

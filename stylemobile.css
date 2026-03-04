@@ -21,17 +21,20 @@ header img {
 
 h1{
     font-size: 25px;
+
 }
 
 .log {
     padding: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .log button {
-    padding: 5px;
-    width: 60px;
+    padding: 3px 5px;
+    width: 70px;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 nav{
@@ -66,6 +69,33 @@ nav{
     transition: transform 0.3s ease;
     margin-right: auto;
 }
+
+.jumbotron {
+    height: 170px;
+}
+
+.jumbotron h2 {
+    font-size: 12px;
+}
+ .jumbotron p {
+    font-size: 9px;
+ }
+
+ .container {
+    height: 80%;
+    justify-content: space-between;
+ }
+
+ .overlay {
+    padding: 0 20px;
+ }
+
+.jumbotron a {
+    width: 40px;
+    padding: 1px 4px;
+    font-size: 10px;
+    font-weight: 500;
+ }
 
 .restaurant ul {
     grid-template-columns: repeat(2, 1fr);
