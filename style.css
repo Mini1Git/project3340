@@ -6,12 +6,17 @@
 header {
     background-color: #e93729;
     color: #fbfbfb;
-    font-family: "Srisakdi", system-ui;
-    font-size: 25px;
-    letter-spacing: 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+    font-size: 40px;
+    font-family: "Srisakdi", system-ui;
 }
 
 header img {
@@ -45,17 +50,60 @@ header img {
 }
 
 
-.login a{
+.login a, #on-page a{
     color:#e93729;
     text-decoration: none;
+}
+
+.content { /*everything after header*/
+    display: flex;
 }
 
 /*navigation rules*/
 nav {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(217, 217, 217, 0.15);
+    
 }
 
-.services, .partner {
+
+.services, .partner { /*the ul*/
     list-style: none;
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    padding: 15px 20px;
+
+}
+.services li, .partner li {
+    height: 50px;
+    background-color: rgba(217, 217, 217, 0.15);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    margin-bottom: 25px;
+    border: 2px #e93729 solid;
+
+}
+
+.services a, .partner a {
+    text-decoration: none;
+    color: #e93729;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.services img {
+    width: 17px;
+} 
+
+#on-page a{
+    color: #fbfbfb;
+}
+
+#on-page{
+    background-color: #e93729;
 }
