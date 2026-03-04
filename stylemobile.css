@@ -6,11 +6,12 @@
     font-size: 12px;
 } 
 header img {
-    width: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 h1{
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .log {
