@@ -211,6 +211,8 @@ nav {
 .restaurant img {
     width: 100%;
     height: 55%;
+    object-fit: cover;
+
 }
 
 .restaurant .info {
