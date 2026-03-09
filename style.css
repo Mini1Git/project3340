@@ -27,7 +27,6 @@ h1{
     
 }
 
-
 header img {
     width: 50px;
 }
@@ -204,13 +203,14 @@ nav {
 }
 
 .restaurant li {
-    height: 300px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 5px 2px 6px 1px rgba(0,0,0,0.39);
+    border-radius: 25px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
 .restaurant img {
     width: 100%;
+    height: 55%;
 }
 
 .restaurant .info {
@@ -222,7 +222,8 @@ nav {
     color: black;
 }
 .restaurant h3 {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
 }
 .restaurant span {
     font-size: 18px;
@@ -231,5 +232,8 @@ nav {
 
 .restaurant .star {
     width: 12px;
+}
+.restaurant .info span{
+    font-size: 11px;
 }
 

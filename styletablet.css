@@ -72,4 +72,41 @@ nav {
     font-weight: 500;
  }
 
+/*restaurants*/
+
+.restaurant ul{
+    gap: 17px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.restaurant li {
+    height: 180px;
+}
+.restaurant img {
+    width: 100%;
+    height: 65%;
+}
+
+.restaurant .info {
+    padding-left: 10px;
+    padding-top: 1px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 16px;
+}
+
+.restaurant .star {
+    width: 11px;
+}
+.restaurant .info span{
+    font-size: 11px;
+}
+
+
 }
