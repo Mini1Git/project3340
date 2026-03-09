@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Grillow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletablet.css">
+    <link rel="stylesheet" href="stylemobile.css">
 </head>
 <body>
+    <header> 
+        <div class="ham">
+            <img src="hamburger.svg">
+        </div>
+        <h1><img src="logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
+        <div class="log">
+            <button class="login"><a href="login.html">Login</a></button>
+            <button class="sign"><a href="signup.html">Sign Up</a></button>
+        </div>
+    </header>
+    <div class="content">
+        <nav> <!--navigation bar-->
+            <div class="offscreen-menu">
+            <ul class="services">
+                <li><a href="index.html"><img src="red-home.svg"><span>Home</span></a></li>
+                <li><a href="browse.html"><img src="red-magnifying glass.svg"><span>Browse</span></a></li>
+                <li><a href="orders.html"><img src="Receipt Icon.svg"><span>Orders</span></a></li>
+                <li><a href="favorites.html"><img src="Star Vector.svg"><span>Favourites</span></a></li>
+                <li><a href="cart.html"><img src="Shopping Cart SVG.svg"><span>Cart</span></a></li>
+                <li id="on-page"><a href="help.html"><img src="white-help.svg"><span>Help</span></a></li>
+            </ul>
+            <ul class="partner">
+                <li><a href="partnerform.html">Partner with us</a></li>
+                <li><a href="driverform.html">Become a Driver</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <script src="./script.js"></script>
     
 </body>
 </html>
