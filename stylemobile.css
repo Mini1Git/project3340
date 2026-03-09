@@ -52,12 +52,13 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;    
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     font-size: 3rem;
     transition: .3s ease;
     z-index: 999;
     overflow-y: scroll;
+    height: 100vh;
 }
 
 .offscreen-menu.active{
