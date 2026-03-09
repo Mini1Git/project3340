@@ -15,8 +15,7 @@ header {
     color: #fbfbfb;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid rgba(217, 217, 217);
+    align-items: center;   
 }
 h1{
     display: flex;
@@ -240,4 +239,3 @@ nav {
 .restaurant .info span{
     font-size: 11px;
 }
-
