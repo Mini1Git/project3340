@@ -84,6 +84,7 @@ nav {
     
 }
 
+
 .services, .partner { /*the ul*/
     list-style: none;
     border-bottom: 2px solid rgba(217, 217, 217, 0.15);
@@ -147,6 +148,8 @@ nav {
     background: url("background\ jumbotron.webp") no-repeat center center/cover;
     overflow: hidden;
     height: 350px;
+    justify-content: center;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
 
  .overlay { /*the orange background*/

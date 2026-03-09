@@ -150,6 +150,7 @@ form {
     box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
     padding: 30px;
     gap: 10px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
 
 label { 
@@ -186,5 +187,5 @@ input{
     align-items: center;
     width: 100%;
     padding: 50px;
-    overflow: hidden;
+    overflow:;
 }
