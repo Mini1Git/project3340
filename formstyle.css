@@ -186,4 +186,5 @@ input{
     align-items: center;
     width: 100%;
     padding: 50px;
+    overflow: hidden;
 }
