@@ -58,9 +58,6 @@ header img {
 .sign a:hover, .login a:hover {
     color: black;
 }
-.sign button {
-    background-color: #e93729;
-}
 
 .login a, #on-page a{
     color:#e93729;
@@ -137,105 +134,56 @@ nav {
     background-color: #e93729;
 }
 
-/*jumbotron*/
-
-.jumbotron {
-    width: 90%;
-    margin: 10px auto;
-    border-radius: 25px;
-    background: url("background\ jumbotron.webp") no-repeat center center/cover;
-    overflow: hidden;
-    height: 350px;
-}
-
- .overlay { /*the orange background*/
-    height: 100%;
-    width: 100%;
-    background: rgba(249, 115, 22, 0.95);
-    clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
-    padding: 20px;
-    display: flex;
-    align-items: center;
- }
-
- .container {
-    color: #fbfbfb;
-    display: flex;
-    width: 50%;
-    height: 70%;
-    flex-direction: column;
-    justify-content: space-between;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
- 
- }
-
- .jumbotron p{
-   font-size: 18px; 
-}
-
-.jumbotron a {
-    text-decoration: none;
-    font-weight: 700;
-    color: rgb(249, 115, 22);
-    background-color: #fbfbfb;
-    padding: 10px;
-    width: 120px;
+/*form rules*/
+.register h2{
+    font-weight: 500;
+    font-size: 28px;
     text-align: center;
-    border: 2px solid#fbfbfb;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #d9d9d926;
     border-radius: 25px;
-    text-shadow: none;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    gap: 10px;
 }
 
-.jumbotron a:hover {
-    background-color: rgb(249, 115, 22);
-    color: #fbfbfb;
+label { 
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    padding: 15px;
+    border-radius: 3px;
 
 }
 
-/*restaurant rules*/
-
-.restaurant ul{
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;/*might change later*/
-    width: 90%;
-    margin: 50px auto;
-}
-
-.restaurant li {
-    height: 200px;
-    overflow: hidden;
+input[type="submit"]{
     border-radius: 25px;
-    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
-}
-.restaurant img {
-    width: 100%;
-    height: 55%;
-    object-fit: cover;
-
-}
-
-.restaurant .info {
-    padding: 20px;
-}
-
-.restaurant a {
-    text-decoration: none;
-    color: black;
-}
-.restaurant h3 {
-    font-size: 18px;
+    width: 250px;
+    height: 50px;
+    background-color:#e93729;
+    color:#fbfbfb;
+    font-size: 14px;
     font-weight: 600;
-}
-.restaurant span {
-    font-size: 18px;
-    color: gray;
+    border: none;
 }
 
-.restaurant .star {
-    width: 12px;
+input{
+    background-color: #a8a4a426;
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    text-indent: 5%;
+    border-bottom: 1px solid #92929279;
 }
-.restaurant .info span{
-    font-size: 11px;
+
+.formparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
 }
