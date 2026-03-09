@@ -58,6 +58,7 @@ nav{
     font-size: 3rem;
     transition: .3s ease;
     z-index: 999;
+    overflow: scroll;
 }
 
 .offscreen-menu.active{
