@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0 ;
+    font-family: "Poppins", sans-serif;
+}
+
+/*ham burger*/
+.ham{
+    display: none;
+}
+header {
+    background-color: #e93729;
+    color: #fbfbfb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-family: "Srisakdi", system-ui;
+    gap: 10px;
+    
+}
+
+header img {
+    width: 50px;
+    padding-left: 20px;
+}
+
+.log {
+    padding: 30px;
+}
+
+.log button {
+    color: #e93729;
+    padding: 10px;
+    width: 90px;
+    border-radius: 25px;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sign {
+    background-color: #e93729;
+}
+.sign a{
+    color: #fbfbfb;
+    text-decoration: none;
+
+}
+
+.sign a:hover, .login a:hover {
+    color: black;
+}
+.sign button {
+    background-color: #e93729;
+}
+
+.login a, #on-page a{
+    color:#e93729;
+    text-decoration: none;
+}
+
+.content { /*everything after header*/
+    display: flex;
+}
+
+/*navigation rules*/
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(217, 217, 217, 0.15);
+    font-size: 16px;
+  
+    
+}
+
+.services, .partner { /*the ul*/
+    list-style: none;
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    padding: 15px 20px;
+
+}
+.services li a, .partner li a{
+    height: 50px;
+    background-color: rgba(217, 217, 217, 0.15);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #e93729;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.partner {
+    padding-top: 38px;
+}
+.partner li a{
+       border: 2px #e93729 solid;
+}
+
+
+.services a:hover, .partner a:hover, #on-page a:hover {
+    color: #fbfbfb;
+    background-color: rgba(249, 115, 22);
+    border-color: rgb(249, 115, 22);
+}
+
+.services img {
+    width: 17px;
+} 
+.services a {
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+
+#on-page a{
+    color: #fbfbfb;
+    border-radius: 30px;
+}
+
+#on-page a{
+    background-color: #e93729;
+}
+
+/*jumbotron*/
+
+.jumbotron {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 25px;
+    background: url("background\ jumbotron.webp") no-repeat center center/cover;
+    overflow: hidden;
+    height: 350px;
+}
+
+ .overlay { /*the orange background*/
+    height: 100%;
+    width: 100%;
+    background: rgba(249, 115, 22, 0.95);
+    clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+ }
+
+ .container {
+    color: #fbfbfb;
+    display: flex;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+ 
+ }
+
+ .jumbotron p{
+   font-size: 18px; 
+}
+
+.jumbotron a {
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(249, 115, 22);
+    background-color: #fbfbfb;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    border: 2px solid#fbfbfb;
+    border-radius: 25px;
+    text-shadow: none;
+}
+
+.jumbotron a:hover {
+    background-color: rgb(249, 115, 22);
+    color: #fbfbfb;
+
+}
+
+/*restaurant rules*/
+
+.restaurant ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;/*might change later*/
+    width: 90%;
+    margin: 50px auto;
+}
+
+.restaurant li {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+}
+.restaurant img {
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+
+}
+
+.restaurant .info {
+    padding: 20px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.restaurant span {
+    font-size: 18px;
+    color: gray;
+}
+
+.restaurant .star {
+    width: 12px;
+}
+.restaurant .info span{
+    font-size: 11px;
+}
