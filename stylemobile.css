@@ -1,0 +1,105 @@
+@media(max-width: 767px)
+{
+
+header img {
+    width: 30px;
+    height: 30px;
+}
+
+.ham {
+        display: flex;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+h1{
+    font-size: 25px;
+
+}
+
+.log {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.log button {
+    padding: 3px 5px;
+    width: 70px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+nav{
+    display: flex;
+}
+
+
+.offscreen-menu{
+    background-color: #fbfbfb;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    left: -450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+    z-index: 999;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.offscreen-menu.active{
+    left: 0;
+}
+
+.ham {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    margin-right: auto;
+}
+
+.jumbotron {
+    height: 170px;
+}
+
+.jumbotron h2 {
+    font-size: 12px;
+}
+ .jumbotron p {
+    font-size: 9px;
+ }
+
+ .container {
+    height: 80%;
+    justify-content: space-between;
+ }
+
+ .overlay {
+    padding: 0 20px;
+ }
+
+.jumbotron a {
+    width: 40px;
+    padding: 1px 4px;
+    font-size: 10px;
+    font-weight: 500;
+ }
+
+.restaurant ul {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+}
