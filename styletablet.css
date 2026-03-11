@@ -137,4 +137,17 @@ input{
 .formparent{
     padding: 30px;
 }
+
+.eye {
+    bottom: 15px;
+    right: 19px;
+}
+
+.eyeclosed {
+    width: 20px;
+    height: 20px;
+    bottom: 19px;
+    right: 20px;
+
+}
 }

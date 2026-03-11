@@ -163,4 +163,17 @@ input{
     padding: 20px 25px;
 }
 
+.eye {
+    bottom: 15px;
+    right: 19px;
+}
+
+.eye.active {
+    width: 20px;
+    height: 20px;
+    bottom: 20px;
+    right: 23px;
+
+}
+
 }
