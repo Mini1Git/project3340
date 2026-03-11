@@ -9,8 +9,8 @@ hamMenu.addEventListener('click', () => {
     
     // Toggle between hamburger.svg and circle_x.svg
     if (hamMenu.classList.contains('active')) {
-        hamImg.src = 'circle_x.svg';
+        hamImg.src = './icons/circle_x.svg';
     } else {
-        hamImg.src = 'hamburger.svg';
+        hamImg.src = './icons/hamburger.svg';
     }
 })
