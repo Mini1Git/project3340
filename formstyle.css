@@ -35,6 +35,45 @@ input[type="submit"]{
     font-weight: 600;
     border: none;
 }
+ /*aternate the*/
+input[type="submit"].theme2 {
+    background-color: black;
+}
+
+input[type="submit"].theme3 {
+    background-color: rgb(34, 2, 163);
+
+}
+
+form a {
+    color: #e93729;
+    text-decoration: none;
+}
+
+form a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+form a.theme2 {
+    color: black;
+
+}
+
+form a.theme3 {
+    color: rgb(34, 2, 163);
+
+}
+
+form a.theme2-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+form a.theme3-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
 
 input{
     background-color: #a8a4a426;
@@ -59,7 +98,7 @@ input{
 .pass {
     position: relative;
 }
-
+/*rule for the form eye*/
 .eye {
     display: inline-block;
     width: 30px;

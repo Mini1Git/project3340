@@ -60,7 +60,8 @@ function applyTheme3() { //for the 2nd theme
     const onPage = document.querySelector("#on-page a");
     const jumboBrowse = document.querySelector(".jumbotron a");
     const partnerTheme = document.querySelectorAll(".partner li a");
-    const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a"); //this returns a list
+    const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a, form a"); //this returns a list
+    const submit = document.querySelector(`input[type="submit"]`);
     const themeBar = document.querySelector("#theme-changer");
     //for the header
     if(headerTheme) {//checking to make sure the elements are not null
@@ -103,6 +104,10 @@ function applyTheme3() { //for the 2nd theme
         onPage.classList.add("theme3");
         onPage.style.color ="#fbfbfb";
     }
+    
+    if (submit){
+        submit.classList.add("theme3");
+    }
 
     themeBar.style.backgroundColor ="rgba(46, 19, 136, 0.95)";
 
@@ -114,7 +119,8 @@ function applyTheme2() { //for the dark theme
     const onPage = document.querySelector("#on-page a");
     const jumboBrowse = document.querySelector(".jumbotron a");
     const partnerTheme = document.querySelectorAll(".partner li a");
-    const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a"); //this returns a list
+    const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a, form a"); //this returns a list
+    const submit = document.querySelector(`input[type="submit"]`);
     const themeBar = document.querySelector("#theme-changer");
 
     //for the header
@@ -166,6 +172,9 @@ function applyTheme2() { //for the dark theme
         onPage.classList.add("theme2");
         onPage.style.color ="#fbfbfb";
     }
+     if (submit){
+        submit.classList.add("theme2");
+    }
 
 
     themeBar.style.backgroundColor ="#e93729";
@@ -177,7 +186,8 @@ function removeAll () {
     const onPage = document.querySelector("#on-page a");
     const jumboBrowse = document.querySelector(".jumbotron a");
     const partnerTheme = document.querySelectorAll(".partner li a");
-    const menubar = document.querySelectorAll(".services li a, .partner li a"); //this returns a list
+    const menubar = document.querySelectorAll(".services li a, .partner li a, form a"); //this returns a list
+    const submit = document.querySelector("input[type=\"submit\"]");
     const themeBar = document.querySelector("#theme-changer");
     //for the header
     if(headerTheme) {//making eveything empty
@@ -217,11 +227,14 @@ function removeAll () {
         });
     }
 
-
     if(onPage){
         onPage.classList.remove("theme2","theme3");
         onPage.style.color ="#fbfbfb";
     }
+
+    if (submit){
+        submit.classList.remove("theme2", "theme3");
+    } 
 
 
 
