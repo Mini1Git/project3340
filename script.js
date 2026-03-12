@@ -23,7 +23,7 @@ const theme2 = document.querySelector("#theme2");
 const theme3 = document.querySelector("#theme3");
 
 defaultTheme.addEventListener('click', ()=>{
-    sessionStorage.removeItem("theme"); //removing the item
+    localStorage.removeItem("theme"); //removing the item
     removeAll();
 
 });
@@ -32,13 +32,13 @@ defaultTheme.addEventListener('click', ()=>{
 theme2.addEventListener('click', ()=>{
    removeAll(); //removing everything
    applyTheme2();
-   sessionStorage.setItem("theme", "theme2"); //applying theme and saving to local storage
+   localStorage.setItem("theme", "theme2"); //applying theme and saving to local storage
 });
 
 theme3.addEventListener('click', ()=>{
     removeAll();
     applyTheme3();
-    sessionStorage.setItem("theme", "theme3");
+    localStorage.setItem("theme", "theme3");
 });
 
 function applyTheme3() { //for the 2nd theme
