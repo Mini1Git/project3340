@@ -66,10 +66,7 @@ header img {
 .sign a:hover, .login a:hover {
     color: black;
 }
-/*
-* might have to add alternate color
-*
-*/
+
 
 .login a, #on-page a{
     color: var(--front-color);

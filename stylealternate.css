@@ -25,6 +25,9 @@ header.theme3 {
     color: rgb(34, 2, 163);
 }
 
+.login a.theme3-hover:hover {
+    color: black;
+}
 
 .sign a.theme2-hover:hover, .login a.theme2-hover:hover {
     color: #e93729;

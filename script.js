@@ -18,6 +18,19 @@ hamMenu.addEventListener('click', () => {
 
 
 //theme changing logic
+document.addEventListener("DOMContentLoaded", ()=> { //when page loads
+    const savedTheme = localStorage.getItem("theme"); //checking what theme was saved
+    if (savedTheme === "theme2") {
+        applyTheme2(); //so applying 2nd theme
+    }
+    else if(savedTheme === "theme3") {
+        applyTheme3(); //applying 3rd theme
+    }
+    else {
+
+    }
+});
+
 const defaultTheme = document.querySelector("#default");
 const theme2 = document.querySelector("#theme2");
 const theme3 = document.querySelector("#theme3");
@@ -56,8 +69,10 @@ function applyTheme3() { //for the 2nd theme
         if(signTheme)
             signTheme.classList.add("theme3");
         const login = document.querySelector(".login a");
-        if(login)
+        if(login){
             login.classList.add("theme3");
+            login.classList.add("theme3-hover");
+        }
     }
     //for the jumbotron
     if(jumboTheme)
@@ -172,8 +187,7 @@ function removeAll () {
            signTheme.classList.remove("theme2", "theme3", "theme2-hover");
         const login = document.querySelector(".login a");
         if(login)
-            login.classList.remove("theme2", "theme3", "theme2-hover");
-
+            login.classList.remove("theme2", "theme3", "theme2-hover", "theme3-hover");
         const signin = document.querySelector(".sign a");
         if(signin){
             signin.classList.remove("theme2-hover", "theme2-hover");
