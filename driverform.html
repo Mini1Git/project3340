@@ -6,18 +6,19 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Grillow Driver Registration</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylealternate.css">
     <link rel="stylesheet" href="styletablet.css">
     <link rel="stylesheet" href="stylemobile.css">
 </head>
 <body>
-    <header>
+    <header> 
         <div class="ham">
             <img src="./icons/hamburger.svg">
         </div>
         <h1><img src="./icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         <div class="log">
-            <button class="./icons/login"><a href="login.html">Login</a></button>
-            <button class="./icons/sign"><a href="signup.html">Sign Up</a></button>
+            <button class="login"><a href="login.html">Login</a></button>
+            <button class="sign"><a href="signup.html">Sign Up</a></button>
         </div>
     </header>
     <div class="content">
@@ -33,11 +34,17 @@
             </ul>
             <ul class="partner">
                 <li><a href="partnerform.html">Partner with us</a></li>
-                <li id="on-page"><a href="driverform.html">Become a Driver</a></li>
+                <li id="on-page" ><a href="driverform.html">Become a Driver</a></li>
                 <li><a href="about.html">About us</a></li>
             </ul>
             </div>
         </nav>
+    </div>
+    <aside id="theme-changer">
+        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    </aside>
+
+    <script src="./script.js"></script>
     
 </body>
 </html>
