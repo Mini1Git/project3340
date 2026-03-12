@@ -1,0 +1,100 @@
+/*rule for alternate header*/
+
+header.theme2 {
+    background-color: black;
+}
+header.theme3 {
+    background-color: rgb(34, 2, 163);
+}
+
+
+/*alternate sign in color*/
+.sign.theme2 {
+    background-color:black;
+}
+.sign.theme3 {
+    background-color:rgb(34, 2, 163);
+}
+
+
+/*alternate login color*/
+.login a.theme2 {
+    color: black;
+}
+.login a.theme3 {
+    color: rgb(34, 2, 163);
+}
+
+
+.sign a.theme2-hover:hover, .login a.theme2-hover:hover {
+    color: #e93729;
+
+}
+
+/*alternate theme for nav*/
+.services li a.theme3, .partner li a.theme3 {
+    color: rgb(34, 2, 163);
+}
+
+.services li a.theme2, .partner li a.theme2 {
+    color: black;
+}
+
+
+.partner li a.theme3 {
+    border-color: rgb(34, 2, 163);
+}
+
+.partner li a.theme2 {
+    border-color: black;
+}
+
+
+/*alternate themes nav hover*/
+
+.services a.theme3-hover:hover, .partner a.theme3-hover:hover, #on-page a.theme3-hover:hover{
+    color: #fbfbfb;
+    background-color: rgb(34, 2, 163);
+    border-color: rgb(34, 2, 163);
+}
+
+.services a.theme2-hover:hover, .partner a.theme2-hover:hover, #on-page a.theme3-hover:hover{
+    color: #fbfbfb;
+    background-color: black;
+    border-color: black;
+}
+
+/*alternate theme rules for the page we are on*/
+#on-page a.theme2{
+    background-color: black;
+}
+
+#on-page a.theme3{
+    background-color: rgb(34, 2, 163);
+}
+
+#theme-changer #theme2 {
+    background-color: black;
+}
+
+#theme-changer #theme3  {
+    background-color: rgb(34, 0, 255);
+}
+
+/*theme hover classes*/
+.jumbotron a.theme2 {
+    color: rgba(30, 121, 35, 0.95);;
+}
+.jumbotron a.theme2-hover:hover {
+    background-color: rgba(30, 121, 35, 0.95);
+    color: #fbfbfb;
+}
+
+.jumbotron a.theme3 {
+    color: rgba(46, 19, 136, 0.95);
+}
+
+.jumbotron a.theme3-hover:hover {
+    background-color: rgba(46, 19, 136, 0.95);
+    color: #fbfbfb;
+}
