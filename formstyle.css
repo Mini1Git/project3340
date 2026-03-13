@@ -121,3 +121,11 @@ input{
     background: url("./icons/closedeye.svg") center/cover no-repeat;
 }
 
+.driverform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
