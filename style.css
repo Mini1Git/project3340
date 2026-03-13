@@ -5,6 +5,47 @@
     --front-color: #e93729;
 }
 
+/* auth pages (login / signup) */
+body.auth {
+    background: linear-gradient(135deg, #e93729 0%, #ff7a3d 60%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+body.auth .offscreen-menu {
+    background: rgba(255,255,255,0.10); /* faded lighter panel so gradient shows through */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 12px 8px;
+}
+
+/* keep same white text on auth pages */
+body.auth .services li a,
+body.auth .partner li a {
+    background-color: rgba(255,255,255,0.18);
+    color: #ffffff;
+    border: none;
+}
+
+body.auth .offscreen-menu .partner {
+    margin-top: 18px;
+    padding-top: 8px;
+}
+
+/* lihgter hover */
+body.auth .services a:hover,
+body.auth .partner a:hover {
+    background-color: rgba(255,255,255,0.28);
+    color: #ffffff;
+}
+
+body.auth #on-page a {
+    background-color: var(--front-color);
+    color: #ffffff;
+    border-color: var(--front-color);
+}
+
 * {
     margin: 0;
     padding: 0 ;
@@ -88,6 +129,69 @@ nav {
 
 }
 
+/* wider screens show the offscreen menu by default and allow the
+   hamburger to hide it*/
+@media (min-width: 768px) {
+    .offscreen-menu {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 260px; /* sidebar width on wide screens */
+        max-width: none;
+        height: auto;
+        background: transparent;
+        overflow: visible;
+        transform: translateX(0); /* visible by default */
+        transition: transform 0.32s ease, opacity 0.24s ease;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+    }
+
+    /* hide by translating out of view so layout can reflow smoothly */
+    .offscreen-menu.active {
+        transform: translateX(-110%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* show hamburger button on wide screens so user can hide/show menu */
+    .ham {
+        display: flex;
+        cursor: pointer;
+    }
+}
+
+/* wide-screen layout: nav sidebar + centered main; allow collapse */
+@media (min-width: 768px) {
+    .content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .content nav {
+        flex: 0 0 260px;
+        transition: flex-basis 0.32s ease, width 0.32s ease;
+    }
+
+    .content main {
+        flex: 1 1 auto;
+        width: auto;
+        transition: margin 0.32s ease, width 0.32s ease;
+        display: block;
+    }
+
+    .content.nav-hidden nav {
+        flex-basis: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    .content.nav-hidden main {
+        margin-left: 0;
+    }
+}
+
 
 .services, .partner { /*the ul*/
     list-style: none;
@@ -123,9 +227,10 @@ nav {
     border-color: rgb(249, 115, 22);
 }
 
-.services img {
+.services img, .partner img {
     width: 17px;
-} 
+    filter: brightness(0) invert(1);
+}
 .services a {
     display: flex;
     justify-content: center;

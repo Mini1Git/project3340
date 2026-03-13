@@ -6,12 +6,20 @@ const offscreenMenu = document.querySelector('.offscreen-menu');
 hamMenu.addEventListener('click', () => { 
     hamMenu.classList.toggle("active");
     offscreenMenu.classList.toggle('active');
+    // also toggle a class on the content wrapper so layout can adjust
+    const contentWrap = document.querySelector('.content');
+    if (contentWrap) contentWrap.classList.toggle('nav-hidden');
     
     // Toggle between hamburger.svg and circle_x.svg
-    if (hamMenu.classList.contains('active')) {
-        hamImg.src = './icons/circle_x.svg';
-    } else {
+    // On wide screens we always show the hamburger icon
+    if (window.innerWidth >= 768) {
         hamImg.src = './icons/hamburger.svg';
+    } else {
+        if (hamMenu.classList.contains('active')) {
+            hamImg.src = './icons/circle_x.svg';
+        } else {
+            hamImg.src = './icons/hamburger.svg';
+        }
     }
 });
 
@@ -110,6 +118,7 @@ function applyTheme3() { //for the 2nd theme
     }
 
     themeBar.style.backgroundColor ="rgba(46, 19, 136, 0.95)";
+    if (document && document.body) document.body.classList.add('theme3');
 
 }
 
@@ -178,6 +187,7 @@ function applyTheme2() { //for the dark theme
 
 
     themeBar.style.backgroundColor ="#e93729";
+    if (document && document.body) document.body.classList.add('theme2');
 }
 
 function removeAll () {
@@ -239,4 +249,6 @@ function removeAll () {
 
 
     themeBar.style.backgroundColor ="";
+
+    if (document && document.body) document.body.classList.remove('theme2', 'theme3');
 }
