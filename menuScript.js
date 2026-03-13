@@ -39,8 +39,10 @@ async function fetchmenu(foods) { //foods is array of food items also temp for n
         });
 
 
+    })
+    .catch(e => {
+        console.log(e); //printing the error
     });
-    
     
 }
 
