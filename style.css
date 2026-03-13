@@ -1,99 +1,129 @@
+/*Srisakdi font (logo font) exported from google*/
 @import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+/*Poppins font exported from google*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Variables*/
 :root {
     --bg-color: #fbfbfb;
-    --front-color: #e93729;
+    --primary-color: #e93729;
+    --secondary-color: #ff7a3d;
 }
-
-/* auth pages (login / signup) */
-body.auth {
-    background: linear-gradient(135deg, #e93729 0%, #ff7a3d 60%);
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-
-body.auth .offscreen-menu {
-    background: rgba(255,255,255,0.10); /* faded lighter panel so gradient shows through */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: 12px;
-    padding: 12px 8px;
-}
-
-/* keep same white text on auth pages */
-body.auth .services li a,
-body.auth .partner li a {
-    background-color: rgba(255,255,255,0.18);
-    color: #ffffff;
-    border: none;
-}
-
-body.auth .offscreen-menu .partner {
-    margin-top: 18px;
-    padding-top: 8px;
-}
-
-/* lihgter hover */
-body.auth .services a:hover,
-body.auth .partner a:hover {
-    background-color: rgba(255,255,255,0.28);
-    color: #ffffff;
-}
-
-body.auth #on-page a {
-    background-color: var(--front-color);
-    color: #ffffff;
-    border-color: var(--front-color);
-}
-
+/*Select all element styles*/
 * {
-    margin: 0;
-    padding: 0 ;
-    font-family: "Poppins", sans-serif;
+    margin: 0; /*Set margin of all to zero*/
+    padding: 0 ; /*Set padding of all to zero*/
+    font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
 }
 
-/*ham burger*/
-.ham{
-    display: none;
-}
+/*Header contains burger, logo, sign in and sign up*/
 header {
-    background-color: var(--front-color);
+    /*Header main colour*/
+    background-color: var(--primary-color);
+    /*Text colour off-white*/
     color: #fbfbfb;
+    /*Display flex for horizontally centred content*/
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*Slight off-white bottom border*/
     border-bottom: 2px solid rgba(217, 217, 217);
-    
 }
 
-/*grillow*/
+/*grillow logo navigation*/
 h1{
+    /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
     font-size: 45px;
     letter-spacing: 3px;
+    /*Font family of Srisakdi with system-ui as a backup*/
     font-family: "Srisakdi", system-ui;
     gap: 10px;
 }
 
+/*Logo for the nav*/
 header img {
     width: 50px;
     padding-left: 20px;
 }
 
+/*Side-navigation style rules*/
+nav {
+    /*Display flex for inline positioning*/
+    display: flex;
+    /*Display in the column direction (horizontally)*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*Add a separating border*/
+    border-right: 2px solid rgba(217, 217, 217, 0.15);
+    font-size: 16px;
+
+}
+
+/* auth pages (login / signup) */
+body.auth {
+    /*Red to orange gradient colours on main authorization pages*/
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 60%);
+    /*Minimum height of the viewport*/
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/*Offscreen menu specific to the login and sign up pages*/
+body.auth .offscreen-menu {
+    background: rgba(255,255,255,0.10); /* faded lighter panel so gradient shows through */
+    backdrop-filter: blur(6px); /*Blur the background*/ 
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 12px 8px; 
+}
+
+/* keep same white text on auth pages */
+body.auth .services li a,
+body.auth .partner li a {
+    background-color: #ffffff2e; /*Translucent background for each list item*/
+    color: #ffffff;
+    border: none;
+}
+
+/*Select the section including partner with us, drive with us, and about list items in nav*/ 
+body.auth .offscreen-menu .partner {
+    /*Apply more space between each item*/
+    margin-top: 18px;
+    padding-top: 8px;
+}
+
+/* lighter hover */
+body.auth .services a:hover,
+body.auth .partner a:hover {
+    /*Apply a less translucent background while hovering*/
+    background-color: #ffffff47;
+}
+
+/*Provides the currently selected page on the nav with a less saturated red colour*/
+body.auth #on-page a:hover {
+    background-color: #e13d31;
+}
+/*Apply a padding around the login and sign in buttons*/
 .log {
     padding: 30px;
 }
 
+/*Apply a standard background colour to the account button (signup or login depending on page)*/
 .account-btn {
     color: var(--bg-color);
 }
 
+/*Apply a standard hover colour a little darker than default*/
 .account-btn:hover {
     background-color: #a72a21;
 }
 
+/*Shared properties between login and sign up*/
 .account-btn, .account-btn-bold {
+    /*Expand */
     padding: 0.7rem 2rem;
     border-radius: 25px;
     border: none;
@@ -103,7 +133,7 @@ header img {
 }
 
 .account-btn-bold {
-    color: var(--front-color);
+    color: var(--primary-color);
     background-color: var(--bg-color);
    
 }
@@ -118,16 +148,7 @@ header img {
     display: flex;
 }
 
-/*navigation rules*/
-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-right: 2px solid rgba(217, 217, 217, 0.15);
-    font-size: 16px;
 
-}
 
 /* wider screens show the offscreen menu by default and allow the
    hamburger to hide it*/
@@ -374,6 +395,6 @@ nav {
 }
 
 #theme-changer #default {
-    background-color: var(--front-color);
+    background-color: var(--primary-color);
 }
 
