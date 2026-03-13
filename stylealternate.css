@@ -9,7 +9,7 @@ header.theme3 {
 
 /* auth page gradients for themes */
 body.auth.theme2 {
-    background: linear-gradient(135deg, #282626 0%, #959690 100%);
+    background: linear-gradient(135deg, #1e1d1d 0%, #d72c12 100%);
 }
 
 body.auth.theme3 {

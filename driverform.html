@@ -42,6 +42,18 @@
             </ul>
             </div>
         </nav>
+
+        <!-- driver form and content -->
+         <div class="driverform">
+            <h2> Sorry, we are not currently accepting new drivers.</h2>
+            <p>Enter your Resume and Email address and we'll contact you when we are hiring drivers!</p>
+            <form action="submit_driver_form.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="resume-upload">Resume:</label>
+                <textarea id="resume" name="resume" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Submit">
+         </div>
     </div>
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
