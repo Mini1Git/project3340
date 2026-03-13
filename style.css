@@ -93,11 +93,10 @@ nav {
     list-style: none;
     border-bottom: 2px solid rgba(217, 217, 217, 0.15);
     padding: 15px 20px;
-
 }
-.services li a, .partner li a{
+
+.services li a, .partner li a {
     height: 50px;
-    background-color: rgba(217, 217, 217, 0.15);
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -109,14 +108,13 @@ nav {
     font-size: 14px;
     font-weight: 500;
 
-
 }
 
 .partner {
     padding-top: 38px;
 }
 .partner li a{
-       border: 2px #e93729 solid;
+    border: 2px #e93729 solid;
 }
 
 .services a:hover, .partner a:hover, #on-page a:hover {
