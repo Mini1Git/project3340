@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "product_name": "4Pc Fried Chicken",
+        "description": "4 pieces of our signature chicken, marinated for 12hrs in our traditional savory Louisiana herbs and seasonings then battered up with our crunchy southern coating and fried until golden brown.",
+        "inStock": true
+    },
+    {
+        "id": 2,
+        "product_name": "4Pc Fried Chicken",
+        "description": "4 pieces of our signature chicken, marinated for 12hrs in our traditional savory Louisiana herbs and seasonings then battered up with our crunchy southern coating and fried until golden brown.",
+        "inStock": true
+    },
+    {
+        "id": 3,
+        "product_name": "4Pc Fried Chicken-no stock",
+        "description": "4 pieces of our signature chicken, marinated for 12hrs in our traditional savory Louisiana herbs and seasonings then battered up with our crunchy southern coating and fried until golden brown.",
+        "inStock": false
+    },
+    {
+        "id": 4,
+        "product_name": "4Pc Fried Chicken",
+        "description": "4 pieces of our signature chicken, marinated for 12hrs in our traditional savory Louisiana herbs and seasonings then battered up with our crunchy southern coating and fried until golden brown.",
+        "inStock": true
+    },
+    {
+        "id": 5,
+        "product_name": "4Pc Fried Chicken",
+        "description": "4 pieces of our signature chicken, marinated for 12hrs in our traditional savory Louisiana herbs and seasonings then battered up with our crunchy southern coating and fried until golden brown.",
+        "inStock": true
+    }
+]
