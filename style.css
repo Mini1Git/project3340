@@ -22,6 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgba(217, 217, 217);
+    
 }
 
 /*grillow*/
@@ -32,7 +33,6 @@ h1{
     letter-spacing: 3px;
     font-family: "Srisakdi", system-ui;
     gap: 10px;
-    
 }
 
 header img {
@@ -44,33 +44,33 @@ header img {
     padding: 30px;
 }
 
-.log button {
-    padding: 10px;
-    width: 90px;
+.account-btn {
+    color: var(--bg-color);
+}
+
+.account-btn:hover {
+    background-color: #a72a21;
+}
+
+.account-btn, .account-btn-bold {
+    padding: 0.7rem 2rem;
     border-radius: 25px;
     border: none;
     font-size: 12px;
     font-weight: 700;
-}
-
-.sign {
-    background-color: var(--front-color);
-}
-
-.sign a{
-    color: var(--bg-color);
     text-decoration: none;
-
 }
 
-.sign a:hover, .login a:hover {
-    color: black;
-}
-
-
-.login a, #on-page a{
+.account-btn-bold {
     color: var(--front-color);
-    text-decoration: none;
+    background-color: var(--bg-color);
+   
+}
+
+.account-btn-bold:hover {
+    color: var(--bg-color);
+    background: none;
+    outline: solid 2px var(--bg-color);
 }
 
 .content { /*everything after header*/
@@ -85,9 +85,9 @@ nav {
     align-items: center;
     border-right: 2px solid rgba(217, 217, 217, 0.15);
     font-size: 16px;
-  
-    
+
 }
+
 
 .services, .partner { /*the ul*/
     list-style: none;
