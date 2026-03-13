@@ -5,14 +5,13 @@
     --front-color: #e93729;
 }
 
-/* auth pages (login / signup) background */
+/* auth pages (login / signup) */
 body.auth {
     background: linear-gradient(135deg, #e93729 0%, #ff7a3d 60%);
     min-height: 100vh;
     background-attachment: fixed;
 }
 
-/* Auth-page specific sidebar / button styles */
 body.auth .offscreen-menu {
     background: rgba(255,255,255,0.10); /* faded lighter panel so gradient shows through */
     backdrop-filter: blur(6px);
@@ -21,7 +20,7 @@ body.auth .offscreen-menu {
     padding: 12px 8px;
 }
 
-/* keep same light-gray button background but white text on auth pages */
+/* keep same white text on auth pages */
 body.auth .services li a,
 body.auth .partner li a {
     background-color: rgba(255,255,255,0.18);
@@ -29,29 +28,22 @@ body.auth .partner li a {
     border: none;
 }
 
-/* partner list sits below services, keep spacing */
 body.auth .offscreen-menu .partner {
     margin-top: 18px;
     padding-top: 8px;
 }
 
-/* hover behaviour on auth pages (lighter highlight) */
+/* lihgter hover */
 body.auth .services a:hover,
 body.auth .partner a:hover {
     background-color: rgba(255,255,255,0.28);
     color: #ffffff;
 }
 
-/* keep the highlighted (current) button red with white text */
 body.auth #on-page a {
     background-color: var(--front-color);
     color: #ffffff;
     border-color: var(--front-color);
-}
-
-/* ensure icons inside buttons remain visible on light backgrounds */
-body.auth .services img, body.auth .partner img {
-    filter: brightness(0) invert(1) saturate(0.9);
 }
 
 * {
