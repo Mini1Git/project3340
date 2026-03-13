@@ -118,6 +118,7 @@ function applyTheme3() { //for the 2nd theme
     }
 
     themeBar.style.backgroundColor ="rgba(46, 19, 136, 0.95)";
+    if (document && document.body) document.body.classList.add('theme3');
 
 }
 
@@ -186,6 +187,7 @@ function applyTheme2() { //for the dark theme
 
 
     themeBar.style.backgroundColor ="#e93729";
+    if (document && document.body) document.body.classList.add('theme2');
 }
 
 function removeAll () {
@@ -247,4 +249,6 @@ function removeAll () {
 
 
     themeBar.style.backgroundColor ="";
+
+    if (document && document.body) document.body.classList.remove('theme2', 'theme3');
 }
