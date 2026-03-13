@@ -1,0 +1,113 @@
+/* menu */
+
+.menu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* banner image */
+.menu .banner {
+    width: 100%;
+    height: clamp(160px, 28vw, 420px);
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+    margin-bottom: 18px;
+    display: block;
+}
+
+.menu h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--front-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu .dishes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.dish {
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    transition: transform 0.2s;
+    position: relative;
+    padding-bottom: 56px;
+    cursor: pointer;
+}
+
+/* floating plus button */
+.add-btn {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--front-color);
+    color: var(--bg-color);
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #c82b23;
+}
+
+.dish-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.details {
+    font-size: 14px;
+    color: gray;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .menu {
+        margin: 20px 12px;
+    }
+    .menu h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    .menu .dishes {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .dish {
+        padding: 16px;
+        border-radius: 14px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .menu {
+        max-width: 1400px;
+    }
+}

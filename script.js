@@ -6,12 +6,20 @@ const offscreenMenu = document.querySelector('.offscreen-menu');
 hamMenu.addEventListener('click', () => { 
     hamMenu.classList.toggle("active");
     offscreenMenu.classList.toggle('active');
+    // also toggle a class on the content wrapper so layout can adjust
+    const contentWrap = document.querySelector('.content');
+    if (contentWrap) contentWrap.classList.toggle('nav-hidden');
     
     // Toggle between hamburger.svg and circle_x.svg
-    if (hamMenu.classList.contains('active')) {
-        hamImg.src = './icons/circle_x.svg';
-    } else {
+    // On wide screens we always show the hamburger icon
+    if (window.innerWidth >= 768) {
         hamImg.src = './icons/hamburger.svg';
+    } else {
+        if (hamMenu.classList.contains('active')) {
+            hamImg.src = './icons/circle_x.svg';
+        } else {
+            hamImg.src = './icons/hamburger.svg';
+        }
     }
 });
 
