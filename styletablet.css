@@ -150,4 +150,9 @@ input{
     right: 20px;
 
 }
+
+/*menu page*/
+.menu .dishes {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    }
 }

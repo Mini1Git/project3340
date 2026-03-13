@@ -40,7 +40,6 @@
         display: flex;
     }
 
-
     .offscreen-menu{
         background-color: #fbfbfb;
         width: 100%;
@@ -199,6 +198,11 @@
         height: 1rem;
         width: 1rem;
 
+    }
+
+    /* menu items*/
+    .menu .dishes {
+    grid-template-columns: repeat(1, minmax(260px, 1fr));
     }
 
 }
