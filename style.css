@@ -227,14 +227,14 @@ nav {
     border-color: rgb(249, 115, 22);
 }
 
-.services img, .partner img {
-    width: 17px;
-    filter: brightness(0) invert(1);
-}
 .services a {
     display: flex;
     justify-content: center;
     gap:10px;
+}
+
+.logo-menu {
+    display: flex;
 }
 
 #on-page a{
