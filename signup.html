@@ -19,8 +19,8 @@
         </div>
         <h1><img src="./icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         <div class="log">
-            <button class="login"><a href="login.html">Login</a></button>
-            <button class="sign"><a href="signup.html">Sign Up</a></button>
+            <a class="account-btn-bold" href="login.html">Login</a>
+            <a class="account-btn" href="signup.html">Sign Up</a>
         </div>
     </header>
     <div class="content">
@@ -45,16 +45,16 @@
         <form class="register">
             <h2>Create An Account</h2>
             <label>
-                <input type="text" placeholder="Full Name" required>
+                <input type="text" name="user-name" placeholder="Full Name" required>
             </label>
             <label>
-                <input type="tel" placeholder="Phone" required>
+                <input type="tel" name="phone-num" placeholder="Phone" required>
             </label>
             <label>
-                <input type="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
             </label>
             <label class="pass">
-                <input class="password" type="password" placeholder="Password" required>
+                <input class="password" name="password" type="password" placeholder="Password" required>
                 <span class="eye"></span> <!--to add the eye icon-->
             </label>
 
