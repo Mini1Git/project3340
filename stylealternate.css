@@ -157,10 +157,10 @@ body.theme3 header .account-btn-bold:hover {
 
 /*theme hover classes*/
 .jumbotron a.theme2 {
-    color: rgba(30, 121, 35, 0.95);;
+    color: #e93629da;
 }
 .jumbotron a.theme2-hover:hover {
-    background-color: rgba(30, 121, 35, 0.95);
+    background-color: #e93629da;
     color: #fbfbfb;
 }
 
