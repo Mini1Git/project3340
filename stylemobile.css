@@ -69,14 +69,6 @@
         margin-right: auto;
     }
 
-    /* .offscreen-menu.theme3{
-        background: linear-gradient(37deg,rgba(2,0,36,1) 0%, rgba(9,9,121,1) 47%,rgba(0,212,255,1) 100%);
-    }
-
-    .offscreen-menu.theme2{
-        background: linear-gradient(34deg,rgba(14,59,30,1) 9%,rgba(87,199,133,1) 53%, rgba(91,237,83,1) 100%);
-    } */
-
     .jumbotron {
         height: 170px;
     }
@@ -112,9 +104,9 @@
         margin: 20px auto;
     }
 
-    .restaurant li {
-        height: 180px;
-    }
+    /* .restaurant li {
+        height: 250px;
+    } */
     .restaurant img {
         width: 100%;
         height: 65%;

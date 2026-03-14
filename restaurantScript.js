@@ -23,10 +23,10 @@ async function fetchRestaurant(vendors){ //it'a json for now
             info.appendChild(icon);
 
             const rateCuisne = document.createElement("span");
-            rateCuisne.textContent = restaurant["rating"] + " " + restaurant["cuisine_name"];
+            rateCuisne.textContent = restaurant["rating"] + " | " + restaurant["cuisine_name"];
             info.appendChild(rateCuisne);
 
-            const address = document.createElement("spang");
+            const address = document.createElement("address");
             address.textContent = restaurant["address"];
 
             info.appendChild(address);
