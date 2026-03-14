@@ -49,4 +49,4 @@ async function fetchRestaurant(vendors){ //it'a json for now
 
 }
 
-window.onload = ()=> fetchRestaurant("restaurant.json");
+window.onload = ()=> fetchRestaurant("/scripts/restaurant.json");

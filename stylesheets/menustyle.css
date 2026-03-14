@@ -24,7 +24,7 @@
 .menu h2 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--front-color);
+    color: var(--primary-color);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -60,7 +60,7 @@
     height: 44px;
     border-radius: 50%;
     border: none;
-    background-color: var(--front-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     font-size: 22px;
     font-weight: 700;

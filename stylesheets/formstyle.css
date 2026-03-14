@@ -29,7 +29,7 @@ input[type="submit"]{
     border-radius: 25px;
     width: 250px;
     height: 50px;
-    background-color:#e93729;
+    background-color: var(--primary-color);
     color:#fbfbfb;
     font-size: 14px;
     font-weight: 600;
@@ -46,7 +46,7 @@ input[type="submit"].theme3 {
 }
 
 form a {
-    color: #e93729;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -106,7 +106,7 @@ input{
     position: absolute;
     bottom: 20px;
     right: 19px;
-    background: url("icons/openeye.svg") center/cover no-repeat;
+    background: url("../icons/openeye.svg") center/cover no-repeat;
     transition: opacity 0.2s ease, transform 0.2s ease;
 
 }
@@ -118,7 +118,7 @@ input{
     position: absolute;
     bottom: 25px;
     right: 22px;
-    background: url("icons/closedeye.svg") center/cover no-repeat;
+    background: url("../icons/closedeye.svg") center/cover no-repeat;
 }
 
 .driverform{

@@ -101,7 +101,7 @@ body.theme3 header .account-btn-bold:hover {
 }
 
 .sign a.theme2-hover:hover, .login a.theme2-hover:hover {
-    color: #e93729;
+    color: var(--primary-color);
 
 }
 

@@ -294,7 +294,7 @@ body.auth .partner a:hover {
     width: 90%;
     margin: 10px auto;
     border-radius: 25px;
-    background: url("background\ jumbotron.webp") no-repeat center center/cover;
+    background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
     overflow: hidden;
     height: 350px;
     justify-content: center;

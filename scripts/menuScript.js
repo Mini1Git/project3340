@@ -3,7 +3,7 @@ async function fetchmenu(foods) { //foods is array of food items also temp for n
 
     //temp
     const menu = document.querySelector(".menu");
-    let imagePath = "indianfood.jpg" //hardcoded for now will change later
+    let imagePath = "../images/indianfood.jpg" //hardcoded for now will change later
     let restaurant = "Be Desi";
     const image = document.createElement("img");
     image.src = imagePath;
@@ -46,4 +46,4 @@ async function fetchmenu(foods) { //foods is array of food items also temp for n
     
 }
 
-window.onload = ()=> fetchmenu("tempmenu.json");
+window.onload = ()=> fetchmenu("/scripts/tempmenu.json");

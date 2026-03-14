@@ -13,12 +13,12 @@ hamMenu.addEventListener('click', () => {
     // Toggle between hamburger.svg and circle_x.svg
     // On wide screens we always show the hamburger icon
     if (window.innerWidth >= 768) {
-        hamImg.src = './icons/hamburger.svg';
+        hamImg.src = '../icons/hamburger.svg';
     } else {
         if (hamMenu.classList.contains('active')) {
-            hamImg.src = './icons/circle_x.svg';
+            hamImg.src = '../icons/circle_x.svg';
         } else {
-            hamImg.src = './icons/hamburger.svg';
+            hamImg.src = '../icons/hamburger.svg';
         }
     }
 });
