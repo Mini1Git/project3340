@@ -8,6 +8,7 @@
     --bg-color: #fbfbfb;
     --primary-color: #e93729;
     --secondary-color: #ff7a3d;
+    --tertiary-color: #1E1E1E;
 }
 /*Select all element styles*/
 * {
@@ -45,6 +46,7 @@ h1{
 /*Logo for the nav*/
 header img {
     width: 50px;
+    height: auto;
     padding-left: 20px;
 }
 
@@ -58,7 +60,7 @@ nav {
     align-items: center;
     /*Add a separating border*/
     border-right: 2px solid rgba(217, 217, 217, 0.15);
-    font-size: 16px;
+    font-size: 1rem;
 
 }
 
@@ -73,14 +75,19 @@ body.auth {
 
 /*Offscreen menu specific to the login and sign up pages*/
 body.auth .offscreen-menu {
-    background: rgba(255,255,255,0.10); /* faded lighter panel so gradient shows through */
+    background: #ffffff1a; /* faded lighter panel so gradient shows through */
     backdrop-filter: blur(6px); /*Blur the background*/ 
     -webkit-backdrop-filter: blur(6px);
     border-radius: 12px;
-    padding: 12px 8px; 
+    padding: 0.9rem 1.25rem;
 }
 
-/* keep same white text on auth pages */
+/*Pad the offscreen menu*/
+.offscreen-menu {
+    padding: 0.9rem 1.25rem;
+}
+
+/* keep same white text on auth pages*/
 body.auth .services li a,
 body.auth .partner li a {
     background-color: #ffffff2e; /*Translucent background for each list item*/
@@ -102,8 +109,15 @@ body.auth .partner a:hover {
     background-color: #ffffff47;
 }
 
+/**/
+#on-page a {
+    color: #fbfbfb;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+}
+
 /*Provides the currently selected page on the nav with a less saturated red colour*/
-body.auth #on-page a:hover {
+#on-page a:hover {
     background-color: #e13d31;
 }
 /*Apply a padding around the login and sign in buttons*/
@@ -123,24 +137,35 @@ body.auth #on-page a:hover {
 
 /*Shared properties between login and sign up*/
 .account-btn, .account-btn-bold {
-    /*Expand */
+    /*Expand spacing around buttons*/
     padding: 0.7rem 2rem;
-    border-radius: 25px;
+    /*Round the borders by ~25 pixels*/
+    border-radius: 1.5rem;
+    /*Remove the standard black outline form both*/
+    outline: none;
+    /*Remove the borders from both buttons*/
     border: none;
-    font-size: 12px;
+    /*Font size of ~12px*/
+    font-size: 0.75rem;
     font-weight: 700;
     text-decoration: none;
 }
 
+/*Bold buttons*/
 .account-btn-bold {
+    /*Text colour of the primary colour*/
     color: var(--primary-color);
+    /*Background colour of button*/
     background-color: var(--bg-color);
-   
 }
 
+/*Hover effect for account buttons*/
 .account-btn-bold:hover {
+    /*White text colour*/
     color: var(--bg-color);
+    /*No background (no colour)*/
     background: none;
+    /*Assign a white outline on hover*/
     outline: solid 2px var(--bg-color);
 }
 
@@ -157,7 +182,7 @@ body.auth #on-page a:hover {
         position: static;
         left: auto;
         top: auto;
-        width: 260px; /* sidebar width on wide screens */
+        width: 14.5rem; /* sidebar width on wide screens */
         max-width: none;
         height: auto;
         background: transparent;
@@ -213,56 +238,55 @@ body.auth #on-page a:hover {
     }
 }
 
-
-.services, .partner { /*the ul*/
+/*Nav sections, unordered lists*/
+.services, .partner {
+    /*Remove the bullet points*/
     list-style: none;
+    /*Add a slight border as a horizontal rule*/
     border-bottom: 2px solid rgba(217, 217, 217, 0.15);
-    padding: 15px 20px;
+    /*Add spacing */
+    padding: 0.9rem 1.25rem;
 }
 
+/*
+* Accessing the links for each item in each nav section within the standard pages
+* Assigning a standard button style for each nav item so that it provides a pill-shaped outline
+*/
 .services li a, .partner li a {
-    height: 50px;
-    border-radius: 30px;
+    height: 3.125rem;
+    border-radius: 1.875rem;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    width: 140px;
-    margin-bottom: 25px;
+    background-color: #f4f4f4ad;    
+    margin-bottom: 1.5rem;
     text-decoration: none;
-    color: #e93729;
-    font-size: 14px;
+    color: #1E1E1E90;
+    font-size: 0.875rem;
     font-weight: 500;
-
+    padding-left: 1.5rem;
 }
 
 .partner {
     padding-top: 38px;
 }
-.partner li a{
-    border: 2px #e93729 solid;
-}
 
-.services a:hover, .partner a:hover, #on-page a:hover {
-    color: #fbfbfb;
-    background-color: rgba(249, 115, 22);
-    border-color: rgb(249, 115, 22);
+.services a:hover, .partner a:hover{
+    background-color: #1E1E1E22;
+
 }
 
 .services a {
     display: flex;
     justify-content: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .logo-menu {
     display: flex;
 }
 
-#on-page a{
-    color: #fbfbfb;
-    border-radius: 30px;
-    background-color: #e93729;
-}
+
 
 /*jumbotron*/
 
@@ -277,17 +301,17 @@ body.auth #on-page a:hover {
     box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
 
- .overlay { /*the orange background*/
+.overlay { /*the orange background*/
     height: 100%;
     width: 100%;
-    background: rgba(249, 115, 22, 0.95);
+    background: rgb(249, 115, 22);
     clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
     padding: 20px;
     display: flex;
     align-items: center;
- }
+}
 
- .container {
+.container {
     color: #fbfbfb;
     display: flex;
     width: 50%;
@@ -296,9 +320,9 @@ body.auth #on-page a:hover {
     justify-content: space-between;
     text-shadow: 0 2px 6px rgba(0,0,0,0.45);
  
- }
+}
 
- .jumbotron p{
+.jumbotron p {
    font-size: 18px; 
 }
 
@@ -323,7 +347,7 @@ body.auth #on-page a:hover {
 
 /*restaurant rules*/
 
-.restaurant ul{
+.restaurant ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
