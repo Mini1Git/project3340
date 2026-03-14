@@ -9,7 +9,7 @@ async function fetchRestaurant(vendors){ //it'a json for now
         json.forEach(restaurant =>{
             const listitem = document.createElement("li");
             const anchor = document.createElement("a");
-            anchor.href = "menu.html"; //adding it temporariliy like this
+            anchor.href = "../services/menu.html"; //adding it temporariliy like this
             
             const image = document.createElement("img");
             image.src = restaurant["img_path"];
