@@ -106,7 +106,7 @@ input{
     position: absolute;
     bottom: 20px;
     right: 19px;
-    background: url("./icons/openeye.svg") center/cover no-repeat;
+    background: url("icons/openeye.svg") center/cover no-repeat;
     transition: opacity 0.2s ease, transform 0.2s ease;
 
 }
@@ -118,7 +118,7 @@ input{
     position: absolute;
     bottom: 25px;
     right: 22px;
-    background: url("./icons/closedeye.svg") center/cover no-repeat;
+    background: url("icons/closedeye.svg") center/cover no-repeat;
 }
 
 .driverform{
