@@ -61,7 +61,7 @@ nav {
     /*Add a separating border*/
     border-right: 2px solid rgba(217, 217, 217, 0.15);
     font-size: 1rem;
-
+    
 }
 
 /* auth pages (login / signup) */
@@ -111,7 +111,7 @@ body.auth .partner a:hover {
 
 /**/
 #on-page a {
-    color: #fbfbfb;
+    color: var(--bg-color);
     border-radius: 30px;
     background-color: var(--primary-color);
 }
@@ -169,7 +169,7 @@ body.auth .partner a:hover {
     outline: solid 2px var(--bg-color);
 }
 
-.content { /*everything after header*/
+.content {
     display: flex;
 }
 
@@ -304,7 +304,7 @@ body.auth .partner a:hover {
 .overlay { /*the orange background*/
     height: 100%;
     width: 100%;
-    background: rgb(249, 115, 22);
+    background: #f97316;
     clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
     padding: 20px;
     display: flex;
@@ -312,13 +312,12 @@ body.auth .partner a:hover {
 }
 
 .container {
-    color: #fbfbfb;
+    color: var(--bg-color);
     display: flex;
     width: 50%;
     height: 70%;
     flex-direction: column;
     justify-content: space-between;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
  
 }
 
@@ -329,19 +328,19 @@ body.auth .partner a:hover {
 .jumbotron a {
     text-decoration: none;
     font-weight: 700;
-    color: rgb(249, 115, 22);
-    background-color: #fbfbfb;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
     padding: 10px;
     width: 120px;
     text-align: center;
-    border: 2px solid#fbfbfb;
+    border: 2px solid var(--bg-color);
     border-radius: 25px;
     text-shadow: none;
 }
 
 .jumbotron a:hover {
-    background-color: rgb(249, 115, 22);
-    color: #fbfbfb;
+    background-color: #f97316;
+    color: var(--bg-color);
 
 }
 
@@ -360,7 +359,7 @@ body.auth .partner a:hover {
     height: 300px;
     overflow: hidden;
     border-radius: 25px;
-    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+    box-shadow: 5px 1px 5px 1px #00000063;
 }
 .restaurant img {
     width: 100%;
@@ -383,12 +382,12 @@ body.auth .partner a:hover {
 }
 .restaurant span {
     font-size: 18px;
-    color: gray;
+    color: #808080;
 }
 
 .restaurant address {
     font-style: normal;
-    color: rgb(36, 36, 36);
+    color: #242424;
 }
 
 .restaurant .star {
@@ -400,8 +399,8 @@ body.auth .partner a:hover {
 
 /*rules for theme changer*/
 #theme-changer {
-    background-color: rgb(249, 115, 22);;
-    border: 2px solid rgb(86, 86, 86);
+    background-color: #f97316;;
+    border: 2px solid #565656;
     position: fixed;
     bottom: 3rem;
     right: 1.5rem;
@@ -419,7 +418,7 @@ body.auth .partner a:hover {
     border-radius: 50px;
     height: 1.3rem;
     width: 1.3rem;
-    border: 2px solid white;
+    border: 2px solid #ffffff;
     cursor: pointer;
 }
 
