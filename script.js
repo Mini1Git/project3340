@@ -246,8 +246,6 @@ function removeAll () {
         submit.classList.remove("theme2", "theme3");
     } 
 
-
-
     themeBar.style.backgroundColor ="";
 
     if (document && document.body) document.body.classList.remove('theme2', 'theme3');

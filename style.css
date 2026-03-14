@@ -357,7 +357,7 @@ body.auth .partner a:hover {
 }
 
 .restaurant li {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
     border-radius: 25px;
     box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
@@ -384,6 +384,11 @@ body.auth .partner a:hover {
 .restaurant span {
     font-size: 18px;
     color: gray;
+}
+
+.restaurant address {
+    font-style: normal;
+    color: rgb(36, 36, 36);
 }
 
 .restaurant .star {
