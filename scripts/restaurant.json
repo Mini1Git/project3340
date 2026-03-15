@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "buisness_name": "Be Desi",
+        "admin": "Nazifa Tahsin",
+        "img_path":"../images/indianfood.jpg",
+        "cuisine_name": "Indian",
+        "email":"bedesi123@gmail.com",
+        "phone_number": "+1 0126872198",
+        "address": "234 Wyandot, Windsor",
+        "rating": 4.2
+    },
+    {
+        "id": 2,
+        "buisness_name": "McDonald's",
+        "admin": "Wilson Tran",
+        "img_path":"../images/fastfood.jpg",
+        "cuisine_name": "Fast food",
+        "email":"mcdonald@gmail.com",
+        "phone_number": "+17987987551",
+        "address": "8436 University Ave, Windsor",
+        "rating": 3.5
+    },
+    {
+        "id": 3,
+        "buisness_name": "Sushi Yum",
+        "admin": "Liana Bell",
+        "img_path":"../images/sushi.jpg",
+        "cuisine_name": "Indian",
+        "email":"sushiyum64@gmail.com",
+        "phone_number": "+17904665",
+        "address": "646 Campbell Ave, Windsor",
+        "rating": 4.4
+    },
+    {
+        "id": 4,
+        "buisness_name": "Italiana",
+        "admin": "Kayden Lons",
+        "img_path":"../images/indianfood.jpg",
+        "cuisine_name": "Italian",
+        "email":"italiana@gmail.com",
+        "phone_number": "+16768667465",
+        "address": "287 Jenkins Ave, Windsor",
+        "rating": 4.7
+    }
+]

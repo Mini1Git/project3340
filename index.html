@@ -4,37 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grillow</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styletablet.css">
-    <link rel="stylesheet" href="stylemobile.css">
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/stylealternate.css">
+    <link rel="stylesheet" href="stylesheets/styletablet.css">
+    <link rel="stylesheet" href="stylesheets/stylemobile.css">
+    <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="ham">
-            <img src="hamburger.svg">
+        <div class="logo-menu">
+            <div class="ham">
+                <img src="icons/hamburger.svg">
+            </div>
+            <h1><img src="icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
-        <h1><img src="logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         <div class="log">
-            <button class="login"><a href="login.html">Login</a></button>
-            <button class="sign"><a href="signup.html">Sign Up</a></button>
+            <a class="account-btn" href="forms/login.html">Login</a>
+            <a class="account-btn-bold" href="forms/signup.html">Sign Up</a>
         </div>
     </header>
     <div class="content">
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
             <ul class="services">
-                <li id="on-page"><a href="index.html"><img src="Home Vector.svg"><span>Home</span></a></li>
-                <li><a href="browse.html"><img src="Magnifying Glass Vector.svg"><span>Browse</span></a></li>
-                <li><a href="orders.html"><img src="Receipt Icon.svg"><span>Orders</span></a></li>
-                <li><a href="favorites.html"><img src="Star Vector.svg"><span>Favourites</span></a></li>
-                <li><a href="cart.html"><img src="Shopping Cart SVG.svg"><span>Cart</span></a></li>
-                <li><a href="help.html"><img src="Help Icon Vector.svg"><span>Help</span></a></li>
+                <li id="on-page"><a href="/index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                <li><a href="services/orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
+                <li><a href="services/favorites.html"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                <li><a href="services/cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                <li><a href="info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
             </ul>
             <ul class="partner">
-                <li><a href="partnerform.html">Partner with us</a></li>
-                <li><a href="driverform.html">Become a Driver</a></li>
-                <li><a href="about.html">About us</a></li>
+                <li><a href="forms/partnerform.html">Partner with us</a></li>
+                <li><a href="forms/driverform.html">Become a Driver</a></li>
+                <li><a href="info/about.html">About us</a></li>
             </ul>
             </div>
         </nav>
@@ -53,43 +57,14 @@
                 </div>
             </section>
             <section class="restaurant">
-                <ul>
-                    <li>
-                        <a href="">
-                            <img src="background jumbotron.webp">
-                            <div class="info">
-                                <img class="star" src="Star Vector.svg"> <span>5.00,</span>
-                                <span>Indian</span>
-                                <h3>fake</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="background jumbotron.webp">
-                            <div class="info">
-                                <img class="star" src="Star Vector.svg"> <span>5.00,</span>
-                                <span>Indian</span>
-                                <h3>fake</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="background jumbotron.webp">
-                            <div class="info">
-                                <img class="star" src="Star Vector.svg"> <span>5.00,</span>
-                                <span>Indian</span>
-                                <h3>fake</h3>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-
+                <!--these will come dynamically-->
             </section>
         </main>
     </div>
-    
-    <script src="./script.js"></script>
+    <aside id="theme-changer">
+        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    </aside>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/restaurantScript.js"></script>
 </body>
 </html>

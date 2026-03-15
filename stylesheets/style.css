@@ -1,0 +1,428 @@
+/*Srisakdi font (logo font) exported from google*/
+@import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
+/*Poppins font exported from google*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Variables*/
+:root {
+    --bg-color: #fbfbfb;
+    --primary-color: #e93729;
+    --secondary-color: #ff7a3d;
+    --tertiary-color: #1E1E1E;
+}
+/*Select all element styles*/
+* {
+    margin: 0; /*Set margin of all to zero*/
+    padding: 0 ; /*Set padding of all to zero*/
+    font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
+}
+
+/*Header contains burger, logo, sign in and sign up*/
+header {
+    /*Header main colour*/
+    background-color: var(--primary-color);
+    /*Text colour off-white*/
+    color: #fbfbfb;
+    /*Display flex for horizontally centred content*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*Slight off-white bottom border*/
+    border-bottom: 2px solid rgba(217, 217, 217);
+}
+
+/*grillow logo navigation*/
+h1{
+    /*Display everything in flex for inline positioning*/
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    letter-spacing: 3px;
+    /*Font family of Srisakdi with system-ui as a backup*/
+    font-family: "Srisakdi", system-ui;
+    gap: 10px;
+}
+
+/*Logo for the nav*/
+header img {
+    width: 50px;
+    height: auto;
+    padding-left: 20px;
+}
+
+/*Side-navigation style rules*/
+nav {
+    /*Display flex for inline positioning*/
+    display: flex;
+    /*Display in the column direction (horizontally)*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*Add a separating border*/
+    border-right: 2px solid rgba(217, 217, 217, 0.15);
+    font-size: 1rem;
+    
+}
+
+/* auth pages (login / signup) */
+body.auth {
+    /*Red to orange gradient colours on main authorization pages*/
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 60%);
+    /*Minimum height of the viewport*/
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/*Offscreen menu specific to the login and sign up pages*/
+body.auth .offscreen-menu {
+    background: #ffffff1a; /* faded lighter panel so gradient shows through */
+    backdrop-filter: blur(6px); /*Blur the background*/ 
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 0.9rem 1.25rem;
+}
+
+/*Pad the offscreen menu*/
+.offscreen-menu {
+    padding: 0.9rem 1.25rem;
+}
+
+/* keep same white text on auth pages*/
+body.auth .services li a,
+body.auth .partner li a {
+    background-color: #ffffff2e; /*Translucent background for each list item*/
+    color: #ffffff;
+    border: none;
+}
+
+/*Select the section including partner with us, drive with us, and about list items in nav*/ 
+body.auth .offscreen-menu .partner {
+    /*Apply more space between each item*/
+    margin-top: 18px;
+    padding-top: 8px;
+}
+
+/* lighter hover */
+body.auth .services a:hover,
+body.auth .partner a:hover {
+    /*Apply a less translucent background while hovering*/
+    background-color: #ffffff47;
+}
+
+/**/
+#on-page a {
+    color: var(--bg-color);
+    border-radius: 30px;
+    background-color: var(--primary-color);
+}
+
+/*Provides the currently selected page on the nav with a less saturated red colour*/
+#on-page a:hover {
+    background-color: #e13d31;
+}
+/*Apply a padding around the login and sign in buttons*/
+.log {
+    padding: 30px;
+}
+
+/*Apply a standard background colour to the account button (signup or login depending on page)*/
+.account-btn {
+    color: var(--bg-color);
+}
+
+/*Apply a standard hover colour a little darker than default*/
+.account-btn:hover {
+    background-color: #a72a21;
+}
+
+/*Shared properties between login and sign up*/
+.account-btn, .account-btn-bold {
+    /*Expand spacing around buttons*/
+    padding: 0.7rem 2rem;
+    /*Round the borders by ~25 pixels*/
+    border-radius: 1.5rem;
+    /*Remove the standard black outline form both*/
+    outline: none;
+    /*Remove the borders from both buttons*/
+    border: none;
+    /*Font size of ~12px*/
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/*Bold buttons*/
+.account-btn-bold {
+    /*Text colour of the primary colour*/
+    color: var(--primary-color);
+    /*Background colour of button*/
+    background-color: var(--bg-color);
+}
+
+/*Hover effect for account buttons*/
+.account-btn-bold:hover {
+    /*White text colour*/
+    color: var(--bg-color);
+    /*No background (no colour)*/
+    background: none;
+    /*Assign a white outline on hover*/
+    outline: solid 2px var(--bg-color);
+}
+
+.content {
+    display: flex;
+}
+
+
+
+/* wider screens show the offscreen menu by default and allow the
+   hamburger to hide it*/
+@media (min-width: 768px) {
+    .offscreen-menu {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 14.5rem; /* sidebar width on wide screens */
+        max-width: none;
+        height: auto;
+        background: transparent;
+        overflow: visible;
+        transform: translateX(0); /* visible by default */
+        transition: transform 0.32s ease, opacity 0.24s ease;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+    }
+
+    /* hide by translating out of view so layout can reflow smoothly */
+    .offscreen-menu.active {
+        transform: translateX(-110%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* show hamburger button on wide screens so user can hide/show menu */
+    .ham {
+        display: flex;
+        cursor: pointer;
+    }
+}
+
+/* wide-screen layout: nav sidebar + centered main; allow collapse */
+@media (min-width: 768px) {
+    .content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .content nav {
+        flex: 0 0 260px;
+        transition: flex-basis 0.32s ease, width 0.32s ease;
+    }
+
+    .content main {
+        flex: 1 1 auto;
+        width: auto;
+        transition: margin 0.32s ease, width 0.32s ease;
+        display: block;
+    }
+
+    .content.nav-hidden nav {
+        flex-basis: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
+    .content.nav-hidden main {
+        margin-left: 0;
+    }
+}
+
+/*Nav sections, unordered lists*/
+.services, .partner {
+    /*Remove the bullet points*/
+    list-style: none;
+    /*Add a slight border as a horizontal rule*/
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    /*Add spacing */
+    padding: 0.9rem 1.25rem;
+}
+
+/*
+* Accessing the links for each item in each nav section within the standard pages
+* Assigning a standard button style for each nav item so that it provides a pill-shaped outline
+*/
+.services li a, .partner li a {
+    height: 3.125rem;
+    border-radius: 1.875rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f4f4f4ad;    
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: #1E1E1E90;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding-left: 1.5rem;
+}
+
+.partner {
+    padding-top: 38px;
+}
+
+.services a:hover, .partner a:hover{
+    background-color: #1E1E1E22;
+
+}
+
+.services a {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-menu {
+    display: flex;
+}
+
+
+
+/*jumbotron*/
+
+.jumbotron {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 25px;
+    background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
+    overflow: hidden;
+    height: 350px;
+    justify-content: center;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+}
+
+.overlay { /*the orange background*/
+    height: 100%;
+    width: 100%;
+    background: #f97316;
+    clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    color: var(--bg-color);
+    display: flex;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+ 
+}
+
+.jumbotron p {
+   font-size: 18px; 
+}
+
+.jumbotron a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    border: 2px solid var(--bg-color);
+    border-radius: 25px;
+    text-shadow: none;
+}
+
+.jumbotron a:hover {
+    background-color: #f97316;
+    color: var(--bg-color);
+
+}
+
+/*restaurant rules*/
+
+.restaurant ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;/*might change later*/
+    width: 90%;
+    margin: 50px auto;
+}
+
+.restaurant li {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 5px 1px 5px 1px #00000063;
+}
+.restaurant img {
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+
+}
+
+.restaurant .info {
+    padding: 20px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.restaurant span {
+    font-size: 18px;
+    color: #808080;
+}
+
+.restaurant address {
+    font-style: normal;
+    color: #242424;
+}
+
+.restaurant .star {
+    width: 12px;
+}
+.restaurant .info span{
+    font-size: 11px;
+}
+
+/*rules for theme changer*/
+#theme-changer {
+    background-color: #f97316;;
+    border: 2px solid #565656;
+    position: fixed;
+    bottom: 3rem;
+    right: 1.5rem;
+    width: 7.5rem;
+    height: 2.5rem;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-direction: column; */
+
+}
+
+#theme-changer button {
+    border-radius: 50px;
+    height: 1.3rem;
+    width: 1.3rem;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+#theme-changer #default {
+    background-color: var(--primary-color);
+}
+

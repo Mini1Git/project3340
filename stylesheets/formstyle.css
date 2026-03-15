@@ -1,0 +1,131 @@
+
+/*form rules*/
+.register h2{
+    font-weight: 500;
+    font-size: 28px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #afaeae26;
+    border-radius: 25px;
+    padding: 30px;
+    gap: 10px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+    background-color: #fbfbfb;
+}
+
+label { 
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    padding: 15px;
+    border-radius: 3px;
+
+}
+
+input[type="submit"]{
+    border-radius: 25px;
+    width: 250px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color:#fbfbfb;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+}
+ /*aternate the*/
+input[type="submit"].theme2 {
+    background-color: black;
+}
+
+input[type="submit"].theme3 {
+    background-color: rgb(34, 2, 163);
+
+}
+
+form a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+form a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+form a.theme2 {
+    color: black;
+
+}
+
+form a.theme3 {
+    color: rgb(34, 2, 163);
+
+}
+
+form a.theme2-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+form a.theme3-hover:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+input{
+    background-color: #a8a4a426;
+    width: 300px;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    text-indent: 5%;
+    border-bottom: 1px solid #92929279;
+}
+
+.formparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+   
+
+}
+
+.pass {
+    position: relative;
+}
+/*rule for the form eye*/
+.eye {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 19px;
+    background: url("../icons/openeye.svg") center/cover no-repeat;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+}
+
+.eye.active {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 25px;
+    right: 22px;
+    background: url("../icons/closedeye.svg") center/cover no-repeat;
+}
+
+.driverform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}

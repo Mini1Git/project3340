@@ -1,0 +1,159 @@
+@media(max-width: 1023px) and (min-width: 768px)
+{
+
+header img {
+    width: 40px;
+    height: 40px;
+}
+
+h1{
+    font-size: 35px;
+}
+
+.log {
+    padding: 22px;
+}
+
+.log button {
+    padding: 7px;
+    width: 75px;
+    font-size: 11px;
+    font-weight: 600;
+}
+nav {
+    width: 200px;
+}
+.services, .partner { /*the ul*/
+    padding: 20px 10px;
+}
+.services li a, .partner li  a{
+    height: 40px;
+    width: 120px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.partner {
+    padding-top: 25px;
+}
+
+
+.services img {
+    width: 14px;
+} 
+.services a {
+    gap:10px;
+}
+.jumbotron {
+    height: 250px;
+}
+
+.jumbotron h2 {
+    font-size: 18px;
+}
+ .jumbotron p {
+    font-size: 12px;
+ }
+
+ .container {
+    height: 80%;
+    justify-content: space-around;
+ }
+
+ .overlay {
+    padding: 0 20px;
+ }
+
+.jumbotron a {
+    width: 80px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500;
+ }
+
+/*restaurants*/
+
+.restaurant ul{
+    gap: 17px;
+    width: 90%;
+    margin: 30px auto;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* .restaurant li {
+    height: 275px;
+} */
+.restaurant img {
+    width: 100%;
+    height: 65%;
+}
+
+.restaurant .info {
+    padding-left: 10px;
+    padding-top: 1px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 16px;
+}
+
+.restaurant .star {
+    width: 11px;
+}
+.restaurant .info span{
+    font-size: 11px;
+}
+
+/*form rules*/
+form h2{
+    font-weight: 450;
+    font-size: 22px;
+}
+form {
+    padding: 25px;
+    gap: 10px;
+}
+
+label { 
+    padding: 10px 15px;
+}
+
+input[type="submit"]{
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input{
+    width: 175px;
+    padding: 10px 15px;
+}
+
+.formparent{
+    padding: 30px;
+}
+
+.eye {
+    bottom: 15px;
+    right: 19px;
+}
+
+.eyeclosed {
+    width: 20px;
+    height: 20px;
+    bottom: 19px;
+    right: 20px;
+
+}
+
+/*menu page*/
+.menu .dishes {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    }
+}
