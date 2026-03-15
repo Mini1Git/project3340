@@ -69,6 +69,15 @@
         margin-right: auto;
     }
 
+    /*offscreen menu specific to the login and sign up pages*/
+    body.auth .offscreen-menu {
+        background: #3b3939a2; /* faded lighter panel so gradient shows through */
+        backdrop-filter: blur(6px); /*Blur the background*/ 
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: 12px;
+        padding: 0.9rem 1.25rem;
+}
+
     .jumbotron {
         height: 170px;
     }
