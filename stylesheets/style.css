@@ -184,7 +184,7 @@ body.auth .partner a:hover {
         top: auto;
         width: 14.5rem; /* sidebar width on wide screens */
         max-width: none;
-        height: auto;
+        height: 100vh;
         background: transparent;
         overflow: visible;
         transform: translateX(0); /* visible by default */
