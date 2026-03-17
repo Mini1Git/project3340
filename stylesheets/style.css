@@ -25,10 +25,23 @@ header {
     color: #fbfbfb;
     /*Display flex for horizontally centred content*/
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     /*Slight off-white bottom border*/
     border-bottom: 2px solid rgba(217, 217, 217);
+    width: 100vw;
+    flex-wrap:nowrap;
+}
+
+header .log{
+    max-width: 100%;
+    display: flex;
+}
+header .logo-menu{
+    max-width: 100%;
+    display: flex;
+
 }
 
 /*grillow logo navigation*/
