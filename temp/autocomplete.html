@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+    * { box-sizing: border-box; }
+    body {
+        font: 16px Arial;
+    }
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+    }
+
+    input {
+        border: 1px solid transparent;
+        background-color: #ffffffff;
+        padding: 10px;
+        font-size: 16px;
+    }
+    input[type=text] {
+        background-color: #deff84ff;
+        width: 100%;
+    }
+    input[type=submit] {
+        background-color: DodgerBlue;
+        color: #ffffffff;
+    }
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<body>
+Search for an address! <!-- Hello, this is a comment-->
+<div class="autocomplete" style="width:300px;">
+    <input id = "address" type = "text" autocomplete="off"/>
+</div>
+
+<button onclick="sendAddressToBack()">Submit</button>
+
+<br>
+</body>
+
+</html>
+
+<script>
+
+
+    //MINOR BUGS BUT CAN FIX LATER.
+
+
+    function sendAddressToBack(){
+        console.log("SENDING ADDRESS: " + document.getElementById("address").value + " TO BACKEND");
+    }
+
+    let listOfAddresses = []; //dynamic array
+
+    //HERE IS EVENT LISTENER!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const inputCheck = document.getElementById("address");
+
+
+
+    let timer;
+    inputCheck.addEventListener("input", function (event){
+
+        clearTimeout(timer);
+        timer = window.setTimeout(getAddress, 200);
+
+    });
+
+    async function getAddress(){
+
+
+        if (inputCheck.value.length <= 2){
+            console.log("TYPE MORE BRUH"); // make sure its not empty. or too little characters.
+            return false;
+        }
+
+        let addressResult = "https://api.geoapify.com/v1/geocode/autocomplete?text=" + encodeURIComponent(inputCheck.value) + "&filter=rect:-83.1,42.2,-82.9,42.35" + "&format=json&apiKey=db26106f97f14ae684d957547558370d";
+
+
+        console.log(addressResult);
+        let results = await fetchAPI(addressResult) || []; // waits for results to come in or nothing, then will autocomplete. Also, when using wait, need to make function async.
+        //fetch here, also reset array just in case.
+        listOfAddresses.length = 0;
+
+        listOfAddresses.push(...results);
+        console.log("LIST OF ADDR: "+ listOfAddresses);
+
+        //this takes in the input element, and an array.
+        autocomplete(inputCheck, listOfAddresses);
+
+
+    }
+
+
+
+
+    async function fetchAPI(url){
+
+        const arrayResults = [];
+        console.log("Fetching... ");
+        const response = await fetch(url);
+
+        const data = await response.json();
+        if (data.results.length == 0){
+            console.log("NO RESULTS");
+            return false;
+        }
+
+        if (!data.results) return [];
+
+        for (let i = 0; i < data.results.length; i++){
+            let dataApproved = data.results[i].formatted.replaceAll(/[,']/ig, "");
+            arrayResults.push(dataApproved);
+
+        }
+        console.log("FINAL: " + arrayResults);
+        //need to remove the ' and ,
+
+        return arrayResults;
+
+
+    }
+
+
+
+    function autocomplete(inputElement, array){
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        closeAllLists();
+        var a;
+        var b;
+        var c;
+        var val = inputElement.value;
+        console.log("input: " + val);
+        if (!val){return false;}
+
+
+
+
+        a = document.createElement("DIV");
+        a.setAttribute("id", inputElement.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+
+        inputElement.parentNode.appendChild(a); // appends the div element to the autocomplete container.
+
+        //then gotta loop thru
+
+        if (!Array.isArray(array) || !array.length) {
+            console.log("NULL!");
+            // array does not exist, is not an array, or is empty
+            b = document.createElement("DIV"); // this is THE SUGGESTION option.
+            b.innerHTML += "Oops! Can't find the address you are looking for! Please try again!";
+            b.innerHTML += "<input type='hidden' value='" + "ERROR" + "'>"; // this stores the true value.
+            a.appendChild(b); //at the end, append it to the autocomplete container.
+            return;
+        }
+
+        console.log("THIS IS ARRAY OF AUTOCOMPLETE: ");
+        for (c = 0; c < array.length; c++){
+
+            console.log(array[c]);
+            //split array into words
+            console.log("WORDS: "+ array[c].split(" "));
+            //we have to check if input matches one of the starts of the words.
+            let wordedArray = array[c].split(" ");
+            let checked = false;
+
+
+            let foundMatch = false;
+
+            for (let i = 0; i < wordedArray.length; i++){
+
+
+                if (wordedArray[i].substr(0, val.length).toUpperCase() == val.toUpperCase()){ // if any of the words match.
+                    checked = true;
+                    foundMatch = true; // if theres a word that match, eventually this will be true.
+                    console.log("Wahoo! " + wordedArray[i].toUpperCase());
+
+
+                    b = document.createElement("DIV"); // this is THE SUGGESTION option.
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + array[c].substr(0, val.length) + "</strong>"; // we want it to bold off only the match.
+                    b.innerHTML += array[c].substr(val.length); // adds the rest of the word. // also note, the bold breaks for this but too lazy to fix.
+
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + array[c] + "'>"; // this stores the true value.
+
+                    //add event listener if clicked
+                    b.addEventListener("click", function(e){ // if click on the element, then "autofill" the input.
+                        /*insert the value for the autocomplete text field:*/
+                        inputElement.value = this.getElementsByTagName("input")[0].value; // debug
+
+                        closeAllLists();
+                    });
+                    a.appendChild(b); //at the end, append it to the autocomplete container.
+
+
+
+                }
+
+
+            }
+
+
+
+
+            console.log("the second one: "+ val.toUpperCase() + " VS " + array[c].substr(0, val.length).toUpperCase() + " and checking if check is " + checked);
+            if (array[c].substr(0, val.length).toUpperCase() == val.toUpperCase() && !checked) { // if matching suggestions... but only first word?
+
+                foundMatch = true;
+                console.log("WORKING autocomplete");
+                b = document.createElement("DIV"); // this is THE SUGGESTION option.
+                /*make the matching letters bold:*/
+                b.innerHTML = "<strong>" + array[c].substr(0, val.length) + "</strong>";
+                b.innerHTML += array[c].substr(val.length); // adds the rest of the word.
+
+                /*insert a input field that will hold the current array item's value:*/
+                b.innerHTML += "<input type='hidden' value='" + array[c] + "'>"; // this stores the true value.
+
+                //add event listener if clicked
+                b.addEventListener("click", function(e){ // if click on the element, then "autofill" the input.
+                    /*insert the value for the autocomplete text field:*/
+                    inputElement.value = this.getElementsByTagName("input")[0].value; // debug
+
+                    closeAllLists();
+                });
+                a.appendChild(b); //at the end, append it to the autocomplete container.
+                checked = false;
+            }
+            if (!foundMatch){ // put this outside loop.
+                console.log("COULDN'T find a match!");
+                b = document.createElement("DIV"); // this is THE SUGGESTION option.
+                b.innerHTML += "Oops! No more results displayed! Please try again!";
+                b.innerHTML += "<input type='hidden' value='" + "ERROR" + "'>"; // this stores the true value.
+                a.appendChild(b); //at the end, append it to the autocomplete container.
+                return;
+            }
+
+
+
+        }
+
+
+
+
+
+        function closeAllLists(e) {
+            //basically, if it doesnt match, close the other options.
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+                if (e != x[i] && e != inputElement) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+            }
+        }
+    }
+
+</script>
