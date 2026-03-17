@@ -1,3 +1,6 @@
+-- Active: 1755301077799@@127.0.0.1@3306@grillow
+--creating the database 
+CREATE DATABASE Grillow;
 -- Customer table consisting of a composite key with username, email, and phone_number.
 -- Six total fields to allow for the creation of an account and references within the other tables
 CREATE TABLE Customer(
