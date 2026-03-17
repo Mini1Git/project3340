@@ -1,0 +1,197 @@
+@media(max-width: 1023px) and (min-width: 768px) {
+
+header img {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+}
+
+h1{
+    font-size: 2.1875rem; /* 35px */
+}
+
+.log {
+    padding: 1.375rem; /* 22px */
+}
+
+.log button {
+    padding: 0.4375rem; /* 7px */
+    width: 4.6875rem; /* 75px */
+    font-size: 0.6875rem; /* 11px */
+    font-weight: 600;
+}
+nav {
+    width: 12.5rem;
+}
+.services, .partner { /*the ul*/
+    padding: 1.25rem 0.625rem;
+}
+.services li a, .partner li  a{
+    height: 2.5rem; 
+    margin-bottom: 0.9rem; 
+    font-size: 13px; 
+    font-weight: 500;
+}
+
+.partner {
+    padding-top: 1.5625rem; /* 25px */
+}
+
+.services img {
+    width: 0.8rem; /* 14px */
+} 
+.services a {
+    gap:10px;
+}
+.jumbotron {
+    height: 15.625rem; /* 250px */
+}
+
+.jumbotron h2 {
+    font-size: 1.7rem;
+}
+ .jumbotron p {
+    font-size: 1rem;
+ }
+
+ .container {
+    height: 100%;
+    justify-content: space-around;
+ }
+
+ .offscreen-menu {
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 12.5rem;
+    max-width: 75%;
+    height:100vh;
+    overflow: scroll;
+ }
+
+ /* center nav links inside the offscreen menu on tablet */
+ .offscreen-menu .services li a,
+ .offscreen-menu .partner li a {
+     width: 130%;
+     margin: 1rem 0;
+     justify-content: center;
+ }
+
+body.auth .offscreen-menu {
+    background: #fbfbfb;
+    backdrop-filter: none;
+    width: 100%;
+}
+body.auth .offscreen-menu .services li a,
+body.auth .offscreen-menu .partner li a {
+     color: #e93729 !important;
+     justify-content: center;
+ }
+
+#on-page a:hover {
+    color: #fbfbfb !important;
+    background-color: rgba(249, 115, 22);
+    border-color: rgb(249, 115, 22);
+}
+ body.auth .offscreen-menu .services a.selected,
+ body.auth .offscreen-menu .partner a.selected {
+     background-color: #e93729;
+     color: #fbfbfb !important;
+     border-color: #e93729;
+ }
+ .overlay {
+    padding: 0 1.25rem; /* 20px */
+ }
+
+.jumbotron a {
+    width: 5rem; /* 80px */
+    padding: 0.3125rem; /* 5px */
+    font-size: 0.75rem; /* 12px */
+    font-weight: 500;
+ }
+
+/*restaurants*/
+
+.restaurant ul{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.0625rem; /* 17px */
+    width: 90%;
+    margin: 1.875rem auto; /* 30px */
+}
+
+.restaurant li {
+    height: 11.25rem; /* 180px */
+}
+.restaurant img {
+    width: 100%;
+    height: 65%;
+}
+
+.restaurant .info {
+    padding-left: 0.625rem; /* 10px */
+    padding-top: 1px;
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: black;
+}
+.restaurant h3 {
+    font-size: 1rem; /* 16px */
+}
+
+.restaurant .star {
+    width: 0.6875rem; /* 11px */
+}
+.restaurant .info span{
+    font-size: 0.6875rem; /* 11px */
+}
+
+/*form rules*/
+form h2{
+    font-weight: 450;
+    font-size: 1.375rem; /* 22px */
+}
+form {
+    padding: 1.5625rem; /* 25px */
+    gap: 10px;
+}
+
+label { 
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+}
+
+input[type="submit"]{
+    width: 12.5rem; /* 200px */
+    height: 2.5rem; /* 40px */
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+}
+
+input{
+    width: 10.9375rem; /* 175px */
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+}
+
+.formparent{
+    padding: 1.875rem; /* 30px */
+}
+
+.eye {
+    bottom: 15px;
+    right: 19px;
+}
+
+.eyeclosed {
+    width: 20px;
+    height: 20px;
+    bottom: 19px;
+    right: 20px;
+
+}
+
+/*menu page*/
+.menu .dishes {
+    grid-template-columns: repeat(1, minmax(6.25rem, 1fr)); /* 100px -> 6.25rem */
+    }
+}
