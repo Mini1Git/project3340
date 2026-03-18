@@ -112,49 +112,6 @@ nav {
         font-size: 0.6rem;
     }
 
-/*form rules*/
-form h2{
-    font-weight: 450;
-    font-size: 22px;
-}
-form {
-    padding: 25px;
-    gap: 10px;
-}
-
-label { 
-    padding: 10px 15px;
-}
-
-input[type="submit"]{
-    width: 200px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-input{
-    width: 175px;
-    padding: 10px 15px;
-}
-
-.formparent{
-    padding: 30px;
-}
-
-.eye {
-    bottom: 15px;
-    right: 19px;
-}
-
-.eyeclosed {
-    width: 20px;
-    height: 20px;
-    bottom: 19px;
-    right: 20px;
-
-}
-
 /*menu page*/
     .menu .dishes {
         grid-template-columns: repeat(1, minmax(100px, 1fr));
@@ -179,3 +136,4 @@ input{
         font-weight: 600;
     }
 }
+

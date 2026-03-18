@@ -154,49 +154,6 @@
         font-size: 0.45rem;
     }
 
-    /*form rules*/
-    form h2{
-        font-weight: 450;
-        font-size: 20px;
-    }
-    form {
-        padding: 20px;
-        gap: 10px;
-    }
-
-    label { 
-        padding: 10px 15px;
-    }
-
-    input[type="submit"]{
-        width: 200px;
-        height: 40px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    input{
-        width: 175px;
-        padding: 10px 15px;
-    }
-
-    .formparent{
-        padding: 20px 25px;
-    }
-
-    .eye {
-        bottom: 15px;
-        right: 19px;
-    }
-
-    .eye.active {
-        width: 20px;
-        height: 20px;
-        bottom: 20px;
-        right: 23px;
-
-    }
-
      /*rules for theme changer*/
     #theme-changer {
         bottom: 2rem;
