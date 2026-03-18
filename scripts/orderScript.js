@@ -12,41 +12,38 @@ async function fetchOrders(orders){ //it'a json for now
             anchor.href = "../services/orders.html"; //adding it temporariliy like this
             
             const image = document.createElement("img");
-            image.src = restaurant["img_path"];
-            image.alt = restaurant["buisness_name"];
+            image.src = order["img_path"];
+            image.alt = order["business_name"];
             anchor.appendChild(image);
 
             const info = document.createElement("div");
             info.className = "info";
-            const icon = document.createElement("i");
-            icon.classList.add("fa-solid", "fa-star");
-            info.appendChild(icon);
 
-            const rateCuisne = document.createElement("span");
-            rateCuisne.textContent = restaurant["rating"] + " | " + restaurant["cuisine_name"];
-            info.appendChild(rateCuisne);
+            const busName = document.createElement("h3");
+            busName.textContent = order["business_name"];
+            info.appendChild(busName);
 
-            const address = document.createElement("address");
-            address.textContent = restaurant["address"];
+            const orderDate = document.createElement("span");
+            orderDate.textContent = order["order_date"];
 
-            info.appendChild(address);
+            info.appendChild(orderDate);
 
-            const name = document.createElement("h3");
-            name.textContent = restaurant["buisness_name"];
+            const orderId = document.createElement("span");
+            orderId.textContent = order["order_id"];
 
-            info.appendChild(name);
+            info.appendChild(orderId);
 
             anchor.appendChild(info);
             listitem.appendChild(anchor);
-            restaurantList.appendChild(listitem);
+            ordersList.appendChild(listitem);
         })
     })
     .catch(e => {
         console.log(e); //printing the error
     });
 
-    restaurantBox.appendChild(restaurantList); //making the ul child of restaurant box
+    ordersBox.appendChild(ordersList); //making the ul child of orders box
 
 }
 
-window.onload = ()=> fetchRestaurant("/scripts/restaurant.json");
+window.addEventListener('load', () => fetchOrders("../scripts/orders.json"));
