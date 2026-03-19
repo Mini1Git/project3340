@@ -13,7 +13,7 @@ async function fetchRestaurant(vendors){ //it'a json for now
             
             const image = document.createElement("img");
             image.src = restaurant["img_path"];
-            image.alt = restaurant["buisness_name"];
+            image.alt = restaurant["business_name"];
             anchor.appendChild(image);
 
             const info = document.createElement("div");
@@ -32,7 +32,7 @@ async function fetchRestaurant(vendors){ //it'a json for now
             info.appendChild(address);
 
             const name = document.createElement("h3");
-            name.textContent = restaurant["buisness_name"];
+            name.textContent = restaurant["business_name"];
 
             info.appendChild(name);
 
