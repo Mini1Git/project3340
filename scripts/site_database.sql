@@ -6,10 +6,9 @@ CREATE DATABASE Grillow;
 CREATE TABLE Customer(
     user_id INT AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    email VARCHAR(100),
+    email VARCHAR(100) NOT NULL,
     phone_number VARCHAR(20),
-    -- Address cannot be null due to the fact that the user needs it to be sent food and for validation purposes
-    address VARCHAR(255) NOT NULL,
+    address VARCHAR(255),
     -- Password must also not be null given that a user account can only exists with a password
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY(user_id)

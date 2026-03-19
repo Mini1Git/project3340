@@ -9,17 +9,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    align-items: stretch;
+    align-items: center;
     padding: 25px;
+    gap: 20px;
 }
 
 #search .searchbox{
     border: 3px solid #e13d31;
     border-radius: 25px;
     background-color: #afaeae26;
-    padding-left: 30px;
+    padding: 0 0.5rem;
     font-size: 1rem;
+    padding-left: 2rem;
 }
 /*alternate styles*/
 #search .searchbox.theme2 {
@@ -30,7 +31,7 @@
     border-color: #2202a3;
 }
 #search input {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     height: 3rem;
 
@@ -42,7 +43,7 @@
     border-radius: 25px;
     background-color: #e13d31;
     color: #fbfbfb;
-
+    width: 95%;
     
 }
 
