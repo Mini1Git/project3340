@@ -22,15 +22,15 @@
             <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
         <div class="log">
-            <a class="account-btn" href="login.html">Login</a>
-            <a class="account-btn-bold" href="signup.html">Sign Up</a>
+            <a class="account-btn" href="login.php">Login</a>
+            <a class="account-btn-bold" href="signup.php">Sign Up</a>
         </div>
     </header>
     <div class="content">
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li id="on-page"><a href="../index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li id="on-page"><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li><a href="../services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <li><a href="../services/orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                     <li><a href="../services/favorites.html"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -46,15 +46,15 @@
         </nav>
 
         <div class="formparent">
-            <form class="login" method="POST">
+            <form class="login" method="POST" action="processLogin.php">
                 <h2>Login</h2>
-                <label>
+                <div>
                     <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-                </label>
-                <label class="pass">
+                </div>
+                <div class="pass">
                     <input class="password" type="password" placeholder="Password" name="password" required>
                     <span class="eye"></span> <!--to add the eye icon-->
-                </label>
+                </div>
                     <a href="">Forgot your password?</a>
 
                 <input type="submit" value="Login">

@@ -22,8 +22,8 @@
             <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
         <div class="log">
-            <a class="account-btn-bold" href="login.html">Login</a>
-            <a class="account-btn" href="signup.html">Sign Up</a>
+            <a class="account-btn-bold" href="login.php">Login</a>
+            <a class="account-btn" href="signup.php">Sign Up</a>
         </div>
     </header>
     <div class="content">
@@ -45,21 +45,21 @@
             </div>
         </nav>
         <div class="formparent">
-        <form class="register" method="POST">
+        <form class="register" method="POST" action="process_signup.php">
             <h2>Create An Account</h2>
-            <label>
-                <input type="text" name="user-name" placeholder="Full Name" required>
-            </label>
-            <label>
-                <input type="tel" name="phone-num" placeholder="Phone" required>
-            </label>
-            <label>
+            <div>
+                <input type="text" name="username" placeholder="Full Name" autocomplete="name" required>
+            </div>
+            <div>
+                <input type="tel" name="phone-num" placeholder="Phone" minlength="10" maxlength="13" required>
+            </div>
+            <div>
                 <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-            </label>
-            <label class="pass">
-                <input class="password" name="password" type="password" placeholder="Password" required>
+            </div>
+            <div class="pass">
+                <input class="password" name="password" type="password" minlength=10 placeholder="Password" required>
                 <span class="eye"></span> <!--to add the eye icon-->
-            </label>
+            </div>
 
             <input type="submit" value="Register">
 

@@ -18,7 +18,7 @@ form {
     background-color: #fbfbfb;
 }
 
-label { 
+form div { 
     border-bottom: 2px solid rgba(217, 217, 217, 0.15);
     padding: 15px;
     border-radius: 3px;

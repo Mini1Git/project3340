@@ -6,7 +6,7 @@ CREATE DATABASE Grillow;
 CREATE TABLE Customer(
     user_id INT AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     phone_number VARCHAR(20),
     address VARCHAR(255),
     -- Password must also not be null given that a user account can only exists with a password
