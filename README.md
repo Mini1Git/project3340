@@ -26,18 +26,15 @@ Languages: HTML, CSS, JavaScript, PHP
   - [X] _Discuss_ ways to combine ideas or go with one via __survey__.
   - [ ] ~~_Identify_ __strengths and weaknesses__ of each group member to more accurately decide the next steps.~~
 
-- [ ] _Design a Simple Logo:_ Each group member can submit a logo to their individual branches.
+- [X] _Design a Simple Logo:_ Each group member can submit a logo to their individual branches.
 
-- [ ] _Optional Task:_ __Design wireframes__ for each page, each person can choose which pages to design based on their UI/UX design skills.
+- [X] _Optional Task:_ __Design wireframes__ for each page, each person can choose which pages to design based on their UI/UX design skills.
 
-- [ ] _Develop_ a __common design__ using design tools or HTML and CSS and present each to the group. This includes the colour theme, forms, navigation system, link styles and anything else you can think of. Check each box if you have finished a design.
-  - [ ] Kayden
-  - [ ] Liana
-  - [ ] Nazifa
-  - [ ] Wilson
+- [X] _Develop_ a __common design__ using design tools or HTML and CSS and present each to the group. This includes the colour theme, forms, navigation system, link styles and anything else you can think of. Check each box if you have finished a design.
 
 ## Requirements
-- Languages: HTML, CSS, JavaScript, PHP
+
+Languages: HTML, CSS, JavaScript, PHP
 
 ## Updates
 
@@ -53,17 +50,36 @@ If there are any comments or concerns, please use the group discord, the github 
     - Name: Description of comment or issue.
 
 ## List of pages
-  WE need at least 15 pages
-  
-### Dynamic pages (10 Dynamic)
 
-- Home page
-- Food menu
-- Inventory page
-- Cart page
+WE need at least 15 pages
 
-### Static pages (5 static) 
+| Dynamic or Static | Page        | Designed | Implemented in front-end | Dynamically Implemented |
+|  --------------   | ----------- | -------- | ------------------------ | ----------------------- |
+|  Dynamic          | Home        | Yes      | Yes                      | No                      |
+|  Dynamic          | Cart        | No       | No                       | No                      |
+|  Dynamic          | Orders      | No       | No                       | No                      |
+|  Dynamic          | Favourites  | No       | No                       | No                      |
+|  Dynamic          | Browse      | Yes      | No                       | No                      |
+|  Dynamic          | Partner     | No       | No                       | No                      |
+|  Dynamic          | Drive w/ us | No       | Yes                      | No                      |
+|  Static           | Help        | No       | No                       | No                      |
+|  Static           | About us    | No       | No                       | No                      |
+|  Static           | FAQ         | No       | No                       | No                      |
+|  Dynamic          | Business    | No       | No                       | No                      |
+|  Dynamic          | Inventory   | No       | No                       | No                      |
+|  Dynamic          | Food menu   | No       | No                       | No                      |
+|  Dynamic          | Food Item   | No       | No                       | No                      |
+|  Dynamic          | Checkout    | No       | No                       | No                      |
+|  Dynamic          | Sign up     | Yes      | Yes                      | No                      |
+|  Dynamic          | Sign in     | Yes      | Yes                      | No                      |
+|  Dynamic          | Forgot pass | No       | No                       | No                      |
 
-- Help page
-- FAQ
-- About us
+|  Total Planned | Dynamic | Static |
+| -------------- | ------- | ------ |
+| 18             | 15      | 3      |
+
+|                         | Total Finished | Dynamic | Static |
+| ----------------------- | -------------- | ------- | ------ |
+| Designed                | 4              | 4       | 0      |
+| Implemented (front-end) | 4              | 4       | 0      |
+| Implemented (back-end)  | 0              | 0       | 0      |

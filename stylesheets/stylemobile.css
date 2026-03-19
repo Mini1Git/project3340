@@ -3,6 +3,8 @@
 
     header img {
         width: 27px;
+        height: 27px;
+        padding-left: 0.5rem;
     }
 
     .ham {
@@ -19,21 +21,32 @@
         }
 
     h1{
-        font-size: 20px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
 
     }
 
     .log {
-        padding: 15px;
+        padding: 0.2rem;
         display: flex;
         align-items: center;
     }
 
-    .log button {
-        padding: 3px 5px;
-        width: 70px;
-        font-size: 11px;
+    /*login and sign up header buttons*/
+    .log a{
+        padding: 0.1rem;
+        width: 3rem;
+        font-size: 0.6rem;
         font-weight: 500;
+        text-align: center;
+    }
+
+    .log button {
+        /*padding: 0.25rem;
+        width: 6rem;
+        font-size: 0.7rem;
+        font-weight: 500;*/
     }
 
     nav{
@@ -43,10 +56,10 @@
     .offscreen-menu{
         background-color: #fbfbfb;
         width: 100%;
-        max-width: 450px;
+        max-width: 375px;
         position: fixed;
         top: 0;
-        left: -450px;
+        left: -475px;
         display: flex;
         flex-direction: column;
         align-items: center;    
@@ -68,6 +81,15 @@
         transition: transform 0.3s ease;
         margin-right: auto;
     }
+
+    /*offscreen menu specific to the login and sign up pages*/
+    body.auth .offscreen-menu {
+        background: #3b3939a2; /* faded lighter panel so gradient shows through */
+        backdrop-filter: blur(6px); /*Blur the background*/ 
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: 12px;
+        padding: 0.9rem 1.25rem;
+}
 
     .jumbotron {
         height: 170px;
@@ -104,12 +126,12 @@
         margin: 20px auto;
     }
 
-    /* .restaurant li {
-        height: 250px;
-    } */
+     .restaurant li {
+        max-height: 10rem;
+    } 
     .restaurant img {
         width: 100%;
-        height: 65%;
+        height: 60%;
     }
 
     .restaurant .info {
@@ -122,57 +144,17 @@
         color: black;
     }
     .restaurant h3 {
-        font-size: 14px;
+        font-size: 0.7rem;
+    }
+    .restaurant address{
+        font-size: 0.4rem;
     }
 
     .restaurant .star {
-        width: 11px;
+        width: 0.5rem;
     }
     .restaurant .info span{
-        font-size: 10px;
-    }
-
-    /*form rules*/
-    form h2{
-        font-weight: 450;
-        font-size: 20px;
-    }
-    form {
-        padding: 20px;
-        gap: 10px;
-    }
-
-    label { 
-        padding: 10px 15px;
-    }
-
-    input[type="submit"]{
-        width: 200px;
-        height: 40px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    input{
-        width: 175px;
-        padding: 10px 15px;
-    }
-
-    .formparent{
-        padding: 20px 25px;
-    }
-
-    .eye {
-        bottom: 15px;
-        right: 19px;
-    }
-
-    .eye.active {
-        width: 20px;
-        height: 20px;
-        bottom: 20px;
-        right: 23px;
-
+        font-size: 0.45rem;
     }
 
      /*rules for theme changer*/
@@ -195,6 +177,46 @@
     /* menu items*/
     .menu .dishes {
     grid-template-columns: repeat(1, minmax(260px, 1fr));
+    }
+
+    .dish{
+        gap: 10px;
+    }
+
+    .dish h3{
+        font-size: 0.8rem;
+    }
+
+    .dish p{
+        font-size: 0.6rem;
+    }
+
+    /*floating plus sign*/
+    .add-btn {
+        right: 4px;
+        bottom: 4px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /*driver form page*/
+    .driverform {
+        justify-content: center;
+    }
+    .driver-form{
+        max-width: 60vw;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .driver-form input{
+        max-width: 50vw;
     }
 
 }

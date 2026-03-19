@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "buisness_name": "Be Desi",
+        "business_name": "Be Desi",
         "admin": "Nazifa Tahsin",
         "img_path":"../images/indianfood.jpg",
         "cuisine_name": "Indian",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "buisness_name": "McDonald's",
+        "business_name": "McDonald's",
         "admin": "Wilson Tran",
         "img_path":"../images/fastfood.jpg",
         "cuisine_name": "Fast food",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "buisness_name": "Sushi Yum",
+        "business_name": "Sushi Yum",
         "admin": "Liana Bell",
         "img_path":"../images/sushi.jpg",
         "cuisine_name": "Indian",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "buisness_name": "Italiana",
+        "business_name": "Italiana",
         "admin": "Kayden Lons",
         "img_path":"../images/indianfood.jpg",
         "cuisine_name": "Italian",
