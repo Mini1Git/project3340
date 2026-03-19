@@ -18,6 +18,8 @@
     border: 3px solid #e13d31;
     border-radius: 25px;
     background-color: #afaeae26;
+    padding-left: 30px;
+    font-size: 1rem;
 }
 /*alternate styles*/
 #search .searchbox.theme2 {
@@ -165,6 +167,11 @@
     .formparent {
         padding: 0;
         
+    }
+    
+    #search .searchbox{
+        padding-left: 20px;
+        font-size: 0.8rem;
     }
 
     
