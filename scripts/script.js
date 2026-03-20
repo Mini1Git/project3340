@@ -43,20 +43,20 @@ const defaultTheme = document.querySelector("#default");
 const theme2 = document.querySelector("#theme2");
 const theme3 = document.querySelector("#theme3");
 
-defaultTheme.addEventListener('click', ()=>{
+defaultTheme.addEventListener('click', () => {
     sessionStorage.removeItem("theme"); //removing the item
     removeAll();
 
 });
 
 
-theme2.addEventListener('click', ()=>{
+theme2.addEventListener('click', () => {
    removeAll(); //removing everything
    applyTheme2();
    sessionStorage.setItem("theme", "theme2"); //applying theme and saving to local storage
 });
 
-theme3.addEventListener('click', ()=>{
+theme3.addEventListener('click', () => {
     removeAll();
     applyTheme3();
     sessionStorage.setItem("theme", "theme3");

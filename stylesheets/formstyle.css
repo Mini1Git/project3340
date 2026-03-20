@@ -122,7 +122,7 @@ input{
     background: url("../icons/closedeye.svg") center/cover no-repeat;
 }
 
-.driverform{
+.driverform {
     display: flex;
     justify-content: center;
     align-items: center;

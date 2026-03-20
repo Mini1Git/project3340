@@ -1,4 +1,9 @@
-async function fetchRestaurant(vendors){ //it'a json for now
+/**
+ *
+ *
+ * @param {string} vendors - A string consisting of the JSON file path
+ */
+async function fetchRestaurant(vendors) { //it'a json for now
     //temp 
     const restaurantBox = document.querySelector(".restaurant");
     const restaurantList = document.createElement("ul");
@@ -49,4 +54,4 @@ async function fetchRestaurant(vendors){ //it'a json for now
 
 }
 
-window.onload = ()=> fetchRestaurant("/scripts/restaurant.json");
+window.onload = () => fetchRestaurant("restaurant.json");

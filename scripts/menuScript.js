@@ -46,4 +46,4 @@ async function fetchmenu(foods) { //foods is array of food items also temp for n
     
 }
 
-window.onload = ()=> fetchmenu("/scripts/tempmenu.json");
+window.onload = ()=> fetchmenu("scripts/tempmenu.json");

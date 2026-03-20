@@ -17,6 +17,10 @@
     font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /*Header contains burger, logo, sign in and sign up*/
 header {
     /*Header main colour*/
@@ -34,7 +38,7 @@ header {
     flex-wrap:nowrap;
 }
 
-header .log{
+header .log {
     max-width: 100%;
     display: flex;
 }
@@ -45,7 +49,7 @@ header .logo-menu{
 }
 
 /*grillow logo navigation*/
-h1{
+h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
@@ -74,7 +78,6 @@ nav {
     /*Add a separating border*/
     border-right: 2px solid rgba(217, 217, 217, 0.15);
     font-size: 1rem;
-    
 }
 
 /* auth pages (login / signup) */
@@ -181,11 +184,6 @@ body.auth .partner a:hover {
     /*Assign a white outline on hover*/
     outline: solid 2px var(--bg-color);
 }
-
-.content {
-    display: flex;
-}
-
 
 
 /* wider screens show the offscreen menu by default and allow the
@@ -309,7 +307,7 @@ body.auth .partner a:hover {
     border-radius: 25px;
     background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
     overflow: hidden;
-    height: 350px;
+    height: 21.875rem;
     justify-content: center;
     box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
@@ -516,4 +514,13 @@ body.auth .partner a:hover {
     font-weight: 500;
     width: 50vw;
     text-align: center;
+}
+
+.profile-settings i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.profile-settings i:hover {
+    color: #f3f3f3AA;
 }
