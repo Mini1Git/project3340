@@ -2,7 +2,7 @@
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
 
-    if ($isLoggedIn) {
+    if (!$isLoggedIn) {
         header("Location: ../forms/login.php");
         exit();
     }
