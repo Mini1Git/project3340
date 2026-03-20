@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $isLoggedIn = isset($_SESSION['user_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +51,7 @@
             <div class="offscreen-menu">
             <ul class="services">
                 <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                <li><a href="../services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                <li><a href="../services/services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                 <li><a href="../services/orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                 <li><a href="../services/favorites.html"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                 <li><a href="../services/cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>

@@ -1,9 +1,6 @@
 <?php
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
-    if ($isLoggedIn) {
-        header("Location: ../user/profile.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -11,17 +8,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Grillow Login</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Grillow</title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
-    <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <link rel="stylesheet" href="../stylesheets/menustyle.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <script src="../scripts/scriptform.js" defer></script>
+    <script src="../scripts/menuScript.js" defer></script>
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
-<body class="auth">
+<body>
     <header>
         <div class="logo-menu">
             <div class="ham">
@@ -65,27 +62,16 @@
             </div>  
         </nav>
 
-        <div class="formparent">
-            <form class="login" method="POST" action="processLogin.php">
-                <h2>Login</h2>
-                <div>
-                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-                </div>
-                <div class="pass">
-                    <input class="password" type="password" placeholder="Password" name="password" required>
-                    <span class="eye"></span> <!--to add the eye icon-->
-                </div>
-                    <a href="">Forgot your password?</a>
-
-                <input type="submit" value="Login">
-
-            </form>
-        </div>
+        <main class="menu">
+            <!--everything here will come from backend with a specific restaurant-->
+        </main>
     </div>
+
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
     </aside>
 
     <script src="../scripts/script.js"></script>
+    
 </body>
 </html>

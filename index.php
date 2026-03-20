@@ -39,11 +39,11 @@
             <div class="offscreen-menu">
                 <ul class="services">
                     <li id="on-page"><a href="index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                    <li><a href="services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
-                        <li><a href="services/orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                        <li><a href="services/favorites.html"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
-                        <li><a href="services/cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                        <li><a href="services/orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
+                        <li><a href="services/favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                        <li><a href="services/cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <?php else: ?>
                         <li><a href="forms/signup.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                         <li><a href="forms/signup.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -52,8 +52,8 @@
                     <li><a href="info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
                 </ul>
                 <ul class="partner">
-                    <li><a href="forms/partnerform.html">Partner with us</a></li>
-                    <li><a href="forms/driverform.html">Become a Driver</a></li>
+                    <li><a href="forms/partnerform.php">Partner with us</a></li>
+                    <li><a href="forms/driverform.php">Become a Driver</a></li>
                     <li><a href="info/about.html">About us</a></li>
                 </ul>
             </div>  

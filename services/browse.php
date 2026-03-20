@@ -1,9 +1,6 @@
-<?php
+<?php 
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
-    if ($isLoggedIn) {
-        header("Location: ../user/profile.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -12,16 +9,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Grillow Login</title>
+    <title>Grillow Browse</title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
-    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <script src="../scripts/scriptform.js" defer></script>
+    <link rel="stylesheet" href="../stylesheets/searchStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
-<body class="auth">
+<body>
     <header>
         <div class="logo-menu">
             <div class="ham">
@@ -39,13 +35,12 @@
             <?php endif; ?>
         </div>
     </header>
-
     <div class="content">
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li id="on-page"><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                    <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li id="on-page"><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                         <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -65,27 +60,20 @@
             </div>  
         </nav>
 
-        <div class="formparent">
-            <form class="login" method="POST" action="processLogin.php">
-                <h2>Login</h2>
-                <div>
-                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-                </div>
-                <div class="pass">
-                    <input class="password" type="password" placeholder="Password" name="password" required>
-                    <span class="eye"></span> <!--to add the eye icon-->
-                </div>
-                    <a href="">Forgot your password?</a>
-
-                <input type="submit" value="Login">
-
+        <main>
+            <form id="search">
+                    <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
+                    <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
+                    <input type="submit">
             </form>
-        </div>
+        </main>
     </div>
+
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
     </aside>
 
     <script src="../scripts/script.js"></script>
+    
 </body>
 </html>
