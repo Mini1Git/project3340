@@ -13,12 +13,12 @@ hamMenu.addEventListener('click', () => {
     // Toggle between hamburger.svg and circle_x.svg
     // On wide screens we always show the hamburger icon
     if (window.innerWidth >= 768) {
-        hamImg.src = '../icons/hamburger.svg';
+        hamImg.src = 'icons/hamburger.svg';
     } else {
         if (hamMenu.classList.contains('active')) {
-            hamImg.src = '../icons/circle_x.svg';
+            hamImg.src = 'icons/circle_x.svg';
         } else {
-            hamImg.src = '../icons/hamburger.svg';
+            hamImg.src = 'icons/hamburger.svg';
         }
     }
 });
@@ -27,7 +27,7 @@ hamMenu.addEventListener('click', () => {
 
 //theme changing logic
 document.addEventListener("DOMContentLoaded", ()=> { //when page loads
-    const savedTheme = localStorage.getItem("theme"); //checking what theme was saved
+    const savedTheme = sessionStorage.getItem("theme"); //checking what theme was saved
     if (savedTheme === "theme2") {
         applyTheme2(); //so applying 2nd theme
     }
@@ -43,23 +43,23 @@ const defaultTheme = document.querySelector("#default");
 const theme2 = document.querySelector("#theme2");
 const theme3 = document.querySelector("#theme3");
 
-defaultTheme.addEventListener('click', ()=>{
-    localStorage.removeItem("theme"); //removing the item
+defaultTheme.addEventListener('click', () => {
+    sessionStorage.removeItem("theme"); //removing the item
     removeAll();
 
 });
 
 
-theme2.addEventListener('click', ()=>{
+theme2.addEventListener('click', () => {
    removeAll(); //removing everything
    applyTheme2();
-   localStorage.setItem("theme", "theme2"); //applying theme and saving to local storage
+   sessionStorage.setItem("theme", "theme2"); //applying theme and saving to local storage
 });
 
-theme3.addEventListener('click', ()=>{
+theme3.addEventListener('click', () => {
     removeAll();
     applyTheme3();
-    localStorage.setItem("theme", "theme3");
+    sessionStorage.setItem("theme", "theme3");
 });
 
 function applyTheme3() { //for the 2nd theme
@@ -71,6 +71,7 @@ function applyTheme3() { //for the 2nd theme
     const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a, form a"); //this returns a list
     const submit = document.querySelector(`input[type="submit"]`);
     const themeBar = document.querySelector("#theme-changer");
+    const search = document.querySelectorAll("#search .searchbox", "#search .searchbox",`#search input[type="submit"]`);
     //for the header
     if(headerTheme) {//checking to make sure the elements are not null
         headerTheme.classList.add("theme3"); 
@@ -117,6 +118,11 @@ function applyTheme3() { //for the 2nd theme
         submit.classList.add("theme3");
     }
 
+    if(search.length>0){
+        search.forEach (element => {
+        element.classList.add('theme3')});
+    }
+
     themeBar.style.backgroundColor ="rgba(46, 19, 136, 0.95)";
     if (document && document.body) document.body.classList.add('theme3');
 
@@ -131,6 +137,7 @@ function applyTheme2() { //for the dark theme
     const menubar = document.querySelectorAll(".services li a, .partner li a, #on-page a, form a"); //this returns a list
     const submit = document.querySelector(`input[type="submit"]`);
     const themeBar = document.querySelector("#theme-changer");
+    const search = document.querySelectorAll("#search .searchbox", "#search .searchbox",`#search input[type="submit"]`);
 
     //for the header
     if(headerTheme) {//checking to make sure the elements are not null
@@ -185,6 +192,11 @@ function applyTheme2() { //for the dark theme
         submit.classList.add("theme2");
     }
 
+    if(search.length>0){
+        search.forEach(element => {
+        element.classList.add('theme2')});
+    }
+
 
     themeBar.style.backgroundColor ="#e93729";
     if (document && document.body) document.body.classList.add('theme2');
@@ -199,6 +211,7 @@ function removeAll () {
     const menubar = document.querySelectorAll(".services li a, .partner li a, form a"); //this returns a list
     const submit = document.querySelector("input[type=\"submit\"]");
     const themeBar = document.querySelector("#theme-changer");
+    const search = document.querySelectorAll("#search .searchbox", "#search .searchbox",`#search input[type="submit"]`);
     //for the header
     if(headerTheme) {//making eveything empty
         headerTheme.classList.remove("theme2", "theme3");
@@ -245,6 +258,11 @@ function removeAll () {
     if (submit){
         submit.classList.remove("theme2", "theme3");
     } 
+
+    if(search.length>0){
+        search.forEach (element => {
+        element.classList.remove('theme3', 'theme2')});
+    }
 
     themeBar.style.backgroundColor ="";
 

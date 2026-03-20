@@ -1,36 +1,57 @@
+<?php
+    session_start();
+    $isLoggedIn = isset($_SESSION['user_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--List of meta tags for SEO-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <title>Grillow Driver Registration</title>
+    <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
+    <!--Stylesheet for screen sizes < 768 pixels-->
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <!--Stylesheet specific to form elements-->
     <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <!--Include a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!--Start of horizontal nav-->
     <header>
+        <!--Logo and hamburger place in the logo-menu class-->
         <div class="logo-menu">
+            <!--Hamburger div which includes the hamburger icon svg-->
             <div class="ham">
                 <img src="../icons/hamburger.svg">
             </div>
+            <!--Logo consisting of an image inside of the h1 tag-->
             <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
+        <!--Account controls-->
         <div class="log">
-            <a class="account-btn" href="login.html">Login</a>
-            <a class="account-btn-bold" href="signup.html">Sign Up</a>
+            <!--Login button-->
+            <a class="account-btn" href="login.php">Login</a>
+            <!--Sign up button-->
+            <a class="account-btn-bold" href="signup.php">Sign Up</a>
         </div>
     </header>
+    <!--End of horizontal nav-->
+    <!--Beginning of content divider-->
     <div class="content">
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
             <ul class="services">
-                <li><a href="../index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                <li><a href="../services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="../services/services/browse.html"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                 <li><a href="../services/orders.html"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                 <li><a href="../services/favorites.html"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                 <li><a href="../services/cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>

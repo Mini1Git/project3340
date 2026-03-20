@@ -17,6 +17,10 @@
     font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /*Header contains burger, logo, sign in and sign up*/
 header {
     /*Header main colour*/
@@ -25,14 +29,27 @@ header {
     color: #fbfbfb;
     /*Display flex for horizontally centred content*/
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     /*Slight off-white bottom border*/
     border-bottom: 2px solid rgba(217, 217, 217);
+    width: 100vw;
+    flex-wrap:nowrap;
+}
+
+header .log {
+    max-width: 100%;
+    display: flex;
+}
+header .logo-menu{
+    max-width: 100%;
+    display: flex;
+
 }
 
 /*grillow logo navigation*/
-h1{
+h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
@@ -61,7 +78,6 @@ nav {
     /*Add a separating border*/
     border-right: 2px solid rgba(217, 217, 217, 0.15);
     font-size: 1rem;
-    
 }
 
 /* auth pages (login / signup) */
@@ -168,11 +184,6 @@ body.auth .partner a:hover {
     /*Assign a white outline on hover*/
     outline: solid 2px var(--bg-color);
 }
-
-.content {
-    display: flex;
-}
-
 
 
 /* wider screens show the offscreen menu by default and allow the
@@ -296,7 +307,7 @@ body.auth .partner a:hover {
     border-radius: 25px;
     background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
     overflow: hidden;
-    height: 350px;
+    height: 21.875rem;
     justify-content: center;
     box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
 }
@@ -426,3 +437,90 @@ body.auth .partner a:hover {
     background-color: var(--primary-color);
 }
 
+/*order history page css*/
+
+.orders-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    margin: 24px;
+    width: 100%;
+    justify-content: center;
+}
+
+.order-item {
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    min-width: 240px;
+    width: 90%;
+    height: 36vh;
+    justify-content: flex-start;
+}
+
+.order-link {
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+    color: inherit;
+    padding: 5vh;
+    align-items: center;
+    width: 90%;
+}
+
+.order-image-wrap {
+    height: 26vh;
+    width: 26vh;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.order-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order-name {
+    font-size: 2rem;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+
+.order-date, .order-id {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.order-more{
+    margin-top: 12px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 50vw;
+    text-align: center;
+}
+
+.profile-settings i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.profile-settings i:hover {
+    color: #f3f3f3AA;
+}
