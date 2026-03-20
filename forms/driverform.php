@@ -61,6 +61,7 @@
                 <li><a href="partnerform.html">Partner with us</a></li>
                 <li id="on-page"><a href="driverform.html">Become a Driver</a></li>
                 <li><a href="../info/about.html">About us</a></li>
+                <li><a href="">Wiki</a></li>
             </ul>
             </div>
         </nav>
