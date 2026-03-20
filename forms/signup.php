@@ -4,6 +4,7 @@
 
     if ($isLoggedIn) {
         header("Location: ../user/profile.php");
+        exit();
     }
 ?>
 

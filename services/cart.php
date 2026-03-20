@@ -4,6 +4,7 @@
 
     if ($isLoggedIn) {
         header("Location: ../forms/login.php");
+        exit();
     }
 ?>
 
