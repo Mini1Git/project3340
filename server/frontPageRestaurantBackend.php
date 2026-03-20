@@ -2,9 +2,9 @@
 <?php
 
 $host = "localhost";               // Your MySQL host (usually "localhost")
-$dbname = "tran9b_terminator";    // Replace with your database name
-$username = "tran9b_terminator";       // Replace with your MySQL username
-$password = "AkrTtVN3HGXu3VzdkX9r";
+$dbname = "grillow";    // Replace with your database name
+$username = "root";       // Replace with your MySQL username
+$password = "";
 
 
 

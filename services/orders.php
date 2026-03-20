@@ -29,13 +29,8 @@
             <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
         <div class="log">
-            <?php if (!$isLoggedIn): ?>
-                <a class="account-btn" href="../forms/login.php">Login</a>
-                <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
-            <?php else: ?>
-                <a class="account-btn-bold" href="../forms/logout.php">Sign Out</a>
-                <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
-            <?php endif; ?>
+            <a class="account-btn-bold" href="../forms/logout.php">Sign Out</a>
+            <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
         </div>
     </header>
 
