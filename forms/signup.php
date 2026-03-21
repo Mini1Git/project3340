@@ -36,7 +36,7 @@
                 <a class="account-btn" href="login.php">Login</a>
                 <a class="account-btn-bold" href="signup.php">Sign Up</a>
             <?php else: ?>
-                <a class="account-btn-bold" href="logout.php">Sign Out</a>
+                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
                 <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
             <?php endif; ?>
         </div>

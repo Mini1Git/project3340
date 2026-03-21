@@ -3,7 +3,8 @@
     $isLoggedIn = isset($_SESSION['user_id']);
     if ($isLoggedIn) {
         header("Location: ../user/profile.php");
-    }
+        exit();
+    }   
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +35,7 @@
                 <a class="account-btn" href="../forms/login.php">Login</a>
                 <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
             <?php else: ?>
-                <a class="account-btn-bold" href="../forms/logout.php">Sign Out</a>
+                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
                 <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
             <?php endif; ?>
         </div>
@@ -66,7 +67,7 @@
         </nav>
 
         <div class="formparent">
-            <form class="login" method="POST" action="processLogin.php">
+            <form class="login" method="POST" action="../server/process_login.php">
                 <h2>Login</h2>
                 <div>
                     <input type="email" name="email" placeholder="Email" autocomplete="email" required>
