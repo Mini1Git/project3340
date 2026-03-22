@@ -1,15 +1,15 @@
 <?php
    
    // Assign the database credentials
-   $host = "localhost";
-    $database = "grillow";
+    $host = "localhost";
+    $dbName = "grillow";
     $dbUser = "root";
     $dbPass = "";
 
     // Try and catch blocks for connecting to the database
     try {
         // Create a new connection using and instance of PDO
-        $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $dbUser, $dbPass);
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
         // Define how the connection will report errors when interacting with the database, in this case,
         // we will throw an exception if anything goes wrong
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
