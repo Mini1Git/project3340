@@ -36,7 +36,7 @@
                 <a class="account-btn" href="login.php">Login</a>
                 <a class="account-btn-bold" href="signup.php">Sign Up</a>
             <?php else: ?>
-                <a class="account-btn-bold" href="logout.php">Sign Out</a>
+                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
                 <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
             <?php endif; ?>
         </div>
@@ -61,9 +61,14 @@
                 </ul>
                 <ul class="partner">
                     <li><a href="partnerform.php">Partner with us</a></li>
+<<<<<<< HEAD
                     <li><a href="forms/driverform.php">Become a Driver</a></li>
                     <li><a href="info/about.html">About us</a></li>
                     <li><a href="">Wiki</a></li>
+=======
+                    <li><a href="driverform.php">Become a Driver</a></li>
+                    <li><a href="../info/about.html">About us</a></li>
+>>>>>>> 2b9495745f1558432947168aa4f91816712c22c1
                 </ul>
             </div>  
         </nav>

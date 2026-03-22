@@ -15,7 +15,7 @@ async function fetchRestaurant(){
                 console.log(count);
                 const listitem = document.createElement("li");
                 const anchor = document.createElement("a");
-                anchor.href = `resolve_menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
+                anchor.href = `services/menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
 
                 const image = document.createElement("img");
                 image.src = restaurant["image_path"];
