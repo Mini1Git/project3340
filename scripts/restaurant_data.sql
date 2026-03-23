@@ -6,7 +6,7 @@ VALUES
     ("Sushi Yum", "Liana Bell", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
     ("Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian")
 ;
-
+--for restaurant 1
 INSERT INTO Product (vendor_id, product_name, description, price, instock) 
 VALUES 
 (1, 'Butter Chicken', 'Creamy tomato-based curry with tender chicken', 14.99, 1),
@@ -18,17 +18,34 @@ VALUES
 (1, 'Samosa', 'Crispy pastry filled with spiced potatoes and peas', 4.99, 1),
 (1, 'Tandoori Chicken', 'Marinated chicken roasted in a tandoor oven', 13.49, 1),
 (1, 'Palak Paneer', 'Spinach curry with cubes of paneer cheese', 11.49, 1),
-(1, 'Mango Lassi', 'Sweet yogurt-based mango drink', 4.49, 70);
+(1, 'Mango Lassi', 'Sweet yogurt-based mango drink', 4.49, 0);
 
+
+--for restaurant 2
 INSERT INTO Product (vendor_id, product_name, description, price, instock) 
 VALUES 
 (2, 'Classic Burger', 'Beef patty with lettuce, tomato, and cheese', 6.99, 1),
 (2, 'Cheeseburger', 'Juicy beef burger with melted cheese', 7.49, 1),
-(2, 'Chicken Nuggets', 'Crispy breaded chicken bites', 5.99, 100),
-(2, 'French Fries', 'Golden crispy potato fries', 3.49, 120),
+(2, 'Chicken Nuggets', 'Crispy breaded chicken bites', 5.99, 0),
+(2, 'French Fries', 'Golden crispy potato fries', 3.49, 0),
 (2, 'Double Burger', 'Two beef patties with cheese and toppings', 8.99, 1),
 (2, 'Chicken Sandwich', 'Fried chicken breast with mayo and lettuce', 6.99, 1),
 (2, 'Milkshake', 'Creamy vanilla, chocolate, or strawberry shake', 4.99, 0),
 (2, 'Soft Drink', 'Carbonated soda beverage', 2.49, 1),
 (2, 'Onion Rings', 'Crispy battered onion rings', 3.99, 1),
 (2, 'Fish Burger', 'Breaded fish fillet with tartar sauce', 7.99, 0);
+
+--for restaurant 3
+INSERT INTO Product (vendor_id, product_name, description, price, instock) 
+VALUES 
+(3, 'Salmon Flower Sushi (2 pcs)', 'Two pieces of sushi rice topped with salmon, shaped like a flower', 7.99, 1),
+(3, 'Spicy Salmon Sushi (2 pcs)', 'Seaweed wrap fresh salmon with spicy mayo, served in two pieces', 5.95, 1),
+(3, 'Fire Dragon Roll (8 pcs)', 'Shrimp, avocado, and cucumber topped with spicy crab', 14.95, 1),
+(3, 'Golden Dragon', 'Shrimp Tempura, Cream Cheese & Cucumber, topped w/ Tempura Sweet Potato & house Sauces', 17.98, 1),
+(3, 'Rainbow Sushi', 'Crab & Cucumber, topped w/ Tuna, Salmon, Red Snapper & Avocado', 20.30, 1),
+(3, 'Shrimp California Roll', 'Shrimp wrapped in a delicate California-style roll', 10.00, 1),
+(3, 'Shrimp Tempura Roll', 'Crisp shrimp in a delicate roll', 10.00, 1),
+(3, 'Red Snapper', 'Fresh red snapper wrapped in a delicate roll', 11.00, 1),
+(3, 'Smoked Salmon Roll', 'Smoked salmon wrapped in a delicate roll', 11.00, 0),
+(3, 'BBQ Eel Roll', 'Eel and BBQ sauce wrapped in a roll', 11.00, 0)
+;
