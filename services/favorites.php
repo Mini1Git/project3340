@@ -44,7 +44,7 @@
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>

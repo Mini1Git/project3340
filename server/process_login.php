@@ -48,13 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_name'] = $user['name'];
 
             // Redirect to the main index.php page
-            header("Location: ../index.php");
+            header("Location: ../home/index.php");
 
             // Exit the script
             exit();
         } else {
             // If the user doesn't enter a password correctly or they don't exist, append a query string of error=invalid
-            header("Location: login.php?error=invalid");
+            header("Location: ../forms/login.php?error=invalid");
             // Exit the script
             exit();
         }
