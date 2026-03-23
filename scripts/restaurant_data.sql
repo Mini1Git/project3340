@@ -1,3 +1,4 @@
+-- Active: 1755301077799@@127.0.0.1@3306@grillow
 -- inserting with restaurants--
 INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
@@ -48,4 +49,19 @@ VALUES
 (3, 'Red Snapper', 'Fresh red snapper wrapped in a delicate roll', 11.00, 1),
 (3, 'Smoked Salmon Roll', 'Smoked salmon wrapped in a delicate roll', 11.00, 0),
 (3, 'BBQ Eel Roll', 'Eel and BBQ sauce wrapped in a roll', 11.00, 0)
+;
+
+--for restaurant 4
+INSERT INTO Product (vendor_id, product_name, description, price, instock) 
+VALUES 
+(4, 'Signature Fettuccini Alfredo', 'Fettuccini noodles smothered in our house made Alfredo sauce, topped with Parmesan cheese and parsley flakes', 20.49, 1), 
+(4, 'Signature Chicken Parmesan with Penne Marinara Pasta (28 oz serving tray)', '1 piece of chicken parmesan smothered in marinara sauce and melted mozzarella cheese. Served with a penne pasta in our marinara sauce. Topped with fresh parmesan and parsley flakes', 19.99, 1), 
+(4, '16" Large Cheese Pizza (16 inch)', 'Hand tossed stone baked 16 inch pizza. Made with our signature house made marinara pizza sauce', 19.99, 1), 
+(4, 'Gnocchi in a Blush Meat Sauce', 'Small potato dumplings made fresh and served in our house blush sauce. Topped with parmesan cheese and parsley flakes', 16.99, 1), 
+(4, 'Lasagna', 'Made fresh and layered with our house meat sauce and mozzarella cheese. Topped with fresh parmesan cheese', 19.99, 1), 
+(4, '12" Medium cheese pizza (12 inch)', 'Hand tossed stone baked 12 inch pizza. Made with our signature house marinara pizza sauce and the finest mozzarella cheese', 15.99, 0), 
+(4, 'Stuffed crust 16\'inch cheese pizza (16 inch)', 'Hand tossed stone baked 16" cheese pizza and made with our house pizza sauce. Each crust edge is curled up and stuffed with mozzarella cheese and painted with our garlic butter', 25.99, 1),  
+(4, 'Spaghetti marinara', 'Spaghetti tossed in our house marinara sauce nd topped with fresh parmesan and parsley flakes', 15.99, 1), 
+(4, 'Family Dinner for 4 with Penne and chicken Parmesan (family size)', 'Comes with one large tray of our penne marinara pasta, 4 pcs of Chicken Parmesan, one large tray of Cesar Salad, Garlic bread, and 4 pops', 70.00, 1), 
+(4, 'Creamy Chicken Cesar 16" Pizza (XL 16 inch)', 'Made with creamy garlic sauce, mozzarella cheese, chicken, mushroom and green olives. Painted with garlic butter and fresh parmesan cheese', 29.99, 0)
 ;
