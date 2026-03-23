@@ -27,7 +27,7 @@
         // Prepare a statement to retrieve the business name and image_path attributes from the database
         $vendorStmt = $pdo->prepare("
         SELECT business_name, image_path 
-        FROM restaurant_vendor 
+        FROM Restaurant_Vendor 
         WHERE restaurant_id = :id
         ");
         // Bind the vendor id to the corresponding id value in the query
@@ -40,7 +40,7 @@
         // Prepare another sql query to retrieve all menu items corresponding to that restaurant
         $productStmt = $pdo->prepare("
             SELECT product_name, description, price, instock 
-            FROM product 
+            FROM Product 
             WHERE vendor_id = :id
         ");
         // Bind the vendor_id to the corresponding id value 

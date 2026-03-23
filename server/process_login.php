@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Prepare a query to retrieve user information including their id, password, and phone number based on their
         // unique email address
-        $stmt = $pdo->prepare("SELECT user_id, password, phone_number FROM customer WHERE email = :email");
+        $stmt = $pdo->prepare("SELECT user_id, password, phone_number, name FROM Customer WHERE email = :email");
         // Bind the email variable inside the query statement
         $stmt->bindParam(':email', $email);
         // Execute the query

@@ -49,7 +49,7 @@
             }
 
             // Prepare the SQL query. This inserts all of the entered information into the database.
-            $stmt = $pdo->prepare("INSERT INTO customer (name, email, phone_number, password) VALUES (:name, :email, :phone_number, :password)");
+            $stmt = $pdo->prepare("INSERT INTO Customer (name, email, phone_number, password) VALUES (:name, :email, :phone_number, :password)");
 
             // Bind each variable we retrieved and reformatted from 'POST' to the corresponding value in the query
             $stmt->bindParam(':name', $name);
@@ -62,7 +62,7 @@
                 // If this works then move down a line, otherwise it will throw an exception
                 $stmt->execute();
                 // Redirect to the login page where the user must login in. Apply the query string registered=1
-                header("Location: login.php?registered=1");
+                header("Location: ../forms/login.php?registered=1");
                 // Exit the script immediately
                 exit();
             } catch (PDOException $e) {

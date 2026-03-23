@@ -73,7 +73,7 @@
             </div>  
         </nav>
         <div class="formparent">
-        <form class="register" method="POST" action="process_signup.php">
+        <form class="register" method="POST" action="../server/process_signup.php">
             <h2>Create An Account</h2>
             <div>
                 <input type="text" name="username" placeholder="Full Name" autocomplete="name" required>
