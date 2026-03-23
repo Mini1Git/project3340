@@ -55,8 +55,19 @@ async function fetchmenu() {
                     <h3 class="dish-name">${item.product_name}</h3>
                     <p class="details">${item.description}</p>
                     <p class="price">$${item.price}</p>
-                    <button class="add-btn" aria-label="Add item">+</button>
                 `;
+                const add =  document.createElement('button');
+                add.className = "add-btn";
+                add.ariaLabel = "Add item";
+                add.textContent ='+';
+                //<button class= aria-label=>+</button> 
+
+                add.addEventListener('click', () =>{
+                    //the function of putting it inside cart
+                })
+                foodcell.appendChild(add);
+            
+
                 // Append this product container to the dishes container
                 dishesContainer.appendChild(foodcell);
             }
