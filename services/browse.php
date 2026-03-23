@@ -39,7 +39,7 @@
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li id="on-page"><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
@@ -63,10 +63,36 @@
 
         <main>
             <form id="search">
-                    <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
-                    <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
-                    <input type="submit">
+                <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
+                <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
+                <input type="submit">  
             </form>
+            
+            <div class="browse-cat">
+                <div class="rest-cat">
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                </div>
+                <div class="rest-cat">
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                </div>
+                <div class="rest-cat">
+
+                </div>
+                <div class="rest-cat">
+
+                </div>
+            </div>
         </main>
     </div>
 

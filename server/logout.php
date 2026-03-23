@@ -6,7 +6,7 @@
     // Destroy the current session
     session_destroy();
     // Redirect to the main page or a page that doesn't require logging in
-    header("Location: ../index.php");
+    header("Location: ../home/index.php");
     // Terminate the execution of the script to prevent any errors or leakage
     exit();
 ?>

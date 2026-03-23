@@ -78,6 +78,7 @@ nav {
     /*Add a separating border*/
     border-right: 2px solid rgba(217, 217, 217, 0.15);
     font-size: 1rem;
+
 }
 
 /* auth pages (login / signup) */
@@ -94,8 +95,8 @@ body.auth .offscreen-menu {
     background: #ffffff1a; /* faded lighter panel so gradient shows through */
     backdrop-filter: blur(6px); /*Blur the background*/ 
     -webkit-backdrop-filter: blur(6px);
-    border-radius: 12px;
     padding: 0.9rem 1.25rem;
+    height: fit-content;
 }
 
 /*Pad the offscreen menu*/
