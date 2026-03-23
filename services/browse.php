@@ -63,10 +63,36 @@
 
         <main>
             <form id="search">
-                    <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
-                    <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
-                    <input type="submit">
+                <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
+                <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
+                <input type="submit">  
             </form>
+            
+            <div class="browse-cat">
+                <div class="rest-cat">
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                </div>
+                <div class="rest-cat">
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                    <div class="rest-card"></div>
+                </div>
+                <div class="rest-cat">
+
+                </div>
+                <div class="rest-cat">
+
+                </div>
+            </div>
         </main>
     </div>
 
