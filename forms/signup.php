@@ -61,14 +61,9 @@
                 </ul>
                 <ul class="partner">
                     <li><a href="partnerform.php">Partner with us</a></li>
-<<<<<<< HEAD
                     <li><a href="forms/driverform.php">Become a Driver</a></li>
                     <li><a href="info/about.html">About us</a></li>
                     <li><a href="">Wiki</a></li>
-=======
-                    <li><a href="driverform.php">Become a Driver</a></li>
-                    <li><a href="../info/about.html">About us</a></li>
->>>>>>> 2b9495745f1558432947168aa4f91816712c22c1
                 </ul>
             </div>  
         </nav>
