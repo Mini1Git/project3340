@@ -1,4 +1,4 @@
--- Active: 1755301077799@@127.0.0.1@3306@grillow
+-- Active: 1755301077799@@127.0.0.1@3306@ems
 DELETE FROM product;
   
 --for observation

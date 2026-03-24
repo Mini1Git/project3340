@@ -66,4 +66,15 @@ VALUES
 (4, 'Creamy Chicken Cesar 16" Pizza (XL 16 inch)', 'Made with creamy garlic sauce, mozzarella cheese, chicken, mushroom and green olives. Painted with garlic butter and fresh parmesan cheese', 29.99, 0)
 ;
 
---more res
+--more restaurant
+INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
+VALUES
+('Mexican Uncle', 'Luis Recardo', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
+('Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
+;
+
+--for restaurant 5 (did not run yet)
+INSERT INTO Product (vendor_id, product_name, description, price, instock) 
+VALUES
+(5, 'Chips with Salsa and Guacamole', 'Crispy Tortilla chips served with tangy and spicy Salsa and Guacamole', 5.99)
+;
