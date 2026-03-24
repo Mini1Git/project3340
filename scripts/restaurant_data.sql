@@ -5,8 +5,15 @@ VALUES
     ("Be Desi", "Nazifa Tahsin", "bedesi123@gmail.com", "+1 0126872198", "234 Wyandot, Windsor", 4.2, "images/indianfood.jpg", "Indian"),
     ("McDongal's", "Wilson Tran", "mcdonald@gmail.com", "+1 7987987551", "8436 University Ave, Windsor", 3.5, "images/fastfood.jpg", "Fast food"),
     ("Sushi Yum", "Liana Bell", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
-    ("Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian")
-;
+    ("Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian"),
+    ("Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "images/pizza.jpg", "Italian"),
+    ("Sushi World", "Bob", "sushi@gmail.com", "+1 5195558899", "789 Riverside Dr, Windsor", 4.7, "images/sushi.jpg", "Japanese"),
+    ("Taco Fiesta", "Carlos", "taco@gmail.com", "+1 5198882233", "321 Tecumseh Rd, Windsor", 4.3, "images/taco.jpg", "Mexican"),
+    ("Burger Hub", "Jake", "burger@gmail.com", "+1 5194441122", "654 University Ave, Windsor", 3.9, "images/burger.jpg", "Fast food"),
+    ("Green Bowl", "Sarah", "green@gmail.com", "+1 5197776655", "987 Walker Rd, Windsor", 4.6, "images/healthy.jpg", "Healthy"),
+    ("Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "images/chinese.jpg", "Chinese"),
+    ("BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "images/bbq.jpg", "BBQ"),
+    ("Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "images/dessert.jpg", "Dessert");
 -- for restaurant 1
 INSERT INTO Product (vendor_id, product_name, description, price, instock) 
 VALUES 

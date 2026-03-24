@@ -22,7 +22,7 @@ CREATE TABLE Restaurant_Vendor(
     -- Administrators name
     admin VARCHAR(100) NOT NULL,
     -- Email address of administrator / restaurant
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     -- Phone number of restaurant
     phone_number VARCHAR(20) NOT NULL,
     -- Address of restaurant

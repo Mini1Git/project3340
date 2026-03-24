@@ -1,36 +1,42 @@
 <?php
 
+    session_start();
+    $isLoggedIn = isset($_SESSION['user_id']); // returns bool
 
-session_start();
-$isLoggedIn = isset($_SESSION['user_id']); // returns bool
+    $host = "localhost";               // Your MySQL host (usually "localhost")
+    $dbname = "grillow";    // Replace with your database name
+    $dbUser = "root";       // Replace with your MySQL username
+    $dbPass = "";
 
-$host = "localhost";               // Your MySQL host (usually "localhost")
-$dbname = "grillow";    // Replace with your database name
-$dbUser = "root";       // Replace with your MySQL username
-$dbPass = "";
+    try {
+        // Establish a connection using PDO (PHP Data Objects)
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbUser, $dbPass);
+        // Set error reporting to Exception for easier debugging
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($isLoggedIn){
+            echo "logged ";
+        }
+        else{
+            echo "Hey u no log "; // also should redirect to login. actually maybe this useless cuz u need to be logged in in the first place....
+        }
 
-try {
-    // Establish a connection using PDO (PHP Data Objects)
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    // Set error reporting to Exception for easier debugging
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    if ($isLoggedIn){
-        echo "logged ";
+        echo "Success! ";
+
     }
-    else{
-        echo "Hey u no log "; // also should redirect to login. actually maybe this useless cuz u need to be logged in in the first place....
+    catch(PDOException $e) {
+        // If connection fails, output the error message and exit
+        die("Connection failed: " . $e->getMessage());
     }
 
-    echo "Success! ";
 
-    $restaurant_name = trim($_POST["restaurant_name"]);
+$restaurant_name = trim($_POST["restaurant_name"]);
     $cuisine_type = trim($_POST["cusine_type"]);
     $restaurant_email = trim($_POST["restaurant_email"]);
     $restaurant_number = trim($_POST["restaurant_number"]);
     $restaurant_address = trim($_POST["restaurant_address"]);
-//dummy test
-//user email = tran9b@gmail.com
-//user password = Test12345$
+    //dummy test
+    //user email = tran9b@gmail.com
+    //user password = Test12345$
     $user = $_SESSION['user_id'];
 
     $registerRestaurant = $pdo->prepare("
@@ -47,22 +53,12 @@ try {
     ]);
 
 
-// Redirect the browser
+    // Redirect the browser
     header("Location: ../home/index.php");
 
-// The below code does not get executed
-// while redirecting
+    // The below code does not get executed
+    // while redirecting
     exit();
-
-
-
-
-}
-catch(PDOException $e) {
-    // If connection fails, output the error message and exit
-    die("Connection failed: " . $e->getMessage());
-}
-
 
 
 
