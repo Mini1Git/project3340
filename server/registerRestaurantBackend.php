@@ -5,9 +5,9 @@ session_start();
 $isLoggedIn = isset($_SESSION['user_id']); // returns bool
 
 $host = "localhost";               // Your MySQL host (usually "localhost")
-$dbname = "tran9b_terminator";    // Replace with your database name
-$username = "tran9b_terminator";       // Replace with your MySQL username
-$password = "AkrTtVN3HGXu3VzdkX9r";
+$dbname = "grillow";    // Replace with your database name
+$dbUser = "root";       // Replace with your MySQL username
+$dbPass = "";
 
 try {
     // Establish a connection using PDO (PHP Data Objects)
@@ -48,11 +48,11 @@ try {
 
 
 // Redirect the browser
-    header("Location: index.php");
+    header("Location: ../home/index.php");
 
 // The below code does not get executed
 // while redirecting
-    exit;
+    exit();
 
 
 
