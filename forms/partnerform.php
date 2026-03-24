@@ -3,6 +3,10 @@
     session_start();
     // If the user_id value is set within the $_SESSION array, then the user is logged in, otherwise not
     $isLoggedIn = isset($_SESSION['user_id']);
+    if (!$isLoggedIn) {
+        header("Location: login.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +26,8 @@
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <!--Stylesheet for screen sizes < 768 pixels-->
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
@@ -39,9 +45,8 @@
         </div>
         <!--Account controls-->
         <div class="log">
-            <!--Anchor tags to login and sign up pages-->
-            <a class="account-btn" href="login.php">Login</a>
-            <a class="account-btn-bold" href="signup.php">Sign Up</a>
+             <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
+            <a class="profile-settings" href="../user/profile.php"><i class="fa-solid fa-circle-user"></i></a>
         </div>
     </header>
     <!--End of header, beginning of side menu-->
@@ -68,6 +73,30 @@
             </div>
         </nav>
         <!--End of navigation bar-->
+
+        <div class="formparent">
+            <form class="register" action = "../server/registerRestaurantBackend.php" method="POST">
+                <h2>Register your restaurant</h2>
+                <div>
+                    <input type="text" name="restaurant_name" placeholder="Restaurant Name" required>
+                </div>
+                <div>
+                    <input type="text" name="cuisine_type" placeholder="Cuisine Type" required>
+                </div>
+                <div>
+                    <input type="email" name="restaurant_email" placeholder="Restaurant Email" required>
+                </div>
+                <div>
+                    <input type="tel" name="restaurant_number" placeholder = "Restaurant Phone Number" minlength="9" maxlength="15">
+                </div>
+                <div>
+                    <input type="text" name="restaurant_address" placeholder="Address" required>
+                </div>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+
     </div>
     <!--End of content div-->
     <aside id="theme-changer">
