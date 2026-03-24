@@ -6,6 +6,14 @@ VALUES
     ("McDongal's", "Wilson Tran", "mcdonald@gmail.com", "+1 7987987551", "8436 University Ave, Windsor", 3.5, "images/fastfood.jpg", "Fast food"),
     ("Sushi Yum", "Liana Bell", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
     ("Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian"),
+    ("Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "images/pizza.jpg", "Italian"),
+    ("Sushi World", "Bob", "sushi@gmail.com", "+1 5195558899", "789 Riverside Dr, Windsor", 4.7, "images/sushi.jpg", "Japanese"),
+    ("Taco Fiesta", "Carlos", "taco@gmail.com", "+1 5198882233", "321 Tecumseh Rd, Windsor", 4.3, "images/taco.jpg", "Mexican"),
+    ("Burger Hub", "Jake", "burger@gmail.com", "+1 5194441122", "654 University Ave, Windsor", 3.9, "images/burger.jpg", "Fast food"),
+    ("Green Bowl", "Sarah", "green@gmail.com", "+1 5197776655", "987 Walker Rd, Windsor", 4.6, "images/healthy.jpg", "Healthy"),
+    ("Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "images/chinese.jpg", "Chinese"),
+    ("BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "images/bbq.jpg", "BBQ"),
+    ("Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "images/dessert.jpg", "Dessert"),
     ('Mexican Uncle', 'Luis Recardo', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
     ('Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
 ;
@@ -79,12 +87,7 @@ VALUES
 (4, 'Creamy Chicken Cesar 16" Pizza (XL 16 inch)', 'Made with creamy garlic sauce, mozzarella cheese, chicken, mushroom and green olives. Painted with garlic butter and fresh parmesan cheese', 29.99, 0)
 ;
 
--- more restaurant
-INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
-VALUES
-('Mexican Uncle', 'Luis Recardo', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
-('Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
-;
+
 
 -- for restaurant 5 (did not run yet)
 -- INSERT INTO Product (vendor_id, product_name, description, price, instock) 
