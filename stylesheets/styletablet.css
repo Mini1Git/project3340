@@ -117,5 +117,14 @@ nav {
         font-size: 1rem;
         font-weight: 600;
     }
+
+    /*order page*/
+    .order-item {
+        height: auto;
+        width: 100%;
+    }
+    .order-name {
+         font-size: 4.5vw; 
+    }
 }
 
