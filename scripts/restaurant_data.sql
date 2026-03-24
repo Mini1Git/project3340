@@ -1,4 +1,4 @@
--- Active: 1755301077799@@127.0.0.1@3306@grillow
+-- Active: 1774042082208@@127.0.0.1@3306@grillow
 -- inserting with restaurants--
 INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
