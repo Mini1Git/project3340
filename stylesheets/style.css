@@ -36,7 +36,7 @@ header {
     border-bottom: 2px solid #d9d9d9;
     width: 100vw;
     flex-wrap:nowrap;
-    height: 7rem;
+    height: 8vh;
 }
 
 header .log {
@@ -54,7 +54,7 @@ h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
-    font-size: 45px;
+    font-size: 3rem;
     letter-spacing: 3px;
     /*Font family of Srisakdi with system-ui as a backup*/
     font-family: "Srisakdi", system-ui;
@@ -518,6 +518,20 @@ body.auth .partner a:hover {
     font-weight: 500;
     width: 50vw;
     text-align: center;
+}
+
+.more-orders-btn {
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    width: 30rem;
+    border: none;
 }
 
 .profile-settings i {
