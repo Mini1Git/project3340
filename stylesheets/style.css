@@ -36,7 +36,7 @@ header {
     border-bottom: 2px solid #d9d9d9;
     width: 100vw;
     flex-wrap:nowrap;
-    height: 8vh;
+    height: 8vw;
 }
 
 header .log {
@@ -54,7 +54,7 @@ h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 6vw;
     letter-spacing: 3px;
     /*Font family of Srisakdi with system-ui as a backup*/
     font-family: "Srisakdi", system-ui;
@@ -63,8 +63,8 @@ h1 {
 
 /*Logo for the nav*/
 header img {
-    width: 50px;
-    height: auto;
+    width: 5.8vw;
+    height: 5.8vw;
     padding-left: 20px;
 }
 
@@ -166,7 +166,7 @@ body.auth .partner a:hover {
     /*Remove the borders from both buttons*/
     border: none;
     /*Font size of ~12px*/
-    font-size: 0.75rem;
+    font-size: 1vw;
     font-weight: 700;
     text-decoration: none;
 }
