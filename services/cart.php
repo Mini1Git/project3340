@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/styleCart.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
     <script src="../scripts/cart.js" defer></script>
 
@@ -62,9 +63,13 @@
                 </ul>
             </div>  
         </nav>
+    <main>   
+        <h2 class="cart-h2"> Your Cart </h2>
+        <section class="cart-box">
+            
+            <!--the item will come from js-->
 
-    <main class="cart-box">
-
+        </section>
     </main>
 
     </div>
