@@ -48,7 +48,7 @@ async function fetchOrders(ordersUrl){
                 imgWrap.className = "order-image-wrap";
                 const image = document.createElement("img");
                 image.className = "order-image";
-                image.src = order["img_path"];
+                image.src = "../" + order["img_path"];
                 image.alt = order["business_name"];
                 imgWrap.appendChild(image);
 
@@ -110,4 +110,4 @@ async function fetchOrders(ordersUrl){
     }
 }
 
-window.addEventListener('load', () => fetchOrders("../scripts/orders.json"));
+window.addEventListener('load', () => fetchOrders("../server/get_orders.php"));
