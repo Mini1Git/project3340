@@ -63,6 +63,10 @@
             </div>  
         </nav>
 
+    <main class="cart-box">
+
+    </main>
+
     </div>
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
