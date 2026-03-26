@@ -1,5 +1,7 @@
 -- Active: 1774042082208@@127.0.0.1@3306@grillow
 -- inserting with restaurants--
+
+/*directly adding users into Database doesnt work so u need to register on the website
 INSERT INTO Customer(user_id, name, email, phone_number, address, password) VALUES
     (1, 'Liana', 'bell23@uwindsor.ca', '+1 519-555-0001', '123 Garden Lane', 'Password1!'),
     (2, 'Wilson', 'wilsontran@uwindsor.ca', '+1 519-555-0002', '456 Peach St', 'Password2!'),
@@ -11,7 +13,7 @@ INSERT INTO Customer(user_id, name, email, phone_number, address, password) VALU
     (8, 'Jack', 'jack@gmail.com', '+1 226-555-0004', '876 Tecumseh St', 'Password8!'),
     (9, 'Isaiah', 'isaiah@gmail.com', '+1 519-555-0005', '223 University St', 'Password9!')
 ;
-
+*/
 INSERT INTO Customer_Order (order_id, customer_id, order_date, total_price, order_status) VALUES
 -- Liana (Cust 1)
     (1, 1, '2026-03-01', 24.48, 1), 
@@ -21,7 +23,9 @@ INSERT INTO Customer_Order (order_id, customer_id, order_date, total_price, orde
     (37, 1, '2026-03-06', 46.49, 1), 
     (38, 1, '2026-03-11', 19.50, 1), 
     (39, 1, '2026-03-16', 17.00, 1), 
-    (40, 1, '2026-03-21', 14.99, 1),
+    (40, 1, '2026-03-21', 14.99, 1)
+;
+INSERT INTO Customer_Order (order_id, customer_id, order_date, total_price, order_status) VALUES
     -- Wilson (Cust 2)
     (5, 2, '2026-03-02', 12.49, 1), 
     (6, 2, '2026-03-06', 11.50, 1), 
@@ -65,6 +69,7 @@ INSERT INTO Customer_Order (order_id, customer_id, order_date, total_price, orde
     (36, 9, '2026-03-20', 11.00, 1)
 ;
 
+-- Liana's orders
 INSERT INTO Order_Item (order_id, product_id, unit_price, quantity, subtotal) VALUES
     -- Order 1 (The Hungry Bunny): 1 Bowl + 1 Taco
     (1, 110101, 12.99, 1, 12.99), (1, 110102, 11.49, 1, 11.49),
@@ -74,6 +79,19 @@ INSERT INTO Order_Item (order_id, product_id, unit_price, quantity, subtotal) VA
     (3, 111301, 6.50, 1, 6.50),
     -- Order 4 (Flutterby Fries): 1 Burger + 1 Fries
     (4, 111610, 12.50, 1, 12.50), (4, 111601, 4.99, 1, 4.99),
+    -- Order 37 (Skyki): Ribs + Brisket
+    (37, 111001, 26.99, 1, 26.99), (37, 111002, 19.50, 1, 19.50),
+    -- Order 38 (Skyki): Brisket
+    (38, 111002, 19.50, 1, 19.50),
+    -- Order 39 (Skyki): Hot Chicken
+    (39, 111003, 17.00, 1, 17.00),
+    -- Order 40 (Skyki): Pulled Pork
+    (40, 111004, 14.99, 1, 14.99)
+;
+
+/*
+-- Orders for future customers
+INSERT INTO Order_Item (order_id, product_id, unit_price, quantity, subtotal) VALUES
     -- Order 5 (Paws & Pancakes): Bear Claw Waffles
     (5, 110402, 12.49, 1, 12.49),
     -- Order 6 (Moonbeam): Moon Panini
@@ -138,21 +156,23 @@ INSERT INTO Order_Item (order_id, product_id, unit_price, quantity, subtotal) VA
     (35, 111106, 5.99, 1, 5.99), (35, 111110, 4.50, 1, 4.50),
     -- Order 36 (Sunny Side Up): Belgian Morning
     (36, 111108, 11.00, 1, 11.00),
-    -- Order 37 (Skyki): Ribs + Brisket
-    (37, 111001, 26.99, 1, 26.99), (37, 111002, 19.50, 1, 19.50),
-    -- Order 38 (Skyki): Brisket
-    (38, 111002, 19.50, 1, 19.50),
-    -- Order 39 (Skyki): Hot Chicken
-    (39, 111003, 17.00, 1, 17.00),
-    -- Order 40 (Skyki): Pulled Pork
-    (40, 111004, 14.99, 1, 14.99)
 ;
+*/
 
+-- Liana's Payments
 INSERT INTO Payment (payment_id, order_id, method, amount, payment_date, payment_status) VALUES
     (1, 1, 'Credit', 24.48, '2026-03-01', 1), 
     (2, 2, 'Debit', 9.98, '2026-03-05', 1), 
     (3, 3, 'PayPal', 6.50, '2026-03-10', 1), 
     (4, 4, 'Cash', 17.49, '2026-03-15', 1),
+    (37, 37, 'Credit', 46.49, '2026-03-06', 1), 
+    (38, 38, 'Debit', 19.50, '2026-03-11', 1), 
+    (39, 39, 'PayPal', 17.00, '2026-03-16', 1), 
+    (40, 40, 'Cash', 14.99, '2026-03-21', 1)
+;
+
+/*
+-- Future customer payments
     (5, 5, 'Credit', 12.49, '2026-03-02', 1), 
     (6, 6, 'Debit', 11.50, '2026-03-06', 1), 
     (7, 7, 'PayPal', 22.00, '2026-03-11', 1), 
@@ -184,9 +204,6 @@ INSERT INTO Payment (payment_id, order_id, method, amount, payment_date, payment
     (33, 33, 'Credit', 11.50, '2026-03-05', 1), 
     (34, 34, 'Debit', 10.99, '2026-03-10', 1), 
     (35, 35, 'PayPal', 10.49, '2026-03-15', 1), 
-    (36, 36, 'Cash', 11.00, '2026-03-20', 1),
-    (37, 37, 'Credit', 46.49, '2026-03-06', 1), 
-    (38, 38, 'Debit', 19.50, '2026-03-11', 1), 
-    (39, 39, 'PayPal', 17.00, '2026-03-16', 1), 
-    (40, 40, 'Cash', 14.99, '2026-03-21', 1)
+    (36, 36, 'Cash', 11.00, '2026-03-20', 1)
 ;
+*/

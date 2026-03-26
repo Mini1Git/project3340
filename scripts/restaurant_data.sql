@@ -18,6 +18,7 @@ VALUES
     (14, 'Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
 ;
 
+/*this is a duplicate ?
 INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, cuisine_name) 
 VALUES 
     ("Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "Italian"),
@@ -28,7 +29,7 @@ VALUES
     ("Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "Chinese"),
     ("BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "BBQ"),
     ("Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "Dessert");
-
+*/
 --restaurant inserts (liana)
 INSERT INTO Restaurant_Vendor(restaurant_id, business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
