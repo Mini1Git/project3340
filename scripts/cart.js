@@ -43,9 +43,10 @@ function create_cart(){
         const order_btn = document.createElement('a');
         order_btn.className = "order-place";
         order_btn.textContent = `Place Your Order`;
+        order_btn.href = "../forms/orderform.php"
         cartBox.appendChild(order_btn);
     }
-    sessionStorage.setItem('total', total); //setting the total
+    sessionStorage.setItem('total', total.toFixed(2)); //setting the total
 
 }
 
