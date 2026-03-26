@@ -1,0 +1,16 @@
+/* .content {
+    display: inline-block;
+} */
+
+
+.cart-h2{
+    text-align: center;
+    display: block;
+}
+
+.food-cell {
+    width: 80%;
+    background-color: rgb(60, 50, 205);
+    margin: 0 auto;
+    border-radius: 25px;
+}
