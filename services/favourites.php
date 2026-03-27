@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+    <script src="../scripts/favouritesScript.js" defer></script>
 </head>
 <body>
     <header>
@@ -48,7 +49,7 @@
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                        <li id="on-page"><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                        <li id="on-page"><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                         <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <?php else: ?>
                         <li><a href="../forms/signup.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
@@ -66,9 +67,17 @@
             </div>  
         </nav>
 
-        <div class = "favcontent"> <!-- favourites shown here-->
-        
-        </div>
+        <!--favourites content shown here if logged in-->
+       <?php if($isLoggedIn): ?>
+            <main class="orders">
+                <h2>Your most Frequently Ordered Restaurants</h2>
+                </main>
+        <?php else: ?>
+            <main>
+                <h2>Logged Out</h2>
+                <p>Please log in to view your Favourites</p>
+            </main>
+        <?php endif;?>
 
     </div>
     <aside id="theme-changer">

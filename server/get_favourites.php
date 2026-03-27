@@ -44,7 +44,7 @@ try {
     ");
     
     $stmt->execute([$current_user]);
-    $orders = $stmt->fetchAll();
+    $favourites = $stmt->fetchAll();
 
     // Return the top 4 most ordered from restaurants data as JSON
     echo json_encode($favourites);

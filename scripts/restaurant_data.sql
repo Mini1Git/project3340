@@ -299,7 +299,7 @@ VALUES
 (111305, 1113, 'Rustic Apple Galette', 'Free-form tart with cinnamon apples', 7.25, 1),
 (111306, 1113, 'Savory Scone', 'Buttermilk scone with fresh herbs', 3.75, 1),
 (111307, 1113, 'Banana Walnut Bread', 'Moist loaf slice with toasted nuts', 3.50, 0),
-(111308, 1113, 'Pumpkin Spice Muffin', 'Seasonal favorite with pumpkin seeds', 3.95, 1),
+(111308, 1113, 'Pumpkin Spice Muffin', 'Seasonal favourite with pumpkin seeds', 3.95, 1),
 (111309, 1113, 'Baguette', 'Classic crispy French bread', 4.00, 1),
 (111310, 1113, 'Apricot Jam Tart', 'Shortcrust pastry with apricot filling', 4.50, 1);
 
