@@ -3,7 +3,7 @@ Fetch and render favouriterestaurants
  */
 async function fetchFavourites(favesUrl){
     const favouritesBox = document.querySelector(".orders");
-    if (!favouritessBox) return console.error('No .orders element found');
+    if (!favouritesBox) return console.error('No .orders element found');
 
     const favouritesList = document.createElement("ul");
     favouritesList.className = "favourites-list";
@@ -64,18 +64,18 @@ async function fetchFavourites(favesUrl){
             anchor.appendChild(imgWrap);
             anchor.appendChild(info);
             listitem.appendChild(anchor);
-            favoritesList.appendChild(listitem);
+            favouritesList.appendChild(listitem);
         });
 
-        favoritesBox.appendChild(favoritesList);
+        favouritesBox.appendChild(favouritesList);
 
     } catch (e) {
-        console.error("Error loading favorites:", e);
+        console.error("Error loading favourites:", e);
         const p = document.createElement('p');
         p.textContent = 'Failed to load your favourites. Please try again later.';
-        favoritesBox.appendChild(p);
+        favouritesBox.appendChild(p);
     }
 }
 
-// Load favorites when the page finishes loading
-window.addEventListener('load', () => fetchFavorites("../server/get_faves.php"));
+// Load favourites when the page finishes loading
+window.addEventListener('load', () => fetchFavourites("../server/get_favourites.php"));
