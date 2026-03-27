@@ -2,8 +2,9 @@
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
 
-    if ($isLoggedIn) {
+    if (!$isLoggedIn) {
         header("Location: ../forms/login.php");
+        exit();
     }
 ?>
 
@@ -18,7 +19,10 @@
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/styleCart.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+    <script src="../scripts/cart.js" defer></script>
+
 </head>
 <body>
 
@@ -30,8 +34,13 @@
             <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
         </div>
         <div class="log">
-            <a class="account-btn-bold" href="../forms/logout.php">Sign Out</a>
-            <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
+            <?php if (!$isLoggedIn): ?>
+                <a class="account-btn" href="../forms/login.php">Login</a>
+                <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
+            <?php else: ?>
+                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
+                <a class="profile-settings" href="../user/profile.php"><i class="fa-solid fa-circle-user"></i></a>
+            <?php endif; ?>
         </div>
     </header>
 
@@ -39,7 +48,7 @@
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                     <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -50,9 +59,18 @@
                     <li><a href="../forms/partnerform.php">Partner with us</a></li>
                     <li><a href="../forms/driverform.php">Become a Driver</a></li>
                     <li><a href="../info/about.html">About us</a></li>
+                    <li><a href="">Wiki</a></li>
                 </ul>
             </div>  
         </nav>
+    <main>   
+        <h2 class="cart-h2"> Your Cart </h2>
+        <section class="cart-box">
+            
+            <!--the item will come from js-->
+
+        </section>
+    </main>
 
     </div>
     <aside id="theme-changer">

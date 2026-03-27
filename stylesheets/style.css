@@ -33,9 +33,10 @@ header {
     justify-content: space-between;
     align-items: center;
     /*Slight off-white bottom border*/
-    border-bottom: 2px solid rgba(217, 217, 217);
+    border-bottom: 2px solid #d9d9d9;
     width: 100vw;
     flex-wrap:nowrap;
+    height: 8vw;
 }
 
 header .log {
@@ -45,6 +46,7 @@ header .log {
 header .logo-menu{
     max-width: 100%;
     display: flex;
+    align-items: center;
 
 }
 
@@ -53,7 +55,7 @@ h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
     justify-content: center;
-    font-size: 45px;
+    font-size: 6vw;
     letter-spacing: 3px;
     /*Font family of Srisakdi with system-ui as a backup*/
     font-family: "Srisakdi", system-ui;
@@ -62,8 +64,8 @@ h1 {
 
 /*Logo for the nav*/
 header img {
-    width: 50px;
-    height: auto;
+    width: 5.8vw;
+    height: 5.8vw;
     padding-left: 20px;
 }
 
@@ -76,8 +78,10 @@ nav {
     justify-content: center;
     align-items: center;
     /*Add a separating border*/
-    border-right: 2px solid rgba(217, 217, 217, 0.15);
+    border-right: 2px solid #d9d9d926;
     font-size: 1rem;
+    height: fit-content;
+
 }
 
 /* auth pages (login / signup) */
@@ -94,13 +98,14 @@ body.auth .offscreen-menu {
     background: #ffffff1a; /* faded lighter panel so gradient shows through */
     backdrop-filter: blur(6px); /*Blur the background*/ 
     -webkit-backdrop-filter: blur(6px);
-    border-radius: 12px;
     padding: 0.9rem 1.25rem;
+    height: fit-content;
 }
 
 /*Pad the offscreen menu*/
-.offscreen-menu {
+div.offscreen-menu {
     padding: 0.9rem 1.25rem;
+    height: 100%;
 }
 
 /* keep same white text on auth pages*/
@@ -162,9 +167,10 @@ body.auth .partner a:hover {
     /*Remove the borders from both buttons*/
     border: none;
     /*Font size of ~12px*/
-    font-size: 0.75rem;
+    font-size: 1vw;
     font-weight: 700;
     text-decoration: none;
+    align-items: center;
 }
 
 /*Bold buttons*/
@@ -443,11 +449,12 @@ body.auth .partner a:hover {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 0;
-    margin: 24px;
-    width: 100%;
-    justify-content: center;
+    gap: 20px;
+    padding: 10vw;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    align-items: center;
 }
 
 .order-item {
@@ -456,27 +463,30 @@ body.auth .partner a:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow: hidden;
     display: flex;
-    min-width: 240px;
-    width: 90%;
-    height: 36vh;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .order-link {
     display: flex;
-    gap: 5px;
+    gap: 20px;
     text-decoration: none;
     color: inherit;
-    padding: 5vh;
+    padding: 15px 25px;
     align-items: center;
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .order-image-wrap {
-    height: 26vh;
-    width: 26vh;
+    height: 100px;
+    width: 100px;
     border-radius: 15px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .order-image {
@@ -490,37 +500,132 @@ body.auth .partner a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
+    min-width: 0;
 }
 
 .order-name {
-    font-size: 2rem;
+    font-size: 2vw;
     margin: 0 0 6px 0;
     font-weight: 600;
 }
 
 .order-date, .order-id {
     color: #666;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
 }
 
 .order-more{
     margin-top: 12px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     background-color: var(--primary-color);
     color: var(--bg-color);
     border-radius: 25px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.6vw;
     font-weight: 500;
-    width: 50vw;
+    width: fit-content;
     text-align: center;
 }
 
+.more-orders-btn {
+    margin: 0 auto;
+    padding: 1vh 2vw;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-radius: 2vw;
+    text-decoration: none;
+    font-size: 1.6vw;
+    font-weight: 500;
+    display: block;
+    width: 60vw;
+    max-width: 480px;
+    border: none;
+}
 .profile-settings i {
-    font-size: 2.5rem;
+    font-size: 5vw;
     cursor: pointer;
+    color: var(--bg-color);
 }
 
 .profile-settings i:hover {
+    color: #f3f3f3AA;
+}
+
+/*ABout us page*/
+
+.aboutcontainer {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px 50px;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 5px 1px 5px 1px #00000063;
+    background: var(--bg-color);
+}
+.aboutheader {
+    font-size: 2vw;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    padding: 40px 20px;
+    border-radius: 35px;
+    border: var(--primary-color) solid 12px;
+    
+}
+.aboutfact {
+    padding: 40px;
+    border-bottom: #3b3b3b79 1px solid;
+    color: var(--tertiary-color);
+}
+.aboutfact h3{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+.aboutfact p{
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/*help page style*/
+.helpcontainer {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px 50px;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 5px 1px 5px 1px #00000063;
+    background: var(--bg-color);
+    color: var(--tertiary-color);
+}
+
+.helpcontainer h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+.helpcontainer p {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+.helpcontainer h3 {
+    font-size: 1.2rem;
+    font-weight: 5600;
+}
+
+.helpcontainer details {
+    padding-left: 20px;
+}
+.helpcontainer summary {
+    font-size: 1rem;
+}
+.helpcontainer summary:hover {
     color: #f3f3f3AA;
 }

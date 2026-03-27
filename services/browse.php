@@ -30,8 +30,8 @@
                 <a class="account-btn" href="../forms/login.php">Login</a>
                 <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
             <?php else: ?>
-                <a class="account-btn-bold" href="../forms/logout.php">Sign Out</a>
-                <a class="profile-settings"><i class="fa-solid fa-circle-user"></i></a>
+                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
+                <a class="profile-settings" href="../user/profile.php"><i class="fa-solid fa-circle-user"></i></a>
             <?php endif; ?>
         </div>
     </header>
@@ -39,7 +39,7 @@
         <nav> <!--navigation bar-->
             <div class="offscreen-menu">
                 <ul class="services">
-                    <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li id="on-page"><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
@@ -56,16 +56,32 @@
                     <li><a href="../forms/partnerform.php">Partner with us</a></li>
                     <li><a href="../forms/driverform.php">Become a Driver</a></li>
                     <li><a href="../info/about.html">About us</a></li>
+                    <li><a href="">Wiki</a></li>
                 </ul>
             </div>  
         </nav>
 
         <main>
             <form id="search">
-                    <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
-                    <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
-                    <input type="submit">
+                <input type="text" class="searchbox" name="q" placeholder="Search for food items, restaurants, etc.">
+                <!-- <i class="fa-solid fa-magnifying-glass" id="glass"></i> -->
+                <input type="submit">  
             </form>
+            
+            <div class="browse-cat">
+                <div class="rest-cat">
+                    
+                </div>
+                <div class="rest-cat">
+                    
+                </div>
+                <div class="rest-cat">
+
+                </div>
+                <div class="rest-cat">
+
+                </div>
+            </div>
         </main>
     </div>
 

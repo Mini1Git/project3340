@@ -1,6 +1,5 @@
 async function fetchRestaurant(){
 
-
     //sincec getting data, only need to use GET.
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () { // top 10 limit. TO DO ///////////////////////////////
@@ -16,10 +15,10 @@ async function fetchRestaurant(){
                 console.log(count);
                 const listitem = document.createElement("li");
                 const anchor = document.createElement("a");
-                anchor.href = "menu.html"; //adding it temporariliy like this
+                anchor.href = `../services/menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
 
                 const image = document.createElement("img");
-                image.src = restaurant["image_path"];
+                image.src = `../${restaurant["image_path"]}`;
                 image.alt = restaurant["business_name"];
                 anchor.appendChild(image);
 

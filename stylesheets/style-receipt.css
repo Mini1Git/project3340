@@ -1,0 +1,87 @@
+/* Specific styling for the Receipt page */
+
+.receipt-body {
+    background-color: #f4f4f4; /* Light grey background to make the white receipt pop */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.receipt-container {
+    max-width: 400px;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px dashed #bbb; /* Gives it that perforated edge look */
+    font-family: 'Courier New', Courier, monospace; /* Classic receipt font */
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.receipt-logo {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.receipt-header h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.receipt-divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 15px 0;
+}
+
+.receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.receipt-table th {
+    text-align: left;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.receipt-table td {
+    padding: 8px 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.receipt-total-row {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 2px solid #333;
+}
+
+.receipt-total-row td {
+    padding-top: 15px;
+}
+
+.receipt-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif; /* Back button doesn't need to be monospace */
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

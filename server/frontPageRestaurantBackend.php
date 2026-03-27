@@ -2,16 +2,16 @@
 <?php
 
 $host = "localhost";               // Your MySQL host (usually "localhost")
-$dbname = "tran9b_terminator";    // Replace with your database name
-$username = "tran9b_terminator";       // Replace with your MySQL username
-$password = "AkrTtVN3HGXu3VzdkX9r";
+$dbName = "grillow";    // Replace with your database name
+$dbUser = "root";       // Replace with your MySQL username
+$dbPass = "";
 
 
 
 //this works, dont touch
 try {
     // Establish a connection using PDO (PHP Data Objects)
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
     // Set error reporting to Exception for easier debugging
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
