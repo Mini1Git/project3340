@@ -1,0 +1,86 @@
+/* --- Favourites Page Specific Styles --- */
+.orders h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--tertiary-color);
+    text-align: center;
+    margin: 40px 0;
+    width: 100%;
+}
+
+.favourites-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 5%;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px; /* Limits width on desktop for better readability */
+    align-items: center;
+}
+
+.favourite-item {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06); /* Softer, deeper shadow */
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.favourite-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 12px 30px rgba(233, 55, 41, 0.15); /* Tinted shadow on hover */
+    border-color: var(--secondary-color);
+}
+
+.favourite-link {
+    display: flex;
+    gap: 25px;
+    text-decoration: none;
+    color: inherit;
+    padding: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Image styling */
+.favourite-item .order-image-wrap {
+    height: 120px;
+    width: 120px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Frequency Text Styling */
+.favourite-item .order-date {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favourite-item .order-name {
+    font-size: 1.4rem;
+    color: var(--tertiary-color);
+}
+
+/* View Menu Button styling */
+.favourite-item .order-more {
+    margin-top: 15px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transition: background 0.2s, color 0.2s;
+}
+
+.favourite-item .order-more:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}

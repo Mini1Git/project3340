@@ -62,7 +62,7 @@
         </nav>
         <?php if($isLoggedIn): ?>
             <main class="orders">
-                <!--show recent orders-->
+                <h2>Your Most Recent Orders</h2>
             </main>
         <?php else: ?>
             <main>
