@@ -66,6 +66,10 @@
             </div>  
         </nav>
 
+        <div class = "favcontent"> <!-- favourites shown here-->
+        
+        </div>
+
     </div>
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
