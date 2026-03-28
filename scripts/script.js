@@ -23,8 +23,6 @@ hamMenu.addEventListener('click', () => {
     }
 });
 
-
-
 //theme changing logic
 document.addEventListener("DOMContentLoaded", ()=> { //when page loads
     const savedTheme = sessionStorage.getItem("theme"); //checking what theme was saved
