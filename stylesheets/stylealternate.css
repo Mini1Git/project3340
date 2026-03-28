@@ -1,174 +1,35 @@
-/*rule for alternate header*/
-
-header.theme2 {
-    background-color: black;
-}
-header.theme3 {
-    background-color: rgb(34, 2, 163);
-}
-
-/* auth page gradients for themes */
-body.auth.theme2 {
-    background: linear-gradient(135deg, #1e1d1d 0%, #d72c12 100%);
+body.theme2 {
+    --clr-primary: #000000;
+    --clr-primary-hover: #222222;
+    --clr-bg: #1e1e1e;
+    --clr-text-primary: #ffffff;
+    --clr-text-secondary: #CCCCCC;
+    --clr-card: #333333;
 }
 
-body.auth.theme3 {
-    background: linear-gradient(135deg, #2b6ef6 0%, #6a1b9a 100%);
+body.theme3 {
+    --clr-primary: #2202a3;
+    --clr-primary-hover: #1a0180;
+    --clr-bg: #f4f6ff;
+    --clr-text-primary: #1E1E1E;
 }
 
-/* colors for menu plus buttons */
-body.theme2 .add-btn,
-body.auth.theme2 .add-btn {
-    background-color: #000000;
-    color: #ffffff;
+.theme-options {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
 }
 
-body.theme3 .add-btn,
-body.auth.theme3 .add-btn {
-    background-color: #2b6ef6;
-    color: #ffffff;
+.theme-btn {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    border: 2px solid var(--clr-border);
+    cursor: pointer;
+    background: var(--clr-card);
+    color: var(--clr-text-primary);
+    transition: all 0.2s ease;
 }
 
-/* hover themes  */
-body.theme2 .add-btn:hover,
-body.auth.theme2 .add-btn:hover {
-    background-color: #222222;
-}
-
-body.theme3 .add-btn:hover,
-body.auth.theme3 .add-btn:hover {
-    background-color: #244bd6;
-}
-
-
-/* Header button colors for theme2 (dark) */
-body.theme2 header .account-btn {
-    color: #ffffff;
-    background: transparent;
-}
-body.theme2 header .account-btn:hover {
-    background-color: rgba(255,255,255,0.08);
-}
-
-body.theme2 header .account-btn-bold {
-    background-color: #ffffff;
-    color: #000000;
-}
-body.theme2 header .account-btn-bold:hover {
-    background-color: #f3f3f3;
-}
-
-/* Header button colors for theme3 (blue/purple) */
-body.theme3 header .account-btn {
-    color: #ffffff;
-    background: transparent;
-}
-body.theme3 header .account-btn:hover {
-    background-color: rgba(255,255,255,0.08);
-}
-
-body.theme3 header .account-btn-bold {
-    background-color: #ffffff;
-    color: rgb(34, 2, 163);
-}
-body.theme3 header .account-btn-bold:hover {
-    background-color: #f3f6ff;
-}
-
-/*alternate sign in color*/
-.sign.theme2 {
-    background-color:black;
-}
-.sign.theme3 {
-    background-color:#2202a3;
-}
-
-.body .auth.theme3 {
-    background: linear-gradient(135deg, #2202a3 0%, #8261ae 60%);
-}
-
-
-/*alternate login color*/
-.login a.theme2 {
-    color: black;
-}
-.login a.theme3 {
-    color: rgb(34, 2, 163);
-}
-
-.login a.theme3-hover:hover {
-    color: black;
-}
-
-.sign a.theme2-hover:hover, .login a.theme2-hover:hover {
-    color: var(--primary-color);
-
-}
-
-/*alternate theme for nav*/
-.services li a.theme3, .partner li a.theme3 {
-    color: rgb(34, 2, 163);
-}
-
-.services li a.theme2, .partner li a.theme2 {
-    color: black;
-}
-
-
-.partner li a.theme3 {
-    border-color: rgb(34, 2, 163);
-}
-
-.partner li a.theme2 {
-    border-color: black;
-}
-
-
-/*alternate themes nav hover*/
-
-.services a.theme3-hover:hover, .partner a.theme3-hover:hover, #on-page a.theme3-hover:hover{
-    color: #fbfbfb;
-    background-color: rgb(34, 2, 163);
-    border-color: rgb(34, 2, 163);
-}
-
-.services a.theme2-hover:hover, .partner a.theme2-hover:hover, #on-page a.theme3-hover:hover{
-    color: #fbfbfb;
-    background-color: black;
-    border-color: black;
-}
-
-/*alternate theme rules for the page we are on*/
-#on-page a.theme2{
-    background-color: black;
-}
-
-#on-page a.theme3{
-    background-color: rgb(34, 2, 163);
-}
-
-#theme-changer #theme2 {
-    background-color: black;
-}
-
-#theme-changer #theme3  {
-    background-color: rgb(34, 0, 255);
-}
-
-/*theme hover classes*/
-.jumbotron a.theme2 {
-    color: #e93629da;
-}
-.jumbotron a.theme2-hover:hover {
-    background-color: #e93629da;
-    color: #fbfbfb;
-}
-
-.jumbotron a.theme3 {
-    color: rgba(46, 19, 136, 0.95);
-}
-
-.jumbotron a.theme3-hover:hover {
-    background-color: rgba(46, 19, 136, 0.95);
-    color: #fbfbfb;
+.theme-btn:hover {
+    border-color: var(--clr-primary);
 }

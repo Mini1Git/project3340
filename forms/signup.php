@@ -36,83 +36,117 @@
 </head>
 <!--Applying the auth class to the body provides a different style to form pages.
 between the background and navigation menu.-->
-<body class="auth">
+<body>
     <!--Header with hamburger, logo, and account buttons based on user sigin-->
-    <header>
-        <div class="logo-menu">
-            <!--Hamburger div-->
-            <div class="ham">
-                <!--Hamburger image-->
-                <img src="../icons/hamburger.svg">
+    <div class="layout forms">
+        <header class="header">
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
+                <h1 class="header-logo-h1">Grillow</h1>
+                <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
-            <!--Pizza icon and logo-->
-            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
-        </div>
-        <!--Account controls-->
-        <div class="log">
-            <!--Anchor tags to login and sign up pages-->
-            <a class="account-btn" href="login.php">Login</a>
-            <a class="account-btn-bold" href="signup.php">Sign Up</a>
-        </div>
-    </header>
-    <!--End of header, beginning of side menu-->
-    <!--Content div includes side nav menu-->
-    <div class="content">
-        <nav> <!--navigation bar-->
-            <div class="offscreen-menu">
-                <!--A list of services, these will redirect depending on login status-->
-                <ul class="services">
-                    <li id="on-page"><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
-                    <li><a href="signup.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                    <li><a href="signup.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
-                    <li><a href="signup.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
-                    <li><a href="../info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
+
+            <div>
+                <?php if (!$isLoggedIn): ?>
+                    <a class="btn btn-outline" href="../forms/login.php">Login</a>
+                    <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
+                <?php else: ?>
+                    <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
+                    <a class="btn btn-primary" href="../user/profile.php">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </header>
+
+        <div class="layout-main">
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
                 </ul>
-                <!--A list of other forms and a website wiki-->
-                <ul class="partner">
-                    <li><a href="partnerform.php">Partner with us</a></li>
-                    <li><a href="driverform.php">Become a Driver</a></li>
-                    <li><a href="../info/about.html">About us</a></li>
-                    <li><a href="">Wiki</a></li>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favorites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
-            </div>  
-        </nav>
-        <!--End of navigation bar-->
-        <!--Parent element of a corresponding form-->
-        <div class="formparent">
-            <!--Form will use the POST method and process that information in the process_login PHP file-->
-            <form class="register" method="POST" action="../server/process_signup.php">
-                <!--Form title-->
-                <h2>Create An Account</h2>
-                <!--Div for fullname input-->
-                <div>
-                    <input type="text" name="username" placeholder="Full Name" autocomplete="name" required>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li>
+                    
+                </ul>
+            </aside>
+            <!--End of navigation bar-->
+            <!--Parent element of a corresponding form-->
+            <main class="main">
+                <div class="formparent">
+                <!--Form will use the POST method and process that information in the process_login PHP file-->
+                    <form class="form" method="POST" action="../server/process_signup.php">
+                        <!--Form title-->
+                        <div class="form-title"><i class="fa-solid fa-circle-user"></i><h2>Create an Account</h2></div>
+                            <!--Div for fullname input-->
+                        <div class="form-main">
+                            <div class="input-field">
+                                <label class="label" for="username">Full Name</label>
+                                <input class="text-input" type="text" name="username" id="username" placeholder="Enter your full name here" autocomplete="name" required>
+                            </div>
+                            <!--Div for phone number input-->
+                            <div class="input-field">
+                                <label class="label" for="phone-num">Phone Number</label>
+                                <input class="text-input" type="tel" name="phone-num" id="phone-num" placeholder="Enter your phone number" minlength="10" maxlength="13" required>
+                            </div>
+                            <!--Div for email input-->
+                            <div class="input-field">
+                                <label class="label" for="email">Email Address</label>
+                                <input class="text-input" type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email" required>
+                            </div>
+                            <!--Div for password input, includes an interactive eye to show/hide password-->
+                            <div class="pass input-field">
+                                <label class="label" for="password">Password</label>
+                                <input class="password text-input" class="password" name="password" id="password" type="password" minlength=10 placeholder="Enter your password" required>
+                                <span class="eye fa-solid fa-eye"></span> <!--to add the eye icon-->
+                            </div>
+                        </div>
+                        <!--Button to submit register information-->
+                        <div class="input-field">
+                            <input class="btn btn-primary long-btn" type="submit" value="Register">
+                            <p style="text-align:center; margin-top: 1rem;">Already have an account? <a class="link" href="../forms/login.php">Sign In</a><p>
+                        </div>
+                    </form>
                 </div>
-                <!--Div for phone number input-->
-                <div>
-                    <input type="tel" name="phone-num" placeholder="Phone" minlength="10" maxlength="13" required>
-                </div>
-                <!--Div for email input-->
-                <div>
-                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-                </div>
-                <!--Div for password input, includes an interactive eye to show/hide password-->
-                <div class="pass">
-                    <input class="password" name="password" type="password" minlength=10 placeholder="Password" required>
-                    <span class="eye"></span> <!--to add the eye icon-->
-                </div>
-                <!--Button to submit register information-->
-                <input type="submit" value="Register">
-            </form>
-        </div>
+            </main>
+            
         <!--End of form-->
+        </div>
+    </div>
+
+    <aside class="settings-menu-btn">
+        <i class="fa-solid fa-gear"></i>
+    </aside>
+    <div class="settings-menu-window hidden">
+        <div class="settings-menu-content">
+            <div class="settings-menu-label">
+                <p>Settings<p>
+                <i class="fa-solid fa-x btn btn-primary"></i>
+            </div>
+            <h3>Theme</h3>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="">Default</button>
+                <button class="theme-btn" data-theme="theme2">Dark</button>
+                <button class="theme-btn" data-theme="theme3">Purple</button>
+            </div>
+        </div>
     </div>
     <!--End of content div-->
-
-    <aside id="theme-changer">
-        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
-    </aside>
     <!--Script to control hamburger interactivity on both mobile and desktop-->
     <script src="../scripts/script.js"></script>
     

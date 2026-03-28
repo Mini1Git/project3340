@@ -1,100 +1,107 @@
+body .forms {
+    background: linear-gradient(
+        135deg,
+        var(--clr-primary) 0%,
+        var(--clr-secondary) 60%
+    );
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+
+.sidebar {
+    background: #ffffff1a; /* faded lighter panel so gradient shows through */
+    backdrop-filter: blur(6px); /*Blur the background*/ 
+    -webkit-backdrop-filter: blur(6px); 
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover:not(.active) {
+    color: var(--clr-primary);
+    background: var(--clr-border);
+}
 
 /*form rules*/
-.register h2{
-    font-weight: 500;
-    font-size: 28px;
-    text-align: center;
-}
-form {
+.form-title {
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    border: 2px solid #afaeae26;
-    border-radius: 25px;
-    padding: 30px;
-    gap: 10px;
-    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
-    background-color: #fbfbfb;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: var(--space-md);
+    gap: 0.75rem;
 }
 
-form div { 
-    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
-    padding: 15px;
-    border-radius: 3px;
-
+.fa-circle-user {
+    font-size: 3rem;
+    color: var(--clr-text-primary);
 }
 
-input[type="submit"]{
-    border-radius: 25px;
-    width: 250px;
-    height: 50px;
-    background-color: var(--primary-color);
-    color:#fbfbfb;
-    font-size: 14px;
-    font-weight: 600;
+.main {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.text-input {
+    width: 100%;
+
+    background-color: var(--clr-border);
+    color: var(--clr-text-primary);
+
     border: none;
-    text-align: center;
-}
- /*aternate the*/
-input[type="submit"].theme2 {
-    background-color: black;
-}
+    border-bottom: 2px solid var(--clr-text-secondary);
 
-input[type="submit"].theme3 {
-    background-color: rgb(34, 2, 163);
+    padding: 1rem 3rem 1rem 1rem;
 
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-form a {
-    color: var(--primary-color);
-    text-decoration: none;
+/* focus state (important UX upgrade) */
+.text-input:focus {
+    border-bottom-color: var(--clr-primary);
 }
 
-form a:hover {
-    color: black;
-    text-decoration: underline;
+/* placeholder */
+.text-input::placeholder {
+    color: var(--clr-muted);
 }
 
-form a.theme2 {
-    color: black;
-
+.input-field {
+    margin: var(--space-md);
+    padding: var(--space-sm);
 }
 
-form a.theme3 {
-    color: rgb(34, 2, 163);
-
+.form-main {
+    width: 90%;
+    border-bottom: solid 2px var(--clr-border);
+    border-top: solid 2px var(--clr-border);
+    justify-self: center;
 }
 
-form a.theme2-hover:hover {
-    color: black;
-    text-decoration: underline;
-}
 
-form a.theme3-hover:hover {
-    color: black;
-    text-decoration: underline;
-}
-
-input{
-    background-color: #a8a4a426;
-    width: 300px;
-    border-radius: 3px;
-    border: none;
-    padding: 10px;
-    text-indent: 5%;
-    border-bottom: 1px solid #92929279;
-}
-
-.formparent{
+.formparent {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 50px;
-   
-
+    width: 60%;
+    padding: var(--space-lg);
+    background: var(--clr-bg);
+    border: solid 5px var(--clr-border);
+    box-shadow: var(--shadow);
+    
 }
+
+.form {
+    width: 100%; 
+}
+
 
 .pass {
     position: relative;
@@ -102,24 +109,17 @@ input{
 /*rule for the form eye*/
 .eye {
     display: inline-block;
-    width: 30px;
-    height: 30px;
     position: absolute;
-    bottom: 20px;
-    right: 19px;
-    background: url("../icons/openeye.svg") center/cover no-repeat;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #1E1E1E;
 }
 
-.eye.active {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    bottom: 25px;
-    right: 22px;
-    background: url("../icons/closedeye.svg") center/cover no-repeat;
+.label {
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    color: var(--clr-text-secondary);
 }
 
 .driverform {
@@ -133,94 +133,18 @@ input{
 
 @media(max-width: 1023px) and (min-width: 768px)
 {
-    form h2{
-            font-weight: 450;
-            font-size: 22px;
-        }
-        form {
-            padding: 25px;
-            gap: 10px;
-        }
-
-        label { 
-            padding: 10px 15px;
-        }
-
-        input[type="submit"]{
-            width: 200px;
-            height: 40px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        input{
-            width: 175px;
-            padding: 10px 15px;
-        }
-
-        .formparent{
-            padding: 30px;
-        }
-
-        .eye {
-            bottom: 15px;
-            right: 19px;
-        }
-
-        .eyeclosed {
-            width: 20px;
-            height: 20px;
-            bottom: 19px;
-            right: 20px;
-
-        }
-
-
+    .formparent {
+        width: 70%;
+    }
 }
 
-@media(max-width: 767px)
+@media(max-width: 768px)
 {
-
-
-    form h2{
-        font-weight: 450;
-        font-size: 22px;
-    }
-    form {
-        padding: 25px;
-        gap: 10px;
-    }
-
-    label { 
-        padding: 10px 15px;
-    }
-
-    input[type="submit"]{
-        width: 200px;
-        height: 40px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    input{
-        width: 175px;
-        padding: 10px 15px;
-    }
-
-    .formparent{
-        padding: 30px;
+    .formparent {
+        width: 80%;
     }
 
     .eye {
-        bottom: 15px;
-        right: 19px;
-    }
-
-    .eyeclosed {
-        width: 20px;
-        height: 20px;
-        bottom: 19px;
-        right: 20px;
-
+        bottom: 1.75rem;
     }
 }

@@ -1,59 +1,66 @@
-async function fetchRestaurant(){
+async function fetchRestaurant() {
+    const container = document.querySelector(".restaurant-list");
 
-    //sincec getting data, only need to use GET.
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function () { // top 10 limit. TO DO ///////////////////////////////
-        const jsonData = JSON.parse(this.response);
-        const restaurantBox = document.querySelector(".restaurant");
-        const restaurantList = document.createElement("ul");
+    // clear old content
+    container.innerHTML = "";
 
-        let limit = 10;
-        let count = 0;
-        jsonData.forEach(restaurant => {
-            count++;
-            if (count <= limit) {
-                console.log(count);
-                const listitem = document.createElement("li");
-                const anchor = document.createElement("a");
-                anchor.href = `../services/menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
+    try {
+        const response = await fetch("../server/frontPageRestaurantBackend.php");
+        const data = await response.json();
 
-                const image = document.createElement("img");
-                image.src = `../${restaurant["image_path"]}`;
-                image.alt = restaurant["business_name"];
-                anchor.appendChild(image);
+        const limit = 9;
 
-                const info = document.createElement("div");
-                info.className = "info";
-                const icon = document.createElement("i");
-                icon.classList.add("fa-solid", "fa-star");
-                info.appendChild(icon);
+        data.slice(0, limit).forEach(restaurant => {
 
-                const rateCuisne = document.createElement("span");
-                rateCuisne.textContent = restaurant["rating"] + " | " + restaurant["cuisine_name"];
-                info.appendChild(rateCuisne);
+            // CARD
+            const card = document.createElement("div");
+            card.className = "card";
 
-                const address = document.createElement("address");
-                address.textContent = restaurant["address"];
+            // IMAGE
+            const image = document.createElement("img");
+            image.src = `../${restaurant.image_path}`;
+            image.alt = restaurant.business_name;
+            image.style.width = "100%";
+            image.style.height = "10rem";
+            image.style.objectFit = "cover";
 
-                info.appendChild(address);
+            // BODY
+            const body = document.createElement("div");
+            body.className = "card-body";
 
-                const name = document.createElement("h3");
-                name.textContent = restaurant["business_name"];
+            // NAME
+            const name = document.createElement("h3");
+            name.textContent = restaurant.business_name;
 
-                info.appendChild(name);
+            // INFO
+            const info = document.createElement("p");
+            info.innerHTML = `<i class="fa-solid fa-star"></i> ${restaurant.rating} | ${restaurant.cuisine_name}`;
 
-                anchor.appendChild(info);
-                listitem.appendChild(anchor);
-                restaurantList.appendChild(listitem);
+            // ADDRESS
+            const address = document.createElement("p");
+            address.textContent = restaurant.address;
 
-            }
+            // LINK
+            const link = document.createElement("a");
+            link.href = `../services/menu.php?id=${restaurant.restaurant_id}`;
+            link.style.textDecoration = "none";
+            link.style.color = "inherit";
+
+            // BUILD
+            body.appendChild(name);
+            body.appendChild(info);
+            body.appendChild(address);
+
+            card.appendChild(image);
+            card.appendChild(body);
+
+            link.appendChild(card);
+            container.appendChild(link);
         });
-        restaurantBox.appendChild(restaurantList); //append at end.
+
+    } catch (error) {
+        console.error("Error fetching restaurants:", error);
     }
-    xmlhttp.open("GET", "../server/frontPageRestaurantBackend.php");
-    xmlhttp.send();
-
-
 }
 
-window.onload = ()=> fetchRestaurant();
+document.addEventListener("DOMContentLoaded", fetchRestaurant);
