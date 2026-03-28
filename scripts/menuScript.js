@@ -63,6 +63,12 @@ async function fetchmenu() {
                 //<button class= aria-label=>+</button> 
 
                 add.addEventListener('click', () =>{
+                   const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+                   cart.push(item);
+                   console.log();
+                   sessionStorage.setItem('cart', JSON.stringify(cart));
+                   alert(`${item.product_name} has been added to your cart!`);
+                   console.log('pushed');
                     //the function of putting it inside cart
                 })
                 foodcell.appendChild(add);

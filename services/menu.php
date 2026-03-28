@@ -10,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <title>Grillow</title>
+
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
-    <link rel="stylesheet" href="../stylesheets/menustyle.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/menuStyle.css">
+    
     <script src="../scripts/menuScript.js" defer></script>
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
@@ -45,7 +47,7 @@
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                        <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                        <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                         <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <?php else: ?>
                         <li><a href="../forms/signup.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>

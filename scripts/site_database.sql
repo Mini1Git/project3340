@@ -1,6 +1,7 @@
 -- Active: 1755301077799@@127.0.0.1@3306@grillow
---creating the database 
+-- creating the database 
 CREATE DATABASE Grillow;
+USE Grillow;
 -- Customer table consisting of a composite key with username, email, and phone_number.
 -- Six total fields to allow for the creation of an account and references within the other tables
 CREATE TABLE Customer(
@@ -22,7 +23,7 @@ CREATE TABLE Restaurant_Vendor(
     -- Administrators name
     admin VARCHAR(100) NOT NULL,
     -- Email address of administrator / restaurant
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     -- Phone number of restaurant
     phone_number VARCHAR(20) NOT NULL,
     -- Address of restaurant
@@ -30,7 +31,7 @@ CREATE TABLE Restaurant_Vendor(
     -- Rating can be null in this case if there are zero ratings for a vendor
     rating FLOAT,
     -- Card image (directory) to display, if the vendor doesn't input their own, the image will be replaced by a default
-    image_path text,
+    image_path text DEFAULT "images/placeholder/placeholder.svg",
     -- Restaurant must be a type of cusine
     cuisine_name VARCHAR(255) NOT NULL,
     -- Restaurant id is the primary key for each restaurant

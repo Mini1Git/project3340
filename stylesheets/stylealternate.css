@@ -1,3 +1,23 @@
+/*theme style rules */
+
+/* Theme 2: Black & Red*/
+body.theme2 {
+    --primary-color: #1e1e1e;  
+    --secondary-color: #831100;
+    --bg-color: #f0f4ff; 
+    --tertiary-color: #000000;
+}
+
+/* Theme 3: Blue & Purple (Light Theme) */
+body.theme3 {
+    --primary-color: #2202a3;  
+    --secondary-color: #9e2bf6; 
+    --bg-color: #f0f4ff;
+    --tertiary-color: #1E1E1E;
+}
+/* The themes will now automatically update the cards and buttons because they use the variable names
+the rules below are redundant */
+
 /*rule for alternate header*/
 
 header.theme2 {

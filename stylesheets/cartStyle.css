@@ -1,0 +1,54 @@
+/*Cart specific styles*/
+
+/* .content {
+    display: inline-block;
+} */
+
+
+.cart-h2{
+    text-align: center;
+    margin: 15px auto;
+    font-size: 1.8rem;
+}
+
+.food-cell {
+    width: 85%;
+    background-color: #fbfbfb;
+    margin: 15px auto;
+    border-radius: 15px;
+    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
+    border: 2px solid #afaeae26;
+    position: relative; /*for the x*/
+    padding: 20px;
+}
+.x {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+}
+
+.cart-box h3{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.order-place {
+    text-decoration: none;
+    color: black;
+    display: block;
+    width: 85%;
+    margin: 15px auto;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 0.8rem;
+    background-color: #8f8f8f4a;
+}
+
+.order-place:hover {
+    border: 2px solid black;
+    font-weight: bold;
+    background-color: #fbfbfb;
+}
