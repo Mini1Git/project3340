@@ -5,7 +5,7 @@ body.theme2 {
     --primary-color: #1e1e1e;    /* Black for headers and buttons */
     --secondary-color: #831100;  /* Red for accents and gradients */
     --bg-color: #f0f4ff;         /* Dark gray for the main background */
-    --tertiary-color: #fbfbfb;   /* Light gray/white for text readability */
+    --tertiary-color: #000000;   /* Light gray/white for text readability */
 }
 
 /* Theme 3: Blue & Purple (Light Theme) */
