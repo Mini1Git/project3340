@@ -1,5 +1,12 @@
-async function fetchOrders(orders){ //it'a json for now
-    //temp 
+/**
+ *
+ *
+ * @param {Array} orders - A list of orders, in this case
+ * this function provides orders from orders.json
+ * 
+ */
+async function fetchOrders(orders){
+    
     const ordersBox = document.querySelector(".orders");
     if (!ordersBox) return console.error('No .orders element found');
     const ordersList = document.createElement("ul");
@@ -8,7 +15,9 @@ async function fetchOrders(orders){ //it'a json for now
     fetch(orders) //fetching from the json
     .then(response => response.json())
     .then(json => {
+        // For every individual order
         json.forEach(order =>{
+            // Create a list item
             const listitem = document.createElement("li");
             listitem.className = "order-item";
 

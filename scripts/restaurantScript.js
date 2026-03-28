@@ -15,10 +15,10 @@ async function fetchRestaurant(){
                 console.log(count);
                 const listitem = document.createElement("li");
                 const anchor = document.createElement("a");
-                anchor.href = `resolve_menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
+                anchor.href = `../services/menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
 
                 const image = document.createElement("img");
-                image.src = restaurant["image_path"];
+                image.src = `../${restaurant["image_path"]}`;
                 image.alt = restaurant["business_name"];
                 anchor.appendChild(image);
 
@@ -50,7 +50,7 @@ async function fetchRestaurant(){
         });
         restaurantBox.appendChild(restaurantList); //append at end.
     }
-    xmlhttp.open("GET", "server/frontPageRestaurantBackend.php");
+    xmlhttp.open("GET", "../server/frontPageRestaurantBackend.php");
     xmlhttp.send();
 
 

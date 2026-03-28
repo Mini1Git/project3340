@@ -30,7 +30,7 @@ CREATE TABLE Restaurant_Vendor(
     -- Rating can be null in this case if there are zero ratings for a vendor
     rating FLOAT,
     -- Card image (directory) to display, if the vendor doesn't input their own, the image will be replaced by a default
-    image_path text NOT NULL,
+    image_path text,
     -- Restaurant must be a type of cusine
     cuisine_name VARCHAR(255) NOT NULL,
     -- Restaurant id is the primary key for each restaurant

@@ -1,0 +1,139 @@
+.profile-container {
+    padding: 1.5rem;
+}
+
+/* GRID LAYOUT */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+/* CARDS */
+.profile-card {
+    background: #ffffff05;
+    border: 2px solid #d9d9d926;
+    border-radius: 12px;
+    padding: 1.2rem;
+
+}
+
+
+
+/* HEADINGS */
+.profile-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* TEXT */
+.profile-card p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+/* ADDRESS EDIT */
+.editable-field {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.editable-field input {
+    flex: 1;
+    padding: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.editable-field button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* STATS */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.profile-stats h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.autocomplete {
+    position: relative;
+    width: 90%;
+}
+
+#profile-address {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #d9d9d926;
+    background: rgba(255,255,255,0.03);
+    color: inherit;
+    font-size: 0.95rem;
+}
+
+/* dropdown container */
+.autocomplete-items {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+
+    background: var(--primary-color);
+    border: 1px solid #d9d9d926;
+    border-radius: 8px;
+
+    max-height: 220px;
+    overflow-y: auto;
+
+    z-index: 10001;
+}
+
+/* each suggestion */
+.autocomplete-items div {
+    padding: 0.6rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* hover */
+.autocomplete-items div:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* no results */
+.autocomplete-items .no-results {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* button */
+#save-address-btn {
+    margin-top: 0.6rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#save-address-btn:hover {
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
