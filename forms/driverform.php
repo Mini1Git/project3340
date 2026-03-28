@@ -23,7 +23,7 @@
     <!--Stylesheet for screen sizes < 768 pixels-->
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <link rel="stylesheet" href="../stylesheets/formStyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>

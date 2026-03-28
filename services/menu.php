@@ -10,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <title>Grillow</title>
+
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
-    <link rel="stylesheet" href="../stylesheets/menustyle.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/menuStyle.css">
+    
     <script src="../scripts/menuScript.js" defer></script>
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>

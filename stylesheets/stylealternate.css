@@ -1,3 +1,21 @@
+/*theme style rules */
+/* Theme 2: Dark Mode Tint */
+body.theme2 {
+    --primary-color: #000000;
+    --secondary-color: #d72c12;
+    --bg-color: #121212;
+}
+
+/* Theme 3: Blue Mode */
+body.theme3 {
+    --primary-color: rgb(34, 2, 163);
+    --secondary-color: #2b6ef6;
+    --bg-color: #f0f4ff;
+}
+
+/* The themes will now automatically update the cards and buttons 
+   because they use the variable names */
+
 /*rule for alternate header*/
 
 header.theme2 {

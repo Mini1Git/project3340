@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <link rel="stylesheet" href="../stylesheets/styleprofile.css">
+    <link rel="stylesheet" href="../stylesheets/profileStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>

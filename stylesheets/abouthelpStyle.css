@@ -1,0 +1,81 @@
+/*styles for the about and help pages*/
+
+/*---------------------------------------------------------------------------------------------
+ABout us page*/
+
+.aboutcontainer {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px 50px;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 5px 1px 5px 1px #00000063;
+    background: var(--bg-color);
+}
+.aboutheader {
+    font-size: 2vw;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    padding: 40px 20px;
+    border-radius: 35px;
+    border: var(--primary-color) solid 12px;
+    
+}
+.aboutfact {
+    padding: 40px;
+    border-bottom: #3b3b3b79 1px solid;
+    color: var(--tertiary-color);
+}
+.aboutfact h3{
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+.aboutfact p{
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/*-------------------------------------------------------------------------------
+help page style*/
+.helpcontainer {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px 50px;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 5px 1px 5px 1px #00000063;
+    background: var(--bg-color);
+    color: var(--tertiary-color);
+}
+
+.helpcontainer h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+.helpcontainer p {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+.helpcontainer h3 {
+    font-size: 1.2rem;
+    font-weight: 5600;
+}
+
+.helpcontainer details {
+    padding-left: 20px;
+}
+.helpcontainer summary {
+    font-size: 1rem;
+}
+.helpcontainer summary:hover {
+    color: #f3f3f3AA;
+}
