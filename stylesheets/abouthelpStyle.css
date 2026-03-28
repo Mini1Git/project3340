@@ -77,5 +77,6 @@ Help page style*/
     font-size: 1rem;
 }
 .helpcontainer summary:hover {
-    color: #f3f3f3AA;
+    color: var(--primary-color);
+    cursor: pointer;
 }
