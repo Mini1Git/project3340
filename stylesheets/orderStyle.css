@@ -22,12 +22,19 @@
     border-radius: 25px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
     display: flex;
     width: 100%;
     height: auto;
     min-height: 140px;
     justify-content: flex-start;
     align-items: center;
+}
+
+.order-item:hover{
+    box-shadow: 0 12px 30px rgba(233, 55, 41, 0.15); /* Tinted shadow on hover */
+    border-color: var(--secondary-color);
+    transition: border 0.2s, color 0.2s;
 }
 
 .order-link {
@@ -89,22 +96,24 @@
     text-align: center;
 }
 
-.order-more:hover {
+.order-more:hover, .more-orders-btn:hover {
+    cursor: pointer;
     background-color: transparent;
     color: var(--primary-color);
+    transition: background 0.2s, color 0.2s;
 }
 
 .more-orders-btn {
     margin: 20px auto;
-    padding: 1vh 2vw;
+    padding: 2vh 2vw;
+    border: 2px solid var(--primary-color);
     background-color: var(--primary-color);
     color: var(--bg-color);
-    border-radius: 2vw;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 1.6vw;
     font-weight: 500;
     display: block;
     width: 60vw;
     max-width: 480px;
-    border: none;
 }

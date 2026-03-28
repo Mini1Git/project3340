@@ -1,18 +1,20 @@
 /*theme style rules */
-/* Theme 2: Dark Mode Tint */
+
+/* Theme 2: Black & Red*/
 body.theme2 {
-    --primary-color: #000000;
-    --secondary-color: #d72c12;
-    --bg-color: #121212;
+    --primary-color: #1e1e1e;    /* Black for headers and buttons */
+    --secondary-color: #831100;  /* Red for accents and gradients */
+    --bg-color: #f0f4ff;         /* Dark gray for the main background */
+    --tertiary-color: #fbfbfb;   /* Light gray/white for text readability */
 }
 
-/* Theme 3: Blue Mode */
+/* Theme 3: Blue & Purple (Light Theme) */
 body.theme3 {
-    --primary-color: rgb(34, 2, 163);
-    --secondary-color: #2b6ef6;
-    --bg-color: #f0f4ff;
+    --primary-color: #2202a3;    /* Deep blue for headers and buttons */
+    --secondary-color: #9e2bf6;  /* Purple for accents and gradients */
+    --bg-color: #f0f4ff;         /* Light blue tint for the main background */
+    --tertiary-color: #1E1E1E;   /* Dark gray/black for text readability */
 }
-
 /* The themes will now automatically update the cards and buttons 
    because they use the variable names */
 
