@@ -27,7 +27,7 @@
     <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <link rel="stylesheet" href="../stylesheets/formStyle.css">
     <!--Stylesheet for screen sizes < 768 pixels-->
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <!--Script for the show/hide password field-->
@@ -66,7 +66,7 @@ between the background and navigation menu.-->
                     <li id="on-page"><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                    <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                    <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                     <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <li><a href="../info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
                 </ul>

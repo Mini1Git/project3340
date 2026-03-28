@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/orderStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -43,7 +44,7 @@
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <?php if ($isLoggedIn): ?>
                         <li id="on-page"><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                        <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                        <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                         <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <?php else: ?>
                         <li id="on-page"><a href="../forms/signup.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
@@ -62,7 +63,7 @@
         </nav>
         <?php if($isLoggedIn): ?>
             <main class="orders">
-                <!--show recent orders-->
+                <h2>Your Most Recent Orders</h2>
             </main>
         <?php else: ?>
             <main>

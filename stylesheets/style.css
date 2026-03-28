@@ -1,3 +1,5 @@
+/*GENERAL STYLES FOR ALL PAGES*/
+
 /*Srisakdi font (logo font) exported from google*/
 @import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
 /*Poppins font exported from google*/
@@ -9,16 +11,20 @@
     --primary-color: #e93729;
     --secondary-color: #ff7a3d;
     --tertiary-color: #1E1E1E;
+    --white: #ffffff;
 }
+
 /*Select all element styles*/
 * {
     margin: 0; /*Set margin of all to zero*/
     padding: 0 ; /*Set padding of all to zero*/
+    box-sizing: border-box; /* padding or borders included in total width*/
     font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
 }
-
+/*default body styles*/
 body {
     overflow-x: hidden;
+    background-color: var(--bg-color);
 }
 
 /*Header contains burger, logo, sign in and sign up*/
@@ -26,17 +32,18 @@ header {
     /*Header main colour*/
     background-color: var(--primary-color);
     /*Text colour off-white*/
-    color: #fbfbfb;
+    color: var(--bg-color);
     /*Display flex for horizontally centred content*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     /*Slight off-white bottom border*/
-    border-bottom: 2px solid #d9d9d9;
+    border-bottom: 2px solid var(--bg-color);
     width: 100vw;
     flex-wrap:nowrap;
-    height: 8vw;
+    height: 70px;
+    padding: 0 20px;
 }
 
 header .log {
@@ -54,19 +61,20 @@ header .logo-menu{
 h1 {
     /*Display everything in flex for inline positioning*/
     display: flex;
+    align-items: center;
+    gap: 10px;
     justify-content: center;
-    font-size: 6vw;
+    font-size: 2.5rem;
     letter-spacing: 3px;
     /*Font family of Srisakdi with system-ui as a backup*/
     font-family: "Srisakdi", system-ui;
-    gap: 10px;
 }
 
 /*Logo for the nav*/
 header img {
-    width: 5.8vw;
-    height: 5.8vw;
-    padding-left: 20px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 /*Side-navigation style rules*/
@@ -75,6 +83,7 @@ nav {
     display: flex;
     /*Display in the column direction (horizontally)*/
     flex-direction: column;
+    flex: 0 0 260px;
     justify-content: center;
     align-items: center;
     /*Add a separating border*/
@@ -84,62 +93,54 @@ nav {
 
 }
 
-/* auth pages (login / signup) */
-body.auth {
-    /*Red to orange gradient colours on main authorization pages*/
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 60%);
-    /*Minimum height of the viewport*/
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-
-/*Offscreen menu specific to the login and sign up pages*/
-body.auth .offscreen-menu {
-    background: #ffffff1a; /* faded lighter panel so gradient shows through */
-    backdrop-filter: blur(6px); /*Blur the background*/ 
-    -webkit-backdrop-filter: blur(6px);
+/*Nav sections, unordered lists*/
+.services, .partner {
+    /*Remove the bullet points*/
+    list-style: none;
+    /*Add a slight border as a horizontal rule*/
+    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
+    /*Add spacing */
     padding: 0.9rem 1.25rem;
-    height: fit-content;
 }
 
-/*Pad the offscreen menu*/
-div.offscreen-menu {
-    padding: 0.9rem 1.25rem;
-    height: 100%;
+/*
+* Accessing the links for each item in each nav section within the standard pages
+* Assigning a standard button style for each nav item so that it provides a pill-shaped outline
+*/
+.services li a, .partner li a {
+    height: 3rem;
+    border-radius: 25px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f4f4f4ad;    
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: var(--tertiary-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding-left: 1.5rem;
 }
 
-/* keep same white text on auth pages*/
-body.auth .services li a,
-body.auth .partner li a {
-    background-color: #ffffff2e; /*Translucent background for each list item*/
-    color: #ffffff;
-    border: none;
+.partner {
+    padding-top: 38px;
 }
 
-/*Select the section including partner with us, drive with us, and about list items in nav*/ 
-body.auth .offscreen-menu .partner {
-    /*Apply more space between each item*/
-    margin-top: 18px;
-    padding-top: 8px;
+.services a:hover, .partner a:hover{
+    background-color: #1E1E1E22;
+
 }
 
-/* lighter hover */
-body.auth .services a:hover,
-body.auth .partner a:hover {
-    /*Apply a less translucent background while hovering*/
-    background-color: #ffffff47;
-}
-
-/**/
+/*link of the page currently on*/
 #on-page a {
-    color: var(--bg-color);
+    color: var(--white);
     border-radius: 30px;
     background-color: var(--primary-color);
 }
 
 /*Provides the currently selected page on the nav with a less saturated red colour*/
 #on-page a:hover {
-    background-color: #e13d31;
+    background-color: var(--primary-color);
 }
 /*Apply a padding around the login and sign in buttons*/
 .log {
@@ -192,9 +193,16 @@ body.auth .partner a:hover {
 }
 
 
-/* wider screens show the offscreen menu by default and allow the
+/*-----------------------------------------------------------------------
+ wider screens show the offscreen menu by default and allow the
    hamburger to hide it*/
 @media (min-width: 768px) {
+    .content {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
     .offscreen-menu {
         position: static;
         left: auto;
@@ -223,19 +231,8 @@ body.auth .partner a:hover {
         display: flex;
         cursor: pointer;
     }
-}
 
-/* wide-screen layout: nav sidebar + centered main; allow collapse */
-@media (min-width: 768px) {
-    .content {
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .content nav {
-        flex: 0 0 260px;
-        transition: flex-basis 0.32s ease, width 0.32s ease;
-    }
+    /* wide-screen layout: nav sidebar + centered main; allow collapse */
 
     .content main {
         flex: 1 1 auto;
@@ -253,57 +250,14 @@ body.auth .partner a:hover {
     .content.nav-hidden main {
         margin-left: 0;
     }
+
+    /* ensures the orders/favourites pages also flex correctly */
+    .content .orders, .content .favourites {
+        flex: 1;
+    }
 }
 
-/*Nav sections, unordered lists*/
-.services, .partner {
-    /*Remove the bullet points*/
-    list-style: none;
-    /*Add a slight border as a horizontal rule*/
-    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
-    /*Add spacing */
-    padding: 0.9rem 1.25rem;
-}
-
-/*
-* Accessing the links for each item in each nav section within the standard pages
-* Assigning a standard button style for each nav item so that it provides a pill-shaped outline
-*/
-.services li a, .partner li a {
-    height: 3.125rem;
-    border-radius: 1.875rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    background-color: #f4f4f4ad;    
-    margin-bottom: 1.5rem;
-    text-decoration: none;
-    color: #1E1E1E90;
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding-left: 1.5rem;
-}
-
-.partner {
-    padding-top: 38px;
-}
-
-.services a:hover, .partner a:hover{
-    background-color: #1E1E1E22;
-
-}
-
-.services a {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.logo-menu {
-    display: flex;
-}
-
-
+/*--------------------------------------------------------*/
 
 /*jumbotron*/
 
@@ -321,7 +275,7 @@ body.auth .partner a:hover {
 .overlay { /*the orange background*/
     height: 100%;
     width: 100%;
-    background: #f97316;
+    background: var(--secondary-color);
     clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
     padding: 20px;
     display: flex;
@@ -356,12 +310,28 @@ body.auth .partner a:hover {
 }
 
 .jumbotron a:hover {
-    background-color: #f97316;
+    background-color: var(--secondary-color);
     color: var(--bg-color);
 
 }
 
-/*restaurant rules*/
+/*------------------------------------------------------------------------------*/
+
+.item-img-wrap {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.item-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*--------------------------------------------------------------------
+main page restaurant rules
+*/
 
 .restaurant ul {
     list-style: none;
@@ -404,7 +374,7 @@ body.auth .partner a:hover {
 
 .restaurant address {
     font-style: normal;
-    color: #242424;
+    color: var(--tertiary-color);
 }
 
 .restaurant .star {
@@ -414,9 +384,10 @@ body.auth .partner a:hover {
     font-size: 11px;
 }
 
-/*rules for theme changer*/
+/*------------------------------------------------------------------------------
+rules for theme changer*/
 #theme-changer {
-    background-color: #f97316;;
+    background-color: var(--secondary-color);;
     border: 2px solid #565656;
     position: fixed;
     bottom: 3rem;
@@ -435,113 +406,63 @@ body.auth .partner a:hover {
     border-radius: 50px;
     height: 1.3rem;
     width: 1.3rem;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--white);
     cursor: pointer;
 }
 
 #theme-changer #default {
-    background-color: var(--primary-color);
+    background-color:#e93729;
 }
 
-/*order history page css*/
-
-.orders-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10vw;
-    margin: 0 auto;
-    width: 90%;
-    max-width: 900px;
-    align-items: center;
+/*-------------------------------------------------------------------------------------
+/* auth pages (login / signup) */
+body.auth {
+    /*Red to orange gradient colours on main authorization pages*/
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 60%);
+    /*Minimum height of the viewport*/
+    min-height: 100vh;
+    background-attachment: fixed;
 }
 
-.order-item {
-    background: #ffffff;
-    border-radius: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    overflow: hidden;
-    display: flex;
-    width: 100%;
-    height: auto;
-    min-height: 140px;
-    justify-content: flex-start;
-    align-items: center;
+/*Offscreen menu specific to the login and sign up pages*/
+body.auth .offscreen-menu {
+    background: #ffffff1a;
+    /* faded lighter panel so gradient shows through */
+    backdrop-filter: blur(6px);
+    /*Blur the background*/
+    -webkit-backdrop-filter: blur(6px);
+    padding: 0.9rem 1.25rem;
+    height: fit-content;
 }
 
-.order-link {
-    display: flex;
-    gap: 20px;
-    text-decoration: none;
-    color: inherit;
-    padding: 15px 25px;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.order-image-wrap {
-    height: 100px;
-    width: 100px;
-    border-radius: 15px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.order-image {
-    width: 100%;
+/*Pad the offscreen menu*/
+div.offscreen-menu {
+    padding: 0.9rem 1.25rem;
     height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
-.order-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    min-width: 0;
-}
-
-.order-name {
-    font-size: 2vw;
-    margin: 0 0 6px 0;
-    font-weight: 600;
-}
-
-.order-date, .order-id {
-    color: #666;
-    font-size: 1.5vw;
-}
-
-.order-more{
-    margin-top: 12px;
-    padding: 0.5rem 1.2rem;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1.6vw;
-    font-weight: 500;
-    width: fit-content;
-    text-align: center;
-}
-
-.more-orders-btn {
-    margin: 0 auto;
-    padding: 1vh 2vw;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    border-radius: 2vw;
-    text-decoration: none;
-    font-size: 1.6vw;
-    font-weight: 500;
-    display: block;
-    width: 60vw;
-    max-width: 480px;
+/* keep same white text on auth pages*/
+body.auth .services li a,
+body.auth .partner li a {
+    background-color: #ffffff2e; /*Translucent background for each list item*/
+    color: var(--white);
     border: none;
 }
+
+/*Select the section including partner with us, drive with us, and about list items in nav*/ 
+body.auth .offscreen-menu .partner {
+    /*Apply more space between each item*/
+    margin-top: 18px;
+    padding-top: 8px;
+}
+
+/* lighter hover */
+body.auth .services a:hover,
+body.auth .partner a:hover {
+    /*Apply a less translucent background while hovering*/
+    background-color: #ffffff47;
+}
+
 .profile-settings i {
     font-size: 5vw;
     cursor: pointer;
@@ -549,83 +470,5 @@ body.auth .partner a:hover {
 }
 
 .profile-settings i:hover {
-    color: #f3f3f3AA;
-}
-
-/*ABout us page*/
-
-.aboutcontainer {
-    width: 80%;
-    max-width: 900px;
-    margin: 50px 50px;
-    padding: 40px;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    box-shadow: 5px 1px 5px 1px #00000063;
-    background: var(--bg-color);
-}
-.aboutheader {
-    font-size: 2vw;
-    font-weight: 600;
-    text-align: center;
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-    padding: 40px 20px;
-    border-radius: 35px;
-    border: var(--primary-color) solid 12px;
-    
-}
-.aboutfact {
-    padding: 40px;
-    border-bottom: #3b3b3b79 1px solid;
-    color: var(--tertiary-color);
-}
-.aboutfact h3{
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-.aboutfact p{
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-/*help page style*/
-.helpcontainer {
-    width: 80%;
-    max-width: 800px;
-    margin: 50px 50px;
-    padding: 40px;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    box-shadow: 5px 1px 5px 1px #00000063;
-    background: var(--bg-color);
-    color: var(--tertiary-color);
-}
-
-.helpcontainer h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-}
-.helpcontainer p {
-    line-height: 1.8;
-    font-size: 1rem;
-}
-.helpcontainer h3 {
-    font-size: 1.2rem;
-    font-weight: 5600;
-}
-
-.helpcontainer details {
-    padding-left: 20px;
-}
-.helpcontainer summary {
-    font-size: 1rem;
-}
-.helpcontainer summary:hover {
     color: #f3f3f3AA;
 }

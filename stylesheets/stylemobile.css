@@ -1,8 +1,6 @@
+/*specific styles for mobile devices under 767px wide*/
 @media(max-width: 767px)
 {
-
-
-
     .ham {
             display: flex;
             height: 40px;

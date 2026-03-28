@@ -33,12 +33,16 @@ $items_result = $stmt_items->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Receipt #<?php echo $order_id; ?></title>
-    <link rel="stylesheet" href="../stylesheets/style-receipt.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/styletablet.css">
+    <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <link rel="stylesheet" href="../stylesheets/receiptStyle.css">
 </head>
 <body class="receipt-body">
     <div class="receipt-container">
         <header class="receipt-header">
-            <h1>GRILLOW</h1>
+            <h1>Grillow</h1>
             <p>Order #<?php echo $order['order_id']; ?></p>
             <p><?php echo date("M j, Y", strtotime($order['order_date'])); ?></p>
         </header>

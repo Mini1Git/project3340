@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <link rel="stylesheet" href="../stylesheets/styleCart.css">
+    <link rel="stylesheet" href="../stylesheets/cartStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
     <script src="../scripts/cart.js" defer></script>
 
@@ -51,7 +51,7 @@
                     <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                     <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                     <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                    <li><a href="favorites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                    <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
                     <li id="on-page"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
                     <li><a href="../info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
                 </ul>
