@@ -7,7 +7,7 @@ async function fetchRestaurant(){
         const restaurantBox = document.querySelector(".restaurant");
         const restaurantList = document.createElement("ul");
 
-        let limit = 10;
+        let limit = 12;
         let count = 0;
         jsonData.forEach(restaurant => {
             count++;
