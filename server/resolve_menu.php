@@ -39,7 +39,7 @@
         
         // Prepare another sql query to retrieve all menu items corresponding to that restaurant
         $productStmt = $pdo->prepare("
-            SELECT product_name, description, price, instock 
+            SELECT *
             FROM Product 
             WHERE vendor_id = :id
         ");

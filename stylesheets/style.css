@@ -42,7 +42,7 @@
     padding: 0 ; /*Set padding of all to zero*/
     box-sizing: border-box;
 }
-
+/*default body styles*/
 body {
     overflow-x: hidden;
     font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
@@ -190,6 +190,7 @@ p, li, span, a, h5, h6 {
     background: var(--clr-card);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
 .card-body {

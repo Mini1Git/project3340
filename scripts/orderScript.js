@@ -1,5 +1,5 @@
 /**
-Fetch and render orders with simple pagination (4 per page).
+Fetch and render orders (4 per page).
  * @param {string} ordersUrl - URL to the orders JSON file
  */
 async function fetchOrders(ordersUrl){
@@ -73,7 +73,7 @@ async function fetchOrders(ordersUrl){
                 const moreButton = document.createElement("a");
                 moreButton.className = "order-more";
                 moreButton.textContent = "Details";
-                moreButton.href = `../services/order-details.html?id=${order["order_id"]}`;
+                moreButton.href = `../services/order-details.php?id=${order["order_id"]}`;
                 info.appendChild(moreButton);
 
                 anchor.appendChild(imgWrap);

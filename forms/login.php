@@ -27,7 +27,7 @@
     <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
     <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <link rel="stylesheet" href="../stylesheets/formStyle.css">
     <!--Stylesheet for screen sizes < 768 pixels-->
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <!--Script for the show/hide password field-->

@@ -1,6 +1,3 @@
-//rules for password in forms
-const eye = document.querySelector(".eye");
-let visible = false;
 
 eye.addEventListener('click', () => {
     const pass = document.querySelector('.password');
@@ -18,3 +15,10 @@ eye.addEventListener('click', () => {
     }
 
 });
+
+//rule for showing total
+const total = sessionStorage.getItem('total') || 0; //getting it from sesson storage
+const showTotal = document.querySelector('.show-total');
+if(showTotal) {
+    showTotal.innerHTML =`Your Total is $${total}`;
+}

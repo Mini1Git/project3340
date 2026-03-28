@@ -1,3 +1,5 @@
+/*styles specific for tablet devices between 768-1023 px wide*/
+
 @media(max-width: 1023px) and (min-width: 768px)
 {
 

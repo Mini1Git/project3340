@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../stylesheets/formStyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+    <script src="../scripts/scriptform.js" defer> </script>
 </head>
 <body>
     <!--Header with hamburger, logo, and account buttons based on user sigin-->
@@ -65,7 +66,7 @@
                 </ul>
                 <!--A list of other forms and a website wiki-->
                 <ul class="partner">
-                    <li id="on-page"><a href="partnerform.php">Partner with us</a></li>
+                    <li><a href="partnerform.php">Partner with us</a></li>
                     <li><a href="driverform.php">Become a Driver</a></li>
                     <li><a href="../info/about.html">About us</a></li>
                     <li><a href="">Wiki</a></li>
@@ -75,25 +76,30 @@
         <!--End of navigation bar-->
 
         <div class="formparent">
-            <form class="register" action = "../server/registerRestaurantBackend.php" method="POST">
-                <h2>Register your restaurant</h2>
-                <div>
-                    <input type="text" name="restaurant_name" placeholder="Restaurant Name" required>
+            <form class="orderForm" action = "" method="POST">
+                <h2>Place Your Order</h2>
+                <div class="autocomplete">
+                        <input type="text" name="delivery_address" id="address" placeholder="Address" required>
                 </div>
-                <div>
-                    <input type="text" name="cuisine_type" placeholder="Cuisine Type" required>
-                </div>
-                <div>
-                    <input type="email" name="restaurant_email" placeholder="Restaurant Email" required>
-                </div>
-                <div>
-                    <input type="tel" name="restaurant_number" placeholder = "Restaurant Phone Number" minlength="9" maxlength="15">
-                </div>
-                <div>
-                    <input type="text" name="restaurant_address" placeholder="Address" required>
+                <h3>Payment Information</h3> <!--payment information-->
+                <label class="payment" for="card-num">
+                    Card Number
+                </label>
+                <input type="text" id="card-num" placeholder="Card Number" required>
+                <label class="payment" for="exp-date">
+                    Expiration
+                </label>
+                <input type="month" id="exp-date" placeholder="yyyy/mm" required>
+                
+                <label class="payment" for="seq">
+                    Security Code 
+                </label>
+                    <input type ="text" id="seq" placeholder="Security Code">
+                <div class="show-total">
+                    <!--from js-->
                 </div>
 
-                <input type="submit" value="Register">
+                <input type="submit" value="Place Order">
             </form>
         </div>
 
