@@ -1,0 +1,60 @@
+
+.wikiHome{
+    align-items: center;
+}
+
+.wikiCards {
+    align-items: center;
+    margin: 20px 20px;
+    padding: 20px;
+    background: var(--bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wikiCards ul{
+    list-style: none;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 30px auto;
+}
+.wikiCards li {
+    flex: 0 0 25%;
+    margin: 20px;
+    padding: 10px;
+    height: auto;
+    min-height: 140px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    color: var(--primary-color);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+.wikiCards li:hover{
+    color: var(--secondary-color);
+    box-shadow: 0 12px 30px rgba(200, 200, 200, 0.15); /* Tinted shadow on hover */
+    border-color: var(--secondary-color);
+    transition: border 0.2s, color 0.2s;
+}
+.wikiCards i{
+    color: var(--primary-color);
+    margin: 10px;
+}
+
+.wikiCards i:hover{
+    color: var(--secondary-color);
+}
+
+.wikiCards a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.wikiCards a:hover{
+    color: var(--secondary-color);
+}

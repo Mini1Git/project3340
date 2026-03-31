@@ -57,7 +57,7 @@
                     <li><a href="../forms/partnerform.php">Partner with us</a></li>
                     <li><a href="../forms/driverform.php">Become a Driver</a></li>
                     <li><a href="../info/about.html">About us</a></li>
-                    <li><a href="">Wiki</a></li>
+                    <li><a href="../info/wiki.html">Wiki</a></li>
                 </ul>
             </div>  
         </nav>
