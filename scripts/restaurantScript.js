@@ -1,10 +1,19 @@
-async function fetchRestaurant(){
+async function fetchRestaurant() {
+    const backendUrl = "../server/frontPageRestaurantBackend.php";
 
-    //sincec getting data, only need to use GET.
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function () { // top 10 limit. TO DO ///////////////////////////////
-        const jsonData = JSON.parse(this.response);
+    // appends a unique timestamp to the URL
+    const fetchUrl = backendUrl + (backendUrl.includes('?') ? '&' : '?') + '_=' + Date.now();
+    
+    try {
+        // Fetch the data while explicitly telling the browser NOT to store or use a cache
+        const response = await fetch(fetchUrl, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const jsonData = await response.json();
         const restaurantBox = document.querySelector(".restaurant");
+
+        // Clear existing list to prevent duplicates on refresh
+        restaurantBox.innerHTML = ''; 
         const restaurantList = document.createElement("ul");
 
         let limit = 12;
@@ -49,11 +58,9 @@ async function fetchRestaurant(){
             }
         });
         restaurantBox.appendChild(restaurantList); //append at end.
+    } catch (error){
+        console.error("fetchRestaurant Error:", error);
     }
-    xmlhttp.open("GET", "../server/frontPageRestaurantBackend.php");
-    xmlhttp.send();
-
-
 }
 
-window.onload = ()=> fetchRestaurant();
+window.addEventListener('load', fetchRestaurant);

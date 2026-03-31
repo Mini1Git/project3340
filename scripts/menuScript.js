@@ -12,9 +12,16 @@ async function fetchmenu() {
 
     // Try and catch based on the corresponding retrieval from php and mysql
     try {
-        // Assign the response to the rows retrieved by the resolved_menu.php
-        const response = await fetch(`../server/resolve_menu.php?id=${id}`);
-        // Assign the response in JSON form to the data constant we'll be using
+        // Cashe refresh fix thing ---
+        const baseUrl = `../server/resolve_menu.php?id=${id}`;
+        
+        // This line checks if the URL already has a ? and appends the timestamp
+        const fetchUrl = baseUrl + (baseUrl.includes('?') ? '&' : '?') + '_=' + Date.now();
+        
+        // Fetch with no store to ensure the browser doesnt use an old version of the data
+        const response = await fetch(fetchUrl, { cache: 'no-store' });
+
+        // Assign the response in json form to the data constant we'll be using
         const data = await response.json();
 
         // Create the vendor banner

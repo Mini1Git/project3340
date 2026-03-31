@@ -81,7 +81,7 @@
     <aside id="theme-changer">
         <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
     </aside>
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/script.js?v=<?php echo filemtime('../scripts/script.js'); ?>"></script>
     <script src="../scripts/restaurantScript.js?v=<?php echo filemtime('../scripts/restaurantScript.js'); ?>" defer></script>
 </body>
 </html>
