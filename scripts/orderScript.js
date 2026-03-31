@@ -1,5 +1,5 @@
 /**
-Fetch and render orders with simple pagination (4 per page).
+Fetch and render orders (4 per page).
  * @param {string} ordersUrl - URL to the orders JSON file
  */
 async function fetchOrders(ordersUrl){
