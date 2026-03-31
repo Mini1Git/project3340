@@ -25,52 +25,66 @@
 
 </head>
 <body>
+    <div class="layout">
 
-    <header>
-        <div class="logo-menu">
-            <div class="ham">
-                <img src="../icons/hamburger.svg">
+        <!-- HEADER -->
+        <header class="header">
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
+                <h1 class="header-logo-h1">Grillow</h1>
+                <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
-            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
-        </div>
-        <div class="log">
-            <?php if (!$isLoggedIn): ?>
-                <a class="account-btn" href="../forms/login.php">Login</a>
-                <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
-            <?php else: ?>
-                <a class="account-btn-bold" href="../server/logout.php">Sign Out</a>
-                <a class="profile-settings" href="../user/profile.php"><i class="fa-solid fa-circle-user"></i></a>
-            <?php endif; ?>
-        </div>
-    </header>
 
-    <div class="content">
-        <nav> <!--navigation bar-->
-            <div class="offscreen-menu">
-                <ul class="services">
-                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
-                    <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                    <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
-                    <li id="on-page"><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
-                    <li><a href="../info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
-                </ul>
-                <ul class="partner">
-                    <li><a href="../forms/partnerform.php">Partner with us</a></li>
-                    <li><a href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a href="../info/about.html">About us</a></li>
-                    <li><a href="">Wiki</a></li>
-                </ul>
-            </div>  
-        </nav>
-    <main>   
-        <h2 class="cart-h2"> Your Cart </h2>
-        <section class="cart-box">
-            
-            <!--the item will come from js-->
+            <div>
+                <?php if (!$isLoggedIn): ?>
+                    <a class="btn btn-outline" href="../forms/login.php">Login</a>
+                    <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
+                <?php else: ?>
+                    <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
+                    <a class="btn btn-primary" href="../user/profile.php">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </header>
 
-        </section>
-    </main>
+        <!-- BODY -->
+        <div class="layout-main">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li>
+                    
+                </ul>
+            </aside>
+    
+        <main class="main">   
+            <h2 class="cart-h2"> Your Cart </h2>
+            <section class="cart-box">
+                
+                <!--the item will come from js-->
+
+            </section>
+        </main>
 
     </div>
     <aside id="theme-changer">

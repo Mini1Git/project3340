@@ -1,3 +1,5 @@
+const eye = document.querySelector('.eye');
+let visible = false;
 
 eye.addEventListener('click', () => {
     const pass = document.querySelector('.password');

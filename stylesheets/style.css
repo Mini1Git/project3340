@@ -246,11 +246,14 @@ p, li, span, a, h5, h6 {
 
 .link {
     color: var(--clr-text-primary);
+    color: var(--clr-secondary-hover);
+
 }
 
 .link:hover {
-    border-bottom: dotted 2px var(--clr-text-primary); 
+    border-bottom: dotted 2px var(--clr-secondary-hover); 
     text-decoration: none; 
+    color: var(--clr-secondary-hover);
 }
 
 /*
