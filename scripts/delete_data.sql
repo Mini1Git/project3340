@@ -5,3 +5,5 @@ DELETE FROM product;
 SELECT * FROM product;
 
 DROP DATABASE grillow;
+
+
