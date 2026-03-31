@@ -48,7 +48,7 @@ if (!$isLoggedIn) {
     <nav> <!--navigation bar-->
         <div class="offscreen-menu">
             <ul class="services">
-                <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                 <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                 <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                 <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -59,7 +59,7 @@ if (!$isLoggedIn) {
                 <li><a href="../forms/partnerform.php">Partner with us</a></li>
                 <li><a href="../forms/driverform.php">Become a Driver</a></li>
                 <li><a href="../info/about.html">About us</a></li>
-                <li><a href="">Wiki</a></li>
+                <li><a href="#">Wiki</a></li>
             </ul>
         </div>
     </nav>
