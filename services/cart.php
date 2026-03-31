@@ -21,7 +21,7 @@ if (!$isLoggedIn) {
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <link rel="stylesheet" href="../stylesheets/cartStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
-
+    <script src="../scripts/cart.js?v=<?php echo filemtime('../scripts/cart.js'); ?>"></script>
 
 </head>
 <body>
