@@ -28,6 +28,8 @@ if (!$isLoggedIn) {
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
 
     <link rel="stylesheet" href="../stylesheets/formstyle.css">
+    <!-- for the auto complete bar -->
+    <link rel="stylesheet" href="../stylesheets/autocomplete_style.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
     <script src="../scripts/scriptform.js" defer> </script>
@@ -57,7 +59,7 @@ if (!$isLoggedIn) {
         <div class="offscreen-menu">
             <!--A list of services, these will redirect depending on login status-->
             <ul class="services">
-                <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="../index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                 <li><a href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
                 <li><a href="../services/orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
                 <li><a href="../services/favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
@@ -76,7 +78,7 @@ if (!$isLoggedIn) {
     <!--End of navigation bar-->
 
     <div class="formparent">
-        <form class="orderForm" action = "" method="POST">
+        <form id = "order" class="orderForm" action = "" method="POST"> <!-- action redirect: go to page that says thanks for order, or maybe go to orders page? -->
             <h2>Place Your Order</h2>
             <div class="autocomplete">
                 <input type="text" name="delivery_address" id="address" placeholder="Address" required>
@@ -110,6 +112,7 @@ if (!$isLoggedIn) {
 </aside>
 <!--Script to control hamburger interactivity on both mobile and desktop-->
 <script src="../scripts/script.js"></script>
-
+<script type = "module" src = "../scripts/placeOrder.js"></script>
+<!-- gotta add type = module because orderScript is using import -->
 </body>
 </html>
