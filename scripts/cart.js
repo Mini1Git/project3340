@@ -1,6 +1,9 @@
 const cartBox = document.querySelector('.cart-box');
+
 if(cartBox){
+
     create_cart()
+
 }
 
 
@@ -8,7 +11,7 @@ function create_cart(){
     cartBox.innerHTML =""; //emptying everything beforehand
     const cart = JSON.parse(sessionStorage.getItem("cart"));
     let total = 0;  //it'll change inside the loop
-    console.log(cart);
+
 
     if(cart){ //if cart not null
         cart.forEach(item => {

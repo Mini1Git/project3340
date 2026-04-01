@@ -1,11 +1,11 @@
-<?php 
-    session_start();
-    $isLoggedIn = isset($_SESSION['user_id']);
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
 
-    if (!$isLoggedIn) {
-        header("Location: ../forms/login.php");
-        exit();
-    }
+if (!$isLoggedIn) {
+    header("Location: ../forms/login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
