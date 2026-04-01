@@ -81,7 +81,7 @@
                             Support Windsor's most affordable food delivery service and enjoy 
                             the finest cultural cuisines made by small businesses across the city.
                         </p>
-                        <a href="../services/browse.php" class="btn btn-primary btn-hero">Explore</a>
+                        <a href="../services/browse.php" class="btn btn-outline btn-hero">Explore</a>
                     </div>
                 </section>
                 <!-- RESTAURANTS -->

@@ -12,25 +12,26 @@ function create_cart(){
 
     if(cart){ //if cart not null
         cart.forEach(item => {
-            const foodCell = document.createElement('div');
-            foodCell.className='food-cell';
+            const foodCard = document.createElement('div');
+            foodCard.className = 'card';
             const cross = document.createElement('span');
             cross.textContent = '✕';
             cross.className = 'x';
-            cross.addEventListener('click', ()=>{
+            cross.addEventListener('click', () => {
                 console.log('hello');
                 remove_item(item);
             });
-            foodCell.appendChild(cross);
+            foodCard.appendChild(cross);
             const food_info = document.createElement('div');
-
+            food_info.className = 'card-body';
             food_info.innerHTML += `
                 <h3>${item.product_name}</h3>
                 <p>${item.description}</p>
-                <p>Price: $${item.price}</p>`;
-            foodCell.appendChild(food_info);
-            total +=Number(item.price);
-            cartBox.appendChild(foodCell);
+                <p>Price: $${item.price}</p>
+                `;
+            foodCard.appendChild(food_info);
+            total += Number(item.price);
+            cartBox.appendChild(foodCard);
             
         });
     }
@@ -41,7 +42,7 @@ function create_cart(){
     cartBox.appendChild(show_total);
     if(total !== 0 ){ //if there is something in the cart
         const order_btn = document.createElement('a');
-        order_btn.className = "order-place";
+        order_btn.classList.add("btn", "btn-primary", "long-btn");
         order_btn.textContent = `Place Your Order`;
         order_btn.href = "../forms/orderform.php"
         cartBox.appendChild(order_btn);
@@ -63,6 +64,6 @@ function remove_item(food){
             cart.splice(index, 1); //removing from cart array
             sessionStorage.setItem("cart", JSON.stringify(cart));
         }
-    create_cart()
-}
+        create_cart()
+    }
 }

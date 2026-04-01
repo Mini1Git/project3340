@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <link rel="stylesheet" href="../stylesheets/cartStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
-    <script src="../scripts/cart.js?v=<?php echo filemtime('../scripts/cart.js'); ?>"></script>
 
 </head>
 <body>
@@ -54,14 +53,14 @@
             <!-- SIDEBAR -->
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
-                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
                 </ul>
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
                     <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
-                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link active" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
 
                 <ul class="nav-list">
@@ -87,11 +86,26 @@
         </main>
 
     </div>
-    <aside id="theme-changer">
-        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    <aside class="settings-menu-btn">
+        <i class="fa-solid fa-gear"></i>
     </aside>
+    <div class="settings-menu-window hidden">
+        <div class="settings-menu-content">
+            <div class="settings-menu-label">
+                <p>Settings<p>
+                <i class="fa-solid fa-x btn btn-primary"></i>
+            </div>
+            <h3>Theme</h3>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="">Default</button>
+                <button class="theme-btn" data-theme="theme2">Dark</button>
+                <button class="theme-btn" data-theme="theme3">Purple</button>
+            </div>
+        </div>
+    </div>
 
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/cart.js?v=<?php echo filemtime('../scripts/cart.js'); ?>"></script>
     
 </body>
 </html>
