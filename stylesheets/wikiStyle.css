@@ -85,3 +85,8 @@
     font-size: 0.9rem;
     margin: 0;
 }
+
+.wiki-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+}
