@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Contact</title>
+    <title>Grillow Tech Wiki</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    
     <div class="layout">
-        
         <header class="header">
             <div style="display:flex; align-items:center; gap:1rem;">
                 <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
@@ -25,7 +25,7 @@
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
         </header>
-
+        
         <div class="layout-main">
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
@@ -47,7 +47,7 @@
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li>
                     
                 </ul>
             </aside>
@@ -59,22 +59,91 @@
                     <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
                     <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                     <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
-                    <li><a class="nav-link active" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li> 
                 </ul>
 
             </aside>
+            <div class="aboutcontainer main"><!--Main content area-->
+                <div class="aboutheader">
+                    <h2>Site Technology Guide</h2>
+                </div>
 
-            <div class="main">
-                <!--Content goes here!-->
+                <div class="aboutfact">
+                    <h3>The core Technology</h3>
+                    <p>
+                        Grillow was built using: <br><br>
+                        HTML5 - the structural backbone of our 
+                        website, using tags to make sure the site 
+                        is organized and accessible.<br><br>
+                        CSS - used for the visual design. We used 
+                        external stylesheets to keep the code organized, 
+                        and seperated stylesheets into categories for 
+                        different pages. <br><br>
+                        Javascript - powers the interactivity of the side. 
+                        This handles things such as hamburger menu toggles, theme switcher
+                        , and form validation, before the data is sent to the server.<br><br>
+                        PHP - Our server-side language was PHP. It takes requests from
+                        the user, talks to the database, and brings back dynamic content
+                        for users to see on the website.<br><br>
+                        MySQL - Our relational database management system. we used MySQL to store our unique
+                        records of food items, user profiles, restaurant vendors, etc.
+                    </p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Dynamic and Static pages</h3>
+                    <p>
+                        Grillow is made up of two types of pages. Static pages 
+                        like "About Us", where the content does not change accross users. 
+                        These are written with just HTML and have fast loading speed. Dynamic
+                        pages like "Browse", "Cart", "Orders", etc. change based on the user 
+                        who is logged in, and what is in the database. These are generated 
+                        in real time by PHP.
+                    </p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Other Resources</h3>
+                    <p>
+                        We used FontAwesome, an icon library for navigation icons and Wiki icons,
+                        that can easily be modified like text to match our themes and layouts. <br><br>
+                        <!--We also used the Google maps API maybe? wilson-->
+                    </p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Responsiveness</h3>
+                    <p>
+                        Using Flexbox, Grid, and Media Queries, the site automatically
+                        adjusts for three screen sizes: Desktop, Tablet, and Mobile. 
+                        No matter the screen size the experience remains consistent, and our 
+                        site looks nicely styled and organized.
+                    </p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Software Repository</h3>
+                    <p>
+                        All of Grillow files that make up our website, were documented in GitHub.
+                        This lets us collaborate as a team on development, and keep track of documentation
+                        and version history, update history, etc.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="wiki.html" class="wiki-btn">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Main Wiki
+                    </a>
+                </div>
+
             </div>
-
         </div>
+        
 
-    </div>  
-      
+    </div>
     <aside class="settings-menu-btn">
         <i class="fa-solid fa-gear"></i>
     </aside>
@@ -88,7 +157,7 @@
             <div class="theme-options">
                 <button class="theme-btn" data-theme="">Default</button>
                 <button class="theme-btn" data-theme="theme2">Dark</button>
-                <button class="theme-btn" data-theme="theme3">Blue</button>
+                <button class="theme-btn" data-theme="theme3">Purple</button>
             </div>
         </div>
     </div>

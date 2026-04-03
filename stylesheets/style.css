@@ -1,474 +1,487 @@
-/*GENERAL STYLES FOR ALL PAGES*/
 
-/*Srisakdi font (logo font) exported from google*/
-@import url('https://fonts.googleapis.com/css2?family=Srisakdi:wght@400;700&display=swap');
-/*Poppins font exported from google*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*Variables*/
 :root {
-    --bg-color: #fbfbfb;
-    --primary-color: #e93729;
-    --secondary-color: #ff7a3d;
-    --tertiary-color: #1E1E1E;
-    --white: #ffffff;
+    /* MAIN COLORS */
+    --clr-bg: #fbfbfb;            /* light neutral background */
+    --clr-primary: #e93729;       /* main red for buttons, highlights */
+    --clr-primary-hover: #c32b22; /* slightly darker for hover / active */
+    --clr-secondary: #ff7a3d;     /* accent orange for badges, highlights */
+    --clr-secondary-hover: #e66a33; /* darker for hover states */
+    
+    /* NEUTRALS */
+    --clr-card: #ffffff;           /* card backgrounds */
+    --clr-border: #e0e0e0;         /* borders and dividers */
+    --clr-text-primary: #1E1E1E;   /* main text color (dark) */
+    --clr-text-secondary: #555555; /* secondary text for less important info */
+    --clr-muted: #888888;          /* subtle text or placeholders */
+
+    /* FEEDBACK / STATUS COLORS */
+    --clr-success: #28a745;        /* success messages or badges */
+    --clr-warning: #ffc107;        /* warnings or notifications */
+    --clr-error: #dc3545;          /* errors or critical alerts */
+
+    /* SPACING */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    /* SIZES */
+    --nav-width: 16.25rem;
+    --header-height: 5rem;
+    --radius: 1.5rem;
+
+    /* SHADOW */
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /*Select all element styles*/
 * {
     margin: 0; /*Set margin of all to zero*/
     padding: 0 ; /*Set padding of all to zero*/
-    box-sizing: border-box; /* padding or borders included in total width*/
-    font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
+    box-sizing: border-box;
 }
 /*default body styles*/
 body {
     overflow-x: hidden;
-    background-color: var(--bg-color);
+    font-family: "Poppins", sans-serif; /*Set the default font family to 'Poppins'*/
+    background: var(--clr-bg);
 }
 
-/*Header contains burger, logo, sign in and sign up*/
-header {
-    /*Header main colour*/
-    background-color: var(--primary-color);
-    /*Text colour off-white*/
-    color: var(--bg-color);
-    /*Display flex for horizontally centred content*/
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: var(--clr-text-primary);
+}
+
+.header-logo-h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+p, li, span, a, h5, h6 {
+    font-family: "Lato", sans-serif;
+    color: var(--clr-text-secondary);
+}
+
+.layout {
     display: flex;
-    flex-direction: row;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.layout-main {
+    display: flex;
+    flex: 1;
+}
+
+.header {
+    height: var(--header-height);
+    background: var(--clr-primary);
+    color: white;
+
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    /*Slight off-white bottom border*/
-    border-bottom: 2px solid var(--bg-color);
-    width: 100vw;
-    flex-wrap:nowrap;
-    height: 70px;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0 var(--space-lg);
 }
 
-header .log {
-    max-width: 100%;
+.header-icon {
+    width: 3rem;
+    height: auto;
+}
+
+.sidebar {
+    width: var(--nav-width);
+    background: white;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar.hidden {
+    width: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.main {
+    flex: 1;
+    padding: var(--space-lg);
+}
+
+
+.hero {
+    width: 100%;
+    min-height: 30rem; /* adjust height as needed */
     display: flex;
-}
-header .logo-menu{
-    max-width: 100%;
-    display: flex;
     align-items: center;
-
+    justify-content: center;
+    background: var(--clr-bg);
+    border: 2px solid var(--clr-border);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-lg);
+    color: white;
+    text-align: left;
 }
 
-/*grillow logo navigation*/
-h1 {
-    /*Display everything in flex for inline positioning*/
+.hero-content {
+    padding: var(--space-lg);
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+}
+
+.btn-hero {
+    font-size: 1.1rem;
+    padding: var(--space-md) var(--space-lg);
+}   
+
+.btn {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.1s ease;
+}
+
+.long-btn {
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--clr-primary);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--clr-primary-hover);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--clr-primary-hover);
+}
+
+.card {
+    background: var(--clr-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: var(--space-md);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.grid-3 {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+}
+
+.nav-list {
+    list-style: none;
+    padding: var(--space-md);
+}
+
+.nav-list + .nav-list {
+    margin-top: auto;
+}
+
+.nav-link {
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: center;
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-    /*Font family of Srisakdi with system-ui as a backup*/
-    font-family: "Srisakdi", system-ui;
+
+    padding: var(--space-md);
+    border-radius: var(--radius);
+
+    text-decoration: none;
+    color: var(--clr-muted);
+
+    transition: background 0.2s ease;
 }
 
-/*Logo for the nav*/
-header img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.nav-link.active {
+    background: var(--clr-primary);
+    color: white;
 }
 
-/*Side-navigation style rules*/
-nav {
-    /*Display flex for inline positioning*/
-    display: flex;
-    /*Display in the column direction (horizontally)*/
-    flex-direction: column;
-    flex: 0 0 260px;
-    justify-content: center;
-    align-items: center;
-    /*Add a separating border*/
-    border-right: 2px solid #d9d9d926;
-    font-size: 1rem;
-    height: fit-content;
-
+.nav-link.active:hover {
+    background: var(--clr-primary-hover);
 }
 
-/*Nav sections, unordered lists*/
-.services, .partner {
-    /*Remove the bullet points*/
-    list-style: none;
-    /*Add a slight border as a horizontal rule*/
-    border-bottom: 2px solid rgba(217, 217, 217, 0.15);
-    /*Add spacing */
-    padding: 0.9rem 1.25rem;
+.nav-link:hover {
+    background: #f4f4f4;
+}
+
+.link {
+    color: var(--clr-secondary);
+    color: var(--clr-secondary-hover);
+}
+
+.link:hover {
+    border-bottom: dotted 2px var(--clr-secondary-hover); 
+    text-decoration: none; 
+    color: var(--clr-secondary-hover);
 }
 
 /*
-* Accessing the links for each item in each nav section within the standard pages
-* Assigning a standard button style for each nav item so that it provides a pill-shaped outline
+* Start of settings menu styling.
 */
-.services li a, .partner li a {
-    height: 3rem;
-    border-radius: 25px;
+
+/*Select the settings menu button*/
+.settings-menu-btn {
+    /*Place it in a fixed position in the bottom right corner of the screen*/
+    position: fixed; 
+    bottom: 3rem;
+    right: 3rem;
+    /*Have the background be the primary colour for the theme*/
+    background: var(--clr-primary);
+    /*Apply a medium padding*/
+    padding: var(--space-md);
+    /*Increase the icon size*/
+    font-size: 1.5rem;
+    /*Apply a standard border radius*/
+    border-radius: var(--radius);
+    /*Apply a colour of the background theme*/
+    color: white;
+    /*Apply a shadow*/
+    box-shadow: var(--shadow);
+    /*Make the cursor change states when hovering*/
+    cursor: pointer;
+}
+
+/*Hover effects for the settings menu button*/
+.settings-menu-btn:hover {
+    /*Change the background colour to the predefined primary hover colour*/
+    background: var(--clr-primary-hover);
+}
+
+/*Select the separate settings window when it's hidden*/
+.settings-menu-window.hidden {
+    /*Display nothing whil hidden*/
+    display: none;
+}
+
+/*Select the separate settings window when it's shown*/
+.settings-menu-window {
+    /*Display the window fixed so it's always in view*/
+    position: fixed;
+    /*Use a translucent background colour to darken the rest of the site*/
+    background-color: #1E1E1EAA;
+    /*Apply the height to the total viewport height*/
+    height: 100vh;
+    /*Apply the width to the total viewport width*/
+    width: 100vw;
+    /*Align in the top left corner*/
+    top: 0;
+    left: 0;
+    /*Display flex to align the menu content to the centre of the screen*/
     display: flex;
-    justify-content: start;
-    align-items: center;
-    background-color: #f4f4f4ad;    
-    margin-bottom: 1.5rem;
-    text-decoration: none;
-    color: var(--tertiary-color);
-    font-size: 0.875rem;
-    font-weight: 500;
-    padding-left: 1.5rem;
-}
-
-.partner {
-    padding-top: 38px;
-}
-
-.services a:hover, .partner a:hover{
-    background-color: #1E1E1E22;
-
-}
-
-/*link of the page currently on*/
-#on-page a {
-    color: var(--white);
-    border-radius: 30px;
-    background-color: var(--primary-color);
-}
-
-/*Provides the currently selected page on the nav with a less saturated red colour*/
-#on-page a:hover {
-    background-color: var(--primary-color);
-}
-/*Apply a padding around the login and sign in buttons*/
-.log {
-    padding: 30px;
-}
-
-/*Apply a standard background colour to the account button (signup or login depending on page)*/
-.account-btn {
-    color: var(--bg-color);
-}
-
-/*Apply a standard hover colour a little darker than default*/
-.account-btn:hover {
-    background-color: #a72a21;
-}
-
-/*Shared properties between login and sign up*/
-.account-btn, .account-btn-bold {
-    /*Expand spacing around buttons*/
-    padding: 0.7rem 2rem;
-    /*Round the borders by ~25 pixels*/
-    border-radius: 1.5rem;
-    /*Remove the standard black outline form both*/
-    outline: none;
-    /*Remove the borders from both buttons*/
-    border: none;
-    /*Font size of ~12px*/
-    font-size: 1vw;
-    font-weight: 700;
-    text-decoration: none;
-    align-items: center;
-}
-
-/*Bold buttons*/
-.account-btn-bold {
-    /*Text colour of the primary colour*/
-    color: var(--primary-color);
-    /*Background colour of button*/
-    background-color: var(--bg-color);
-}
-
-/*Hover effect for account buttons*/
-.account-btn-bold:hover {
-    /*White text colour*/
-    color: var(--bg-color);
-    /*No background (no colour)*/
-    background: none;
-    /*Assign a white outline on hover*/
-    outline: solid 2px var(--bg-color);
-}
-
-
-/*-----------------------------------------------------------------------
- wider screens show the offscreen menu by default and allow the
-   hamburger to hide it*/
-@media (min-width: 768px) {
-    .content {
-        display: flex;
-        align-items: flex-start;
-        width: 100%;
-    }
-    
-    .offscreen-menu {
-        position: static;
-        left: auto;
-        top: auto;
-        width: 14.5rem; /* sidebar width on wide screens */
-        max-width: none;
-        height: 100vh;
-        background: transparent;
-        overflow: visible;
-        transform: translateX(0); /* visible by default */
-        transition: transform 0.32s ease, opacity 0.24s ease;
-        display: flex;
-        flex-direction: column;
-        opacity: 1;
-    }
-
-    /* hide by translating out of view so layout can reflow smoothly */
-    .offscreen-menu.active {
-        transform: translateX(-110%);
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    /* show hamburger button on wide screens so user can hide/show menu */
-    .ham {
-        display: flex;
-        cursor: pointer;
-    }
-
-    /* wide-screen layout: nav sidebar + centered main; allow collapse */
-
-    .content main {
-        flex: 1 1 auto;
-        width: auto;
-        transition: margin 0.32s ease, width 0.32s ease;
-        display: block;
-    }
-
-    .content.nav-hidden nav {
-        flex-basis: 0;
-        width: 0;
-        overflow: hidden;
-    }
-
-    .content.nav-hidden main {
-        margin-left: 0;
-    }
-
-    /* ensures the orders/favourites pages also flex correctly */
-    .content .orders, .content .favourites {
-        flex: 1;
-    }
-}
-
-/*--------------------------------------------------------*/
-
-/*jumbotron*/
-
-.jumbotron {
-    width: 90%;
-    margin: 10px auto;
-    border-radius: 25px;
-    background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
-    overflow: hidden;
-    height: 21.875rem;
     justify-content: center;
-    box-shadow: 5px 1px 5px 1px rgba(0,0,0,0.39);
-}
-
-.overlay { /*the orange background*/
-    height: 100%;
-    width: 100%;
-    background: var(--secondary-color);
-    clip-path: polygon(46% 0%, 69% 100%, 0% 100%, 0% 0%);
-    padding: 20px;
-    display: flex;
     align-items: center;
 }
 
-.container {
-    color: var(--bg-color);
-    display: flex;
+/*Select the content which is nested inside of the window container.*/
+.settings-menu-content {
+    /*Assign the width to 50% of the site width and heigh to 70%*/
     width: 50%;
     height: 70%;
-    flex-direction: column;
-    justify-content: space-between;
- 
+    /*Create a background for the window*/
+    background: var(--clr-bg);
+    /*Assign a standard border for the window*/
+    border: 5px solid var(--clr-border);
+    /*Create a shadow for the window*/
+    box-shadow: var(--shadow);
+    /*Assign padding for spacing*/
+    padding: 0 var(--space-sm);
 }
 
-.jumbotron p {
-   font-size: 18px; 
-}
-
-.jumbotron a {
-    text-decoration: none;
-    font-weight: 700;
-    color: var(--secondary-color);
-    background-color: var(--bg-color);
-    padding: 10px;
-    width: 120px;
-    text-align: center;
-    border: 2px solid var(--bg-color);
-    border-radius: 25px;
-    text-shadow: none;
-}
-
-.jumbotron a:hover {
-    background-color: var(--secondary-color);
-    color: var(--bg-color);
-
-}
-
-/*------------------------------------------------------------------------------*/
-
-.item-img-wrap {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-}
-
-.item-img-wrap img {
+/*Select the the window title and 'X' button*/
+.settings-menu-label {
+    /*Assign a width of 100% with a height just larger than the font-size*/
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/*--------------------------------------------------------------------
-main page restaurant rules
-*/
-
-.restaurant ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;/*might change later*/
-    width: 90%;
-    margin: 50px auto;
-}
-
-.restaurant li {
-    height: 300px;
-    overflow: hidden;
-    border-radius: 25px;
-    box-shadow: 5px 1px 5px 1px #00000063;
-}
-.restaurant img {
-    width: 100%;
-    height: 55%;
-    object-fit: cover;
-
-}
-
-.restaurant .info {
-    padding: 20px;
-}
-
-.restaurant a {
-    text-decoration: none;
-    color: black;
-}
-.restaurant h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-.restaurant span {
-    font-size: 18px;
-    color: #808080;
-}
-
-.restaurant address {
-    font-style: normal;
-    color: var(--tertiary-color);
-}
-
-.restaurant .star {
-    width: 12px;
-}
-.restaurant .info span{
-    font-size: 11px;
-}
-
-/*------------------------------------------------------------------------------
-rules for theme changer*/
-#theme-changer {
-    background-color: var(--secondary-color);;
-    border: 2px solid #565656;
-    position: fixed;
-    bottom: 3rem;
-    right: 1.5rem;
-    width: 7.5rem;
-    height: 2.5rem;
-    border-radius: 25px;
+    height: 3rem;
+    /*Display flex to align the label and 'X' button inline*/
     display: flex;
-    justify-content: space-evenly;
+    /*Apply an alignment with space in between the label and 'X' button*/
+    justify-content: space-between;
+    /*Align these elements vertically*/
     align-items: center;
-    /* flex-direction: column; */
-
+    /*Assign a slight border on the bottom of the label container*/
+    border-bottom: 2px solid var(--clr-border);
+    margin-bottom: var(--space-md);
 }
 
-#theme-changer button {
-    border-radius: 50px;
-    height: 1.3rem;
-    width: 1.3rem;
-    border: 2px solid var(--white);
+/*Select the 'X' icon in the menu label*/
+.settings-menu-label .fa-x {
+    /*Change cursor state to pointer on hover*/
     cursor: pointer;
+    /*Display in flex to center content horizontally and vertically*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#theme-changer #default {
-    background-color:#e93729;
+.hero.home-page {
+    background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
 }
 
-/*-------------------------------------------------------------------------------------
-/* auth pages (login / signup) */
-body.auth {
-    /*Red to orange gradient colours on main authorization pages*/
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 60%);
-    /*Minimum height of the viewport*/
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-
-/*Offscreen menu specific to the login and sign up pages*/
-body.auth .offscreen-menu {
-    background: #ffffff1a;
-    /* faded lighter panel so gradient shows through */
-    backdrop-filter: blur(6px);
-    /*Blur the background*/
-    -webkit-backdrop-filter: blur(6px);
-    padding: 0.9rem 1.25rem;
-    height: fit-content;
-}
-
-/*Pad the offscreen menu*/
-div.offscreen-menu {
-    padding: 0.9rem 1.25rem;
+.hero.home-page .hero-content {
+    width: 100%;
     height: 100%;
+    background: var(--clr-secondary);
+    clip-path: polygon(70% 0%, 90% 100%, 0% 100%, 0% 0%);
 }
 
-/* keep same white text on auth pages*/
-body.auth .services li a,
-body.auth .partner li a {
-    background-color: #ffffff2e; /*Translucent background for each list item*/
-    color: var(--white);
-    border: none;
+.hero.home-page .hero-title, .hero.home-page .hero-subtitle {
+    max-width: 70%;
 }
 
-/*Select the section including partner with us, drive with us, and about list items in nav*/ 
-body.auth .offscreen-menu .partner {
-    /*Apply more space between each item*/
-    margin-top: 18px;
-    padding-top: 8px;
+.hero.home-page .hero-title {
+    color: var(--clr-bg);
 }
 
-/* lighter hover */
-body.auth .services a:hover,
-body.auth .partner a:hover {
-    /*Apply a less translucent background while hovering*/
-    background-color: #ffffff47;
+.hero.home-page .hero-subtitle {
+    color: var(--clr-bg);
 }
 
-.profile-settings i {
-    font-size: 5vw;
-    cursor: pointer;
-    color: var(--bg-color);
+.mobile-nav {
+    display: none;
 }
 
-.profile-settings i:hover {
-    color: #f3f3f3AA;
+
+/*------------------------------------------------------------------*/
+
+.aboutheader {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--clr-text-primary);
+    background-color: var(--bg-color);
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+    border: var(--primary-color) solid 1rem;
+    
+}
+.aboutfact {
+    padding: 2rem;
+    border-bottom: var(--clr-text-secondary) solid;
+    color: var(--clr-text-primary);
+}
+
+.aboutfact:last-of-type {
+    border-bottom: none;
+}
+
+.aboutfact h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+.aboutfact p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.aboutsection {
+    margin: var(--space-lg);
+}
+
+/*---------------------------------------------------------------------*/
+
+.orders-list {
+    list-style: none;
+}
+
+.order-item {
+    margin: var(--space-lg);
+
+}
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .sidebar {
+        position: absolute;
+        left: -100%;
+        top: var(--header-height);
+        height: calc(100% - var(--header-height));
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .settings-menu-content {
+        width: 70%;
+        height: 50%;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        position: fixed;
+        overflow-y: scroll;
+        top: var(--header-height);
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: var(--clr-bg);
+        z-index: 99;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-nav > ul {
+        width: 50%;
+    }
+
+    .mobile-nav.hidden {
+        left: -100vw;
+    }
+    
+}
+
+@media screen and (max-width: 430px) {
+    html {
+        font-size: 10px;
+    }
+
+    .header-logo-h1 {
+        display: none;
+    }
 }

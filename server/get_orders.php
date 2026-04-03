@@ -48,7 +48,7 @@ try {
     // 4. Return the data as JSON
     echo json_encode($orders);
 
-} catch (\PDOException $e) {
+} catch (PDOException $e) {
     // Return error as JSON so JS can catch it
     echo json_encode(['error' => $e->getMessage()]);
 }

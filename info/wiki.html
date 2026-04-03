@@ -1,54 +1,25 @@
-<?php
-session_start();
-$isLoggedIn = isset($_SESSION['user_id']);
-
-if (!$isLoggedIn) {
-    header("Location: ../forms/login.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillow Wiki</title>
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Your Cart</title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-    <link rel="stylesheet" href="../stylesheets/cartStyle.css">
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <div class="layout">
-
-        <!-- HEADER -->
         <header class="header">
             <div style="display:flex; align-items:center; gap:1rem;">
                 <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
                 <h1 class="header-logo-h1">Grillow</h1>
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
-
-            <div>
-                <?php if (!$isLoggedIn): ?>
-                    <a class="btn btn-outline" href="../forms/login.php">Login</a>
-                    <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
-                <?php else: ?>
-                    <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
-                    <a class="btn btn-primary" href="../user/profile.php">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                <?php endif; ?>
-            </div>
         </header>
-
-        <!-- BODY -->
         <div class="layout-main">
-
-            <!-- SIDEBAR -->
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -58,7 +29,7 @@ if (!$isLoggedIn) {
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
                     <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
-                    <li><a class="nav-link active" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
 
                 <ul class="nav-list">
@@ -69,7 +40,7 @@ if (!$isLoggedIn) {
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li>
                     
                 </ul>
             </aside>
@@ -79,26 +50,69 @@ if (!$isLoggedIn) {
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
                     <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
-                    <li><a class="nav-link active" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                     <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
                     <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li> 
                 </ul>
 
             </aside>
-    
-        <main class="main">   
-            <h2 class="cart-h2"> Your Cart </h2>
-            <section class="cart-box">
-                
-                <!--the item will come from js-->
-
-            </section>
-        </main>
-
+            <main class="wikiContainer main">
+                <section class="wikiIntro">
+                    <h2>Grillow's Official Wiki</h2>
+                            <p>
+                                Welcome to the Wiki which includes help documentation for our Grillow system. 
+                                Whether you're a Restaurant owner managing a menu, a Driver navigating the city, 
+                                or a System Admin monitoring the server, you can find guides here.
+                                This site is a system designed to connect hungry customers, local Windsor 
+                                restaurants, and independent Drivers.
+                            </p>
+                </section>    
+                <section class="wikiHome">
+                    <ul class="wikiCards">
+                        <li>
+                            <a href = "wikiNav.html">
+                                <i class="fa-solid fa-signs-post fa-5x"></i>
+                                <h4>Navigation</h4>
+                                <p>How to navigate Grillow</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "wikiDat.html">
+                                <i class="fa-solid fa-arrows-rotate fa-5x"></i>
+                                <h4>Updating the database</h4>
+                                <p>Menu and Order management</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "wikiTheme.html">
+                                <i class="fa-solid fa-paintbrush fa-5x"></i>
+                                <h4>Themes</h4>
+                                <p>How the themes work</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "wikiForm.html">
+                                <i class="fa-brands fa-wpforms fa-5x"></i>
+                                <h4>Forms</h4>
+                                <p>How to use our Forms</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "wikiTech.html">
+                                <i class="fa-solid fa-laptop fa-5x"></i>
+                                <h4>Technology</h4>
+                                <p>Technology we have used</p>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
     </div>
+    
     <aside class="settings-menu-btn">
         <i class="fa-solid fa-gear"></i>
     </aside>
@@ -117,8 +131,7 @@ if (!$isLoggedIn) {
         </div>
     </div>
 
+
     <script src="../scripts/script.js"></script>
-    <script src="../scripts/cart.js?v=<?php echo filemtime('../scripts/cart.js'); ?>"></script>
-    
 </body>
 </html>

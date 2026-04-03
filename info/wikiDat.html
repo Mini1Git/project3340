@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>About</title>
+    <title>Grillow Database Wiki</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <!--Stylesheet for about and help pages-->
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <!--Start of horizontal nav-->
+<body>  
     <div class="layout">
         <header class="header">
             <div style="display:flex; align-items:center; gap:1rem;">
@@ -24,9 +25,8 @@
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
         </header>
-        <!--End of horizontal nav-->
-        <!--Beginning of content divider-->
-        <div class="content layout-main">
+        <!--End of navigation bar-->
+        <div class="layout-main">
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -41,13 +41,13 @@
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
-                    <li><a class="nav-link active" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
                 </ul>
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li>
                     
                 </ul>
             </aside>
@@ -58,59 +58,80 @@
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
                     <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
                     <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
-                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
-                    <li><a class="nav-link active" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link active" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
+                    <li><a class="nav-link active" href="../info/wiki.html">Wiki</a></li> 
                 </ul>
 
             </aside>
-            <!--End of navigation bar-->
 
-            <div class="main"><!--Main content area-->
-                <div class="card">
-                    <div class="aboutheader">
-                        <h2>About Us</h2>
-                    </div>
-                    <div class = "aboutfact">
-                        <h3>The number 1 choice for Windsor food delivery</h3>
-                        <p>Grillow is a local Windsor food delivery service that connects customers 
-                            with local restaurants and delivery drivers. 
-                            We are committed to providing the best possible experience 
-                            for our customers, restaurant partners, and delivery drivers.</p>
-                    </div>
-
-                    <div class = "aboutfact">
-                        <h3>We care about and value our drivers</h3>
-                        <p>Unlike most other delivery services, Grillow takes care of our drivers, ensuring
-                            they make a fair hourly wage on top of delivery fees and tips, while also covering their gas expenses,
-                            and providing insurance coverage.</p>
-                    </div>
-
-                    <div class = "aboutfact">
-                        <h3>Our Restaurants</h3>
-                        <p>We carefully choose high quality restaurants in Windsor, that meet our standards. We 
-                            work closely with our restaurant partners to ensure they 
-                            are satisfied with our service, and we are committed to providing the best possible experience
-                            for all our partners.</p>
-                    </div>
-
-                    <div class = "aboutfact">
-                        <h3>Get to know the Creators </h3>
-                        <p>Grillow was started by University of Windsor students Wilson, Kayden, Nazifa, and Liana. We weren't satisfied
-                            with the current food delivery options in Windsor, and wanted to create a better experience for customers, restaurants, and drivers. 
-                            We are passionate about food and technology, and we are committed to providing the best possible experience for our customers, 
-                            restaurant partners, and delivery drivers.</p>
-                    </div>
-
+            <div class="aboutcontainer main"><!--Main content area-->
+                <div class="aboutheader">
+                    <h2>Site Database Guide</h2>
                 </div>
-                
-            </div>
+                <div class = "aboutfact">
+                    <h3>Introduction to the Dynamic system</h3>
+                    <p>Unlike a static website where you have 
+                        to change code to change a price, 
+                        Grillow is fully dynamic. This means 
+                        the frontend (what customers see) is 
+                        a "window" into our MySQL Database. 
+                        When you update a record in the database 
+                        via the Admin Portal, the website updates 
+                        instantly across all devices</p>
+                </div>
 
-        </div>
+                <div class = "aboutfact">
+                    <h3>Menu Management</h3>
+                    <p>Restaurant owners can manage the products on their 
+                        menu without ever touching a line of code. 
+                        Our PHP backend handles the communication 
+                        between our website, and the products table in the database.</p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Adding a new product</h3>
+                    <p> (after kayden does that ill add tutorial here and add 
+                        more to this wiki page if needed)</p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Order management and fulfillment</h3>
+                    <p>Every time a customer clicks "Checkout,"
+                        a new order is generated in the database's 
+                        orders table with a unique Order ID. 
+                        An order can have a status of "0" for not completed yet, 
+                        and "1" for fulfilled.</p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Administrators</h3>
+                    <p>User Moderation: Admins can view all user records. 
+                        If a user violates our terms of service, 
+                        their account can be disabled, preventing them 
+                        from logging into the PHP session.</p>
+                </div>
+
+                <div class = "aboutfact">
+                    <h3>Initial Catalog Setup</h3>
+                    <p>The initial catalog setup was performed via a batch SQL
+                        script to ensure the site was launched with a full 
+                        variety of 20+ restaurants each with 10+ products and descriptions.
+                    </p>
+                </div>
+
+                <div>
+                    <a href="wiki.html" class="wiki-btn">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Main Wiki
+                    </a>
+                </div>
+
+            </div>
+        <div>
+
     </div>
-    <!--End of content div-->
     <aside class="settings-menu-btn">
         <i class="fa-solid fa-gear"></i>
     </aside>

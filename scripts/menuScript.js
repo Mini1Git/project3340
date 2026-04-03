@@ -31,7 +31,7 @@ async function fetchmenu() {
         // Assign the alt attribute
         image.alt = data.vendor.business_name + " banner";
         // Assign the className to banner
-        image.className = "banner";
+        image.className = "hero";
         // Append this image to the top of the menu container
         menu.appendChild(image);
 
@@ -54,20 +54,25 @@ async function fetchmenu() {
             // If the instock attribute is 0, don't append to the container
             if(item.instock > 0){
                 // Create a container for the product
-                const foodcell = document.createElement("div");
+                const foodCard = document.createElement("div");
+                const foodDescription = document.createElement("div");
+                const addBtnDiv = document.createElement("div");
                 // Assign the className as dish
-                foodcell.className = "dish";
+                foodCard.className = "card";
+                foodDescription.className = "card-body";
+                addBtnDiv.className = "add-btn-div";
+                
                 // Assign the following innnerHTML
-                foodcell.innerHTML = `
-                    <h3 class="dish-name">${item.product_name}</h3>
-                    <p class="details">${item.description}</p>
-                    <p class="price">$${item.price}</p>
+                foodDescription.innerHTML = `
+                    <h3>${item.product_name}</h3>
+                    <p>${item.description}</p>
+                    <p>$${item.price}</p>
                 `;
                 const add =  document.createElement('button');
-                add.className = "add-btn";
+                add.className = "btn btn-primary";
                 add.ariaLabel = "Add item";
-                add.textContent ='+';
-                //<button class= aria-label=>+</button> 
+                add.textContent ='Add item';
+                //<button class= aria-label=>Add item</button> 
 
                 add.addEventListener('click', () =>{
                    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
@@ -78,11 +83,14 @@ async function fetchmenu() {
                    console.log('pushed');
                     //the function of putting it inside cart
                 })
-                foodcell.appendChild(add);
+                addBtnDiv.appendChild(add);
+                foodDescription.appendChild(addBtnDiv);
+                foodCard.appendChild(foodDescription);
+                
             
 
                 // Append this product container to the dishes container
-                dishesContainer.appendChild(foodcell);
+                dishesContainer.appendChild(foodCard);
             }
         });
 
