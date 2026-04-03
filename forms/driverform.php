@@ -24,30 +24,48 @@
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
-    <!--End of horizontal nav-->
-    <!--Beginning of content divider-->
+    <!--Beginning of container of class layout.
+    Layout provides us with a good starting point.
+    Needed to stack the header on top of the rest of the content -->
     <div class="layout">
+        <!--Header is of class header. This class provides us with a horizontal
+        bar at the top of the screen with account controls and company logo-->
         <header class="header">
+            <!--Div containing the logo, company name, and the hamburger button for the sidebar and mobile nav-->
             <div style="display:flex; align-items:center; gap:1rem;">
+                <!--Hamburger button-->
                 <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
+                <!--Company name, h1-->
                 <h1 class="header-logo-h1">Grillow</h1>
+                <!--Our rushing pizza logo-->
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
-
+            <!--On the other side of the nav with space in between the two divs are the account controls-->
             <div>
+                <!--If there isn't anyone logged in, display the login and sign up buttons, otherwise, display the profile
+                and sign out buttons-->
                 <?php if (!$isLoggedIn): ?>
+                    <!--Login button-->
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
+                    <!--Sign up button-->
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                 <?php else: ?>
+                    <!--Sign out button-->
                     <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
+                    <!--Profile button with user icon-->
                     <a class="btn btn-primary" href="../user/profile.php">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 <?php endif; ?>
             </div>
+
         </header>
+        <!--End of top header-->
+        <!--layout main container with a forms class.
+        Layout main is used so display the navbar inline with the main content.
+        Forms is used to specify whether the content consists of a form and apply the correct styling-->
         <div class="layout-main forms">
+            <!--Desktop sidebar. Will be utilized until the screen-width is lower than or equal to 768px-->
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -71,6 +89,8 @@
                     <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>  
                 </ul>
             </aside>
+            <!--Desktop sidebar. Will be utilized when the screen-width is lower than or equal to 768px. Above this threshold,
+            this element is not displayed-->
             <aside class="mobile-nav hidden">
                 <ul class="nav-list">
                     <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
