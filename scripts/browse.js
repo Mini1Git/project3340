@@ -1,4 +1,4 @@
-import { autocomplete } from '../temp/autocomplete.js';
+import { autocomplete } from '../scripts/autocomplete.js';
 
 let autoCompleteList = [];
 
@@ -35,39 +35,72 @@ function getSearchResults() {
 
         const query = document.getElementById("searchbox").value;
 
+        browseBox.innerHTML = "<p>Loading...</p>";
+
         fetch(`../server/browseBackend.php?query=${encodeURIComponent(query)}`)
             .then(res => res.json())
             .then(data => {
-                // data.results contains array of search results
                 const results = data.results || [];
                 browseBox.innerHTML = "";
 
+                if (results.length === 0) {
+                    browseBox.innerHTML = "<p>No results found.</p>";
+                    return;
+                }
+
                 results.forEach(item => {
-                    const div = document.createElement("div");
-                    div.style.cssText = "color: black; background-color: red; border: 1px solid black; padding: 10px; margin: 5px;";
+                    const image = item.image && item.image.trim() !== ""
+                        ? item.image
+                        : "../images/placeholder/placeholder.png";
 
-                    div.innerHTML = `<strong>${item.product}</strong>`;
+                    const price = item.price
+                        ? `$${parseFloat(item.price).toFixed(2)}`
+                        : "N/A";
 
-                    const cross = document.createElement('span');
-                    cross.textContent = '+';
-                    cross.style.cssText = "display: flex; justify-content: center; align-items: center; height: 65px; font-size: 50px; cursor: pointer;";
+                    const card = document.createElement("div");
+                    card.classList.add("card");
 
-                    cross.addEventListener('click', () => {
-                        // fetch full product info by productID
+                    card.innerHTML = `
+                        <img src="../${image}" alt="${item.name}" class="card-img" style="object-fit: cover; width: 100%; height: 10rem;">
+
+                        <div class="card-body">
+                            <h3>${item.product}</h3>
+                            <p style="opacity: 0.7;">${item.name}</p>
+                            <p style="font-size: 0.85rem; color: var(--clr-muted);">
+                                ${item.cuisine || ""}
+                            </p>
+                            <p class="price">${price}</p>
+
+                            <button class="btn btn-primary long-btn">
+                                Add to Cart
+                            </button>
+                        </div>
+                    `;
+
+                    const button = card.querySelector("button");
+                    button.addEventListener('click', () => {
                         fetch(`../server/browseBackend.php?productID=${item.id}`)
                             .then(res => res.json())
                             .then(productDetails => {
                                 const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
                                 cart.push(productDetails);
                                 sessionStorage.setItem('cart', JSON.stringify(cart));
-                                alert(`${productDetails.product_name} has been added to your cart!`);
+
+                                button.textContent = "Added!";
+                                setTimeout(() => {
+                                    button.textContent = "Add to Cart";
+                                }, 1000);
                             });
                     });
 
-                    div.appendChild(cross);
-                    browseBox.appendChild(div);
+                    browseBox.appendChild(card);
                 });
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err);
+                browseBox.innerHTML = "<p>Error loading results.</p>";
+            });
     });
 }
+
+console.log("JS Loaded");
