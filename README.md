@@ -74,7 +74,6 @@ WE need at least 15 pages
 |  Static           | Demo        | No       | No                       |                         |
 |  Static           | Contact us  | No       | No                       |                         |
 
-
 |  Total Planned | Dynamic | Static |
 | -------------- | ------- | ------ |
 | 18             | 15      | 3      |
