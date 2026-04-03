@@ -5,6 +5,14 @@
         header("Location: ../forms/login.php");
         exit();
     }
+
+    // dsatabase connection
+    $host = "localhost";
+    $dbName = "grillow";
+    $dbUser = "root";
+    $dbPass = "";
+
+    
 ?>
 
 <!DOCTYPE html>
