@@ -15,7 +15,8 @@ try {
     // Define how the connection will report errors when interacting with the database, in this case,
     // we will throw an exception if anything goes wrong
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
+} 
+catch(PDOException $e) {
     // Report errors and close scripts immediately
     die("Connection failed: " . $e->getMessage());
 }
@@ -39,22 +40,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Send the first row from the retrieved data in the database. This will result in an array called $user
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        // If the user consists of valid values and the raw passwords fits the hashed password from the database
-        if ($user && password_verify($password, $user['password'])) {
-            // Then create a session key called 'user_id' to the retrieved user id
+
+        //check if user exist
+        if (!$user){
+            //email not in database go to not found error
+            header("Location: ../forms/login.php?error=not_found");
+            exit();
+        }
+
+        //check if password is correct
+        if (password_verify($password, $user['password'])){
+            //correct password! continue to create session key called user_id
             $_SESSION['user_id'] = $user['user_id'];
-            // Also create a session key called 'user_name' to the retrieved name in the database
+            //create session key user_name
             $_SESSION['user_name'] = $user['name'];
 
             // Redirect to the main index.php page
             header("Location: ../home/index.php");
-
-            // Exit the script
             exit();
-        } else {
-            // If the user doesn't enter a password correctly or they don't exist, append a query string of error=invalid
-            header("Location: ../forms/login.php?error=invalid");
+        }
+        
+        else {
+            // If the user doesn't enter a password correctly query string of error=wrong_password
+            header("Location: ../forms/login.php?error=wrong_password");
             // Exit the script
             exit();
         }
