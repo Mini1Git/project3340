@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Login</title>
+    <title>Forgot Password</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
@@ -100,29 +100,36 @@ between the background and navigation menu.-->
 
             <main class="main"> 
                 <div class="formparent">
-                    <!--Form will use the POST method and process that information in the process_login PHP file-->
-                    <form class="form" method="POST" action="../server/process_login.php">
-                        <!--Form title-->
-                        <div class="form-title"><i class="fa-solid fa-circle-user"></i><h2>Sign In to Grillow</h2></div>
+                    <!--Form will use the POST method and process that information in the process_forgot PHP file-->
+                    <form class="form" method="POST" action="../server/process_forgot.php">
+                    
+
+                    <!--this msg pops up after user enters email to show "success"-->
+                    <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; text-align: center;">
+                            <i class="fa-solid fa-check-circle"></i> 
+                            Check your inbox! If email is valid a reset link will be sent to your email.
+                        </div>
+                    <?php endif; ?>
+                    
+                    <!--Form title-->
+                        <div class="form-title">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <h2>Find your Account</h2>
+                            <h4>Enter the Email associated with your account to reset your password</h4>
+                        </div>
                         <!--Div for email input-->
                         <div class="form-main">
                             <div class="input-field">
                                 <label class="label" for="email">Email Address</label>
                                 <input class="text-input" id="email" type="email" name="email" placeholder="Enter your email here" autocomplete="email" required>
                             </div>
-                            <!--Div for password input, includes an interactive eye to show/hide password-->
-                            <div class="pass input-field">
-                                <label class="label" for="password">Password<a class="link" href="forgot.php">Forgot your password?</a></label>
-                                <input class="password text-input" id="password" type="password" placeholder="Enter your password" name="password" required>
-                                <span class="eye fa-solid fa-eye"></span> <!--to add the eye icon-->
-                                
-                            </div>
-                        
-                        <!--Link to a page in case you forgot your password-->    
+                           
                         </div>
                         <!--Button to submit login information-->
                         <div class="input-field">
-                            <input class="btn btn-primary long-btn" type="submit" value="Login">
+                            <input class="btn btn-primary long-btn" type="submit" value="Submit Email">
+                            <!--Link to a page to create an account--> 
                             <p style="text-align:center; margin-top: 1rem;">New to Grillow? <a class="link" href="../forms/signup.php">Create an Account</a><p>
                         </div>
                     </form>
