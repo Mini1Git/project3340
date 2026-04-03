@@ -55,24 +55,25 @@ WE need at least 15 pages
 
 | Dynamic or Static | Page        | Designed | Implemented in front-end | Dynamically Implemented |
 |  --------------   | ----------- | -------- | ------------------------ | ----------------------- |
-|  Dynamic          | Home        | Yes      | Yes                      | No                      |
-|  Dynamic          | Cart        | No       | No                       | No                      |
-|  Dynamic          | Orders      | No       | No                       | No                      |
-|  Dynamic          | Favourites  | No       | No                       | No                      |
+|  Dynamic          | Home        | Yes      | Yes                      | Yes                     |
+|  Dynamic          | Cart        | ~~No~~   | Yes                      | Yes                     |
+|  Dynamic          | Orders      | Yes      | Yes                      | Yes                     |
+|  Dynamic          | Favourites  | ~~No~~   | Yes                      | Yes                     |
 |  Dynamic          | Browse      | Yes      | No                       | No                      |
-|  Dynamic          | Partner     | No       | No                       | No                      |
-|  Dynamic          | Drive w/ us | No       | Yes                      | No                      |
-|  Static           | Help        | No       | No                       | No                      |
-|  Static           | About us    | No       | No                       | No                      |
-|  Static           | FAQ         | No       | No                       | No                      |
+|  Dynamic          | Partner     | Yes      | Yes                      | Yes                     |
+|  Dynamic          | Drive w/ us | No       | Yes                      | Yes                     |
 |  Dynamic          | Business    | No       | No                       | No                      |
 |  Dynamic          | Inventory   | No       | No                       | No                      |
-|  Dynamic          | Food menu   | No       | No                       | No                      |
-|  Dynamic          | Food Item   | No       | No                       | No                      |
-|  Dynamic          | Checkout    | No       | No                       | No                      |
-|  Dynamic          | Sign up     | Yes      | Yes                      | No                      |
-|  Dynamic          | Sign in     | Yes      | Yes                      | No                      |
+|  Dynamic          | Food menu   | Yes      | Yes                      | Yes                     |
+|  Dynamic          | Checkout    | Yes      | Yes                      | No                      |
+|  Dynamic          | Sign up     | Yes      | Yes                      | Yes                     |
+|  Dynamic          | Sign in     | Yes      | Yes                      | Yes                     |
 |  Dynamic          | Forgot pass | No       | No                       | No                      |
+|  Static           | Help        | ~~No~~   | Yes                      |                         |
+|  Static           | About us    | No       | Yes                      |                         |
+|  Static           | Demo        | No       | No                       |                         |
+|  Static           | Contact us  | No       | No                       |                         |
+
 
 |  Total Planned | Dynamic | Static |
 | -------------- | ------- | ------ |
@@ -80,6 +81,5 @@ WE need at least 15 pages
 
 |                         | Total Finished | Dynamic | Static |
 | ----------------------- | -------------- | ------- | ------ |
-| Designed                | 4              | 4       | 0      |
-| Implemented (front-end) | 4              | 4       | 0      |
-| Implemented (back-end)  | 0              | 0       | 0      |
+| Implemented (front-end) | 12             | 10      | 2      |
+| Implemented (back-end)  | 10             | 10      |        |
