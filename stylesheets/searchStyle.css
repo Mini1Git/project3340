@@ -62,18 +62,16 @@
     color: var(--clr-muted);
 }
 
-/* Search input wrapper */
 .search {
     position: relative;
 }
 
-/* Magnifying glass icon */
 .search-icon {
     position: absolute;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    
+    pointer-events: none; /* prevents clicking the icon from blocking typing */
     color: var(--clr-muted);
     font-size: 1rem;
 }
@@ -84,6 +82,6 @@
 }
 
 /* highlight on focus */
-.search .text-input:focus + .search-icon {
+.search:focus-within .search-icon {
     color: var(--clr-primary);
 }
