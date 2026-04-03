@@ -1,4 +1,4 @@
--- Active: 1755301077799@@127.0.0.1@3306@grillow
+-- Active: 1774042082208@@127.0.0.1@3306@grillow
 -- inserting with restaurants--
 INSERT INTO Restaurant_Vendor(restaurant_id, business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
@@ -6,19 +6,10 @@ VALUES
     (2, "McDongal's", "Wilson Tran", "mcdonald@gmail.com", "+1 7987987551", "8436 University Ave, Windsor", 3.5, "images/fastfood.jpg", "Fast food"),
     (3, "Sushi Yum", "Liana Bell", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
     (4, "Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian"),
-    (5, "Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "images/pizza.jpg", "Italian"),
-    (6, "Sushi World", "Bob", "sushi@gmail.com", "+1 5195558899", "789 Riverside Dr, Windsor", 4.7, "images/sushi.jpg", "Japanese"),
-    (7, "Taco Fiesta", "Carlos", "taco@gmail.com", "+1 5198882233", "321 Tecumseh Rd, Windsor", 4.3, "images/taco.jpg", "Mexican"),
-    (8, "Burger Hub", "Jake", "burger@gmail.com", "+1 5194441122", "654 University Ave, Windsor", 3.9, "images/burger.jpg", "Fast food"),
-    (9, "Green Bowl", "Sarah", "green@gmail.com", "+1 5197776655", "987 Walker Rd, Windsor", 4.6, "images/healthy.jpg", "Healthy"),
-    (10, "Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "images/chinese.jpg", "Chinese"),
-    (11, "BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "images/bbq.jpg", "BBQ"),
-    (12, "Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "images/dessert.jpg", "Dessert"),
     (13, 'Mexican Uncle', 'Luis Recardo', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
     (14, 'Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
 ;
 
-/*this is a duplicate ?
 INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, cuisine_name) 
 VALUES 
     ("Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "Italian"),
@@ -29,8 +20,8 @@ VALUES
     ("Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "Chinese"),
     ("BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "BBQ"),
     ("Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "Dessert");
-*/
---restaurant inserts (liana)
+
+-- restaurant inserts (liana)
 INSERT INTO Restaurant_Vendor(restaurant_id, business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
     (1101, "The Hungry Bunny", "Yoshi Bell", "HungryBunny@grillow.com", "+1 519-555-0001", "123 Garden Lane, Windsor", 4.8, "images/hungrybunny.jpg", "Vegan"),

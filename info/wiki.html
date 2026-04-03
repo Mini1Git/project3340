@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grillow Wiki</title>
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <link rel="stylesheet" href="../stylesheets/styletablet.css">
+    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
+    <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+            <div class="ham">
+                <img src="../icons/hamburger.svg">
+            </div>
+            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
+        </div>
+    </header>
+    <div class="content">
+        <nav> <!--navigation bar-->
+            <div class="offscreen-menu">
+                <ul class="services">
+                    <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                    <li><a href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                    <li><a href="../services/orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
+                    <li><a href="../services/favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                    <li><a href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                    <li><a href="help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
+                </ul>
+                <ul class="partner">
+                    <li><a href="../forms/partnerform.php">Partner with us</a></li>
+                    <li><a href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a href="../info/about.html">About us</a></li>
+                    <li id="on-page"><a href="wiki.html">Wiki</a></li>
+                </ul>
+            </div>  
+        </nav>
+
+        <main class="wikiContainer">
+            <section class="wikiIntro">
+                <h2>Grillow's Official Wiki</h2>
+                        <p>
+                            Welcome to the Wiki which includes help documentation for our Grillow system. 
+                            Whether you're a Restaurant owner managing a menu, a Driver navigating the city, 
+                            or a System Admin monitoring the server, you can find guides here.
+                            This site is a system designed to connect hungry customers, local Windsor 
+                            restaurants, and independent Drivers.
+                        </p>
+            </section>    
+            <section class="wikiHome">
+                <ul class="wikiCards">
+                    <li>
+                        <a href = "wikiNav.html">
+                            <i class="fa-solid fa-signs-post fa-5x"></i>
+                            <h4>Navigation</h4>
+                            <p>How to navigate Grillow</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "wikiDat.html">
+                            <i class="fa-solid fa-arrows-rotate fa-5x"></i>
+                            <h4>Updating the database</h4>
+                            <p>Menu and Order management</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "wikiTheme.html">
+                            <i class="fa-solid fa-paintbrush fa-5x"></i>
+                            <h4>Themes</h4>
+                            <p>How the themes work</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "wikiForm.html">
+                            <i class="fa-brands fa-wpforms fa-5x"></i>
+                            <h4>Forms</h4>
+                            <p>How to use our Forms</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href = "wikiTech.html">
+                            <i class="fa-solid fa-laptop fa-5x"></i>
+                            <h4>Technology</h4>
+                            <p>Technology we have used</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <aside id="theme-changer">
+        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    </aside>
+    <script src="../scripts/script.js?v=<?php echo filemtime('../scripts/script.js'); ?>"></script>
+    <script src="../scripts/restaurantScript.js?v=<?php echo filemtime('../scripts/restaurantScript.js'); ?>" defer></script>
+</body>
+</html>

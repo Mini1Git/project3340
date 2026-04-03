@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--List of meta tags for SEO-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Our icon we chose-->
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <title>Grillow Database Wiki</title>
+    <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <!--Theme stylsheet. Includes all three themes-->
+    <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
+    <link rel="stylesheet" href="../stylesheets/styletablet.css">
+    <!--Stylesheet for screen sizes < 768 pixels-->
+    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <!--Stylesheet for about and help pages-->
+    <link rel="stylesheet" href="../stylesheets/abouthelpStyle.css">
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
+    <!--Includes a library of icons-->
+    <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Start of horizontal nav-->
+    <header>
+        <!--Logo and hamburger place in the logo-menu class-->
+        <div class="logo-menu">
+            <!--Hamburger div which includes the hamburger icon svg-->
+            <div class="ham">
+                <img src="../icons/hamburger.svg">
+            </div>
+            <!--Logo consisting of an image inside of the h1 tag-->
+            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
+        </div>
+    </header>
+    <!--End of horizontal nav-->
+    <!--Beginning of content divider-->
+    <div class="content">
+        <nav> <!--navigation bar-->
+            <div class="offscreen-menu">
+            <ul class="services">
+                <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                <li><a href="../services/orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
+                <li><a href="../services/favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                <li><a href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                <li><a href="help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
+            </ul>
+            <ul class="partner">
+                <li><a href="../forms/partnerform.php">Partner with us</a></li>
+                <li><a href="../forms/driverform.php">Become a Driver</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li id="on-page"><a href="wiki.html">Wiki</a></li>
+            </ul>
+            </div>
+        </nav>
+        <!--End of navigation bar-->
+
+        <div class="aboutcontainer"><!--Main content area-->
+            <div class="aboutheader">
+                <h2>Site Database Guide</h2>
+            </div>
+            <div class = "aboutfact">
+                <h3>Introduction to the Dynamic system</h3>
+                <p>Unlike a static website where you have 
+                    to change code to change a price, 
+                    Grillow is fully dynamic. This means 
+                    the frontend (what customers see) is 
+                    a "window" into our MySQL Database. 
+                    When you update a record in the database 
+                    via the Admin Portal, the website updates 
+                    instantly across all devices</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Menu Management</h3>
+                <p>Restaurant owners can manage the products on their 
+                    menu without ever touching a line of code. 
+                    Our PHP backend handles the communication 
+                    between our website, and the products table in the database.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Adding a new product</h3>
+                <p> (after kayden does that ill add tutorial here and add 
+                    more to this wiki page if needed)</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Order management and fulfillment</h3>
+                <p>Every time a customer clicks "Checkout,"
+                     a new order is generated in the database's 
+                     orders table with a unique Order ID. 
+                     An order can have a status of "0" for not completed yet, 
+                     and "1" for fulfilled.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Administrators</h3>
+                <p>User Moderation: Admins can view all user records. 
+                    If a user violates our terms of service, 
+                    their account can be disabled, preventing them 
+                    from logging into the PHP session.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Initial Catalog Setup</h3>
+                <p>The initial catalog setup was performed via a batch SQL
+                     script to ensure the site was launched with a full 
+                     variety of 20+ restaurants each with 10+ products and descriptions.
+                </p>
+            </div>
+
+            <div>
+                <a href="wiki.html" class="wiki-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Main Wiki
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <!--End of content div-->
+    <aside id="theme-changer">
+        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    </aside>
+    <!--Script to control hamburger interactivity on both mobile and desktop-->
+    <script src="../scripts/script.js"></script>
+    
+</body>
+</html>

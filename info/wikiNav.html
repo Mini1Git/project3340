@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--List of meta tags for SEO-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Our icon we chose-->
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <title>Grillow Nav Wiki</title>
+    <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <!--Theme stylsheet. Includes all three themes-->
+    <link rel="stylesheet" href="../stylesheets/stylealternate.css">
+    <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
+    <link rel="stylesheet" href="../stylesheets/styletablet.css">
+    <!--Stylesheet for screen sizes < 768 pixels-->
+    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
+    <!--Stylesheet for about and help pages-->
+    <link rel="stylesheet" href="../stylesheets/abouthelpStyle.css">
+    <link rel="stylesheet" href="../stylesheets/wikiStyle.css">
+    <!--Includes a library of icons-->
+    <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Start of horizontal nav-->
+    <header>
+        <!--Logo and hamburger place in the logo-menu class-->
+        <div class="logo-menu">
+            <!--Hamburger div which includes the hamburger icon svg-->
+            <div class="ham">
+                <img src="../icons/hamburger.svg">
+            </div>
+            <!--Logo consisting of an image inside of the h1 tag-->
+            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
+        </div>
+    </header>
+    <!--End of horizontal nav-->
+    <!--Beginning of content divider-->
+    <div class="content">
+        <nav> <!--navigation bar-->
+            <div class="offscreen-menu">
+            <ul class="services">
+                <li><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                <li><a href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
+                <li><a href="../services/orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
+                <li><a href="../services/favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
+                <li><a href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                <li><a href="help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
+            </ul>
+            <ul class="partner">
+                <li><a href="../forms/partnerform.php">Partner with us</a></li>
+                <li><a href="../forms/driverform.php">Become a Driver</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li id="on-page"><a href="wiki.html">Wiki</a></li>
+            </ul>
+            </div>
+        </nav>
+        <!--End of navigation bar-->
+
+        <div class="aboutcontainer"><!--Main content area-->
+            <div class="aboutheader">
+                <h2>Site Navigation Guide</h2>
+            </div>
+            <div class = "aboutfact">
+                <h3>Using the Side bar</h3>
+                <p>The primary way to move through Grillow is 
+                    via the <strong>Side Navigation Bar</strong>. 
+                    On desktop, this is visible on the left. 
+                    On mobile devices, click the <strong>Hamburger Icon</strong> 
+                    (three lines) in the top left corner to toggle the menu 
+                    open and closed.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Home</h3>
+                <p>Main page showing the site description, and the featured restaurants.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Browse</h3>
+                <p>Page where you can see all restaurants, and search for specific ones.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Orders</h3>
+                <p>Page where you can see your previous orders, and view the order details about an order.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Favourites</h3>
+                <p>Page where you can see your most frequently ordered Restaurants</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Cart</h3>
+                <p>Page where you can see what products are in your cart, and you can go to checkout.
+                    To add an item to your cart simply go to a restaurant menu, and press the plus button.
+                </p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Help</h3>
+                <p>Page that helps customers by answering frequently asked questions, and provides help contact information in case they need more help.
+                </p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Partner with Us</h3>
+                <p>Page where you can fill out a form to apply to be one of our restaurant partners. More details in Forms Wiki Page</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Become a Driver</h3>
+                <p>Page where you can fill out a form to apply to become a driver. More details in Forms.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>About us</h3>
+                <p>Some information about the Grillow company's goals, intentions, and team.</p>
+            </div>
+
+            <div class = "aboutfact">
+                <h3>Sign up/ Log in</h3>
+                <p>Buttons at the top left our website that allow you to log into an existing account, sign up to create an account, or log out of your account. More information about signing up in Forms Wiki.</p>
+            </div>
+
+            <div>
+                <a href="wiki.html" class="wiki-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Main Wiki
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <!--End of content div-->
+    <aside id="theme-changer">
+        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+    </aside>
+    <!--Script to control hamburger interactivity on both mobile and desktop-->
+    <script src="../scripts/script.js"></script>
+    
+</body>
+</html>
