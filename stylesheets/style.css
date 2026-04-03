@@ -445,6 +445,11 @@ p, li, span, a, h5, h6 {
     color: var(--clr-muted);
 }
 
+video {
+    text-align: center;
+    width: 70%;
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 12px;
