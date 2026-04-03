@@ -80,28 +80,34 @@ Search for an address! <!-- Hello, this is a comment-->
 <script>
 
 
-    //MINOR BUGS BUT CAN FIX LATER.
 
 
-    function sendAddressToBack(){
-        console.log("SENDING ADDRESS: " + document.getElementById("address").value + " TO BACKEND");
-    }
+
+
+
+
+
+
 
     let listOfAddresses = []; //dynamic array
 
-    //HERE IS EVENT LISTENER!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    const inputCheck = document.getElementById("address");
+
+    var inputCheck = document.getElementById("address");
 
 
 
-    let timer;
-    inputCheck.addEventListener("input", function (event){
 
-        clearTimeout(timer);
-        timer = window.setTimeout(getAddress, 200);
 
-    });
+    export function startAddressAPI() {
+        let timer;
+        inputCheck.addEventListener("input", function (event) {
 
+            clearTimeout(timer);
+            timer = window.setTimeout(getAddress, 200);
+
+        });
+
+    }
     async function getAddress(){
 
 
@@ -119,7 +125,7 @@ Search for an address! <!-- Hello, this is a comment-->
         listOfAddresses.length = 0;
 
         listOfAddresses.push(...results);
-        console.log("LIST OF ADDR: "+ listOfAddresses);
+
 
         //this takes in the input element, and an array.
         autocomplete(inputCheck, listOfAddresses);
@@ -149,7 +155,7 @@ Search for an address! <!-- Hello, this is a comment-->
             arrayResults.push(dataApproved);
 
         }
-        console.log("FINAL: " + arrayResults);
+
         //need to remove the ' and ,
 
         return arrayResults;
@@ -159,8 +165,8 @@ Search for an address! <!-- Hello, this is a comment-->
 
 
 
-    function autocomplete(inputElement, array){
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    export function autocomplete(inputElement, array){
+
         closeAllLists();
         var a;
         var b;
@@ -171,6 +177,7 @@ Search for an address! <!-- Hello, this is a comment-->
 
 
 
+        let foundMatch = false;
 
         a = document.createElement("DIV");
         a.setAttribute("id", inputElement.id + "autocomplete-list");
@@ -190,18 +197,16 @@ Search for an address! <!-- Hello, this is a comment-->
             return;
         }
 
-        console.log("THIS IS ARRAY OF AUTOCOMPLETE: ");
+
         for (c = 0; c < array.length; c++){
 
-            console.log(array[c]);
-            //split array into words
-            console.log("WORDS: "+ array[c].split(" "));
+
             //we have to check if input matches one of the starts of the words.
             let wordedArray = array[c].split(" ");
             let checked = false;
 
 
-            let foundMatch = false;
+
 
             for (let i = 0; i < wordedArray.length; i++){
 
@@ -209,7 +214,7 @@ Search for an address! <!-- Hello, this is a comment-->
                 if (wordedArray[i].substr(0, val.length).toUpperCase() == val.toUpperCase()){ // if any of the words match.
                     checked = true;
                     foundMatch = true; // if theres a word that match, eventually this will be true.
-                    console.log("Wahoo! " + wordedArray[i].toUpperCase());
+
 
 
                     b = document.createElement("DIV"); // this is THE SUGGESTION option.
@@ -239,11 +244,11 @@ Search for an address! <!-- Hello, this is a comment-->
 
 
 
-            console.log("the second one: "+ val.toUpperCase() + " VS " + array[c].substr(0, val.length).toUpperCase() + " and checking if check is " + checked);
+            //console.log("the second one: "+ val.toUpperCase() + " VS " + array[c].substr(0, val.length).toUpperCase() + " and checking if check is " + checked);
             if (array[c].substr(0, val.length).toUpperCase() == val.toUpperCase() && !checked) { // if matching suggestions... but only first word?
 
                 foundMatch = true;
-                console.log("WORKING autocomplete");
+                //console.log("WORKING autocomplete");
                 b = document.createElement("DIV"); // this is THE SUGGESTION option.
                 /*make the matching letters bold:*/
                 b.innerHTML = "<strong>" + array[c].substr(0, val.length) + "</strong>";
@@ -262,16 +267,16 @@ Search for an address! <!-- Hello, this is a comment-->
                 a.appendChild(b); //at the end, append it to the autocomplete container.
                 checked = false;
             }
-            if (!foundMatch){ // put this outside loop.
-                console.log("COULDN'T find a match!");
-                b = document.createElement("DIV"); // this is THE SUGGESTION option.
-                b.innerHTML += "Oops! No more results displayed! Please try again!";
-                b.innerHTML += "<input type='hidden' value='" + "ERROR" + "'>"; // this stores the true value.
-                a.appendChild(b); //at the end, append it to the autocomplete container.
-                return;
-            }
 
+        }
 
+        if (!foundMatch){ // put this outside loop.
+            //  console.log("COULDN'T find a match!");
+            b = document.createElement("DIV"); // this is THE SUGGESTION option.
+            b.innerHTML += "Oops! No more results displayed! Please try again!";
+            b.innerHTML += "<input type='hidden' value='" + "ERROR" + "'>"; // this stores the true value.
+            a.appendChild(b); //at the end, append it to the autocomplete container.
+            return;
 
         }
 
@@ -289,5 +294,7 @@ Search for an address! <!-- Hello, this is a comment-->
             }
         }
     }
+
+
 
 </script>
