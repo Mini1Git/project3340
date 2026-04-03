@@ -20,7 +20,6 @@
 <body class="receipt-body">
     <div class="receipt-container">
         <header class="receipt-header">
-            <i class="fa-solid fa-paper-plane"></i>
             <br>
             <h1>Order Placed</h1>
         </header>
