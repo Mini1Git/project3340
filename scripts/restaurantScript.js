@@ -1,66 +1,66 @@
 async function fetchRestaurant() {
-    const backendUrl = "../server/frontPageRestaurantBackend.php";
+    const container = document.querySelector(".restaurant-list");
 
-    // appends a unique timestamp to the URL
-    const fetchUrl = backendUrl + (backendUrl.includes('?') ? '&' : '?') + '_=' + Date.now();
-    
+    // clear old content
+    container.innerHTML = "";
+
     try {
-        // Fetch the data while explicitly telling the browser NOT to store or use a cache
-        const response = await fetch(fetchUrl, { cache: 'no-store' });
-        if (!response.ok) throw new Error('Network response was not ok');
-        
-        const jsonData = await response.json();
-        const restaurantBox = document.querySelector(".restaurant");
+        const response = await fetch("../server/frontPageRestaurantBackend.php");
+        const data = await response.json();
 
-        // Clear existing list to prevent duplicates on refresh
-        restaurantBox.innerHTML = ''; 
-        const restaurantList = document.createElement("ul");
+        const limit = 9;
 
-        let limit = 12;
-        let count = 0;
-        jsonData.forEach(restaurant => {
-            count++;
-            if (count <= limit) {
-                console.log(count);
-                const listitem = document.createElement("li");
-                const anchor = document.createElement("a");
-                anchor.href = `../services/menu.php?id=${restaurant["restaurant_id"]}`; //adding it temporariliy like this
+        data.slice(0, limit).forEach(restaurant => {
 
-                const image = document.createElement("img");
-                image.src = `../${restaurant["image_path"]}`;
-                image.alt = restaurant["business_name"];
-                anchor.appendChild(image);
+            // CARD
+            const card = document.createElement("div");
+            card.className = "card";
 
-                const info = document.createElement("div");
-                info.className = "info";
-                const icon = document.createElement("i");
-                icon.classList.add("fa-solid", "fa-star");
-                info.appendChild(icon);
+            // IMAGE
+            const image = document.createElement("img");
+            image.src = `../${restaurant.image_path}`;
+            image.alt = restaurant.business_name;
+            image.style.width = "100%";
+            image.style.height = "10rem";
+            image.style.objectFit = "cover";
 
-                const rateCuisne = document.createElement("span");
-                rateCuisne.textContent = restaurant["rating"] + " | " + restaurant["cuisine_name"];
-                info.appendChild(rateCuisne);
+            // BODY
+            const body = document.createElement("div");
+            body.className = "card-body";
 
-                const address = document.createElement("address");
-                address.textContent = restaurant["address"];
+            // NAME
+            const name = document.createElement("h3");
+            name.textContent = restaurant.business_name;
 
-                info.appendChild(address);
+            // INFO
+            const info = document.createElement("p");
+            info.innerHTML = `<i class="fa-solid fa-star"></i> ${restaurant.rating} | ${restaurant.cuisine_name}`;
 
-                const name = document.createElement("h3");
-                name.textContent = restaurant["business_name"];
+            // ADDRESS
+            const address = document.createElement("p");
+            address.textContent = restaurant.address;
 
-                info.appendChild(name);
+            // LINK
+            const link = document.createElement("a");
+            link.href = `../services/menu.php?id=${restaurant.restaurant_id}`;
+            link.style.textDecoration = "none";
+            link.style.color = "inherit";
 
-                anchor.appendChild(info);
-                listitem.appendChild(anchor);
-                restaurantList.appendChild(listitem);
+            // BUILD
+            body.appendChild(name);
+            body.appendChild(info);
+            body.appendChild(address);
 
-            }
+            card.appendChild(image);
+            card.appendChild(body);
+
+            link.appendChild(card);
+            container.appendChild(link);
         });
-        restaurantBox.appendChild(restaurantList); //append at end.
-    } catch (error){
-        console.error("fetchRestaurant Error:", error);
+
+    } catch (error) {
+        console.error("Error fetching restaurants:", error);
     }
 }
 
-window.addEventListener('load', fetchRestaurant);
+document.addEventListener("DOMContentLoaded", fetchRestaurant);

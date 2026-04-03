@@ -34,8 +34,6 @@ $items_result = $stmt_items->get_result();
     <meta charset="UTF-8">
     <title>Receipt #<?php echo $order_id; ?></title>
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <link rel="stylesheet" href="../stylesheets/receiptStyle.css">
 </head>

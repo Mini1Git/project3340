@@ -19,17 +19,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Grillow Login</title>
+    <title>Login</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-    <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
-    <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <!--Stylesheet specific to form elements-->
     <link rel="stylesheet" href="../stylesheets/formStyle.css">
-    <!--Stylesheet for screen sizes < 768 pixels-->
-    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <!--Script for the show/hide password field-->
     <script src="../scripts/scriptform.js" defer></script>
     <!--Includes a library of icons-->
@@ -37,77 +33,126 @@
 </head>
 <!--Applying the auth class to the body provides a different style to form pages.
 between the background and navigation menu.-->
-<body class="auth">
+<body>
     <!--Header with hamburger, logo, and account buttons based on user sigin-->
-    <header>
-        <div class="logo-menu">
-            <!--Hamburger div-->
-            <div class="ham">
-                <!--Hamburger image-->
-                <img src="../icons/hamburger.svg">
+    <div class="layout">
+        <!-- HEADER -->
+        <header class="header">
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
+                <h1 class="header-logo-h1">Grillow</h1>
+                <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
-            <!--Pizza icon and logo-->
-            <h1><img src="../icons/logo-pizza.png" alt="rushing pizza logo"> Grillow</h1>
-        </div>
-        <!--Account controls-->
-        <div class="log">
-            <!--Anchor tags to login and sign up pages-->
-            <a class="account-btn" href="../forms/login.php">Login</a>
-            <a class="account-btn-bold" href="../forms/signup.php">Sign Up</a>
-        </div>
-    </header>
-    <!--End of header, beginning of side menu-->
-    <!--Content div includes side nav menu-->
-    <div class="content">
-        <nav> <!--navigation bar-->
-            <div class="offscreen-menu">
-                <!--A list of services, these will redirect depending on login status-->
-                <ul class="services">
-                    <li id="on-page"><a href="../home/index.php"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                    <li><a href="browse.php"><i class="fa-solid fa-magnifying-glass"></i><span>Browse</span></a></li>
-                    <li><a href="orders.php"><i class="fa-solid fa-receipt"></i><span>Orders</span></a></li>
-                    <li><a href="favourites.php"><i class="fa-solid fa-star"></i><span>Favourites</span></a></li>
-                    <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
-                    <li><a href="../info/help.html"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
-                </ul>
-                <!--A list of other forms and a website wiki-->
-                <ul class="partner">
-                    <li><a href="../forms/partnerform.php">Partner with us</a></li>
-                    <li><a href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a href="../info/about.html">About us</a></li>
-                    <li><a href="../info/wiki.html">Wiki</a></li>
-                </ul>
-            </div>  
-        </nav>
+
+            <div>
+                <?php if (!$isLoggedIn): ?>
+                    <a class="btn btn-outline" href="../forms/login.php">Login</a>
+                    <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
+                <?php else: ?>
+                    <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
+                    <a class="btn btn-primary" href="../user/profile.php">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </header>
         <!--End of navigation bar-->
         <!--Parent element of a corresponding form-->
-        <div class="formparent">
-            <!--Form will use the POST method and process that information in the process_login PHP file-->
-            <form class="login" method="POST" action="../server/process_login.php">
-                <!--Form title-->
-                <h2>Login</h2>
-                <!--Div for email input-->
-                <div>
-                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+        <div class="layout-main forms">
+            <aside class="sidebar" id="sidebar">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                </ul>
+
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li>  
+                </ul>
+            </aside>
+            <aside class="mobile-nav hidden">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li> 
+                </ul>
+
+            </aside>
+
+            <main class="main"> 
+                <div class="formparent">
+                    <!--Form will use the POST method and process that information in the process_login PHP file-->
+                    <form class="form" method="POST" action="../server/process_login.php">
+                        <!--Form title-->
+                        <div class="form-title"><i class="fa-solid fa-circle-user"></i><h2>Sign In to Grillow</h2></div>
+                        <!--Div for email input-->
+                        <div class="form-main">
+                            <div class="input-field">
+                                <label class="label" for="email">Email Address</label>
+                                <input class="text-input" id="email" type="email" name="email" placeholder="Enter your email here" autocomplete="email" required>
+                            </div>
+                            <!--Div for password input, includes an interactive eye to show/hide password-->
+                            <div class="pass input-field">
+                                <label class="label" for="password">Password<a class="link" href="#">Forgot your password?</a></label>
+                                <input class="password text-input" id="password" type="password" placeholder="Enter your password" name="password" required>
+                                <span class="eye fa-solid fa-eye"></span> <!--to add the eye icon-->
+                                
+                            </div>
+                        
+                        <!--Link to a page in case you forgot your password-->    
+                        </div>
+                        <!--Button to submit login information-->
+                        <div class="input-field">
+                            <input class="btn btn-primary long-btn" type="submit" value="Login">
+                            <p style="text-align:center; margin-top: 1rem;">New to Grillow? <a class="link" href="../forms/signup.php">Create an Account</a><p>
+                        </div>
+                    </form>
+                    
                 </div>
-                <!--Div for password input, includes an interactive eye to show/hide password-->
-                <div class="pass">
-                    <input class="password" type="password" placeholder="Password" name="password" required>
-                    <span class="eye"></span> <!--to add the eye icon-->
-                </div>
-                <!--Link to a page in case you forgot your password-->    
-                <a href="">Forgot your password?</a>
-                <!--Button to submit login information-->
-                <input type="submit" value="Login">
-            </form>
+            </main>
+
         </div>
-        <!--End of form-->
+
+
     </div>
     <!--End of content div-->
-    
-    <aside id="theme-changer">
-        <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
+
+    <aside class="settings-menu-btn">
+        <i class="fa-solid fa-gear"></i>
     </aside>
+    <div class="settings-menu-window hidden">
+        <div class="settings-menu-content">
+            <div class="settings-menu-label">
+                <p>Settings<p>
+                <i class="fa-solid fa-x btn btn-primary"></i>
+            </div>
+            <h3>Theme</h3>
+            <div class="theme-options">
+                <button class="theme-btn" data-theme="">Default</button>
+                <button class="theme-btn" data-theme="theme2">Dark</button>
+                <button class="theme-btn" data-theme="theme3">Purple</button>
+            </div>
+        </div>
+    </div>
     <!--Script to control hamburger interactivity on both mobile and desktop-->
     <script src="../scripts/script.js"></script>
 </body>
