@@ -440,6 +440,11 @@ p, li, span, a, h5, h6 {
     background-color: var(--clr-bg);;
 }
 
+.aboutfact address{
+    font-style: normal;
+    color: var(--clr-muted);
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 12px;
