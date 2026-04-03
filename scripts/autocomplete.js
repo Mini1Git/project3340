@@ -88,7 +88,7 @@ export function autocomplete(inputElement, array){
     a.setAttribute("id", inputElement.id + "autocomplete-list");
     a.setAttribute("class", "autocomplete-items");
 
-    inputElement.parentNode.appendChild(a); // appends the div element to the autocomplete container.
+    inputElement.closest('form').appendChild(a); // appends the div element to the autocomplete container.
 
     //then gotta loop thru
 

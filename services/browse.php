@@ -89,7 +89,7 @@
                                     id="searchbox"
                                     placeholder="Search for food, restaurants..."
                                 >
-                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <span class="fa-solid fa-magnifying-glass search-icon"></span>
                             </div>
                             <input class="btn btn-primary long-btn" type="submit" value="Search">
                         </form>
