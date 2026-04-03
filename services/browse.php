@@ -40,13 +40,13 @@
                 <aside class="sidebar" id="sidebar">
                     <ul class="nav-list">
                         <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
-                        <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                        <li><a class="nav-link active" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
                     </ul>
 
                     <ul class="nav-list">
                         <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
                         <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
-                        <li><a class="nav-link active" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                        <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                     </ul>
 
                     <ul class="nav-list">

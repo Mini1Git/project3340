@@ -100,7 +100,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Address</h3>
 
-                        <div class="autocomplete">
+                        <div class="input-field">
                             <input class="text-input" type="text" name="profile-address" id="profile-address" autocomplete="off">
                         </div>
                     
