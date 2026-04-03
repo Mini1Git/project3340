@@ -66,7 +66,7 @@
                     <ul class="nav-list">
                         <li><a class="nav-link active" href="../forms/partnerform.php">Partner with Us</a></li>
                         <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                        <li><a class="nav-link" href="#">Wiki</a></li>  
+                        <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>  
                     </ul>
                 </aside>
                 <aside class="mobile-nav hidden">
@@ -80,7 +80,7 @@
                         <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
                         <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                         <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                        <li><a class="nav-link" href="#">Wiki</a></li> 
+                        <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
                     </ul>
 
                 </aside>
@@ -143,7 +143,7 @@
                 <div class="theme-options">
                     <button class="theme-btn" data-theme="">Default</button>
                     <button class="theme-btn" data-theme="theme2">Dark</button>
-                    <button class="theme-btn" data-theme="theme3">Purple</button>
+                    <button class="theme-btn" data-theme="theme3">Blue</button>
                 </div>
             </div>
         </div>

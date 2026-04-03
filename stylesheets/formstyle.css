@@ -131,6 +131,24 @@ body .forms {
     padding: 50px;
 }
 
+.mobile-nav .nav-link.active {
+    color: var(--clr-bg);
+}
+.mobile-nav .nav-link.active:hover {
+    background-color: var(--clr-primary-hover);
+    color: var(--clr-bg);
+}
+
+.mobile-nav .nav-link {
+    color: var(--clr-muted);
+}
+
+.mobile-nav .nav-link:hover {
+    background: #f4f4f4;
+    color: var(--clr-muted);
+}
+
+
 @media(max-width: 1023px) and (min-width: 768px)
 {
     .formparent {
