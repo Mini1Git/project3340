@@ -75,13 +75,73 @@ $isLoggedIn = isset($_SESSION['user_id']);
     </main>
 </div>
 
-<aside id="theme-changer">
-    <button id="default"></button><button id="theme2"></button><button id="theme3"></button>
-</aside>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                        <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                        <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>
+                        
+                    </ul>
+                </aside>
+                <aside class="mobile-nav hidden">
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a class="nav-link active" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                        <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                        <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                        <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                        <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                        <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                        <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                        <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                        <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
+                    </ul>
 
 <script src="../scripts/script.js"></script>
 <script src = "../server/browseBackend.php"></script>
 <script type = "module" src = "../scripts/browse.js"></script>
 </body>
 
+                <main class="main">
+                    <div class="form-parent">
+                        <form class="form search-form hero-card" method="GET">
+                            <div class="input-field search">
+                                <input 
+                                    class="text-input" 
+                                    type="text" 
+                                    name="q" 
+                                    placeholder="Search for food, restaurants..."
+                                >
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            </div>
+                            <input class="btn btn-primary long-btn" type="submit" value="Search">
+                        </form>
+                    </div>
+                    <div class="browse-cat">
+                    
+                    </div>
+                </main>
+        
+            </div>
+        </div>
+    
+        <aside class="settings-menu-btn">
+            <i class="fa-solid fa-gear"></i>
+        </aside>
+        <div class="settings-menu-window hidden">
+            <div class="settings-menu-content">
+                <div class="settings-menu-label">
+                    <p>Settings<p>
+                    <i class="fa-solid fa-x btn btn-primary"></i>
+                </div>
+                <h3>Theme</h3>
+                <div class="theme-options">
+                    <button class="theme-btn" data-theme="">Default</button>
+                    <button class="theme-btn" data-theme="theme2">Dark</button>
+                    <button class="theme-btn" data-theme="theme3">Blue</button>
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/script.js"></script>   
+    
+    </body>
 </html>

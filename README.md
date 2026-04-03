@@ -32,10 +32,6 @@ Languages: HTML, CSS, JavaScript, PHP
 
 - [X] _Develop_ a __common design__ using design tools or HTML and CSS and present each to the group. This includes the colour theme, forms, navigation system, link styles and anything else you can think of. Check each box if you have finished a design.
 
-## Requirements
-
-Languages: HTML, CSS, JavaScript, PHP
-
 ## Updates
 
 - __17/01/2026, Changes made:__
