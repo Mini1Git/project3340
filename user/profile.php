@@ -12,6 +12,38 @@
     $dbUser = "root";
     $dbPass = "";
 
+    try{
+        //connect to db
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
+        //tell us if error
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //get user's ID
+        $user_id = $_SESSION['user_id'];
+
+        //find user ingo
+        $userStmt = $pdo->prepare("SELECT name, email, phone_number, address FROM Customer WHERE user_id = :id");
+        $userStmt->execute(['id' => $user_id]);
+
+        //save result into $userData array
+        $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
+
+        //count the ordersand add up the sum total prices
+        $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_order WHERE customer_id = :id");
+        $statsStmt->execute(['id' => $user_id]);
+
+        //save result in statsData arrau\;y
+        $statsData = $statsStmt->fetch(PDO::FETCH_ASSOC);
+
+        //if nothing say 0
+        $totalOrders = $statsData['total_orders'] ?? 0;
+
+        //two deciaml places
+        $totalSpent = number_format($statsData['total_spent'] ?? 0, 2);
+    }
+    catch(PDOException $e) {
+        // the connection fails, stop the page and show the error.
+        die("Connection failed: " . $e->getMessage());
+    }
     
 ?>
 
@@ -121,11 +153,13 @@
                         <h3 class="card-title">Your Activity</h3>
                         <div class="profile-stats">
                             <div>
-                                <h4 id="stat-orders">0</h4>
+                                <h4 id="stat-orders">
+                                    <?php echo $totalOrders; ?>
+                                </h4>
                                 <p>Orders</p>
                             </div>
                             <div>
-                                <h4 id="stat-spent">$0</h4>
+                                <h4 id="stat-spent">$<?php echo $totalSpent; ?></h4>
                                 <p>Spent</p>
                             </div>
                         </div>
