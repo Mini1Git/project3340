@@ -104,6 +104,7 @@ between the background and navigation menu.-->
                     <form class="form" method="POST" action="../server/process_login.php">
                         <!--Form title-->
                         <div class="form-title"><i class="fa-solid fa-circle-user"></i><h2>Sign In to Grillow</h2></div>
+
                         <!--Div for email input-->
                         <div class="form-main">
                             <div class="input-field">
@@ -117,6 +118,20 @@ between the background and navigation menu.-->
                                 <span class="eye fa-solid fa-eye"></span> <!--to add the eye icon-->
                                 
                             </div>
+
+                        <!--error messages invalid username or incorrect password based on error retreived from process_login.pohp-->
+                        <?php if (isset($_GET['error'])): ?>
+                            <div style="color: #721c24; background-color: #ecd5d7; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 1rem; border-radius: 25px; text-align: center;">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                                <?php 
+                                    if ($_GET['error'] == "not_found") {
+                                        echo "Email not registered.";
+                                    } elseif ($_GET['error'] == "wrong_password") {
+                                        echo "Incorrect password.";
+                                    }
+                                ?>
+                            </div>
+                        <?php endif; ?>
                         
                         <!--Link to a page in case you forgot your password-->    
                         </div>

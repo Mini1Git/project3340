@@ -106,7 +106,7 @@ between the background and navigation menu.-->
 
                     <!--this msg pops up after user enters email to show "success"-->
                     <?php if (isset($_GET['status']) && $_GET['status'] == 'success'): ?>
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; text-align: center;">
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 25px; margin-bottom: 1rem; text-align: center;">
                             <i class="fa-solid fa-check-circle"></i> 
                             Check your inbox! If email is valid a reset link will be sent to your email.
                         </div>
