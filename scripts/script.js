@@ -1,34 +1,20 @@
-/*const hamMenu = document.querySelector('.ham');
-const hamImg = document.querySelector('.ham img');
-const offscreenMenu = document.querySelector('.offscreen-menu');
-
-
-hamMenu.addEventListener('click', () => { 
-    hamMenu.classList.toggle("active");
-    offscreenMenu.classList.toggle('active');
-    // also toggle a class on the content wrapper so layout can adjust
-    const contentWrap = document.querySelector('.content');
-    if (contentWrap) contentWrap.classList.toggle('nav-hidden');
-    
-    // Toggle between hamburger.svg and circle_x.svg
-    // On wide screens we always show the hamburger icon
-    if (window.innerWidth >= 768) {
-        hamImg.src = '../icons/hamburger.svg';
-    } else {
-        if (hamMenu.classList.contains('active')) {
-            hamImg.src = '../icons/circle_x.svg';
-        } else {
-            hamImg.src = '../icons/hamburger.svg';
-        }
-    }
-});
-*/
-
 const toggleBtn = document.getElementById("menu-toggle");
 const sidebar = document.getElementById("sidebar");
+const mobileNav = document.querySelector(".mobile-nav");
+const headerNav = document.querySelector(".header");
 
 toggleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("hidden");
+    if (window.innerWidth > 768) {
+        sidebar.classList.toggle("hidden");
+    } else {
+        mobileNav.classList.toggle("hidden");
+        if (!mobileNav.classList.contains("hidden")) {
+            headerNav.style.position = "fixed";
+            headerNav.style.zIndex = "101";
+        } else {
+            headerNav.style.position = "static";
+        }
+    }
 });
 
 

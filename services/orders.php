@@ -14,12 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Grillow</title>
+    <title>Orders</title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-    <link rel="stylesheet" href="../stylesheets/styletablet.css">
-    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
-    <link rel="stylesheet" href="../stylesheets/cartStyle.css">
+
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
     <script src="../scripts/cart.js?v=<?php echo filemtime('../scripts/cart.js'); ?>"></script>
 
@@ -76,9 +74,25 @@
                     
                 </ul>
             </aside>
+
+            <aside class="mobile-nav hidden">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                    <li><a class="nav-link active" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li> 
+                </ul>
+
+            </aside>
       
             <?php if($isLoggedIn): ?>
-            <main class="orders main">
+            <main class="restaurant-list orders main">
                 <h2>Your Most Recent Orders</h2>
             </main>
             <?php else: ?>

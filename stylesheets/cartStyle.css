@@ -22,8 +22,8 @@
 }
 .x {
     position: absolute;
-    right: 5px;
-    top: 1px;
+    top: 0.25rem;
+    right: 0.25rem;
 }
 
 

@@ -19,17 +19,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Grillow Login</title>
+    <title>Login</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-    <!--Stylesheet specific for screen sizes > 768 pixels and < 1023 px-->
-    <link rel="stylesheet" href="../stylesheets/styletablet.css">
     <!--Stylesheet specific to form elements-->
     <link rel="stylesheet" href="../stylesheets/formStyle.css">
-    <!--Stylesheet for screen sizes < 768 pixels-->
-    <link rel="stylesheet" href="../stylesheets/stylemobile.css">
     <!--Script for the show/hide password field-->
     <script src="../scripts/scriptform.js" defer></script>
     <!--Includes a library of icons-->
@@ -85,6 +81,21 @@ between the background and navigation menu.-->
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
                     <li><a class="nav-link" href="#">Wiki</a></li>  
                 </ul>
+            </aside>
+            <aside class="mobile-nav hidden">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li> 
+                </ul>
+
             </aside>
 
             <main class="main"> 

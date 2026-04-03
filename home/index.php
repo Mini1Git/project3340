@@ -43,7 +43,7 @@
 
         <!-- BODY -->
         <div class="layout-main">
-
+            
             <!-- SIDEBAR -->
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
@@ -65,16 +65,30 @@
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="#">Wiki</a></li>
-                    
+                    <li><a class="nav-link" href="#">Wiki</a></li>    
                 </ul>
+            </aside>
+            <aside class="mobile-nav hidden">
+                <ul class="nav-list">
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
+                    <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+                    <li><a class="nav-link" href="../info/help.html"><i class="fa-solid fa-circle-question"></i>Help</a></li>
+                    <li><a class="nav-link" href="../info/about.html"><i class="fa-solid fa-circle-info"></i>About</a></li>
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
+                    <li><a class="nav-link" href="#">Wiki</a></li> 
+                </ul>
+
             </aside>
 
             <!-- MAIN -->
             <main class="main">
 
                 <!-- HERO -->
-                <section class="hero">
+                <section class="hero home-page">
                     <div class="hero-content">
                         <h1 class="hero-title">Welcome to Windsor's Delivery App</h1>
                         <p class="hero-subtitle">

@@ -1,7 +1,9 @@
 body.theme2 {
     --clr-primary: #000000;
     --clr-primary-hover: #222222;
-    --clr-bg: #1e1e1e;
+    --clr-secondary: #AAAAAA;
+    --clr-secondary-hover: #BBBBBB;
+    --clr-bg: #4a4949;
     --clr-text-primary: #ffffff;
     --clr-text-secondary: #CCCCCC;
     --clr-card: #333333;
@@ -10,6 +12,8 @@ body.theme2 {
 body.theme3 {
     --clr-primary: #2202a3;
     --clr-primary-hover: #1a0180;
+    --clr-secondary: #78cbff;
+    --clr-secondary-hover: #6cb6e4;
     --clr-bg: #f4f6ff;
     --clr-text-primary: #1E1E1E;
 }

@@ -132,7 +132,6 @@ p, li, span, a, h5, h6 {
 }
 
 .hero-content {
-    max-width: 50rem;
     padding: var(--space-lg);
 }
 
@@ -245,9 +244,8 @@ p, li, span, a, h5, h6 {
 }
 
 .link {
-    color: var(--clr-text-primary);
+    color: var(--clr-secondary);
     color: var(--clr-secondary-hover);
-
 }
 
 .link:hover {
@@ -354,6 +352,82 @@ p, li, span, a, h5, h6 {
     align-items: center;
 }
 
+.hero.home-page {
+    background: url("../images/backgroundjumbotron.webp") no-repeat center center/cover;
+}
+
+.hero.home-page .hero-content {
+    width: 100%;
+    height: 100%;
+    background: var(--clr-secondary);
+    clip-path: polygon(70% 0%, 90% 100%, 0% 100%, 0% 0%);
+}
+
+.hero.home-page .hero-title, .hero.home-page .hero-subtitle {
+    max-width: 70%;
+}
+
+.hero.home-page .hero-title {
+    color: var(--clr-bg);
+}
+
+.hero.home-page .hero-subtitle {
+    color: var(--clr-bg);
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
+/*------------------------------------------------------------------*/
+
+.aboutheader {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--clr-text-primary);
+    background-color: var(--bg-color);
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+    border: var(--primary-color) solid 1rem;
+    
+}
+.aboutfact {
+    padding: 2rem;
+    border-bottom: var(--clr-text-secondary) solid;
+    color: var(--clr-text-primary);
+}
+
+.aboutfact:last-of-type {
+    border-bottom: none;
+}
+
+.aboutfact h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+.aboutfact p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.aboutsection {
+    margin: var(--space-lg);
+}
+
+/*---------------------------------------------------------------------*/
+
+.orders-list {
+    list-style: none;
+}
+
+.order-item {
+    margin: var(--space-lg);
+
+}
+
+
 @media (max-width: 768px) {
     html {
         font-size: 12px;
@@ -375,6 +449,31 @@ p, li, span, a, h5, h6 {
         width: 70%;
         height: 50%;
     }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        position: fixed;
+        overflow-y: scroll;
+        top: var(--header-height);
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: var(--clr-bg);
+        z-index: 99;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-nav > ul {
+        width: 50%;
+    }
+
+    .mobile-nav.hidden {
+        left: -100vw;
+    }
+    
 }
 
 @media screen and (max-width: 430px) {

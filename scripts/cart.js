@@ -1,9 +1,7 @@
 const cartBox = document.querySelector('.cart-box');
 
 if(cartBox){
-
-    create_cart()
-
+    create_cart();
 }
 
 
@@ -13,13 +11,14 @@ function create_cart(){
     let total = 0;  //it'll change inside the loop
 
 
-    if(cart){ //if cart not null
+    if (cart) { //if cart not null
         cart.forEach(item => {
             const foodCard = document.createElement('div');
             foodCard.className = 'card';
+            foodCard.style.position = "relative";
             const cross = document.createElement('span');
             cross.textContent = '✕';
-            cross.className = 'x';
+            cross.className = 'x btn btn-primary';
             cross.addEventListener('click', () => {
                 console.log('hello');
                 remove_item(item);
@@ -42,13 +41,18 @@ function create_cart(){
     const show_total = document.createElement('h3');
     show_total.textContent= `
         Your Total is $${total.toFixed(2)}`;
+    show_total.style.textAlign = 'center';
     cartBox.appendChild(show_total);
     if(total !== 0 ){ //if there is something in the cart
+        const orderBtnDiv = document.createElement('div');
+        orderBtnDiv.style.display = "flex";
         const order_btn = document.createElement('a');
-        order_btn.classList.add("btn", "btn-primary", "long-btn");
+        order_btn.classList.add('btn', 'btn-primary', 'long-btn');
+        order_btn.style.textAlign = "center";
         order_btn.textContent = `Place Your Order`;
-        order_btn.href = "../forms/orderform.php"
-        cartBox.appendChild(order_btn);
+        order_btn.href = "../forms/orderform.php";
+        orderBtnDiv.appendChild(order_btn);
+        cartBox.appendChild(orderBtnDiv);
     }
     sessionStorage.setItem('total', total.toFixed(2)); //setting the total
 

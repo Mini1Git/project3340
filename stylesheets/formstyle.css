@@ -51,7 +51,7 @@ body .forms {
 .text-input {
     width: 100%;
 
-    background-color: var(--clr-border);
+    background-color: var(--clr-bg);
     color: var(--clr-text-primary);
 
     border: none;
