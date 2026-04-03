@@ -448,6 +448,10 @@ p, li, span, a, h5, h6 {
 video {
     text-align: center;
     width: 70%;
+    margin: 0 auto;
+}
+.videobox {
+    text-align: center;
 }
 
 @media (max-width: 768px) {
