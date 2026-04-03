@@ -431,7 +431,7 @@ p, li, span, a, h5, h6 {
     background-color: var(--clr-primary);
     color: var(--clr-bg);
     border: 2px solid var(--clr-primary);
-    padding: 10px;
+    padding: 10px var(--space-lg);
     border-radius: 30px;
 }
 
@@ -445,6 +445,10 @@ p, li, span, a, h5, h6 {
     color: var(--clr-muted);
 }
 
+.info-contain{
+    display: flex;
+    justify-content: space-around;
+}
 video {
     text-align: center;
     width: 70%;
