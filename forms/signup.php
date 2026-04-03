@@ -127,6 +127,19 @@ between the background and navigation menu.-->
                                 <input class="password text-input" class="password" name="password" id="password" type="password" minlength=10 placeholder="Enter your password" required>
                                 <span class="eye fa-solid fa-eye"></span> <!--to add the eye icon-->
                             </div>
+
+                            <!--error message for wrong password format-->
+                            <?php if (isset($_GET['error'])): ?>
+                                <div style="color: #721c24; background-color: #ecd5d7; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 1rem; border-radius: 25px; text-align: center;">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                    <?php 
+                                        if ($_GET['error'] == "format_password") {
+                                            echo "Password must be at least 10 characters, include uppercase letters, lowercase letters, a number, and a symbol.";
+                                        }
+                                    ?>
+                                </div>
+                            <?php endif; ?>
+
                         </div>
                         <!--Button to submit register information-->
                         <div class="input-field">
