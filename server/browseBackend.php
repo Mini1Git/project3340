@@ -2,9 +2,9 @@
 session_start();
 
 $host = "localhost";
-$dbname = "tran9b_terminator";
-$username = "tran9b_terminator";
-$password = "AkrTtVN3HGXu3VzdkX9r";
+$dbname = "grillow";
+$username = "root";
+$password = "";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -33,10 +33,12 @@ if ($query === '') {
         SELECT DISTINCT 
             rv.business_name AS name, 
             rv.cuisine_name AS cuisine, 
+            rv.image_path AS image,
             p.product_name AS product,
+            p.price AS price,
             p.product_id AS id
         FROM Restaurant_Vendor rv
-        JOIN Product p ON rv.vendor_id = p.vendor_id
+        JOIN Product p ON rv.restaurant_id = p.vendor_id
         WHERE p.instock = 1
         LIMIT 50
     ");
@@ -46,10 +48,12 @@ if ($query === '') {
         SELECT DISTINCT 
             rv.business_name AS name, 
             rv.cuisine_name AS cuisine, 
+            rv.image_path AS image,
             p.product_name AS product,
+            p.price AS price,
             p.product_id AS id
         FROM Restaurant_Vendor rv
-        JOIN Product p ON rv.vendor_id = p.vendor_id
+        JOIN Product p ON rv.restaurant_id = p.vendor_id
         WHERE (rv.business_name LIKE CONCAT('%', ?, '%')
             OR p.product_name LIKE CONCAT('%', ?, '%')
             OR rv.cuisine_name LIKE CONCAT('%', ?, '%'))

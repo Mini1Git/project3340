@@ -427,6 +427,18 @@ p, li, span, a, h5, h6 {
 
 }
 
+.more-info {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg);
+    border: 2px solid var(--clr-primary);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.more-info:hover {
+    color: var(--clr-primary);
+    background-color: var(--clr-bg);;
+}
 
 @media (max-width: 768px) {
     html {
