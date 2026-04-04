@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $current_user = $_SESSION['user_id'];
 
-
+//database connecton
 $host = 'localhost';
 $db   = 'grillow';
 $user = 'root'; 
@@ -49,7 +49,8 @@ try {
     // Return the top 4 most ordered from restaurants data as JSON
     echo json_encode($favourites);
 
-} catch (\PDOException $e) {
+} 
+catch (\PDOException $e) {
     // Return error as JSON so JS can catch it
     echo json_encode(['error' => $e->getMessage()]);
 }

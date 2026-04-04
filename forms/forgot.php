@@ -11,6 +11,8 @@
     }   
 ?>
 
+//page for if the user forgot their password to reset it
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,7 +140,6 @@ between the background and navigation menu.-->
             </main>
 
         </div>
-
 
     </div>
     <!--End of content div-->

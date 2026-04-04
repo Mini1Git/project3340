@@ -101,6 +101,7 @@
                     <p>Please log in to view your orders</p>
                 </main>
             <?php endif;?>
+            <!--orders content shown here if logged in-->
     </div>
     <aside class="settings-menu-btn">
         <i class="fa-solid fa-gear"></i>

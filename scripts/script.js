@@ -1,13 +1,15 @@
-const toggleBtn = document.getElementById("menu-toggle");
-const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("menu-toggle"); //menu toggle button
+const sidebar = document.getElementById("sidebar"); 
 const mobileNav = document.querySelector(".mobile-nav");
 const headerNav = document.querySelector(".header");
 
 toggleBtn.addEventListener("click", () => {
     if (window.innerWidth > 768) {
         sidebar.classList.toggle("hidden");
-    } else {
+        //if width is bit we hide the siedbar
+    } else { //mobile nav toggle set to hidden
         mobileNav.classList.toggle("hidden");
+        //if we show the mobile nav, we set header to fixed so it stays on top of the mobile nav
         if (!mobileNav.classList.contains("hidden")) {
             headerNav.style.position = "fixed";
             headerNav.style.zIndex = "101";
@@ -23,19 +25,19 @@ const settingsX = document.querySelector(".settings-menu-window .fa-x");
 const settingsMenu = document.querySelector(".settings-menu-window");
 const settingsBtn = document.querySelector(".settings-menu-btn");
 
-settingsBtn.addEventListener('click', () => {
+settingsBtn.addEventListener('click', () => { //toggle settings menu on click
     if (settingsMenu.classList.contains("hidden")) {
         settingsMenu.classList.remove("hidden");
     }
 });
 
-settingsX.addEventListener('click', () => {
+settingsX.addEventListener('click', () => { //close settings menu on click
     if (!(settingsMenu.classList.contains("hidden"))) {
         settingsMenu.classList.add("hidden");
     }
 });
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => { //close settings menu on esc key
     if (!(settingsMenu.classList.contains("hidden"))) {
         if (e.key === "Escape") {
             settingsMenu.classList.add("hidden");
@@ -44,8 +46,8 @@ document.addEventListener('keydown', (e) => {
     
 });
 
-
-document.addEventListener("DOMContentLoaded", () => {
+//get chosen theme from session storage so it remains consistent
+document.addEventListener("DOMContentLoaded", () => { 
     const savedTheme = sessionStorage.getItem("theme");
     if (savedTheme) {
         document.body.classList.add(savedTheme);

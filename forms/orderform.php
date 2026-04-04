@@ -87,7 +87,7 @@
 
                 <div class="main">
                     <div class="formparent">
-                        <form id ="order" class="form" action="order_success.php" method="POST"> <!-- action redirect: go to page that says thanks for order, or maybe go to orders page? -->
+                        <form id ="order" class="form" action="order_success.php" method="POST"> <!-- action redirect: go to page that says thank you for ordering and order was successful -->
                             <h2 class="form-title">Place Your Order</h2>
                             
                             <div class="form-main">
