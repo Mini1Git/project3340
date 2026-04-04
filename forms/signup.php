@@ -43,7 +43,7 @@ between the background and navigation menu.-->
             </div>
 
             <div>
-                <?php if (!$isLoggedIn): ?>
+                <?php if (!$isLoggedIn): ?> <!--checking logged in or not-->
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                 <?php else: ?>
@@ -83,7 +83,7 @@ between the background and navigation menu.-->
                 </ul>
             </aside>
 
-            <aside class="mobile-nav hidden">
+            <aside class="mobile-nav hidden"> <!--for mobile nav-->
                 <ul class="nav-list">
                     <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
@@ -156,7 +156,7 @@ between the background and navigation menu.-->
         </div>
     </div>
 
-    <aside class="settings-menu-btn">
+    <aside class="settings-menu-btn"> <!--theme change menu-->
         <i class="fa-solid fa-gear"></i>
     </aside>
     <div class="settings-menu-window hidden">
