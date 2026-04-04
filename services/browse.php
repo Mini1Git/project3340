@@ -25,7 +25,7 @@
                 </div>
 
                 <div>
-                    <?php if (!$isLoggedIn): ?>
+                    <?php if (!$isLoggedIn): ?> <!--checking logged in or not--> 
                         <a class="btn btn-outline" href="../forms/login.php">Login</a>
                         <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                     <?php else: ?>
@@ -61,7 +61,7 @@
                         
                     </ul>
                 </aside>
-                <aside class="mobile-nav hidden">
+                <aside class="mobile-nav hidden"><!--mobile nav menu-->
                     <ul class="nav-list">
                         <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a class="nav-link active" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
