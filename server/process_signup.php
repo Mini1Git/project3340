@@ -69,7 +69,7 @@
                 // 1062 = duplicate entry error in MySQL
                 if ($e->errorInfo[1] == 1062) {
                     // Apply the query string error=email_taken
-                    header("Location: signup.php?error=email_taken");
+                    header("Location: ../forms/signup.php?error=email_taken");
                     // Exit the script immediately
                     exit();
                 } else {

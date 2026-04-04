@@ -196,6 +196,12 @@ p, li, span, a, h5, h6 {
     padding: var(--space-md);
 }
 
+.card-img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+}
+
 .grid {
     display: grid;
     gap: var(--space-lg);

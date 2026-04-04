@@ -1,4 +1,10 @@
-<?php
+<?php 
+    $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false)
+        ? '/myProjects/project3340'   // local
+        : '';          // live server (root)
+
+    // Optional: full URL version
+    
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
     if (!$isLoggedIn) {
@@ -25,10 +31,10 @@
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
 
-        $hasRestaurant = isset($userRestaurant);
+        $hasRestaurant = $userRestaurant !== false;
 
-        if ($hasRestaurant) {
-            header("Location: ../user/profile.php");
+        if (!$hasRestaurant) {
+            header("Location: profile.php?error=no+restaurant+found");
             exit();
         }
     }
@@ -42,24 +48,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--List of meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Our icon we chose-->
+    <title>Grillow Profile Information</title>
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
-    <title>Partner Registration</title>
-    <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
-    <!--Includes a library of icons-->
+    <link rel="stylesheet" href="../stylesheets/profileStyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <div class="layout">
-
         <header class="header">
             <div style="display:flex; align-items:center; gap:1rem;">
                 <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
@@ -79,16 +79,18 @@
                 <?php endif; ?>
             </div>
         </header>
-        <div class="layout-main forms">
+
+        <div class="layout-main">
+            <!-- SIDEBAR -->
             <aside class="sidebar" id="sidebar">
                 <ul class="nav-list">
-                    <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
                 </ul>
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
-                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/favorites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
                     <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
 
@@ -98,12 +100,13 @@
                 </ul>
 
                 <ul class="nav-list">
-                    <li><a class="nav-link active" href="../forms/partnerform.php">Partner with Us</a></li>
+                    <li><a class="nav-link" href="../forms/partnerform.php">Partner with Us</a></li>
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
-                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>  
+                    <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>
+                    
                 </ul>
             </aside>
-            <aside class="mobile-nav hidden ">
+            <aside class="mobile-nav hidden">
                 <ul class="nav-list">
                     <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
@@ -116,47 +119,25 @@
                     <li><a class="nav-link" href="../forms/driverform.php">Become a Driver</a></li>
                     <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li> 
                 </ul>
-            </aside>
-            <div class="main">
-                <div class="formparent">
-                    <form class="form" action = "../server/registerRestaurantBackend.php" method="POST">
-                        <h2 class="form-title"><i class="fa-solid fa-circle-user"></i>Register your restaurant</h2>
-                        <div class="form-main">
-                            <div class="input-field">
-                                <label class="label" for="restaurant_name">Restaurant Name</label>
-                                <input class="text-input" type="text" name="restaurant_name" id="restaurant_name" placeholder="Enter the name of your restaurant" required>
-                            </div>
-                            <div class="input-field">
-                                <label class="label" for="cuisine_type">Cuisine Type</label>
-                                <input class="text-input" type="text" name="cuisine_type" id="cuisine_type" placeholder="Enter your restaurants cuisine type" required>
-                            </div>
-                            <div class="input-field">
-                                <label class="label" for="restaurant_email">Email Address</label>
-                                <input class="text-input" type="email" name="restaurant_email" id="restaurant_email" placeholder="Enter the email you will use for your restaurant" required>
-                            </div>
-                            <div class="input-field">
-                                <label class="label" for="restaurant_number">Phone Number</label>
-                                <input class="text-input" type="tel" name="restaurant_number" id="restaurant_number" placeholder="Enter the phone number you will use for your restaurant" minlength="9" maxlength="15">
-                            </div>
-                            <div class="input-field">
-                                <label class="label" for="restaurant_address">Address</label>
-                                <input class="text-input" type="text" name="restaurant_address" id="restaurant_address" placeholder="Enter the restaurant's address" required>
-                            </div>
-                        </div>
-                        
-                        <div class="input-field">
-                            <input class="btn btn-primary long-btn" type="submit" value="Register">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--End of navigation bar-->
 
+            </aside>
+        <main class="main menu">
+            <?php 
+                $imagePath = isset($userRestaurant["image_path"]) ? $userRestaurant["image_path"] : "images/placeholder/placeholder.svg";
+            ?>
+            <div>
+                <img 
+                    class="hero card-img"
+                    src="<?= $base_url . "/" . htmlspecialchars($imagePath) ?>" 
+                    alt="<?= htmlspecialchars($userRestaurant["business_name"]) ?>"
+                >
+            </div>
+            
+        </main>
     </div>
-                    
+
     <aside class="settings-menu-btn">
-        <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-gear"></i>
     </aside>
     <div class="settings-menu-window hidden">
         <div class="settings-menu-content">
@@ -172,8 +153,9 @@
             </div>
         </div>
     </div>
-    <!--Script to control hamburger interactivity on both mobile and desktop-->
-    <script src="../scripts/script.js"></script>
     
+
+    <script src="../scripts/script.js"></script>
+
 </body>
 </html>

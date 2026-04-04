@@ -1,7 +1,7 @@
 /*
 Fetch and render favouriterestaurants
  */
-async function fetchFavourites(favesUrl){
+async function fetchFavourites(favesUrl) {
     const favouritesBox = document.querySelector(".orders");
     if (!favouritesBox) return console.error('No .orders element found');
 

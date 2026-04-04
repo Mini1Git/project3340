@@ -6,6 +6,19 @@
         exit();
     }
 
+    function formatPhoneNum($phoneNumberString) {
+        // Remove all non-digits
+        $cleaned = preg_replace('/\D/', '', $phoneNumberString);
+
+        // Match 10-digit format
+        if (preg_match('/^(\d{3})(\d{3})(\d{4})$/', $cleaned, $matches)) {
+            return "({$matches[1]}) {$matches[2]}-{$matches[3]}";
+        }
+
+        // Return original if it doesn't match
+        return $phoneNumberString;
+    }
+
     // dsatabase connection
     $host = "localhost";
     $dbName = "grillow";
@@ -20,7 +33,7 @@
         //get user's ID
         $user_id = $_SESSION['user_id'];
 
-        //find user ingo
+        //find user info
         $userStmt = $pdo->prepare("SELECT name, email, phone_number, address FROM Customer WHERE user_id = :id");
         $userStmt->execute(['id' => $user_id]);
 
@@ -31,7 +44,7 @@
         $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_order WHERE customer_id = :id");
         $statsStmt->execute(['id' => $user_id]);
 
-        //save result in statsData arrau\;y
+        //save result in statsData array
         $statsData = $statsStmt->fetch(PDO::FETCH_ASSOC);
 
         //if nothing say 0
@@ -39,6 +52,13 @@
 
         //two deciaml places
         $totalSpent = number_format($statsData['total_spent'] ?? 0, 2);
+
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
+        $userRestaurantStmt->bindValue(":id", $user_id);
+        $userRestaurantStmt->execute();
+        $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
+
+        $hasRestaurant = $userRestaurant !== false;
     }
     catch(PDOException $e) {
         // the connection fails, stop the page and show the error.
@@ -129,9 +149,9 @@
                 <div class="card" id="account-card">
                     <div class="card-body">
                         <h3 class="card-title">Account Info</h3>
-                        <p><strong>Name:</strong> <span id="profile-name"></span></p>
-                        <p><strong>Email:</strong> <span id="profile-email"></span></p>
-                        <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+                        <p><strong>Name:</strong> <?php echo htmlspecialchars($userData["name"]); ?> </p>
+                        <p><strong>Email:</strong> <?php echo htmlspecialchars($userData["email"]); ?></p>
+                        <p><strong>Phone:</strong> <?php echo formatPhoneNum($userData["phone_number"]); ?></p>
                     </div>
                 </div>
 
@@ -141,10 +161,10 @@
                         <h3 class="card-title">Address</h3>
 
                         <div class="input-field">
-                            <input class="text-input" type="text" name="profile-address" id="profile-address" autocomplete="off">
+                            <input class="text-input" type="text" name="profile-address" id="profile-address" autocomplete="off" value="<?php echo htmlspecialchars($userData["address"]) ?>">
                         </div>
                     
-                        <button class="btn btn-primary" id="save-address-btn">Save</button>
+                        <button style="margin-top: var(--space-md);" class="btn btn-primary" id="save-address-btn">Save</button>
                     </div>
                 </div>
                 <!-- Stats -->
@@ -173,6 +193,22 @@
                         <p id="extra-info">Coming soon...</p>
                     </div>
                 </div>
+
+                <?php if ($hasRestaurant): ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Manage your restaurant</h3>
+                        <p><strong>Name:</strong> <?php echo htmlspecialchars($userRestaurant["business_name"]); ?><p>
+                        <p><strong>Address:</strong> <?php echo htmlspecialchars($userRestaurant["address"]); ?></p>
+                        <p><strong>Email:</strong> <?php echo htmlspecialchars($userRestaurant["email"]); ?></p>
+                        <p><strong>Phone Number:</strong> <?php echo htmlspecialchars($userRestaurant["phone_number"]); ?></p>
+                        <div style="margin-top: var(--space-md);">
+                            <a class="btn btn-primary" href="../user/restaurant.php">Go to restaurant page  <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <?php endif; ?>
 
             </section>
 
