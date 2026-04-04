@@ -35,8 +35,8 @@
             // and includes uppercase letters, lowercase letters, a number, and a symbol 
             $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{10,}$/';
             if (!preg_match($pattern, $userPass)) {
-                // If the user enters a password that doesn't match the pattern defined above, then exit the script 
-                die("Password must be at least 10 characters and include uppercase, lowercase, number, and symbol.");
+                // If the user enters a password that doesn't match the pattern defined above, query string error=format_password
+                header("Location: ../forms/signup.php?error=format_password");
             }
 
             // Convert the raw password to a hashed password. This is what we're storing in the database
@@ -69,7 +69,7 @@
                 // 1062 = duplicate entry error in MySQL
                 if ($e->errorInfo[1] == 1062) {
                     // Apply the query string error=email_taken
-                    header("Location: signup.php?error=email_taken");
+                    header("Location: ../forms/signup.php?error=email_taken");
                     // Exit the script immediately
                     exit();
                 } else {

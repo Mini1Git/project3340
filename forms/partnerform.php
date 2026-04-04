@@ -1,12 +1,42 @@
 <?php
-    // Start the session to access the superglobal array
     session_start();
-    // If the user_id value is set within the $_SESSION array, then the user is logged in, otherwise not
     $isLoggedIn = isset($_SESSION['user_id']);
     if (!$isLoggedIn) {
-        header("Location: login.php");
+        header("Location: ../forms/login.php");
         exit();
     }
+
+    // dsatabase connection
+    $host = "localhost";
+    $dbName = "grillow";
+    $dbUser = "root";
+    $dbPass = "";
+
+    try{
+        //connect to db
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
+        //tell us if error
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //get user's ID
+        $user_id = $_SESSION['user_id'];
+
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
+        $userRestaurantStmt->bindValue(":id", $user_id);
+        $userRestaurantStmt->execute();
+        $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
+
+        $hasRestaurant = isset($userRestaurant);
+
+        if ($hasRestaurant) {
+            header("Location: ../user/profile.php");
+            exit();
+        }
+    }
+    catch(PDOException $e) {
+        // the connection fails, stop the page and show the error.
+        die("Connection failed: " . $e->getMessage());
+    }
+    
 ?>
 
 <!DOCTYPE html>

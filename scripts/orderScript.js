@@ -75,7 +75,7 @@ function createOrderItem(order) {
         <div class="card">
             <img src="../${order.img_path}" 
                  alt="${order.business_name}"
-                 style="width: 100%; height: 10rem; object-fit: cover;">
+                 class="card-img">
 
             <div class="card-body">
                 <h3 class="order-name">${order.business_name}</h3>

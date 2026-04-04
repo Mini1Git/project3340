@@ -20,9 +20,7 @@ async function fetchRestaurant() {
             const image = document.createElement("img");
             image.src = `../${restaurant.image_path}`;
             image.alt = restaurant.business_name;
-            image.style.width = "100%";
-            image.style.height = "10rem";
-            image.style.objectFit = "cover";
+            image.className = "card-img";
 
             // BODY
             const body = document.createElement("div");
