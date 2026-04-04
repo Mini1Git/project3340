@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $current_user = $_SESSION['user_id'];
 
-
+//database connection
 $host = 'localhost';
 $db   = 'grillow';
 $user = 'root'; 

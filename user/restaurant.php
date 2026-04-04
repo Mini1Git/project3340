@@ -54,7 +54,7 @@
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-    <link rel="stylesheet" href="../stylesheets/profileStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -131,8 +131,77 @@
                     src="<?= $base_url . "/" . htmlspecialchars($imagePath) ?>" 
                     alt="<?= htmlspecialchars($userRestaurant["business_name"]) ?>"
                 >
+                <div class="card">
+                <div class="card-body">
+                    <h2>Update Restaurant Info</h2>
+
+                    <!-- Image Upload -->
+                    <form action="../server/updateRestaurant.php" method="POST" enctype="multipart/form-data">
+                        <label class="label" for="restaurant_image">Upload Restaurant Image:</label>
+                        <input class="file-input" type="file" name="restaurant_image" id="restaurant_image" accept="image/*">
+                        <input type="submit" name="upload_image" value="Upload Image" class="btn btn-primary">
+                    </form>
+                    <br>
+                    <hr>
+                    <!-- Add Menu Item -->
+                    <form action="../server/updateRestaurant.php" method="POST">
+                        <h3 class="form-title">Add New Menu Item</h3>
+                        <div class="input-field">
+                            <input class="text-input" type="text" name="product_name" placeholder="Item Name" required>
+                        </div>    
+                        <div class="input-field">
+                            <input class="text-input" type="number" step="0.01" name="price" placeholder="Price" required>
+                        </div>
+                        <div class="input-field">
+                            <textarea class="text-input" name="description" placeholder="Item Description" required></textarea>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label class="label">
+                                In Stock <input type="checkbox" name="instock" value="1" checked> 
+                            </label>
+                        </div>
+                        
+                        <input type="submit" name="add_item" value="Add Menu Item" class="btn btn-primary long-btn">
+                    </form>
+                    <br>
+                    <hr>
+                    
+                    <!-- Edit Menu Items (optional) -->
+                    <h3 class="form-title">Edit Existing Items</h3>
+                    <?php
+                    // Fetch products for this vendor
+                    $productsStmt = $pdo->prepare("SELECT * FROM Product WHERE vendor_id = :vid");
+                    $productsStmt->execute([':vid' => $userRestaurant['restaurant_id']]);
+                    $products = $productsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach($products as $prod): ?>
+                        <form action="../server/updateRestaurant.php" method="POST" style="margin-bottom:1rem;">
+                            <input type="hidden" name="product_id" value="<?= $prod['product_id'] ?>">
+                            <div class="input-field">
+                                <input class="text-input" type="text" name="product_name" value="<?= htmlspecialchars($prod['product_name']) ?>" required>
+                            </div>
+                            <div class="input-field">
+                                <input class="text-input" type="number" step="0.01" name="price" value="<?= $prod['price'] ?>" required>
+                            </div>
+                            <div class="input-field">
+                                <textarea class="text-input" name="description" required><?= htmlspecialchars($prod['description']) ?></textarea>
+                            </div>
+                            <div class="input-field">
+                                <label class="label">
+                                    In Stock <input type="checkbox" name="instock" value="1" <?= $prod['instock'] ? 'checked' : '' ?>>
+                                </label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" name="edit_item" value="Update Item" class="btn btn-primary">
+                                <input type="submit" name="delete_item" value="Delete Item" class="btn">
+                            </div>
+                            
+                        </form>
+                    <?php endforeach; ?>
+                </div>
             </div>
-            
+            </div>
         </main>
     </div>
 

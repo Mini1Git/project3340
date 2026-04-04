@@ -3,6 +3,7 @@
     align-items: center;
 }
 
+/*each card is restaurant, clicking on it takes you to the restaurant page*/
 .wikiCards {
     align-items: center;
     margin: 20px auto;
@@ -18,6 +19,8 @@
 .wikiIntro h2 {
     text-align: center;
 }
+
+/* intro with a text description */
 .wikiIntro {
     display: flex;
     flex-direction: column;
@@ -43,6 +46,8 @@
     width: 100%;
     margin: 30px auto;
 }
+
+/*each wiki card list item */
 .wikiCards li {
     flex: 0 1 250px;
     aspect-ratio: 1 / 1;

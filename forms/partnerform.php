@@ -20,12 +20,26 @@
         //get user's ID
         $user_id = $_SESSION['user_id'];
 
+        //connect to db
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
+        //tell us if error
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //get user's ID
+        $user_id = $_SESSION['user_id'];
+
+        //find user info
+        $userStmt = $pdo->prepare("SELECT name, email, phone_number, address FROM Customer WHERE user_id = :id");
+        $userStmt->execute(['id' => $user_id]);
+
+        //save result into $userData array
+        $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
+
         $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
 
-        $hasRestaurant = isset($userRestaurant);
+        $hasRestaurant = $userRestaurant !== false;
 
         if ($hasRestaurant) {
             header("Location: ../user/profile.php");
@@ -68,7 +82,7 @@
             </div>
 
             <div>
-                <?php if (!$isLoggedIn): ?>
+                <?php if (!$isLoggedIn): ?> <!--checking logged in or not-->
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                 <?php else: ?>

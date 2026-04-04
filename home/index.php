@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $isLoggedIn = isset($_SESSION['user_id']);
+    $isLoggedIn = isset($_SESSION['user_id']); //checking if logged in or not
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
         <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
         <link rel="stylesheet" href="../stylesheets/style.css">
         <link rel="stylesheet" href="../stylesheets/stylealternate.css">
-
+        <!--api call for icons-->
         <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
     </head>
 
@@ -28,7 +28,7 @@
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
 
-            <div>
+            <div> <!--based on logged in or not-->
                 <?php if (!$isLoggedIn): ?>
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
@@ -124,7 +124,7 @@
                 <button class="theme-btn" data-theme="theme3">Blue</button>
             </div>
         </div>
-    </div>
+    </div> <!--the js scripts-->
     <script src="../scripts/restaurantScript.js"></script>
     <script src="../scripts/script.js"></script>
 

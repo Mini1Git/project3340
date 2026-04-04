@@ -43,12 +43,13 @@ between the background and navigation menu.-->
             </div>
 
             <div>
-                <?php if (!$isLoggedIn): ?>
+                <?php if (!$isLoggedIn): ?> <!--checking logged in or not-->
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                 <?php else: ?>
                     <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
                     <a class="btn btn-primary" href="../user/profile.php">
+                        //person icon for profile button link
                         <i class="fa-solid fa-user"></i>
                     </a>
                 <?php endif; ?>
@@ -82,7 +83,7 @@ between the background and navigation menu.-->
                 </ul>
             </aside>
 
-            <aside class="mobile-nav hidden">
+            <aside class="mobile-nav hidden"> <!--for mobile nav-->
                 <ul class="nav-list">
                     <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
@@ -133,6 +134,7 @@ between the background and navigation menu.-->
                                 <div style="color: #721c24; background-color: #ecd5d7; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 1rem; border-radius: 25px; text-align: center;">
                                 <i class="fa-solid fa-circle-xmark"></i>
                                     <?php 
+                                    //if the error is that the format of the password is not following the rules
                                         if ($_GET['error'] == "format_password") {
                                             echo "Password must be at least 10 characters, include uppercase letters, lowercase letters, a number, and a symbol.";
                                         }
@@ -154,7 +156,7 @@ between the background and navigation menu.-->
         </div>
     </div>
 
-    <aside class="settings-menu-btn">
+    <aside class="settings-menu-btn"> <!--theme change menu-->
         <i class="fa-solid fa-gear"></i>
     </aside>
     <div class="settings-menu-window hidden">

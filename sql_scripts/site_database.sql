@@ -102,3 +102,13 @@ CREATE TABLE Payment(
     FOREIGN KEY(order_id) REFERENCES Customer_Order(order_id)
 
 );
+
+CREATE TABLE Admins(
+    admin_id INT NOT NULL PRIMARY KEY,
+    FOREIGN KEY (admin_id) REFERENCES Customer(user_id)
+);
+
+CREATE TABLE DisabledAccounts(
+    user_id INT PRIMARY KEY,
+    FOREIGN KEY (user_id) REFERENCES Customer(user_id)
+);
