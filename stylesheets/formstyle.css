@@ -9,13 +9,13 @@ body .forms {
 }
 
 
-.sidebar {
+.forms .sidebar {
     background: #ffffff1a; /* faded lighter panel so gradient shows through */
     backdrop-filter: blur(6px); /*Blur the background*/ 
     -webkit-backdrop-filter: blur(6px); 
 }
 
-.nav-link {
+.forms .nav-link {
     color: white;
 }
 
@@ -146,6 +146,10 @@ body .forms {
 .mobile-nav .nav-link:hover {
     background: #f4f4f4;
     color: var(--clr-muted);
+}
+
+.file-input {
+    color: var(--clr-text-primary);
 }
 
 
