@@ -8,7 +8,7 @@
     }
 ?>
 
-//page to show that their order was successfully placed
+<!--page to show that their order was successfully placed-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
         <h3>
             Thank you for ordering from Grillow! Your order will be arriving shortly!
         </h3>
-        //link to the orders page to see their order
+        <!--link to the orders page to see their order-->
         <div class="receipt-footer">
             <a href="../services/orders.php" class="back-link">See Your Orders</a>
         </div>
