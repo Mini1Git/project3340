@@ -1,11 +1,12 @@
 const ORDERS_PER_PAGE = 4;
-
+//on load fetch orders and display
 window.addEventListener('load', () => {
     initOrders("../server/get_orders.php");
 });
 
 async function initOrders(url) {
     const ordersBox = document.querySelector(".orders");
+    //did not find orders show error msg
     if (!ordersBox) return console.error("No .orders element found");
 
     try {
@@ -17,19 +18,20 @@ async function initOrders(url) {
         }
 
         renderOrders(orders, ordersBox);
-
+        //error catch and mesage on browsere and console
     } catch (err) {
         console.error(err);
         ordersBox.innerHTML = "<p>Failed to load orders.</p>";
     }
 }
-
+//hard reefresh function
 async function fetchOrders(url) {
+    //if the url already has query parameters, append with & otherwise start with ?
     const fetchUrl = url + (url.includes('?') ? '&' : '?') + '_=' + Date.now();
-
+    //no-store to hard refresh every time we refresh to see updates instantly
     const res = await fetch(fetchUrl, { cache: 'no-store' });
     const data = await res.json();
-
+    //eror message
     if (!Array.isArray(data)) {
         throw new Error("Invalid orders data");
     }
@@ -39,10 +41,12 @@ async function fetchOrders(url) {
 
 function renderOrders(orders, container) {
     let currentIndex = 0;
-
+    //create uhnordered list for orders-list list of orders
     const list = document.createElement("ul");
     list.className = "orders-list";
 
+    //button to load more orders if they have more to be shown
+    //initially only 4 shown
     const btn = document.createElement("button");
     btn.className = "btn btn-primary long-btn";
     btn.textContent = "More orders";
@@ -70,7 +74,7 @@ function renderOrders(orders, container) {
 function createOrderItem(order) {
     const li = document.createElement("li");
     li.className = "order-item";
-
+    //html for each order item
     li.innerHTML = `
         <div class="card">
             <img src="../${order.img_path}" 

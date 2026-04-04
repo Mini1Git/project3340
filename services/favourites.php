@@ -32,10 +32,12 @@
                 <img class="header-icon" src="../icons/logo-pizza.png">
             </div>
 
-            <div>
+            <div> 
+                <!--if logged out show log in and sign up buttons-->
                 <?php if (!$isLoggedIn): ?>
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
+                <!--if logged in show sign out and profile button-->
                 <?php else: ?>
                     <a class="btn btn-outline" href="../server/logout.php">Sign Out</a>
                     <a class="btn btn-primary" href="../user/profile.php">
@@ -90,9 +92,11 @@
             </aside>
 
             <?php if($isLoggedIn): ?>
+                <!--if logged in show your most frequently ordered from restaurants-->
             <main class="main orders">
                 <h2>Your most Frequently Ordered Restaurants</h2>
                 </main>
+                <!--if logged out ask them to log in, take them to log in page-->
             <?php else: ?>
                 <main class="main">
                     <h2>Logged Out</h2>
@@ -101,8 +105,8 @@
             <?php endif;?>
 
         </div> 
-                <!--favourites content shown here if logged in-->
-
+            <!--favourites content shown here if logged in-->
+            <!--rendered by javascript-->
     <div>
 
     <aside class="settings-menu-btn">
