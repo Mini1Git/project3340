@@ -82,7 +82,7 @@
             </div>
 
             <div>
-                <?php if (!$isLoggedIn): ?>
+                <?php if (!$isLoggedIn): ?> <!--checking logged in or not-->
                     <a class="btn btn-outline" href="../forms/login.php">Login</a>
                     <a class="btn btn-primary" href="../forms/signup.php">Sign Up</a>
                 <?php else: ?>

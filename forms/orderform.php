@@ -46,7 +46,7 @@
                 </div>
             </header>
             <div class="layout-main forms">
-                <aside class="sidebar" id="sidebar">
+                <aside class="sidebar" id="sidebar"> <!--th e regular nav-bar-->
                     <ul class="nav-list">
                         <li><a class="nav-link" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
@@ -69,7 +69,7 @@
                         <li><a class="nav-link" href="../info/wiki.html">Wiki</a></li>  
                     </ul>
                 </aside>
-                <aside class="mobile-nav hidden">
+                <aside class="mobile-nav hidden"> <!--the mobile nav bar-->
                     <ul class="nav-list">
                         <li><a class="nav-link active" href="../home/index.php"><i class="fa-solid fa-house"></i> Home</a></li>
                         <li><a class="nav-link" href="../services/browse.php"><i class="fa-solid fa-magnifying-glass"></i> Browse</a></li>
