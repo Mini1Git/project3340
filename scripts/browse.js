@@ -4,15 +4,26 @@ let autoCompleteList = [];
 
 // Fetch all results for autocomplete
 fetch('../server/browseBackend.php') // no query = all products
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+    })
     .then(data => {
         // data.results contains array of objects {name, cuisine, product, id}
+        if (!data.results || !Array.isArray(data.results)) {
+            console.error("Autocomplete data missing or invalid:", data);
+            return;
+        }
         autoCompleteList = data.results.flatMap(item => [
             item.product,
             item.name,
             item.cuisine
         ]).filter(Boolean);
         autoCompleteList = [...new Set(autoCompleteList)];
+        console.log("Autocomplete list loaded:", autoCompleteList);
+    })
+    .catch(err => {
+        console.error("Autocomplete fetch error:", err);
     });
 
 let timer;

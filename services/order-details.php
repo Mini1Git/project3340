@@ -1,38 +1,47 @@
-//note all receipt pages are linked to a specific order, cant just go to a random receipt page
 <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: ../forms/login.php");
-    exit();
-}
-// database connection
-$conn = new mysqli("localhost", "root", "", "Grillow");
-$order_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$user_id = $_SESSION['user_id'];
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../forms/login.php");
+        exit();
+    }
+    require_once __DIR__ . '/../config.php';
 
-// Fetch Main Order Info
-$stmt = $conn->prepare("SELECT * FROM Customer_Order WHERE order_id = ? AND customer_id = ?");
-$stmt->bind_param("ii", $order_id, $user_id);
-$stmt->execute();
-$order = $stmt->get_result()->fetch_assoc();
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Database connection failed: " . $e->getMessage());
+    }
 
-if (!$order) { die("Order not found."); }
+    $order_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+    $user_id = $_SESSION['user_id'];
 
-// Fetch Items with Product Names
-$items_sql = "SELECT p.product_name, oi.quantity, oi.subtotal 
-              FROM Order_Item oi 
-              JOIN Product p ON oi.product_id = p.product_id 
-              WHERE oi.order_id = ?";
-$stmt_items = $conn->prepare($items_sql);
-$stmt_items->bind_param("i", $order_id);
-$stmt_items->execute();
-$items_result = $stmt_items->get_result();
+    // Fetch Main Order Info
+    $stmt = $pdo->prepare("SELECT * FROM Customer_Order WHERE order_id = :order_id AND customer_id = :user_id");
+    $stmt->execute(['order_id' => $order_id, 'user_id' => $user_id]);
+    $order = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$order) {
+        die("Order not found.");
+    }
+
+    // Fetch Items with Product Names
+    $items_sql = "SELECT p.product_name, oi.quantity, oi.subtotal 
+                FROM Order_Item oi 
+                JOIN Product p ON oi.product_id = p.product_id 
+                WHERE oi.order_id = :order_id";
+    $stmt_items = $pdo->prepare($items_sql);
+    $stmt_items->execute(['order_id' => $order_id]);
+    $items_result = $stmt_items->fetchAll(PDO::FETCH_ASSOC);
 ?>
-//html for the receipt page
+<!-- html for the receipt page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Receipt #<?php echo $order_id; ?></title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
@@ -51,13 +60,13 @@ $items_result = $stmt_items->get_result();
                 <tr><th>Item</th><th>Qty</th><th class="text-right">Price</th></tr>
             </thead>
             <tbody>
-                <?php while($item = $items_result->fetch_assoc()): ?>
+                <?php foreach ($items_result as $item): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($item['product_name']); ?></td>
                     <td><?php echo $item['quantity']; ?></td>
                     <td class="text-right">$<?php echo number_format($item['subtotal'], 2); ?></td>
                 </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
             <tfoot>
                 <tr class="receipt-total-row">

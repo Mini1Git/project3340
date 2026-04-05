@@ -464,6 +464,16 @@ video {
     text-align: center;
 }
 
+.admin-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.admin-actions form {
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 12px;

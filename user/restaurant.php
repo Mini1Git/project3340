@@ -1,9 +1,9 @@
 <?php 
+    require_once __DIR__ . '/../config.php';
+// $pdo is now available from config.php
     $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false)
         ? '/myProjects/project3340'   // local
         : '';          // live server (root)
-
-    // Optional: full URL version
     
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
@@ -11,12 +11,6 @@
         header("Location: ../forms/login.php");
         exit();
     }
-
-    // dsatabase connection
-    $host = "localhost";
-    $dbName = "grillow";
-    $dbUser = "root";
-    $dbPass = "";
 
     try{
         //connect to db
@@ -26,7 +20,7 @@
         //get user's ID
         $user_id = $_SESSION['user_id'];
 
-        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin_id = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
@@ -50,6 +44,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Grillow Profile Information</title>
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <link rel="stylesheet" href="../stylesheets/style.css">
@@ -167,15 +164,15 @@
                     <br>
                     <hr>
                     
-                    <!-- Edit Menu Items (optional) -->
+                    <!-- Edit Menu Items-->
                     <h3 class="form-title">Edit Existing Items</h3>
                     <?php
-                    // Fetch products for this vendor
-                    $productsStmt = $pdo->prepare("SELECT * FROM Product WHERE vendor_id = :vid");
-                    $productsStmt->execute([':vid' => $userRestaurant['restaurant_id']]);
-                    $products = $productsStmt->fetchAll(PDO::FETCH_ASSOC);
+                        // Fetch products for this vendor
+                        $productsStmt = $pdo->prepare("SELECT * FROM Product WHERE vendor_id = :vid");
+                        $productsStmt->execute([':vid' => $userRestaurant['restaurant_id']]);
+                        $products = $productsStmt->fetchAll(PDO::FETCH_ASSOC);
 
-                    foreach($products as $prod): ?>
+                        foreach($products as $prod): ?>
                         <form action="../server/updateRestaurant.php" method="POST" style="margin-bottom:1rem;">
                             <input type="hidden" name="product_id" value="<?= $prod['product_id'] ?>">
                             <div class="input-field">
