@@ -24,7 +24,7 @@
         //save result into $userData array
         $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
 
-        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin_id = :id");
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin_id = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
@@ -60,7 +60,7 @@
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
 
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>

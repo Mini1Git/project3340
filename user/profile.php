@@ -36,7 +36,7 @@
         $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
 
         //count the ordersand add up the sum total prices
-        $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_order WHERE customer_id = :id");
+        $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_Order WHERE customer_id = :id");
         $statsStmt->execute(['id' => $user_id]);
 
         //save result in statsData array
@@ -48,7 +48,7 @@
         //two deciaml places
         $totalSpent = number_format($statsData['total_spent'] ?? 0, 2);
 
-        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin_id = :id");
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin_id = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
@@ -113,7 +113,7 @@
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
-                    <li><a class="nav-link" href="../services/favorites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
                     <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
 

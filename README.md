@@ -200,4 +200,4 @@ See `sql_scripts/site_database.sql` for the full schema.
 
 ## Live Demo
 
-- Add your live site URL here once deployed
+https://ions.myweb.cs.uwindsor.ca/COMP3340/project3340/home/index.php

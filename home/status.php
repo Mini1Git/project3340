@@ -1,7 +1,9 @@
 <?php
+require_once __DIR__ . '/../config.php';
+
 function checkDatabase() {
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=grillow", "root", "");
+        $pdo = new PDO("mysql:host=$host;dbname=$dbName", $dbUser, $dbPass);
         return true;
     } catch (PDOException $e) {
         return false;
@@ -28,8 +30,6 @@ function checkOrdersTable($pdo) {
 
 // Main check
 $status = [];
-
-require_once __DIR__ . '/../config.php';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbName", $dbUser, $dbPass);

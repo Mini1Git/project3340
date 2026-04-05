@@ -27,7 +27,7 @@
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Script for the show/hide password field-->
     <script src="../scripts/scriptform.js" defer></script>
     <!--Includes a library of icons-->

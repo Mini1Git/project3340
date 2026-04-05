@@ -30,7 +30,6 @@
         <link rel="stylesheet" href="../stylesheets/autocomplete_style.css">
         <!--Includes a library of icons-->
         <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
-        <script src="../scripts/scriptform.js" defer> </script>
     </head>
     <body>
         <div class="layout">

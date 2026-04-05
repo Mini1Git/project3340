@@ -22,7 +22,7 @@
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>
