@@ -12,7 +12,9 @@ CREATE TABLE Customer(
     address VARCHAR(255),
     -- Password must also not be null given that a user account can only exists with a password
     password VARCHAR(255) NOT NULL,
-    PRIMARY KEY(user_id)
+    PRIMARY KEY(user_id),
+    role ENUM('user', 'admin') DEFAULT 'user',
+    is_disabled TINYINT(1) DEFAULT 0
 );
 
 -- Table for the restaurant vendors. 
@@ -21,7 +23,7 @@ CREATE TABLE Restaurant_Vendor(
     restaurant_id INT AUTO_INCREMENT,
     business_name VARCHAR(100),
     -- Administrators name
-    admin VARCHAR(100) NOT NULL,
+    admin_id INT UNIQUE DEFAULT NULL,
     -- Email address of administrator / restaurant
     email VARCHAR(100) NOT NULL UNIQUE,
     -- Phone number of restaurant
@@ -35,7 +37,8 @@ CREATE TABLE Restaurant_Vendor(
     -- Restaurant must be a type of cusine
     cuisine_name VARCHAR(255) NOT NULL,
     -- Restaurant id is the primary key for each restaurant
-    PRIMARY KEY(restaurant_id)
+    PRIMARY KEY(restaurant_id),
+    FOREIGN KEY(admin_id) REFERENCES Customer(user_id) ON DELETE CASCADE
 );
 
 -- Product table for the restaurants different products
@@ -48,7 +51,7 @@ CREATE TABLE Product(
     price DECIMAL(10, 2) NOT NULL,
     instock TINYINT(1) NOT NULL,
     -- The vendor id comes directly from the restaurant table
-    FOREIGN KEY (vendor_id) REFERENCES Restaurant_Vendor(restaurant_id),
+    FOREIGN KEY (vendor_id) REFERENCES Restaurant_Vendor(restaurant_id) ON DELETE CASCADE,
     -- Primary key is the product id given that each item is unique
     PRIMARY KEY (product_id)
 );
@@ -65,7 +68,7 @@ CREATE TABLE Customer_Order(
     total_price DECIMAL(12, 2) NOT NULL,
     -- Order status is either true or false. True when fulfilled, false when unfulfilled
     order_status TINYINT(1) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customer(user_id),
+    FOREIGN KEY (customer_id) REFERENCES Customer(user_id) ON DELETE CASCADE,
     PRIMARY KEY(order_id)
 );
 
@@ -80,8 +83,8 @@ CREATE TABLE Order_Item(
     quantity INT(11) NOT NULL,
     -- The price given the quantity of this item
     subtotal DECIMAL(12, 2) NOT NULL,
-    FOREIGN KEY(order_id) REFERENCES Customer_Order(order_id),
-    FOREIGN KEY(product_id) REFERENCES Product(product_id),
+    FOREIGN KEY(order_id) REFERENCES Customer_Order(order_id) ON DELETE CASCADE,
+    FOREIGN KEY(product_id) REFERENCES Product(product_id) ON DELETE CASCADE,
     PRIMARY KEY (order_id, product_id)
 );
 
@@ -99,16 +102,6 @@ CREATE TABLE Payment(
     -- If the payment was fulfilled or not
     payment_status TINYINT(1) NOT NULL,
     PRIMARY KEY (payment_id),
-    FOREIGN KEY(order_id) REFERENCES Customer_Order(order_id)
+    FOREIGN KEY(order_id) REFERENCES Customer_Order(order_id) ON DELETE CASCADE
 
-);
-
-CREATE TABLE Admins(
-    admin_id INT NOT NULL PRIMARY KEY,
-    FOREIGN KEY (admin_id) REFERENCES Customer(user_id)
-);
-
-CREATE TABLE DisabledAccounts(
-    user_id INT PRIMARY KEY,
-    FOREIGN KEY (user_id) REFERENCES Customer(user_id)
 );

@@ -1,12 +1,8 @@
 
 <?php
 
-$host = "localhost";               // Your MySQL host (usually "localhost")
-$dbName = "grillow";    // Replace with your database name
-$dbUser = "root";       // Replace with your MySQL username
-$dbPass = "";
 
-
+require_once __DIR__ . '/../config.php';
 
 //this works, dont touch
 try {

@@ -1,4 +1,5 @@
 <?php
+    require_once __DIR__ . '/../config.php';
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
     if (!$isLoggedIn) {
@@ -6,20 +7,9 @@
         exit();
     }
 
-    // dsatabase connection
-    $host = "localhost";
-    $dbName = "grillow";
-    $dbUser = "root";
-    $dbPass = "";
+  
 
     try{
-        //connect to db
-        $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
-        //tell us if error
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //get user's ID
-        $user_id = $_SESSION['user_id'];
-
         //connect to db
         $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
         //tell us if error
@@ -34,7 +24,7 @@
         //save result into $userData array
         $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
 
-        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin_id = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
@@ -61,13 +51,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Partner Registration</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
 
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Includes a library of icons-->
     <script src="https://kit.fontawesome.com/7d8aa418e1.js" crossorigin="anonymous"></script>
 </head>

@@ -1,4 +1,3 @@
-//note all receipt pages are linked to a specific order, cant just go to a random receipt page
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -6,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 // database connection
-$conn = new mysqli("localhost", "root", "", "Grillow");
+$conn = new mysqli("localhost", "ions_grillow", "Kay123Tay321Gray231!%É.", "ions_grillow");
 $order_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $user_id = $_SESSION['user_id'];
 
@@ -28,7 +27,6 @@ $stmt_items->bind_param("i", $order_id);
 $stmt_items->execute();
 $items_result = $stmt_items->get_result();
 ?>
-//html for the receipt page
 <!DOCTYPE html>
 <html lang="en">
 <head>

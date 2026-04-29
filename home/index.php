@@ -5,10 +5,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+        <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+        <meta name = "description" content ="affordable local food delivery service in Windsor">
         <title>Grillow</title>
-
         <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
         <link rel="stylesheet" href="../stylesheets/style.css">
         <link rel="stylesheet" href="../stylesheets/stylealternate.css">

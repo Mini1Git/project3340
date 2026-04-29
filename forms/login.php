@@ -19,13 +19,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Our icon we chose-->
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Login</title>
     <!--Main stylsheet for nav, home page, restaurants, orders, and profile-->
     <link rel="stylesheet" href="../stylesheets/style.css">
     <!--Theme stylsheet. Includes all three themes-->
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">
     <!--Stylesheet specific to form elements-->
-    <link rel="stylesheet" href="../stylesheets/formStyle.css">
+    <link rel="stylesheet" href="../stylesheets/formstyle.css">
     <!--Script for the show/hide password field-->
     <script src="../scripts/scriptform.js" defer></script>
     <!--Includes a library of icons-->
@@ -36,7 +39,7 @@ between the background and navigation menu.-->
 <body>
     <!--Header with hamburger, logo, and account buttons based on user sigin-->
     <div class="layout">
-        <!-- HEADER -->
+
         <header class="header">
             <div style="display:flex; align-items:center; gap:1rem;">
                 <button id="menu-toggle" class="btn btn-outline"><i class="fa-solid fa-bars"></i></button>
@@ -56,7 +59,7 @@ between the background and navigation menu.-->
                 <?php endif; ?>
             </div>
         </header>
-        <!--End of navigation bar-->
+
         <!--Parent element of a corresponding form-->
         <div class="layout-main forms">
             <aside class="sidebar" id="sidebar">

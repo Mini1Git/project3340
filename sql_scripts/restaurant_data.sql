@@ -1,45 +1,45 @@
 -- Active: 1755301077799@@127.0.0.1@3306@grillow
 -- inserting with restaurants--
-INSERT INTO Restaurant_Vendor(restaurant_id, business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
+INSERT INTO Restaurant_Vendor(restaurant_id, business_name, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
-    (1, "Be Desi", "Nazifa Tahsin", "bedesi123@gmail.com", "+1 0126872198", "234 Wyandot, Windsor", 4.2, "images/indianfood.jpg", "Indian"),
-    (2, "McDongal's", "Wilson Tran", "mcdonald@gmail.com", "+1 7987987551", "8436 University Ave, Windsor", 3.5, "images/fastfood.jpg", "Fast food"),
-    (3, "Sushi Yum", "Liana Bell", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
-    (4, "Italiana", "Kayden Ions", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian"),
-    (13, 'Mexican Uncle', 'Luis Recardo', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
-    (14, 'Punjabi Tadka', 'Harmit Singh', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
+    (1, "Be Desi", "bedesi123@gmail.com", "+1 0126872198", "234 Wyandot, Windsor", 4.2, "images/indianfood.jpg", "Indian"),
+    (2, "McDongal's", "mcdonald@gmail.com", "+1 7987987551", "8436 University Ave, Windsor", 3.5, "images/fastfood.jpg", "Fast food"),
+    (3, "Sushi Yum", "sushiyum64@gmail.com", "+1 7904665523", "646 Campbell Ave, Windsor", 4.4, "images/sushi.jpg", "Japanese"),
+    (4, "Italiana", "italiana@gmail.com", "+1 6768667465", "287 Jenkins Ave, Windsor", 4.7, "images/italiana.jpg", "Italian"),
+    (13, 'Mexican Uncle', 'mexiunc23@gmail.com', '+1 2289419476', '456 Kennedy St, Windsor', 4.2, 'images/mexican uncle.jpg', 'Mexican'),
+    (14, 'Punjabi Tadka', 'punjabitad23@hotmail.com', '+1 7843532742', '232 Jenntte Ave, Windsor', 4.7, 'images/punjabi-tadka.jpg', 'Indian')
 ;
 
-INSERT INTO Restaurant_Vendor(business_name, admin, email, phone_number, address, rating, cuisine_name) 
+INSERT INTO Restaurant_Vendor(business_name, email, phone_number, address, rating, cuisine_name) 
 VALUES 
-    ("Pizza Palace", "Bill", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "Italian"),
-    ("Sushi World", "Bob", "sushi@gmail.com", "+1 5195558899", "789 Riverside Dr, Windsor", 4.7, "Japanese"),
-    ("Taco Fiesta", "Carlos", "taco@gmail.com", "+1 5198882233", "321 Tecumseh Rd, Windsor", 4.3, "Mexican"),
-    ("Burger Hub", "Jake", "burger@gmail.com", "+1 5194441122", "654 University Ave, Windsor", 3.9, "Fast food"),
-    ("Green Bowl", "Sarah", "green@gmail.com", "+1 5197776655", "987 Walker Rd, Windsor", 4.6, "Healthy"),
-    ("Dragon Express", "Joe", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "Chinese"),
-    ("BBQ House", "Chris Johnson", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "BBQ"),
-    ("Sweet Treats", "Emily Davis", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "Dessert");
+    ("Pizza Palace", "pizza@gmail.com", "+1 5192223344", "456 Ouellette Ave, Windsor", 4.2, "Italian"),
+    ("Sushi World", "sushi@gmail.com", "+1 5195558899", "789 Riverside Dr, Windsor", 4.7, "Japanese"),
+    ("Taco Fiesta", "taco@gmail.com", "+1 5198882233", "321 Tecumseh Rd, Windsor", 4.3, "Mexican"),
+    ("Burger Hub", "burger@gmail.com", "+1 5194441122", "654 University Ave, Windsor", 3.9, "Fast food"),
+    ("Green Bowl", "green@gmail.com", "+1 5197776655", "987 Walker Rd, Windsor", 4.6, "Healthy"),
+    ("Dragon Express", "dragon@gmail.com", "+1 5191112233", "159 Howard Ave, Windsor", 4.1, "Chinese"),
+    ("BBQ House", "bbq@gmail.com", "+1 5199990000", "753 Dougall Ave, Windsor", 4.4, "BBQ"),
+    ("Sweet Treats", "dessert@gmail.com", "+1 5196667777", "852 Erie St, Windsor", 4.8, "Dessert");
 
 -- restaurant inserts (liana)
-INSERT INTO Restaurant_Vendor(restaurant_id, business_name, admin, email, phone_number, address, rating, image_path, cuisine_name)
+INSERT INTO Restaurant_Vendor(restaurant_id, business_name, email, phone_number, address, rating, image_path, cuisine_name)
 VALUES
-    (1101, "The Hungry Bunny", "Yoshi Bell", "HungryBunny@grillow.com", "+1 519-555-0001", "123 Garden Lane, Windsor", 4.8, "images/hungrybunny.jpg", "Vegan"),
-    (1102, "Sprinkle Sparkle Cafe", "Luna Lovegood", "sprinkles@grillow.com", "+1 519-555-0002", "456 Peach St, Windsor", 4.9, "images/sprinkle.jpg", "Dessert"),
-    (1103, "Moonbeam", "Ellie Night", "moonbeam@grillow.com", "+1 519-555-0003", "789 Wyandotte St, Windsor", 4.5, "images/moonbeam.jpg", "Cafe"),
-    (1104, "Paws & Pancakes", "Charlie Barker", "paws@grillow.com", "+1 519-555-0004", "101 Georgie St, Windsor", 4.2, "images/paws.jpg", "Breakfast"),
-    (1105, "The Tippy Teapot", "Melanie Traws", "teapot@grillow.com", "+1 519-555-0005", "202 Tecumseh Rd, Windsor", 4.6, "images/teapot.jpg", "Cafe"),
-    (1106, "Giggling Gelato", "Supra Colda", "gelato@grillow.com", "+1 519-555-0006", "303 Riverside Rd, Windsor", 4.7, "images/gelato.jpg", "Italian"),
-    (1107, "Cool Cat cafe", "Jack Cat", "whiskers@grillow.com", "+1 519-555-0007", "404 Meow St, Windsor", 4.3, "images/coolcat.jpg", "Breakfast"),
-    (1108, "Berry Bliss Bistro", "Ruby Ronda", "berry@grillow.com", "+1 519-555-0008", "505 Strawberry Ave, Windsor", 4.4, "images/berry.jpg", "Smoothies"),
-    (1109, "The Dancing Donut", "Donny Glaze", "donut@grillow.com", "+1 519-555-0009", "606 Sprinkles Dr, Windsor", 4.8, "images/donut.jpg", "Bakery"),
-    (1110, "Skyki Steakhouse", "Oliver Belte", "skyki@grillow.com", "+1 519-555-0010", "707 Galaxy Way, Windsor", 4.1, "images/steak.jpg", "BBQ"),
-    (1111, "Sunny Side Up", "Ray Tenns", "sunny@grillow.com", "+1 519-555-0011", "808 Walker Rd, Windsor", 4.5, "images/sunny.jpg", "Breakfast"),
-    (1112, "Velvet Vanilla", "Steph Sweet", "velvet@grillow.com", "+1 519-555-0012", "909 Silk Rd, Windsor", 4.9, "images/velvet.jpg", "Dessert"),
-    (1113, "The Cozy Crumb", "Baker Brown", "crumb@grillow.com", "+1 519-555-0013", "111 Muffin Top, Windsor", 4.6, "images/crumb.jpg", "Bakery"),
-    (1114, "Bubble Bunny Tea", "Rocky Grant", "bubblebunny@grillow.com", "+1 519-555-0015", "333 Carrot Ave, Windsor", 4.4, "images/bubble.jpg", "Beverages"),
-    (1115, "Cloud Nine Confections", "Skyler Blue", "cloudnine@grillow.com", "+1 519-555-0019", "777 California St, Windsor ", 4.9, "images/cloud.jpg ", "Dessert "),
-    (1116,"Flutterby Fries","Mariposa Flaia","flutterby@grillow.com","+1 519-555-0020","888 Devonshire Rd, Windsor ", 4.2,"images/flutter.jpg ","Fast food ")
+    (1101, "The Hungry Bunny", "HungryBunny@grillow.com", "+1 519-555-0001", "123 Garden Lane, Windsor", 4.8, "images/hungrybunny.jpg", "Vegan"),
+    (1102, "Sprinkle Sparkle Cafe", "sprinkles@grillow.com", "+1 519-555-0002", "456 Peach St, Windsor", 4.9, "images/sprinkle.jpg", "Dessert"),
+    (1103, "Moonbeam", "Ellie Night", "+1 519-555-0003", "789 Wyandotte St, Windsor", 4.5, "images/moonbeam.jpg", "Cafe"),
+    (1104, "Paws & Pancakes", "paws@grillow.com", "+1 519-555-0004", "101 Georgie St, Windsor", 4.2, "images/paws.jpg", "Breakfast"),
+    (1105, "The Tippy Teapot", "teapot@grillow.com", "+1 519-555-0005", "202 Tecumseh Rd, Windsor", 4.6, "images/teapot.jpg", "Cafe"),
+    (1106, "Giggling Gelato", "gelato@grillow.com", "+1 519-555-0006", "303 Riverside Rd, Windsor", 4.7, "images/gelato.jpg", "Italian"),
+    (1107, "Cool Cat cafe", "whiskers@grillow.com", "+1 519-555-0007", "404 Meow St, Windsor", 4.3, "images/coolcat.jpg", "Breakfast"),
+    (1108, "Berry Bliss Bistro", "berry@grillow.com", "+1 519-555-0008", "505 Strawberry Ave, Windsor", 4.4, "images/berry.jpg", "Smoothies"),
+    (1109, "The Dancing Donut", "donut@grillow.com", "+1 519-555-0009", "606 Sprinkles Dr, Windsor", 4.8, "images/donut.jpg", "Bakery"),
+    (1110, "Skyki Steakhouse", "skyki@grillow.com", "+1 519-555-0010", "707 Galaxy Way, Windsor", 4.1, "images/steak.jpg", "BBQ"),
+    (1111, "Sunny Side Up", "sunny@grillow.com", "+1 519-555-0011", "808 Walker Rd, Windsor", 4.5, "images/sunny.jpg", "Breakfast"),
+    (1112, "Velvet Vanilla", "velvet@grillow.com", "+1 519-555-0012", "909 Silk Rd, Windsor", 4.9, "images/velvet.jpg", "Dessert"),
+    (1113, "The Cozy Crumb", "crumb@grillow.com", "+1 519-555-0013", "111 Muffin Top, Windsor", 4.6, "images/crumb.jpg", "Bakery"),
+    (1114, "Bubble Bunny Tea", "bubblebunny@grillow.com", "+1 519-555-0015", "333 Carrot Ave, Windsor", 4.4, "images/bubble.jpg", "Beverages"),
+    (1115, "Cloud Nine Confections", "cloudnine@grillow.com", "+1 519-555-0019", "777 California St, Windsor ", 4.9, "images/cloud.jpg ", "Dessert "),
+    (1116,"Flutterby Fries", "flutterby@grillow.com","+1 519-555-0020","888 Devonshire Rd, Windsor ", 4.2,"images/flutter.jpg ","Fast food ")
 ;
 
 
@@ -103,15 +103,7 @@ VALUES
 ;
 
 
-
--- for restaurant 5 (did not run yet)
--- INSERT INTO Product (vendor_id, product_name, description, price, instock) 
--- VALUES
--- (5, 'Chips with Salsa and Guacamole', 'Crispy Tortilla chips served with tangy and spicy Salsa and Guacamole', 5.99)
--- ;
-
-
---restaurants (liana) products
+-- restaurants (liana) products
 -- 1. The Hungry Bunny (Vegan)
 INSERT INTO Product (product_id, vendor_id, product_name, description, price, instock) 
 VALUES 

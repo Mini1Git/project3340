@@ -3,10 +3,8 @@
 session_start(); 
 
 // Assign the database credentials
-$host = "localhost";
-$dbName = "grillow";
-$dbUser = "root";
-$dbPass = "";
+require_once __DIR__ . '/../config.php';
+
 
 // Try and catch block for connecting to the database
 try {
@@ -32,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Prepare a query to retrieve user information including their id, password, and phone number based on their
         // unique email address
-        $stmt = $pdo->prepare("SELECT user_id, password, phone_number, name FROM Customer WHERE email = :email");
+        $stmt = $pdo->prepare("SELECT user_id, password, phone_number, name, is_disabled FROM Customer WHERE email = :email");
         // Bind the email variable inside the query statement
         $stmt->bindParam(':email', $email);
         // Execute the query
@@ -49,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         //check if password is correct
-        if (password_verify($password, $user['password'])){
+        if (password_verify($password, $user['password']) && $user["is_disabled"] == 0){
             //correct password! continue to create session key called user_id
             $_SESSION['user_id'] = $user['user_id'];
             //create session key user_name

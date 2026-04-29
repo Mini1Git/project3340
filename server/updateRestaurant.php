@@ -1,14 +1,12 @@
 <?php
+require_once __DIR__ . '/../config.php';
+
 session_start();
 if(!isset($_SESSION['user_id'])){
     header("Location: ../forms/login.php");
     exit();
 }
 
-$host = "localhost";
-$dbName = "grillow";
-$dbUser = "root";
-$dbPass = "";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
@@ -20,7 +18,7 @@ try {
 $user_id = $_SESSION['user_id'];
 
 // Get vendor
-$stmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin = :id");
+$stmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin_id = :id");
 $stmt->execute([':id'=>$user_id]);
 $vendor = $stmt->fetch(PDO::FETCH_ASSOC);
 $vendor_id = $vendor['restaurant_id'];

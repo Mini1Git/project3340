@@ -1,11 +1,11 @@
 <?php
-session_start();
-$isLoggedIn = isset($_SESSION['user_id']);
+    session_start();
+    $isLoggedIn = isset($_SESSION['user_id']);
 
-if (!$isLoggedIn) {
-    header("Location: ../forms/login.php");
-    exit();
-}
+    if (!$isLoggedIn) {
+        header("Location: ../forms/login.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,10 @@ if (!$isLoggedIn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name = "description" content = "this is the cart you use to checkout items.">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Your Cart</title>
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="stylesheet" href="../stylesheets/stylealternate.css">

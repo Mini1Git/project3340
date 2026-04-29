@@ -1,10 +1,8 @@
 <?php 
     
     // Assign the database credentials
-    $host = "localhost";
-    $dbName = "grillow";
-    $dbUser = "root";
-    $dbPass = "";
+    require_once __DIR__ . '/../config.php';
+
 
     
     // Try and catch blocks for connecting to the database

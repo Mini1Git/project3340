@@ -1,8 +1,7 @@
 <?php
-$host = "localhost";
-$dbName = "grillow";
-$dbUser = "root";
-$dbPass = "";
+
+require_once __DIR__ . '/../config.php';
+
 
 session_start();
 

@@ -1,8 +1,6 @@
-import { startAddressAPI } from '../temp/autocomplete.js';
+console.log("placeOrder.js loaded successfully");
 
-
-startAddressAPI();
-// for the address bar ^
+// Address API functionality removed - file not found
 
 
 // now we got to take care of card number, expiration, security code?
@@ -14,14 +12,22 @@ console.log("loadeded");
 
 const form = document.getElementById("order");
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+console.log("Form element:", form);
 
-    console.log("lmao SUBMITTED!");
-    getItems();
-    console.log("SHOULD REDIRECT NOW");
-    window.location.replace('../services/orders.php');
-});
+if (form) {
+    console.log("Attaching submit event listener");
+    form.addEventListener('submit', function (event) {
+        console.log("Form submit event triggered");
+        event.preventDefault();
+
+        console.log("lmao SUBMITTED!");
+        getItems();
+        console.log("SHOULD REDIRECT NOW");
+        // Removed immediate redirect
+    });
+} else {
+    console.log("ERROR: Form with id 'order' not found!");
+}
 //debug purposes.
 //setTimeout(getItems, 1000);
 
@@ -53,8 +59,14 @@ function getItems() {
             return response.json(); // Parse the JSON response body
         })
         .then(data => {
-            console.log('Success:', data); // Handle the successful response data
-
+            console.log('Response:', data);
+            if (data.error) {
+                alert('Error: ' .concat(data.error));
+            } else if (data.success && data.order_id) {
+                window.location.replace('../forms/order_success.php');
+            } else {
+                alert('Unexpected response from server');
+            }
         })
         .catch((error) => {
             console.error('Error:', error); // Handle errors during the fetch operation

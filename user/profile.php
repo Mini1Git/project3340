@@ -1,4 +1,5 @@
 <?php 
+    require_once __DIR__ . '/../config.php';
     session_start();
     $isLoggedIn = isset($_SESSION['user_id']);
     if (!$isLoggedIn) {
@@ -19,12 +20,6 @@
         return $phoneNumberString;
     }
 
-    // dsatabase connection
-    $host = "localhost";
-    $dbName = "grillow";
-    $dbUser = "root";
-    $dbPass = "";
-
     try{
         //connect to db
         $pdo = new PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser, $dbPass);
@@ -34,14 +29,14 @@
         $user_id = $_SESSION['user_id'];
 
         //find user info
-        $userStmt = $pdo->prepare("SELECT name, email, phone_number, address FROM Customer WHERE user_id = :id");
+        $userStmt = $pdo->prepare("SELECT name, email, phone_number, address, role, is_disabled FROM Customer WHERE user_id = :id");
         $userStmt->execute(['id' => $user_id]);
 
         //save result into $userData array
         $userData = $userStmt->fetch(PDO::FETCH_ASSOC);
 
         //count the ordersand add up the sum total prices
-        $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_order WHERE customer_id = :id");
+        $statsStmt = $pdo->prepare("SELECT COUNT(order_id) as total_orders, SUM(total_price) as total_spent FROM Customer_Order WHERE customer_id = :id");
         $statsStmt->execute(['id' => $user_id]);
 
         //save result in statsData array
@@ -53,12 +48,15 @@
         //two deciaml places
         $totalSpent = number_format($statsData['total_spent'] ?? 0, 2);
 
-        $userRestaurantStmt = $pdo->prepare("SELECT * FROM restaurant_vendor WHERE admin = :id");
+        $userRestaurantStmt = $pdo->prepare("SELECT * FROM Restaurant_Vendor WHERE admin_id = :id");
         $userRestaurantStmt->bindValue(":id", $user_id);
         $userRestaurantStmt->execute();
         $userRestaurant = $userRestaurantStmt->fetch(PDO::FETCH_ASSOC);
 
         $hasRestaurant = $userRestaurant !== false;
+
+        $isAdmin = (isset($userData["role"]) && $userData["role"] === "admin");
+
     }
     catch(PDOException $e) {
         // the connection fails, stop the page and show the error.
@@ -72,6 +70,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="author" content ="Wilson Tran, Liana Bell, Kayden Ions, Nazifa Tahsin">
+    <meta name="keywords" content="food, pizza, grillow, delivery, delivery app, app takeout, eating, restaurants, windsor, local foods">
+    <meta name = "description" content ="affordable local food delivery service in Windsor">
     <title>Grillow Profile Information</title>
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
     <link rel="stylesheet" href="../stylesheets/style.css">
@@ -112,7 +113,7 @@
 
                 <ul class="nav-list">
                     <li><a class="nav-link" href="../services/orders.php"><i class="fa-solid fa-receipt"></i> Orders</a></li>
-                    <li><a class="nav-link" href="../services/favorites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
+                    <li><a class="nav-link" href="../services/favourites.php"><i class="fa-solid fa-star"></i> Favourites</a></li>
                     <li><a class="nav-link" href="../services/cart.php"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
                 </ul>
 
@@ -209,6 +210,17 @@
                     
                 </div>
                 <?php endif; ?>
+                <?php if ($isAdmin): ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Admin Pane</h3>
+                        <div style="margin-top: var(--space-md);">
+                            <a class="btn btn-primary" href="../user/admin.php">Go to Admin Page <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
 
             </section>
 
